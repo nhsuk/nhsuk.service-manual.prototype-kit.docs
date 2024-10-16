@@ -21,7 +21,6 @@ const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
-const documentationRoutes = require('./docs/documentation_routes');
 const utils = require('./lib/utils');
 
 const prototypeAdminRoutes = require('./middleware/prototype-admin-routes');
@@ -203,9 +202,6 @@ if (useDocumentation || onlyDocumentation === 'true') {
   documentationApp.use(bodyParser.urlencoded({
     extended: true,
   }));
-
-  // Custom documentation routes
-  documentationApp.use('/', documentationRoutes);
 
   // Automatically route documentation pages
   documentationApp.get(/^([^.]+)$/, (req, res, next) => {

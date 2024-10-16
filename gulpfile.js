@@ -24,7 +24,7 @@ sass.compiler = require('sass');
 // Compile SASS to CSS
 function compileStyles() {
   return gulp
-    .src(['app/assets/sass/**/*.scss', 'docs/assets/sass/**/*.scss'])
+    .src(['app/assets/sass/**/*.scss'])
     .pipe(sass())
     .pipe(gulp.dest('public/css'))
     .on('error', (err) => {
@@ -36,7 +36,7 @@ function compileStyles() {
 // Compile JavaScript (with ES6 support)
 function compileScripts() {
   return gulp
-    .src(['app/assets/javascript/**/*.js', 'docs/assets/javascript/**/*.js'])
+    .src(['app/assets/javascript/**/*.js'])
     .pipe(babel())
     .pipe(gulp.dest('public/js'));
 }
@@ -46,7 +46,6 @@ function compileAssets() {
   return gulp
     .src([
       'app/assets/**/**/*.*',
-      'docs/assets/**/**/*.*',
       '!**/assets/**/**/*.js', // Don't copy JS files
       '!**/assets/**/**/*.scss', // Don't copy SCSS files
     ], { encoding: false })
@@ -108,9 +107,6 @@ function watch() {
   gulp.watch('app/assets/sass/**/*.scss', compileStyles);
   gulp.watch('app/assets/javascript/**/*.js', compileScripts);
   gulp.watch('app/assets/**/**/*.*', compileAssets);
-  gulp.watch('docs/assets/sass/**/*.scss', compileStyles);
-  gulp.watch('docs/assets/javascript/**/*.js', compileScripts);
-  gulp.watch('docs/assets/**/**/*.*', compileAssets);
 }
 
 exports.watch = watch;

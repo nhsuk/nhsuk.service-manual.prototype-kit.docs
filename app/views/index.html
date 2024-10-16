@@ -1,84 +1,52 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title -->
-{% block pageTitle %}
-  NHS.UK prototype kit
+{% block header %}
+  {{ header({}) }}
+  {{ hero({
+    "heading": "NHS.UK prototype kit",
+    "text": "Rapidly create HTML prototypes of NHS.UK services."
+  }) }}
 {% endblock %}
 
-<!-- For adding a breadcrumb or back link -->
-<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs and https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block beforeContent %}
-{% endblock %}
-
-
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
-      <!-- Change the page title here -->
-      <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
-      </h1>
-
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-
-      <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
-      </p>
-
-      <hr>
-
-      <h2>
-        About this page
-      </h2>
-
-      <p>
-        Use this page as the index for your project.
-      </p>
-      
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
-      <hr>
-
-      <h2>
-        Get started
-      </h2>
-
-      <p>Get started by using the:</p>
-
-      <ul>
-        <li>
-          <a href="/docs/how-tos">how to guides</a>
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            "href": "/install",
+            "clickable": "true",
+            "heading": "Install",
+            "headingClasses": "nhsuk-heading-m",
+            "description": "Download and installation guides"
+          }) }}
         </li>
-        <li>
-          <a href="/docs/page-templates">page templates</a>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            "href": "/how-tos",
+            "clickable": "true",
+            "heading": "How to guides",
+            "headingClasses": "nhsuk-heading-m",
+            "description": "Learn to create pages, use components, add data and more"
+          }) }}
         </li>
-        <li>
-          code snippets for styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            "href": "page-templates",
+            "clickable": "true",
+            "heading": "Page templates",
+            "headingClasses": "nhsuk-heading-m",
+            "description": "Copy and paste page templates into your project"
+          }) }}
         </li>
       </ul>
 
-      <!-- End of content -->
+      <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-6">
+
+      <div class="nhsuk-u-reading-width">
+        <p class="nhsuk-u-margin-bottom-0">Visit the <a href="https://service-manual.nhs.uk">NHS digital service manual</a> for guidance and examples.</p>
+      </div>
 
     </div>
   </div>

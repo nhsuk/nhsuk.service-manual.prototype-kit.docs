@@ -3,6 +3,56 @@ const express = require('express');
 
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+// Documentation router
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
+// Install guide branching
+router.post('/install', (req, res) => {
+  const { install } = req.session.data;
+
+  if (install === 'Simple') {
+    res.redirect('/install/simple');
+  }
+  if (install === 'Developer') {
+    res.redirect('/install/advanced');
+  } else {
+    res.redirect('/install/download-zip');
+  }
+});
+
+// Install - Mac or Windows branching
+router.post('/install/mac', (req, res) => {
+  const { machine } = req.session.data;
+
+  if (machine === 'Mac') {
+    res.redirect('/install/mac/terminal');
+  } else {
+    res.redirect('/install/windows/terminal');
+  }
+});
+
+router.get('/download', (req, res) => {
+  const { version } = packageJson;
+  res.redirect(
+    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v${version}.zip`,
+  );
+});
+
+// Branching example
+router.post('/examples/branching/answer', (req, res) => {
+  // Make a variable and give it the value from 'know-nhs-number'
+  const nhsNumber = req.session.data['know-nhs-number'];
+
+  // Check whether the variable matches a condition
+  if (nhsNumber === 'Yes') {
+    // Send user to next page
+    res.redirect('/examples/branching/answer-yes');
+  } else {
+    // Send user to ineligible page
+    res.redirect('/examples/branching/answer-no');
+  }
+});
 
 module.exports = router;

@@ -39,13 +39,6 @@ router.post('/install/mac', (req, res) => {
   else res.redirect('/install/mac-or-windows')
 });
 
-router.get('/download', (req, res) => {
-  const { version } = packageJson;
-  res.redirect(
-    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v${version}.zip`,
-  );
-});
-
 // Branching example
 router.post('/examples/branching/answer', (req, res) => {
   // Make a variable and give it the value from 'know-nhs-number'

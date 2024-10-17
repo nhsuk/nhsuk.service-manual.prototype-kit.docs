@@ -15,10 +15,14 @@ router.post('/install', (req, res) => {
   if (install === 'Simple') {
     res.redirect('/install/simple');
   }
-  if (install === 'Developer') {
+  else if (install === 'Developer') {
     res.redirect('/install/advanced');
-  } else {
+  }
+  else if (install === 'Download') {
     res.redirect('/install/download-zip');
+  }
+  else {
+    res.redirect('/install')
   }
 });
 
@@ -28,9 +32,11 @@ router.post('/install/mac', (req, res) => {
 
   if (machine === 'Mac') {
     res.redirect('/install/mac/terminal');
-  } else {
+  } 
+  else if (machine === 'Windows') {
     res.redirect('/install/windows/terminal');
   }
+  else res.redirect('/install/mac-or-windows')
 });
 
 router.get('/download', (req, res) => {

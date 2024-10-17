@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const express = require('express');
 const nunjucks = require('nunjucks');
-const sessionInCookie = require('client-sessions');
 const sessionInMemory = require('express-session');
 
 // Run before other code to make sure variables from .env are available
@@ -16,32 +15,25 @@ dotenv.config();
 
 // Local dependencies
 const packageInfo = require('./package.json');
-const authentication = require('./middleware/authentication');
+
 const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
 const utils = require('./lib/utils');
 
-const prototypeAdminRoutes = require('./middleware/prototype-admin-routes');
-
 // Set configuration variables
 const port = parseInt(process.env.PORT) || config.port;
-const useDocumentation = process.env.SHOW_DOCS || config.useDocumentation;
-const onlyDocumentation = process.env.DOCS_ONLY;
 
 // Initialise applications
 const app = express();
-const documentationApp = express();
 
 // Set up configuration variables
 const useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData;
-const useCookieSessionStore = process.env.USE_COOKIE_SESSION_STORE || config.useCookieSessionStore;
 
 // Add variables that are available in all views
 app.locals.asset_path = '/public/';
 app.locals.useAutoStoreData = (useAutoStoreData === 'true');
-app.locals.useCookieSessionStore = (useCookieSessionStore === 'true');
 app.locals.serviceName = config.serviceName;
 
 // Use cookie middleware to parse cookies
@@ -50,8 +42,6 @@ app.use(cookieParser());
 // Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
-  path.join(__dirname, 'docs/views/'),
-  path.join(__dirname, 'lib/prototype-admin/'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
 ];
@@ -78,23 +68,12 @@ const sessionOptions = {
   },
 };
 
-// Authentication
-app.use(authentication);
-
-// Support session data in cookie or memory
-if (useCookieSessionStore === 'true' && !onlyDocumentation) {
-  app.use(sessionInCookie(Object.assign(sessionOptions, {
-    cookieName: sessionName,
-    proxy: true,
-    requestKey: 'session',
-  })));
-} else {
-  app.use(sessionInMemory(Object.assign(sessionOptions, {
-    name: sessionName,
-    resave: false,
-    saveUninitialized: false,
-  })));
-}
+// Support session data in memory
+app.use(sessionInMemory(Object.assign(sessionOptions, {
+  name: sessionName,
+  resave: false,
+  saveUninitialized: false,
+})));
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json());
@@ -147,20 +126,11 @@ app.use(locals(config));
 
 // View engine
 app.set('view engine', 'html');
-documentationApp.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
-
-// Check if the app is documentation only
-if (onlyDocumentation === 'true') {
-  app.get('/', (req, res) => {
-    // Redirect to the documentation pages if it is
-    res.redirect('/docs');
-  });
-}
 
 // Use custom application routes
 app.use('/', routes);
@@ -170,52 +140,11 @@ app.get(/^([^.]+)$/, (req, res, next) => {
   automaticRouting.matchRoutes(req, res, next);
 });
 
-// Check if the app is using documentation
-if (useDocumentation || onlyDocumentation === 'true') {
-  // Documentation routes
-  app.use('/docs', documentationApp);
-
-  // Nunjucks configuration for documentation
-  const docViews = [
-    path.join(__dirname, 'docs/views/'),
-    path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-    path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros')
-  ];
-
-  nunjucksAppEnv = nunjucks.configure(docViews, {
-    autoescape: true,
-    express: documentationApp,
-  });
-  nunjucksAppEnv.addGlobal('version', packageInfo.version);
-
-  // Add Nunjucks filters
-  utils.addNunjucksFilters(nunjucksAppEnv);
-
-  // Automatically store all data users enter
-  if (useAutoStoreData === 'true') {
-    documentationApp.use(utils.autoStoreData);
-    utils.addCheckedFunction(nunjucksAppEnv);
-  }
-
-  // Support for parsing data in POSTs
-  documentationApp.use(bodyParser.json());
-  documentationApp.use(bodyParser.urlencoded({
-    extended: true,
-  }));
-
-  // Automatically route documentation pages
-  documentationApp.get(/^([^.]+)$/, (req, res, next) => {
-    automaticRouting.matchRoutes(req, res, next);
-  });
-}
-
 // Clear all data in session if you open /examples/passing-data/clear-data
 app.post('/examples/passing-data/clear-data', (req, res) => {
   req.session.data = {};
   res.render('examples/passing-data/clear-data-success');
 });
-
-app.use('/prototype-admin', prototypeAdminRoutes);
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, (req, res) => {

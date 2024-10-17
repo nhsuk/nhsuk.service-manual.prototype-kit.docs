@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'NHS.UK prototype kit',
+  serviceName: 'NHS.UK prototype kit docs',
 
   // Port to run nodemon on locally
   port: 2000,
@@ -10,10 +10,4 @@ module.exports = {
   // Automatically stores form data, and send to all views
   useAutoStoreData: 'true',
 
-  // Enable cookie-based session store (persists on restart)
-  // Please note 4KB cookie limit per domain, cookies too large will silently be ignored
-  useCookieSessionStore: 'false',
-
-  // Enable or disable built-in docs and examples.
-  useDocumentation: true,
-};
+}

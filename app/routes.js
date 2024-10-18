@@ -2,6 +2,7 @@
 const express = require('express');
 
 const router = express.Router();
+const packageJson = require('../package.json');
 
 // Documentation router
 router.get('/', (req, res) => {
@@ -37,6 +38,13 @@ router.post('/install/mac', (req, res) => {
     res.redirect('/install/windows/terminal');
   }
   else res.redirect('/install/mac-or-windows')
+});
+
+router.get('/download', (req, res) => {
+  const { prototypeKitVersion } = packageJson;
+  res.redirect(
+    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v${prototypeKitVersion}.zip`,
+  );
 });
 
 // Branching example

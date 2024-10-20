@@ -1,0 +1,22 @@
+
+{% set pageTitle = "Open your prototype in your editor" %}
+{% set next = { "title" : "Create pages" , "link" : "create-pages" } %}
+{% set prev = { "title" : "Get started" , "link" : "start" } %}
+
+
+{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
+<h2>Overview of folders in the Prototype Kit </h2>
+<ul>
+    <li><code>/app</code> is for your work. Inside that folder:</li>
+    <li><code>views</code> is for HTML pages</li>
+    <li><code>assets</code> is for CSS, JavaScript, images and downloadable files</li>
+    <li><code>routes.js</code> is for advanced logic - for example, if a user should go to one page or another based on their answers. We'll cover it later.</li>
+    <li><code>/docs/views/templates</code> has template pages for you to copy into your prototype</li>
+    </ul>
+
+
+
+{% endblock %}

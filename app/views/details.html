@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "href": "magical-powers",
+    "text": "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/check-your-answers" method="post" class="form">
+
+        {% from 'textarea/macro.njk' import textarea %}
+
+        {{ textarea({
+          name: "details",
+          id: "details",
+          label: {
+            text: "Tell us your symptoms of magical powers",
+            classes: "nhsuk-label--l",
+            isPageHeading: true
+          },
+          value: data['details']
+        }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

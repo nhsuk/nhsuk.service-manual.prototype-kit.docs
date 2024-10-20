@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "href": "/templates/start-page",
+    "text": "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">
+        Check your answers before sending your application
+      </h1>
+
+      <h2 class="nhsuk-heading-m">
+        Personal details
+      </h2>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Magical power symptoms in the last 30 days"
+            },
+            value: {
+              text: data['magical-powers']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/magical-powers",
+                  text: "Change",
+                  visuallyHiddenText: "magical power symptoms in the last 30 days"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Details of symptoms"
+            },
+            value: {
+              text: data['details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/details",
+                  text: "Change",
+                  visuallyHiddenText: "details of symptoms"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+  
+      <h2 class="nhsuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <p>
+        Your details with be sent to Rose Medical Practice to begin your registration.
+      </p>
+
+      <a href="/confirmation-page" class="nhsuk-button">
+        Accept and send registration
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

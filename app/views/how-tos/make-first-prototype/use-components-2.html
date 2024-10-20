@@ -1,0 +1,48 @@
+
+{% set pageTitle = "Add a textarea to question 2" %}
+{% set next = { "title" : "Show the user’s answers on your ‘Check answers’ page" , "link" : "show-users-answers" } %}
+{% set prev = { "title" : "Use components from the Design System" , "link" : "use-components" } %}
+
+{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
+  <ol>
+<li>Go to the <a href="https://design-system.service.gov.uk/components/textarea/">textarea page of the Design System</a>.</li>
+<li>Select the <strong>Nunjucks</strong> tab, then <strong>Copy code</strong>.</li>
+<li>Open <code>{{examples[1].url}}.html</code> in your <code>app/views</code> folder.</li>
+<li>Replace the 2 example <code>&lt;p&gt;...&lt;/p&gt;</code> paragraphs with the code you copied.</li>
+<li>Delete the old <code>&lt;h1&gt;</code> tag with "{{examples[2].title}}" (again the example code comes with an accessible heading for the question).</li>
+</ol>
+<h3 id="customise-the-example-code">Customise the example code</h3>
+<ol>
+<li>Under <code>label</code>, change <code>text</code> from "Can you provide more detail?" to "{{examples[2].title}}".</li>
+<li>Change the <code>id</code> and <code>name</code> to <code>{{examples[2].legend}}</code>.</li>
+<li>We don’t need a hint, so remove it and the comma just before it.</li>
+<li>We also want to make the page a title, so in the <code>label</code> area add <code> classes: "nhsuk-label--l",</code> and <code>isPageHeading: true</code> </li>
+
+</ol>
+<p>Your component code should now look like this:</p>
+
+
+<p><pre class="app-pre"><code>&#123;&#123; textarea({
+name: "{{examples[2].legend}}",
+id: "{{examples[2].legend}}",
+label: {
+  text: "{{examples[2].title}}",
+  classes: "nhsuk-label--l",
+  isPageHeading: true
+}
+}) &#125;&#125;</code></pre></p> 
+<p>Your page should now look like this:</p>
+<figure>
+
+<p>
+  <img src="/images/tutorial-textarea.png" style="max-width: 100%;" alt="Web page with the heading &quot;{{examples[2].title}}&quot;, a textarea and continue button" />
+</p>
+<figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
+</figure>
+
+
+
+{% endblock %}

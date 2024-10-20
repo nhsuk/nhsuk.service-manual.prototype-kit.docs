@@ -1,0 +1,18 @@
+
+{% set pageTitle = "Link your index page to your start page" %}
+{% set prev = { "title" : "Show different pages depending on user input" , "link" : "branching" } %}
+
+
+{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
+  <p>You can route users from your service's index page to your start page. The index page is the page that loads when users <a href="http://localhost:3000">go to http://localhost:3000</a>.</p>
+<ol>
+<li>Open the <code>index.html</code> file in your <code>app/views</code> folder.</li>
+<li>Add an <code>&lt;a&gt;</code> tag that links to <code>/{{examples[0].url}}</code>.</li>
+</ol>
+<p>You can now find out <a href="../publishing">how to publish your prototype online</a>, so you can share it with your team or do user research.</p>
+
+
+{% endblock %}

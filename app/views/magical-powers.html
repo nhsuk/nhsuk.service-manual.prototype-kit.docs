@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "href": "/start-page",
+    "text": "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/details" method="post" class="form">
+
+      
+      {{ radios({
+        idPrefix: "magical-powers",
+        name: "magical-powers",
+        fieldset: {
+          legend: {
+            text: "Have you felt symptoms of magical powers in the last 30 days?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        hint: {
+          html: "For example, things moving when you have strong feelings or hearing someone’s thoughts."
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes",
+          checked: checked("magical-powers", "yes")
+
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: checked("magical-powers", "no")
+
+        },
+        {
+          value: "not sure",
+          text: "I'm not sure",
+          checked: checked("magical-powers", "not sure")
+        }
+      ]
+      }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

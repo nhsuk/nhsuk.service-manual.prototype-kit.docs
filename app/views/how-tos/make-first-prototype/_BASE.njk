@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% set fictionalServiceName = "Order a test to check if you have magical powers" %}
+{% set examples = [
+{ url: "start-page" }, 
+{ "url" : "magical-powers", "title" : "Have you felt symptoms of magical powers in the last 30 days?", "legend" : "magical-powers", "summary" : "Symptoms of magical powers" },
+{ "url" : "details", "title" : "Tell us your symptoms of magical powers", legend: "details", "summary" : "Details of the symptoms" },
+{ url: "check-your-answers", title : "Check your answers" },
+{ url: "confirmation-page" },
+{ url: "ineligible" }
+]
+%}
+
+{% block pageTitle %}
+ {{ pageTitle | default("Add title with 'pageTitle'")}} - Make first prototype - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+{% if notCaption %}<span class="nhsuk-caption-xl">Make a basic prototype</span>{% endif %}
+      <h1 class="nhsuk-heading-xl">
+        {{ pageTitle | default("Add title with 'pageTitle'")}}
+      </h1>
+
+{% block makePrototype %}
+   
+   <p>Add text in makePrototype block </p>
+{% endblock %}
+
+
+{{ pagination({
+  previousUrl: prev.link if prev ,
+  previousPage: prev.title if prev ,
+  nextUrl: next.link if next ,
+  nextPage: next.title if next
+}) }}
+
+   
+    </div>
+
+  </div>
+{% endblock %}

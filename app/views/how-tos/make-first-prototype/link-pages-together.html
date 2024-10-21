@@ -1,0 +1,43 @@
+
+{% set pageTitle = "Link your pages together" %}
+{% set next = { "title" : "Use components from the Design System" , "link" : "use-components" } %}
+{% set prev = { "title" : "Create pages" , "link" : "create-pages" } %}
+
+
+{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
+<div class="app-prose-scope">
+    <p>To take users from one page to another, you can use either:</p>
+<ul>
+<li>a link (<code>&lt;a&gt;</code> tag)</li>
+<li>a form (<code>&lt;form&gt;</code> tag, when the user inputs data)</li>
+</ul>
+<h2 id="link-your-start-page-to-question-1">Link your start page to question 1</h2>
+<ol>
+<li>Open <code>start.html</code> in your <code>app/views</code> folder.</li>
+<li>Find the <code>&lt;a&gt;</code> tag with 'Start now' inside.</li>
+<li>Change the value of the <code>href</code> attribute from <code>#</code> to <code>/{{examples[1].url}}</code>.</li>
+</ol>
+<p><a href="http://localhost:3000/{{examples[0].url}}">Go to http://localhost:3000/{{examples[0].url}}</a> and select the <strong>Start now</strong> button to check the link works.</p>
+<p>Links normally appear as text with underlines. We make <strong>Start now</strong> look like a button to make it more obvious to users.</p>
+<h2 id="link-question-1-to-question-2">Link question 1 to question 2</h2>
+<ol>
+<li>Open <code>{{examples[1].url}}.html</code> in your <code>app/views</code> folder.</li>
+<li>Find the line <code>&lt;form class="form" action="/url/of/next/page" method="post"&gt;</code>.</li>
+<li>Change the value of the <code>action</code> attribute from <code>/url/of/next/page</code> to <code>/{{examples[2].url}}</code>.</li>
+</ol>
+<p><a href="http://localhost:3000/{{examples[1].url}}">Go to http://localhost:3000/{{examples[1].url}}</a> and select <strong>Continue</strong> to check the button works.</p>
+<p>This time it's a real HTML button, not a link. Buttons submit form data - the URL is on the form tag, not the button.</p>
+<h2 id="link-question-2-to-your-{{examples[3].url}}-page">Link question 2 to your 'Check answers' page</h2>
+<ol>
+<li>Open <code>{{examples[2].url}}.html</code> in your <code>app/views</code> folder.</li>
+<li>Find the line <code>&lt;form class="form" action="/url/of/next/page" method="post"&gt;</code>.</li>
+<li>Change the value of the <code>action</code> attribute from <code>/url/of/next/page</code> to <code>/{{examples[3].url}}</code>.</li>
+</ol>
+<p><a href="http://localhost:3000/{{examples[2].url}}">Go to http://localhost:3000/{{examples[2].url}}</a> and select <strong>Continue</strong> to check the button works.</p>
+<p>The 'Check answers' page template links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check answers’ page.</p>
+
+
+{% endblock %}

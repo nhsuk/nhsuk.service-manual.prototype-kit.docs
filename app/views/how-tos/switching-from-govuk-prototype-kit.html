@@ -19,34 +19,84 @@
 
 
 <p>
-      If you have used the GOV.UK prototype kit before, most of the things you know are the same in the NHS.UK prototype kit, but there are some differences.
+      If you have learned how to use the GOV.UK prototype kit, you will be able to use the NHS.UK prototype kit. This is because the two prototype kits are built in the same way. However, you must do some things differently.
     </p>
 <h2>Installing and running the NHS.UK prototype kit</h2>
 
 <p>
-When you are installing and running your prototype you need to:
-</p>
-<ul>
-<li>check if you have the right version of node - if you need to use both the NHS.UK and GOV.UK prototype kit at the same time you may need to switch node versions for example by installing a node version manager</li> 
-<li>run your prototype with the action <code>npm run watch</code> and not <code>npm run dev</code></li>
-</ul>
+When you are installing and running your prototype:
+
+{{ list({
+  title: "Do",
+  type: "tick",
+  items: [
+    {
+      item: 'check when you install your prototype that you are using the right version of node.js - you may need to install and use a different version. If you need to make prototypes that for both NHS.UK and GOV.UK you can switch versions of node with a <a href="https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/">node version manager</a>'
+    },
+    {
+      item: 'start your local server by entering in the terminal: <pre class="app-pre"><code class="language-markup">npm run watch</code></pre> '
+    }
+  ]
+}) }}
+
+{{ list({
+  title: "Don't",
+  type: "cross",
+  items: [
+    {
+      item: 'start your local server the same way as in the GOV.UK prototype kit as it will not work'
+    }
+  ]
+}) }}
+
+
 
 <h2>Making pages</h2>
 
 <p>
-When you are making your pages you need to:
-</p>
-<ul>
-  <li>use the NHS.UK design system for <a href="https://service-manual.nhs.uk/design-system/styles">styles</a>, <a href="https://service-manual.nhs.uk/design-system/components">components</a> and <a href="https://service-manual.nhs.uk/design-system/patterns">patterns</a> 
-  </li>
-<li>use NHS.UK page templates and layouts - these are different from GOV.UK. If you copy templates from the GOV.UK prototype kit they may not work </li>
-<li>use NHS.UK macros instead of GOV.UK ones as they different naming conventions, for example use  <code>radios</code> and not <code>govukRadios</code>. You can copy these from the <a href="https://service-manual.nhs.uk/design-system">NHS.UK design system</a>
-</li>
-<li>
-  be aware that the NHS.UK prototype kit may not have functionality that is in the GOV.UK one, for example, plugins
-</li>
-</ul>
-   
+  When you are making pages:
+</p>  
+
+{{ list({
+  title: "Do",
+  type: "tick",
+  items: [
+    {
+      item: 'use the NHS.UK design system for <a href="https://service-manual.nhs.uk/design-system/styles">styles</a>, <a href="https://service-manual.nhs.uk/design-system/components">components</a> and <a href="https://service-manual.nhs.uk/design-system/patterns">patterns</a>'
+    },
+    {
+      item: 'use <a href="https://service-manual.nhs.uk/design-system">NHS.UK macro naming conventions</a>, for example <pre class="app-pre"><code class="language-markup">radios</code></pre>'
+    },
+    {
+      item: 'use <a href="https://service-manual.nhs.uk/design-system/styles/typography">NHS.UK typography classes</a>, for example <pre class="app-pre"><code class="language-markup">' + '<p class="nhsuk-body">nhsuk-body</p>' | escape  + '</code></pre>'
+    },
+    {
+      item: ' be aware that the NHS.UK prototype kit may not have functionality that is in the GOV.UK one, for example, plugins      '
+    }
+  ]
+}) }}
+
+{{ list({
+  title: "Don't",
+  type: "cross",
+  items: [
+    {
+      item: 'copy pages from the GOV.UK design system or GOV.UK prototype kit as they may not work'
+    },
+    {
+      item: 'use GOV.UK macro naming conventions as they will not work'
+    },
+    {
+      item: 'use GOV.UK typography classes as they will not work'
+    }
+  ]
+}) }}
+
+
+<h2>Help and support</h2>
+
+<p>If you have any problems, ask a developer on your team (if you have one), <a href="mailto:england.service-manual@nhs.net?subject=NHS.UK prototype kit - Updating the kit">email us</a> or get in touch on the <a href="https://nhs-service-manual.slack.com/messages/CFYL2GDGW" rel="nofollow">NHS digital service manual #prototype-kit Slack channel</a>.</p>
+
       {% include "how-tos/includes/back-button.html" %}
 
     </div>

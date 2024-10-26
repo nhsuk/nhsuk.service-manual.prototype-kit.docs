@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% set fictionalServiceName = "Order a test to check if you have magical powers" %}
+{% set fictionalServiceURL = "magical-powers" %}
 {% set examples = [
 { url: "start-page" }, 
 { "url" : "magical-powers", "title" : "Have you felt symptoms of magical powers in the last 30 days?", "legend" : "magical-powers", "summary" : "Symptoms of magical powers" },
@@ -41,8 +42,6 @@
    <p>Add text in makePrototype block </p>
 {% endblock %}
 
-{{ exampleIneligible.url}}
-
 {{ pagination({
   previousUrl: prev.link if prev ,
   previousPage: prev.title if prev ,
@@ -51,6 +50,8 @@
 }) }}
 
    
+         {% include "how-tos/includes/back-button.html" %}
+
     </div>
 
   </div>

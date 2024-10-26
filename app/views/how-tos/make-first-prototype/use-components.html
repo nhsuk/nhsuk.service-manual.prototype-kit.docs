@@ -17,29 +17,28 @@
 <ol>
 <li>Go to the <a href="https://service-manual.nhs.uk/design-system/components/radios">radios component in the Design System</a>.</li>
 <li>Select the <strong>Nunjucks</strong> tab under the third example, then <strong>Copy code</strong>.</li>
-<li>Open <code>{{examples[1].url}}.html</code> in your <code>app/views</code> folder.</li>
-<li>Replace the 2 example <code>&lt;p&gt;...&lt;/p&gt;</code> paragraphs with the code you copied.</li>
-<li>The example comes with a heading that is connected to the answers for accessibility, so delete the old <code>&lt;h1&gt;</code> tag with "{{examples[1].title}}".</li>
+<li>Open <code class="language-markup" >{{exampleRadios.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
+<li>Replace the 2 example <code class="language-markup" >&lt;p&gt;...&lt;/p&gt;</code> paragraphs with the code you copied.</li>
+<li>The example comes with a heading that is connected to the answers for accessibility, so delete the old <code class="language-markup" >&lt;h1&gt;</code> tag with "{{exampleRadios.title}}".</li>
 </ol>
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol>
-<li>Under <code>legend</code>, change <code>text</code> from "Do you know your NHS number?" to "{{examples[1].title}}".</li>
-<li>Change <code>name</code> to <code>{{examples[1].legend}}</code>.</li>
-<li>Delete the <code>&#123% set hint %&#125</code> code</li> 
-<li>In the <code>hint: &#123; html:</code> area replace <code>hintHtml</code> and add <code>"For example, things moving when you have strong feelings or hearing someone’s thoughts."</code>.</li>
+<li>Under <code class="language-markup" >legend</code>, change <code class="language-markup" >text</code> from "Do you know your NHS number?" to "{{exampleRadios.title}}".</li>
+<li>Change <code class="language-markup" >name</code> to <code class="language-markup" >{{exampleRadios.legend}}</code>.</li>
+<li>Delete the <code class="language-markup" >&#123% set hint %&#125</code> code</li> 
+<li>In the <code class="language-markup" >hint: &#123; html:</code> area replace <code class="language-markup" >hintHtml</code> and add <code class="language-markup" >"For example, things moving when you have strong feelings or hearing someone’s thoughts."</code>.</li>
 
 <p>Your component code should now look like this:</p>
 
 
-
-  <p><pre class="app-pre"><code>&#123;&#123; 
+  <p><pre class="app-pre language-markup"><code class="language-markup" >&#123;&#123; 
     
     radios({
-        idPrefix: "{{examples[1].legend}}",
-        name: "{{examples[1].legend}}",
+        idPrefix: "{{exampleRadios.legend}}",
+        name: "{{exampleRadios.legend}}",
         fieldset: {
           legend: {
-            text: "{{examples[1].title}}",
+            text: "{{exampleRadios.title}}",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

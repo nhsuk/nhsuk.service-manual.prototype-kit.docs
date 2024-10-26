@@ -11,45 +11,45 @@
   <p>The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.</p>
 <h2 id="show-the-answer-to-question-1">Show the answer to question 1</h2>
 <ol>
-<li>Open <code>check-answers.html</code> in your <code>app/views</code> folder.</li>
-<li>Find the <code>&lt;dt&gt;</code> tag that contains the text 'NHS number'.</li>
-<li>Change 'NHS number' to '{{examples[1].summary}}'.</li>
-<li>In the <code>&lt;dd&gt;</code> tag on the next line, change '485 777 3456' to <code>&#123;&#123;  data['{{examples[1].legend}}'] &#125;&#125;</code>.</li>
+<li>Open <code class=" language-markup">{{exampleCheckAnswers.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
+<li>Find the <code class="language-markup" >&lt;dt&gt;</code> tag that contains the text 'NHS number'.</li>
+<li>Change 'NHS number' to '{{exampleRadios.summary}}'.</li>
+<li>In the <code class="language-markup" >&lt;dd&gt;</code> tag on the next line, change '485 777 3456' to <code class="language-markup" >&#123;&#123;  data['{{exampleRadios.legend}}'] &#125;&#125;</code>.</li>
 </ol>
-<p>This is how we show data a user has entered – '{{examples[1].legend}}' is the <code>name</code> attribute from the <code>&lt;input&gt;</code> on the question page.</p>
+<p>This is how we show data a user has entered – '{{exampleRadios.legend}}' is the <code class="language-markup" >name</code> attribute from the <code class="language-markup" >&lt;input&gt;</code> on the question page.</p>
 <p>Update the screen reader text – change this</p>
-<pre tabindex="0"><code>&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
+<pre tabindex="0"><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
 </code></pre>
 <p>to</p>
-<pre tabindex="0"><code>&lt;span class="govuk-visually-hidden"&gt; {{examples[1].summary | lower }}&lt;/span&gt;
+<pre tabindex="0"><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; {{exampleRadios.summary | lower }}&lt;/span&gt;
 </code></pre>
 <p>Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.</p>
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
 <ol>
-<li>Find the <code>&lt;dt&gt;</code> tag that contains the text 'Name'.</li>
-<li>Change 'Name' to '{{examples[2].summary}}'.</li>
-<li>In the <code>&lt;dd&gt;</code> tag on the next line, change 'Kevin Francis' to <code>&#123;&#123; data['{{examples[2].legend}}'] &#125;&#125;</code>.</li>
+<li>Find the <code class="language-markup" >&lt;dt&gt;</code> tag that contains the text 'Name'.</li>
+<li>Change 'Name' to '{{exampleTextArea.summary}}'.</li>
+<li>In the <code class="language-markup" >&lt;dd&gt;</code> tag on the next line, change 'Kevin Francis' to <code class="language-markup" >&#123;&#123; data['{{exampleTextArea.legend}}'] &#125;&#125;</code>.</li>
 </ol>
 <p>Change</p>
-<pre tabindex="0"><code>&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
+<pre tabindex="0"><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
 </code></pre>
 <p>to</p>
-<pre tabindex="0"><code>&lt;span class="govuk-visually-hidden"&gt; {{examples[2].legend | lower}}&lt;/span&gt;
+<pre tabindex="0"><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; {{exampleTextArea.legend | lower}}&lt;/span&gt;
 </code></pre>
 <p><a href="http://localhost:3000/{{exampleStart.url}}">Go to http://localhost:3000/{{exampleStart.url}}</a> and answer the questions to check your answers show up correctly.</p>
 <h2 id="delete-the-remaining-example-answers">Delete the remaining example answers</h2>
 <p>On the ‘Check answers’ template page, there are example answers that you do not need.</p>
 <ol>
-<li><p>Find and delete the whole <code>&lt;div&gt;</code> that starts with <code>&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact information'.</p>
+<li><p>Find and delete the whole <code class="language-markup" >&lt;div&gt;</code> that starts with <code class="language-markup" >&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact information'.</p>
 </li>
-<li><p>Find and delete the whole <code>&lt;div&gt;</code> that starts with <code>&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact details'.</p>
+<li><p>Find and delete the whole <code class="language-markup" >&lt;div&gt;</code> that starts with <code class="language-markup" >&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact details'.</p>
 </li>
 <li><p>Delete everything from the line that contains 'Medical details' down to the line before 'Now send your application'.</p>
 </li>
 </ol>
 <p>Your code should now look like this:</p>
 <p>
-<pre tabindex="0"><code>
+<pre tabindex="0"><code class="language-markup" >
 {{ '<div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 

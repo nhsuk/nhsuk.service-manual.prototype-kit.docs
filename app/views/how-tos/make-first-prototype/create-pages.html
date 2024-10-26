@@ -10,38 +10,38 @@
 
     <p>Create pages by copying template files that come with the Prototype Kit.</p>
 <h3 id="create-a-start-page">Create a start page</h3>
-<p>Copy the <code>{{exampleStart.url}}.html</code> file from <code>docs/views/templates</code> to <code>app/views</code>. </p>
-<p>Preview the pages in your prototype by going to ht<span>tp</span>://localhost:3000/NAME-OF-HTML-FILE in your web browser. For example, <a href="http://localhost:3000/{{exampleStart.url}}">go to http://localhost:3000/{{exampleStart.url}}</a> to preview <code>{{exampleStart.url}}.html</code>.</p>
+<p>Copy the <code class="language-markup" >{{exampleStart.url}}.html</code> file from <code class="language-markup" >docs/views/templates</code> to <code class="language-markup" >app/views</code>. </p>
+<p>Preview the pages in your prototype by going to ht<span>tp</span>://localhost:3000/NAME-OF-HTML-FILE in your web browser. For example, <a href="http://localhost:3000/{{exampleStart.url}}">go to http://localhost:3000/{{exampleStart.url}}</a> to preview <code class="language-markup" >{{exampleStart.url}}.html</code>.</p>
 <h4 id="change-the-service-name">Change the service name</h4>
 <p>You'll normally edit the HTML to make changes to pages, but the service name is in a config file. This is so we can change it in one place to update it on every page in your prototype.</p>
 <ol>
-<li>Open the <code>config.js</code> file in your <code>app</code> folder.</li>
-<li>Change <code>serviceName</code> from <code>Service name goes here</code> to <code>{{fictionalServiceName}}</code>.</li>
-<li>Press Cmd+S on Mac or Ctrl+S on Windows to save your change.</li>
+<li>Open the <code class="language-markup" >config.js</code> file in your <code class="language-markup" >app</code> folder.</li>
+<li>Change <code class="language-markup" >serviceName</code> from "Service name goes here" to "{{fictionalServiceName}}".</li>
+<li>Press <strong>Cmd+S</strong> on Mac or <strong>Ctrl+S</strong> on Windows to save your change.</li>
 </ol>
 <p>You must save every time you make a change to a file. In most code editors, a dot appears in the tab for any file that has unsaved changes.</p>
 <p>Normally your changes will automatically show in the browser without refreshing. But for this config change, you need to refresh the page. You should see your service name change on the Start page.</p>
 <h3 id="question-pages">Question pages</h3>
-<p>Make 2 copies of the <code>question-page.html</code> file from <code>docs/views/templates</code> to <code>app/views</code>.</p>
+<p>Make 2 copies of the <code class="language-markup" >question-page.html</code> file from <code class="language-markup" >docs/views/templates</code> to <code class="language-markup" >app/views</code>.</p>
 <p>Rename the 2 file copies to:</p>
 <ul>
-<li><code>{{examples[1].url}}.html</code></li>
-<li><code>{{examples[2].url}}.html</code></li>
+<li><code class="language-markup" >{{exampleRadios.url}}.html</code></li>
+<li><code class="language-markup" >{{exampleTextArea.url}}.html</code></li>
 </ul>
 <p>Go to the following URLs to check your pages:</p>
 <ul>
-<li><a href="http://localhost:3000/{{examples[1].url}}">http://localhost:3000/{{examples[1].url}}</a></li>
-<li><a href="http://localhost:3000/{{examples[2].url}}">http://localhost:3000/{{examples[2].url}}</a></li>
+<li><a href="http://localhost:3000/{{exampleRadios.url}}">http://localhost:3000/{{exampleRadios.url}}</a></li>
+<li><a href="http://localhost:3000/{{exampleTextArea.url}}">http://localhost:3000/{{exampleTextArea.url}}</a></li>
 </ul>
-<p>In the <code>{{examples[1].url}}.html</code> file, change the text inside the <code>h1</code> tag from <code>Heading or question goes here</code> to <code>{{examples[1].title}}</code>.</p>
-<p>In the <code>{{examples[2].url}}.html</code> file, change the text inside the <code>h1</code> tag to <code>{{examples[2].title}}</code>.</p>
-<h3 id="{{examples[3].url}}-page">'Check answers' page</h3>
-<p>Copy the <code>{{examples[3].url}}.html</code> file from <code>docs/views/templates</code> to <code>app/views</code>.</p>
-<p>Go to <a href="http://localhost:3000/{{examples[3].url}}">http://localhost:3000/{{examples[3].url}}</a> to check.</p>
+<p>In the <code class="language-markup" >{{exampleRadios.url}}.html</code> file, change the text inside the <code class="language-markup" >&lt;h1&gt;</code> tag from "Heading or question goes here" to "{{exampleRadios.title}}".</p>
+<p>In the <code class="language-markup" >{{exampleTextArea.url}}.html</code> file, change the text inside the <code class="language-markup" >&lt;h1&gt;</code> tag to "{{exampleTextArea.title}}".</p>
+<h3 id="{{exampleCheckAnswers.url}}-page">'Check answers' page</h3>
+<p>Copy the <code class="language-markup" >{{exampleCheckAnswers.url}}.html</code> file from <code class="language-markup" >docs/views/templates</code> to <code class="language-markup" >app/views</code>.</p>
+<p>Go to <a href="http://localhost:3000/{{exampleCheckAnswers.url}}">http://localhost:3000/{{exampleCheckAnswers.url}}</a> to check.</p>
 
 <h3 id="confirmation-page">Confirmation page</h3>
-<p>Copy the <code>{{examples[4].url}}.html</code> file from <code>docs/views/templates</code> to <code>app/views</code>.</p>
-<p>Go to <a href="http://localhost:3000/{{examples[4].url}}">http://localhost:3000/{{examples[4].url}}</a> to check.</p>
+<p>Copy the <code class="language-markup" >{{exampleConfirmation.url}}.html</code> file from <code class="language-markup" >docs/views/templates</code> to <code class="language-markup" >app/views</code>.</p>
+<p>Go to <a href="http://localhost:3000/{{exampleConfirmation.url}}">http://localhost:3000/{{exampleConfirmation.url}}</a> to check.</p>
 
 
 {% endblock %}

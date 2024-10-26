@@ -10,4 +10,4 @@ module.exports = {
   // Automatically stores form data, and send to all views
   useAutoStoreData: 'true',
 
-}
+};

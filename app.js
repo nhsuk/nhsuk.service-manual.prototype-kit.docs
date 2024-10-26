@@ -23,7 +23,7 @@ const routes = require('./app/routes');
 const utils = require('./lib/utils');
 
 // Set configuration variables
-const port = parseInt(process.env.PORT) || config.port;
+const port = parseInt(process.env.PORT, 10) || config.port;
 
 // Initialise applications
 const app = express();
@@ -53,7 +53,7 @@ const nunjucksConfig = {
 
 nunjucksConfig.express = app;
 
-let nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
+const nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
 nunjucksAppEnv.addGlobal('version', packageInfo.version);
 
 // Add Nunjucks filters

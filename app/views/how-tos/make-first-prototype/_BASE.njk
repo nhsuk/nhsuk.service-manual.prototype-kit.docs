@@ -10,6 +10,14 @@
 ]
 %}
 
+{# list of URLS, titles and questions for reference - these are hard-coded but here for ease of changes #}
+{% set exampleStart = { url: "start-page" }  %}
+{% set exampleRadios = { "url" : "magical-powers", "title" : "Have you felt symptoms of magical powers in the last 30 days?", "legend" : "magical-powers", "summary" : "Symptoms of magical powers" }  %}
+{% set exampleTextArea = { "url" : "details", "title" : "Tell us your symptoms of magical powers", legend: "details", "summary" : "Details of the symptoms" } %}
+{% set exampleCheckAnswers = { url: "check-your-answers", title : "Check your answers" }  %}
+{% set exampleConfirmation = { url: "confirmation-page" } %}
+{% set exampleIneligible = { url: "ineligible" }  %}
+
 {% block pageTitle %}
  {{ pageTitle | default("Add title with 'pageTitle'")}} - Make first prototype - NHS.UK prototype kit
 {% endblock %}
@@ -33,6 +41,7 @@
    <p>Add text in makePrototype block </p>
 {% endblock %}
 
+{{ exampleIneligible.url}}
 
 {{ pagination({
   previousUrl: prev.link if prev ,

@@ -7,10 +7,9 @@
 
 {% block makePrototype %}
 
-
   <p>The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.</p>
 <h2 id="show-the-answer-to-question-1">Show the answer to question 1</h2>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li>Open <code class=" language-markup">{{exampleCheckAnswers.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
 <li>Find the <code class="language-markup" >&lt;dt&gt;</code> tag that contains the text 'NHS number'.</li>
 <li>Change 'NHS number' to '{{exampleRadios.summary}}'.</li>
@@ -25,7 +24,7 @@
 </code></pre>
 <p>Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.</p>
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li>Find the <code class="language-markup" >&lt;dt&gt;</code> tag that contains the text 'Name'.</li>
 <li>Change 'Name' to '{{exampleTextArea.summary}}'.</li>
 <li>In the <code class="language-markup" >&lt;dd&gt;</code> tag on the next line, change 'Kevin Francis' to <code class="language-markup" >&#123;&#123; data['{{exampleTextArea.legend}}'] &#125;&#125;</code>.</li>
@@ -39,7 +38,7 @@
 <p><a href="http://localhost:3000/{{exampleStart.url}}">Go to http://localhost:3000/{{exampleStart.url}}</a> and answer the questions to check your answers show up correctly.</p>
 <h2 id="delete-the-remaining-example-answers">Delete the remaining example answers</h2>
 <p>On the ‘Check answers’ template page, there are example answers that you do not need.</p>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li><p>Find and delete the whole <code class="language-markup" >&lt;div&gt;</code> that starts with <code class="language-markup" >&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact information'.</p>
 </li>
 <li><p>Find and delete the whole <code class="language-markup" >&lt;div&gt;</code> that starts with <code class="language-markup" >&lt;div class="govuk-summary-list__row"&gt;</code> and contains 'Contact details'.</p>

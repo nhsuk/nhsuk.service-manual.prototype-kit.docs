@@ -8,13 +8,13 @@
 
 {% block makePrototype %}
 
-    <p>You can copy example code from the NHS Design System to add page elements like radios and text inputs - we call these ‘components’.</p>
+ <p>You can copy example code from the NHS Design System to add page elements like radios and text inputs - we call these ‘components’.</p>
 <h2 id="html-and-nunjucks">HTML and Nunjucks</h2>
 <p>HTML is the language used to create web pages.</p>
 <p>Nunjucks is another language we can run in the Prototype Kit, to make HTML for us. Short, simple Nunjucks code can create much longer, more complex HTML.</p>
 <p>In the Design System, components have both Nunjucks and HTML example code. Either will work in the Prototype Kit.</p>
 <h2 id="add-radios-to-question-1">Add radios to question 1</h2>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li>Go to the <a href="https://service-manual.nhs.uk/design-system/components/radios">radios component in the Design System</a>.</li>
 <li>Select the <strong>Nunjucks</strong> tab under the third example, then <strong>Copy code</strong>.</li>
 <li>Open <code class="language-markup" >{{exampleRadios.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
@@ -22,7 +22,7 @@
 <li>The example comes with a heading that is connected to the answers for accessibility, so delete the old <code class="language-markup" >&lt;h1&gt;</code> tag with "{{exampleRadios.title}}".</li>
 </ol>
 <h3 id="customise-the-example-code">Customise the example code</h3>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li>Under <code class="language-markup" >legend</code>, change <code class="language-markup" >text</code> from "Do you know your NHS number?" to "{{exampleRadios.title}}".</li>
 <li>Change <code class="language-markup" >name</code> to <code class="language-markup" >{{exampleRadios.legend}}</code>.</li>
 <li>Delete the <code class="language-markup" >&#123% set hint %&#125</code> code</li> 
@@ -31,36 +31,34 @@
 <p>Your component code should now look like this:</p>
 
 
-  <p><pre class="app-pre language-markup"><code class="language-markup" >&#123;&#123; 
-    
-    radios({
-        idPrefix: "{{exampleRadios.legend}}",
-        name: "{{exampleRadios.legend}}",
-        fieldset: {
-          legend: {
-            text: "{{exampleRadios.title}}",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        },
-        hint: {
-          html: "For example, things moving when you have strong feelings or hearing someone’s thoughts."
-        },
-        items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        },
-        {
-          value: "not sure",
-          text: "I'm not sure"
-        }
-      ]
-    }) &#125;&#125;</code></pre></p>
+<p><pre class="app-pre language-markup"><code class="language-markup" >&#123;&#123; radios({
+  idPrefix: "{{exampleRadios.legend}}",
+  name: "{{exampleRadios.legend}}",
+  fieldset: {
+    legend: {
+    text: "{{exampleRadios.title}}",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    html: "For example, things moving when you have strong feelings or hearing someone’s thoughts."
+  },
+  items: [
+   {
+    value: "yes",
+    text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "not sure",
+      text: "I'm not sure"
+    }
+  ]
+}) &#125;&#125;</code></pre></p>
 
 <p>Your page should now look like this:</p>
 <figure>

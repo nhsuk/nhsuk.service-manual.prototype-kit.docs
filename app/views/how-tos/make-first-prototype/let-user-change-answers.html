@@ -5,9 +5,9 @@
 {% extends 'how-tos/make-first-prototype/_BASE.njk' %}
 
 {% block makePrototype %}
-  <h2 id="make-the-change-links-work">Make the ‘Change’ links work</h2>
+<h2 id="make-the-change-links-work">Make the ‘Change’ links work</h2>
 <p>Make the <strong>Change</strong> links on the ‘{{exampleCheckAnswers.title}}’ page work by adding the right links.</p>
-<ol>
+<ol class="nhsuk-list nhsuk-list--number">
 <li>In the <code class="language-markup" >&lt;a&gt;</code> tag under <code class="language-markup" >{{ data['how-many-balls'] }}</code>, change the href attribute from <code class="language-markup" >#</code> to <code class="language-markup" >/{{exampleRadios.url}}</code></li>
 <li>In the <code class="language-markup" >&lt;a&gt;</code> tag under <code class="language-markup" >{{ data['most-impressive-trick'] }}</code>, change the href attribute from <code class="language-markup" >#</code> to <code class="language-markup" >/{{exampleTextArea.url}}</code></li>
 </ol>
@@ -16,28 +16,21 @@
 <p>Radios and checkboxes have a <code class="language-markup" >checked</code> option to set whether they are selected (checked) or not when the page loads.</p>
 <p>Open the <code class="language-markup" >{{exampleRadios.url}}.html</code> file in your <code class="language-markup" >app/views</code> folder.</p>
 <p>For each of the <code class="language-markup" >items</code>, we’ll add a <code class="language-markup" >checked</code> value, like this:</p>
-<pre tabindex="0"><code class="language-markup" >    
-
-&#123;
+<pre tabindex="0"><code class="language-markup" >&#123;
   value: "yes",
   text: "Yes",
   checked: checked("magical-powers", "yes")
-
 &#125;,
 &#123;
   value: "no",
   text: "No",
   checked: checked("magical-powers", "no")
-
   &#125;,
   &#123;
   value: "not sure",
   text: "I'm not sure",
   checked: checked("magical-powers", "not sure")
   &#125;,
- 
-
-
 </code></pre>
 <p>In each case make sure the spelling is exactly the same as the <code class="language-markup" >value</code>.</p>
 <p><a href="http://localhost:3000/{{exampleRadios.url}}">Go to http://localhost:3000/{{exampleRadios.url}}</a> and check the journey works by selecting an answer, continuing to the next page, then going back.</p>

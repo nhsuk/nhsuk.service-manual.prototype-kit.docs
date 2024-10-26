@@ -1,36 +1,88 @@
-
 {% set pageTitle = "Show different pages depending on user input (branching)" %}
-{% set next = { "title" : "Link your index page to your start page" , "link" : "link-index-page-start-page" } %}
-{% set prev = { "title" : "Let the user change their answers" , "link" : "let-user-change-answers" } %}
+{% set next = { "title" : "Link your index page to your start page" , "link" :
+"link-index-page-start-page" } %} {% set prev = { "title" : "Let the user change
+their answers" , "link" : "let-user-change-answers" } %} {% extends
+'how-tos/make-first-prototype/_BASE.njk' %} {% block makePrototype %}
 
-{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
-
-{% block makePrototype %}
-
-  <p>Our first question asks the user if they have had symptoms of magical powers in the last 30 days. We’re going to send them to an ‘ineligible’ page if answer anything other than yes. Sending users to different pages based on their input is called branching.</p>
-<p>To do this, we’re going to need an <code class="language-markup" >{{exampleIneligible.url}}.html</code> page, and some logic to decide when to send users there.</p>
-<p>This kind of logic goes in a file called <code class="language-markup" >app/routes.js</code>, which is written in JavaScript. Routes tell the kit what to do when the user goes to specific pages.</p>
-<p>The route takes the answer the user gave to the first question and either sends them to the next question or the ineligible page, depending on their answer.</p>
+<p>
+  Our first question asks the user if they have had symptoms of magical powers
+  in the last 30 days. We’re going to send them to an ‘ineligible’ page if
+  answer anything other than yes. Sending users to different pages based on
+  their input is called branching.
+</p>
+<p>
+  To do this, we’re going to need an
+  <code class="language-markup">{{exampleIneligible.url}}.html</code> page, and
+  some logic to decide when to send users there.
+</p>
+<p>
+  This kind of logic goes in a file called
+  <code class="language-markup">app/routes.js</code>, which is written in
+  JavaScript. Routes tell the kit what to do when the user goes to specific
+  pages.
+</p>
+<p>
+  The route takes the answer the user gave to the first question and either
+  sends them to the next question or the ineligible page, depending on their
+  answer.
+</p>
 <h2 id="create-an-ineligible-page">Create an ineligible page</h2>
-<ol>
-<li><p>Make an <code class="language-markup" >{{exampleIneligible.url}}.html</code> page by copying <code class="language-markup" >content.html</code> from <code class="language-markup" >docs/views/templates</code> to <code class="language-markup" >app/views</code>.</p>
-</li>
-<li><p>Update the content to tell the user why they’re ineligible and what they can do next.</p>
-</li>
+<ol class="nhsuk-list nhsuk-list--number">
+  <li>
+    <p>
+      Make an
+      <code class="language-markup">{{exampleIneligible.url}}.html</code> page
+      by copying <code class="language-markup">content.html</code> from
+      <code class="language-markup">docs/views/templates</code> to
+      <code class="language-markup">app/views</code>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Update the content to tell the user why they’re ineligible and what they
+      can do next.
+    </p>
+  </li>
 </ol>
-<p>To check it works, <a href="http://localhost:3000/{{exampleIneligible.url}}">go to http://localhost:3000/{{exampleIneligible.url}}</a>.</p>
+<p>
+  To check it works,
+  <a href="http://localhost:3000/{{exampleIneligible.url}}"
+    >go to http://localhost:3000/{{exampleIneligible.url}}</a
+  >.
+</p>
 <h2 id="create-a-route">Create a route</h2>
-<p>We’re going to write some logic to process the user’s answer to question 1. If the user has had magical symptoms in the last 30 days, we’ll send them to question 2. If they answer with anything else, we’ll send them to the ineligible page.</p>
-<p>Currently, the <code class="language-markup" >{{exampleRadios.url}}</code> page sends the user directly to question 2. Instead, we’re going to send them to a special URL where we can run some code to check their answer.</p>
-<ol>
-<li><p>In <code class="language-markup" >{{exampleRadios.url}}.html</code> change the form action to <code class="language-markup" >/{{exampleRadios.url}}-answer</code>.</p>
-</li>
-<li><p>Open <code class="language-markup" >/app/routes.js</code>.</p>
-</li>
-<li><p>Insert new JavaScript into line 5, before <code class="language-markup" >module.exports = router</code>.</p>
-</li>
+<p>
+  We’re going to write some logic to process the user’s answer to question 1. If
+  the user has had magical symptoms in the last 30 days, we’ll send them to
+  question 2. If they answer with anything else, we’ll send them to the
+  ineligible page.
+</p>
+<p>
+  Currently, the <code class="language-markup">{{exampleRadios.url}}</code> page
+  sends the user directly to question 2. Instead, we’re going to send them to a
+  special URL where we can run some code to check their answer.
+</p>
+<ol class="nhsuk-list nhsuk-list--number">
+  <li>
+    <p>
+      In <code class="language-markup">{{exampleRadios.url}}.html</code> change
+      the form action to
+      <code class="language-markup">/{{exampleRadios.url}}-answer</code>.
+    </p>
+  </li>
+  <li>
+    <p>Open <code class="language-markup">/app/routes.js</code>.</p>
+  </li>
+  <li>
+    <p>
+      Insert new JavaScript into line 5, before
+      <code class="language-markup">module.exports = router</code>.
+    </p>
+  </li>
 </ol>
-<pre tabindex="0"><code class="language-markup" >// Run this code when a form is submitted to '{{exampleRadios.url}}-answer'
+<pre
+  tabindex="0"
+><code class="language-markup" >// Run this code when a form is submitted to '{{exampleRadios.url}}-answer'
 router.post('/{{exampleRadios.url}}-answer', function (req, res) {
 
 // Make a variable and give it the value from '{{exampleRadios.legend}}'
@@ -47,13 +99,22 @@ res.redirect('/{{exampleIneligible.url}}')
 
 })
 </code></pre>
-<ol start="4">
-<li>Check it works. Selecting ‘Yes’ should send you to the next question. Any other answer should send you to the ineligible page.</li>
+<ol start="4"class="nhsuk-list nhsuk-list--number">
+  <li>
+    Check it works. Selecting ‘Yes’ should send you to the next question. Any
+    other answer should send you to the ineligible page.
+  </li>
 </ol>
 <h2 id="if-it-does-not-work">If it does not work</h2>
-<p>If you do not get a page, check in the terminal to see if the kit has crashed. This is a common problem if there’s a typo in the JavaScript. If so, the kit will try to tell you the line number with the issue.</p>
+<p>
+  If you do not get a page, check in the terminal to see if the kit has crashed.
+  This is a common problem if there’s a typo in the JavaScript. If so, the kit
+  will try to tell you the line number with the issue.
+</p>
 <p>If the kit crashes, you will see something like this on the terminal:</p>
-<pre tabindex="0"><code class="language-markup" >/Users/name/projects/{{fictionalServiceURL}}-prototype/app/routes.js:12
+<pre
+  tabindex="0"
+><code class="language-markup" >/Users/name/projects/{{exampleServiceURL}}-prototype/app/routes.js:12
 });
 ^
 SyntaxError: Unexpected token }
@@ -65,12 +126,17 @@ at tryModuleLoad (module.js:446:12)
 at Function.Module._load (module.js:438:3)
 at Module.require (module.js:497:17)
 at require (internal/module.js:20:19)
-at Object.&lt;anonymous&gt; (/Users/[username]/projects/{{fictionalServiceURL}}-prototype/server.js:7:14)
+at Object.&lt;anonymous&gt; (/Users/[username]/projects/{{exampleServiceURL}}-prototype/server.js:7:14)
 at Module._compile (module.js:570:32)
 [14:11:50] [nodemon] app crashed - waiting for file changes before starting…
 </code></pre>
-<p>The first line of this sample output ends with <code class="language-markup" >/app/routes.js:12</code>.</p>
-<p>The '12' suggests there’s probably an issue on line 12 or the line before it. In this case, the issue was a missing bracket.</p>
-
+<p>
+  The first line of this sample output ends with
+  <code class="language-markup">/app/routes.js:12</code>.
+</p>
+<p>
+  The '12' suggests there’s probably an issue on line 12 or the line before it.
+  In this case, the issue was a missing bracket.
+</p>
 
 {% endblock %}

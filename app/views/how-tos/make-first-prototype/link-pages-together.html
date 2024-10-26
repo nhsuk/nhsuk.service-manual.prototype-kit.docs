@@ -1,43 +1,109 @@
-
-{% set pageTitle = "Link your pages together" %}
-{% set next = { "title" : "Use components from the Design System" , "link" : "use-components" } %}
-{% set prev = { "title" : "Create pages" , "link" : "create-pages" } %}
-
-
-{% extends 'how-tos/make-first-prototype/_BASE.njk' %}
-
-{% block makePrototype %}
+{% set pageTitle = "Link your pages together" %} {% set next = { "title" : "Use
+components from the Design System" , "link" : "use-components" } %} {% set prev
+= { "title" : "Create pages" , "link" : "create-pages" } %} {% extends
+'how-tos/make-first-prototype/_BASE.njk' %} {% block makePrototype %}
 
 <div class="app-prose-scope">
-    <p>To take users from one page to another, you can use either:</p>
-<ul>
-<li>a link (<code class="language-markup" >&lt;a&gt;</code> tag)</li>
-<li>a form (<code class="language-markup" >&lt;form&gt;</code> tag, when the user inputs data)</li>
-</ul>
-<h2 id="link-your-start-page-to-question-1">Link your start page to question 1</h2>
-<ol>
-<li>Open <code class="language-markup" >start.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
-<li>Find the <code class="language-markup" >&lt;a&gt;</code> tag with 'Start now' inside.</li>
-<li>Change the value of the <code class="language-markup" >href</code> attribute from <code class="language-markup" >#</code> to <code class="language-markup" >/{{exampleRadios.url}}</code>.</li>
-</ol>
-<p><a href="http://localhost:3000/{{exampleStart.url}}">Go to http://localhost:3000/{{exampleStart.url}}</a> and select the <strong>Start now</strong> button to check the link works.</p>
-<p>Links normally appear as text with underlines. We make <strong>Start now</strong> look like a button to make it more obvious to users.</p>
-<h2 id="link-question-1-to-question-2">Link question 1 to question 2</h2>
-<ol>
-<li>Open <code class="language-markup" >{{exampleRadios.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
-<li>Find the line <code class="language-markup" >&lt;form class="form" action="/url/of/next/page" method="post"&gt;</code>.</li>
-<li>Change the value of the <code class="language-markup" >action</code> attribute from <code class="language-markup" >/url/of/next/page</code> to <code class="language-markup" >/{{exampleTextArea.url}}</code>.</li>
-</ol>
-<p><a href="http://localhost:3000/{{exampleRadios.url}}">Go to http://localhost:3000/{{exampleRadios.url}}</a> and select <strong>Continue</strong> to check the button works.</p>
-<p>This time it's a real HTML button, not a link. Buttons submit form data - the URL is on the form tag, not the button.</p>
-<h2 id="link-question-2-to-your-{{exampleCheckAnswers.url}}-page">Link question 2 to your 'Check answers' page</h2>
-<ol>
-<li>Open <code class="language-markup" >{{exampleTextArea.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
-<li>Find the line <code class="language-markup" >&lt;form class="form" action="/url/of/next/page" method="post"&gt;</code>.</li>
-<li>Change the value of the <code class="language-markup" >action</code> attribute from <code class="language-markup" >/url/of/next/page</code> to <code class="language-markup" >/{{exampleCheckAnswers.url}}</code>.</li>
-</ol>
-<p><a href="http://localhost:3000/{{exampleTextArea.url}}">Go to http://localhost:3000/{{exampleTextArea.url}}</a> and select <strong>Continue</strong> to check the button works.</p>
-<p>The 'Check answers' page template links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check answers’ page.</p>
+  <p>To take users from one page to another, you can use either:</p>
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    <li>a link (<code class="language-markup">&lt;a&gt;</code> tag)</li>
+    <li>
+      a form (<code class="language-markup">&lt;form&gt;</code> tag, when the
+      user inputs data)
+    </li>
+  </ul>
+  <h2 id="link-your-start-page-to-question-1">
+    Link your start page to question 1
+  </h2>
+  <ol class="nhsuk-list nhsuk-list--number">
+    <li>
+      Open <code class="language-markup">start.html</code> in your
+      <code class="language-markup">app/views</code> folder.
+    </li>
+    <li>
+      Find the <code class="language-markup">&lt;a&gt;</code> tag with 'Start
+      now' inside.
+    </li>
+    <li>
+      Change the value of the
+      <code class="language-markup">href</code> attribute from
+      <code class="language-markup">#</code> to
+      <code class="language-markup">/{{exampleRadios.url}}</code>.
+    </li>
+  </ol>
+  <p>
+    <a href="http://localhost:3000/{{exampleStart.url}}"
+      >Go to http://localhost:3000/{{exampleStart.url}}</a
+    >
+    and select the <strong>Start now</strong> button to check the link works.
+  </p>
+  <p>
+    Links normally appear as text with underlines. We make
+    <strong>Start now</strong> look like a button to make it more obvious to
+    users.
+  </p>
+  <h2 id="link-question-1-to-question-2">Link question 1 to question 2</h2>
+  <ol class="nhsuk-list nhsuk-list--number">
+    <li>
+      Open <code class="language-markup">{{exampleRadios.url}}.html</code> in
+      your <code class="language-markup">app/views</code> folder.
+    </li>
+    <li>
+      Find the line
+      <code class="language-markup"
+        >&lt;form class="form" action="/url/of/next/page"
+        method="post"&gt;</code
+      >.
+    </li>
+    <li>
+      Change the value of the
+      <code class="language-markup">action</code> attribute from
+      <code class="language-markup">/url/of/next/page</code> to
+      <code class="language-markup">/{{exampleTextArea.url}}</code>.
+    </li>
+  </ol>
+  <p>
+    <a href="http://localhost:3000/{{exampleRadios.url}}"
+      >Go to http://localhost:3000/{{exampleRadios.url}}</a
+    >
+    and select <strong>Continue</strong> to check the button works.
+  </p>
+  <p>
+    This time it's a real HTML button, not a link. Buttons submit form data -
+    the URL is on the form tag, not the button.
+  </p>
+  <h2 id="link-question-2-to-your-{{exampleCheckAnswers.url}}-page">
+    Link question 2 to your 'Check answers' page
+  </h2>
+  <ol class="nhsuk-list nhsuk-list--number">
+    <li>
+      Open <code class="language-markup">{{exampleTextArea.url}}.html</code> in
+      your <code class="language-markup">app/views</code> folder.
+    </li>
+    <li>
+      Find the line
+      <code class="language-markup"
+        >&lt;form class="form" action="/url/of/next/page"
+        method="post"&gt;</code
+      >.
+    </li>
+    <li>
+      Change the value of the
+      <code class="language-markup">action</code> attribute from
+      <code class="language-markup">/url/of/next/page</code> to
+      <code class="language-markup">/{{exampleCheckAnswers.url}}</code>.
+    </li>
+  </ol>
+  <p>
+    <a href="http://localhost:3000/{{exampleTextArea.url}}"
+      >Go to http://localhost:3000/{{exampleTextArea.url}}</a
+    >
+    and select <strong>Continue</strong> to check the button works.
+  </p>
+  <p>
+    The 'Check answers' page template links to the ‘Confirmation’ page by
+    default. So you do not need to change the ‘Check answers’ page.
+  </p>
 
-
-{% endblock %}
+  {% endblock %}
+</div>

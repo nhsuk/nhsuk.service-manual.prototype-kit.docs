@@ -1,24 +1,17 @@
-name: Pull request
+name: Code style checks
 
-on: 
-  pull_request:
-    branches:
-    - master
-  push:
-    branches:
-    - master
+on: pull_request
 
 jobs:
-  build:
-    name: Pull request
+  lint:
     runs-on: ubuntu-latest
-    if: github.repository == 'nhsuk/nhsuk-prototype-kit'
-
     steps:
     - uses: actions/checkout@v4
-    
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
     - name: Install dependencies
-      run: npm install
-    
+      run: npm ci
     - name: Run linting
       run: npm run lint:js

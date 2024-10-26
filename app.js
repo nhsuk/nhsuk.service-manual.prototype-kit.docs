@@ -53,7 +53,7 @@ const nunjucksConfig = {
 
 nunjucksConfig.express = app;
 
-let nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
+const nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
 nunjucksAppEnv.addGlobal('version', packageInfo.version);
 
 // Add Nunjucks filters

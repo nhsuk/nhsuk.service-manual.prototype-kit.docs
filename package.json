@@ -11,13 +11,14 @@
     "test": "jest --coverage=true",
     "prewatch": "gulp build",
     "watch": "gulp",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js docs/*.js"
+    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
+    "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
   },
   "author": "https://github.com/nhsuk/",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.25.8",
-    "@babel/preset-env": "^7.25.4",
+    "@babel/core": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "body-parser": "^1.20.3",
     "browser-sync": "^3.0.3",
     "client-sessions": "^0.8.0",
@@ -36,7 +37,7 @@
     "nhsuk-frontend": "^9.0.1",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "sass": "^1.79.5"
+    "sass": "^1.80.4"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

@@ -19,7 +19,7 @@
 
 
 <p>
-      If you have learned how to use the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/), you will be able to use the NHS.UK prototype kit. This is because the two prototype kits are built in the same way. However, you must do some things differently.
+      If you have learned how to use the <a href="https://prototype-kit.service.gov.uk/docs/">GOV.UK Prototype Kit</a>, you will be able to use the NHS.UK prototype kit. This is because the two prototype kits are built in the same way. However, you must do some things differently.
     </p>
 <h2 class="nhsuk-heading-m">Installing and running the NHS.UK prototype kit</h2>
 
@@ -30,8 +30,11 @@ When you are installing and running your prototype:
   title: "Do",
   type: "tick",
   items: [
+  {
+    item: '<a href="/install/download-zip">download the kit using the zip file or Github</a>'
+  },
     {
-      item: 'check when you install your prototype that you are using the right version of Node.js - you may need to install and use a different version. If you need to make prototypes that for both NHS.UK and GOV.UK you can switch versions of node with a <a href="https://github.com/nvm-sh/nvm">node version manager</a>'
+      item: 'check when you install your prototype that you are using the right version of Node.js - you may need to install and use a different version. If you need to make prototypes for both NHS.UK and GOV.UK you can switch versions of node with a <a href="https://github.com/nvm-sh/nvm">node version manager</a>'
     },
     {
       item: 'start your local server by entering in the terminal: <pre class="app-pre"><code class="language-markup">npm run watch</code></pre> '
@@ -43,8 +46,11 @@ When you are installing and running your prototype:
   title: "Don’t",
   type: "cross",
   items: [
+  {
+    item: 'try to install the prototype kit using the terminal as it will not work'
+  },
     {
-      item: 'start your local server the same way as in the GOV.UK prototype kit as it will not work'
+      item: 'start your local server the same way as in the GOV.UK Prototype Kit as it will not work'
     }
   ]
 }) }}
@@ -62,19 +68,19 @@ When you are installing and running your prototype:
   type: "tick",
   items: [
     {
-      item: 'use the NHS.UK design system for <a href="https://service-manual.nhs.uk/design-system/styles">styles</a>, <a href="https://service-manual.nhs.uk/design-system/components">components</a> and <a href="https://service-manual.nhs.uk/design-system/patterns">patterns</a>'
+      item: 'use the NHS.UK design system for <a href="https://service-manual.nhs.uk/design-system/styles">styles</a>, <a href="https://service-manual.nhs.uk/design-system/components">components</a> and <a href="https://service-manual.nhs.uk/design-system/patterns">patterns</a> - you can also copy <a href="/page-templates">template pages in the NHS prototype kit</a>'
     },
     {
       item: 'use <a href="https://service-manual.nhs.uk/design-system">NHS.UK macro naming conventions</a> which do not have a prefix, for example <code class="language-markup">{{ radios }}</code> instead of <code class="language-markup">{{ govukRadios }}</code>'
     },
     {
-      item: 'use <a href="https://service-manual.nhs.uk/design-system/styles/typography">NHS.UK typography classes</a>, for example <pre class="app-pre"><code class="language-markup">' + '<p class="nhsuk-body">nhsuk-body</p>' | escape  + '</code></pre>'
+      item: 'use <a href="https://service-manual.nhs.uk/design-system/styles/typography">NHS.UK typography classes</a> on headings and other text, for example <pre class="app-pre"><code class="language-markup">' + '<p class="nhsuk-body">nhsuk-body</p>' | escape  + '</code></pre>'
     },
     {
-      item: ' be aware that the NHS.UK prototype kit does not have some functionality that is in the GOV.UK one, for example the interface to create pages from templates'
+      item: 'know that the NHS.UK prototype kit does not have some functionality that is in the GOV.UK one, for example the interface to create pages from templates'
    },
    {
-      item: ' note that plugins designed for the GOV.UK Prototype Kit may not work or may need to be installed differently. For example, the [GOV.UK Prototype Kit Filters](https://x-govuk.github.io/govuk-prototype-filters/get-started/) plugin can be installed using the instructions for earlier versions of the kit, which requires making some changes to `filters.js`.'
+      item: 'know that plugins designed for the GOV.UK Prototype Kit may not work or may need to be installed differently - for example, if you want to use the <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">GOV.UK Prototype Kit Filters plugin</a> you must use instructions for earlier versions of the kit and make changes in <code class="language-markup">filters.js</code>.'
     }
   ]
 }) }}
@@ -84,7 +90,7 @@ When you are installing and running your prototype:
   type: "cross",
   items: [
     {
-      item: 'copy pages from the GOV.UK design system or GOV.UK prototype kit as they may not work'
+      item: 'copy pages from the GOV.UK design system or GOV.UK prototype kit and expect them to work - you may need to copy over extra code like CSS to make them work properly'
     },
     {
       item: 'use GOV.UK macro naming conventions as they will not work'
@@ -98,7 +104,7 @@ When you are installing and running your prototype:
 
 <p>You can define routes to do branching logic or other custom behaviour in the same way as the GOV.UK Prototype Kit.</p>
 
-<p>You can also add default session data in `data/session-data-defaults.js`.</p>
+<p>You can also add default session data in <code class="language-markup">data/session-data-defaults.js</code></p>
 
 <p>Unlike the GOV.UK Prototype Kit, if you save any changes the the routes file, the app will restart and any session data will revert to the default.</p>
 

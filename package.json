@@ -2,7 +2,7 @@
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
   "prototypeKitVersion": "5.0.0",
-  "description": "Rapidly create HTML prototypes of NHS websites and services.",
+  "description": "Website and documentation for the NHS.UK prototype kit.",
   "main": "app.js",
   "scripts": {
     "build": "gulp build",
@@ -11,7 +11,8 @@
     "test": "jest --coverage=true",
     "prewatch": "gulp build",
     "watch": "gulp",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js"
+    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
+    "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
   },
   "author": "https://github.com/nhsuk/",
   "license": "MIT",

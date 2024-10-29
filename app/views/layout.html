@@ -30,34 +30,22 @@
 {% endblock %}
 
 {% block footer %}
-  <footer role="contentinfo">
-    <div class="nhsuk-footer-container">
-      <div class="nhsuk-width-container">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-full">
-            <p class="nhsuk-u-secondary-text-color nhsuk-u-font-size-16">This website only stores the cookies that are needed to make it work. Read more about how <a href="/cookies" class="nhsuk-footer__list-item-link">we use cookies</a>.</p>
-          </div>
-        </div>
-        <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-        <div class="nhsuk-footer">
-          <ul class="nhsuk-footer__list">
-            <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-              <a class="nhsuk-footer__list-item-link" href="/">Home</a>
-            </li>
-            <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-              <a class="nhsuk-footer__list-item-link" href="/about">About and support</a>
-            </li>
-            <li class="nhsuk-footer__list-item nhsuk-footer-default__list-item">
-              <a class="nhsuk-footer__list-item-link" href="https://github.com/nhsuk/nhsuk-prototype-kit">NHS.UK prototype kit - GitHub</a>
-            </li>
-          </ul>
-          <div>
-            <p class="nhsuk-footer__copyright">&copy; NHS England</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  {{ footer({
+    links: [
+      {
+        label: "About and support",
+        URL: "/about"
+      },
+      {
+        label: "NHS.UK prototype kit - GitHub",
+        URL: "https://github.com/nhsuk/nhsuk-prototype-kit"
+      },
+      {
+        label: "Cookies",
+        URL: "/cookies"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}

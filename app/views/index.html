@@ -2,10 +2,26 @@
 
 {% block header %}
   {{ super() }}
-  {{ hero({
-    "heading": "NHS.UK prototype kit",
-    "text": "Rapidly create HTML prototypes of NHS.UK services."
-  }) }}
+
+  <section class="nhsuk-hero">
+    <div class="nhsuk-width-container nhsuk-hero--border">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-heading-l">
+              Rapidly create HTML prototypes of NHS.UK services
+            </h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">
+              Use prototypes to get valuable feedback and insights from user research or the people you work with.
+            </p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <img class="nhsuk-image__img" src="/images/homepage-illustration.svg" alt="" role="presentation">
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 {% block content %}

@@ -34,13 +34,16 @@ When you are installing and running your prototype:
     item: '<a href="/install/download-zip">download the kit using the zip file or Github</a>'
   },
     {
-      item: 'check when you install your prototype that you are using the right version of Node.js - you may need to install and use a different version. If you need to make prototypes for both NHS.UK and GOV.UK you can switch versions of node with a <a href="https://github.com/nvm-sh/nvm">node version manager</a>'
-    },
-    {
       item: 'start your local server by entering in the terminal: <pre class="app-pre"><code class="language-markup">npm run watch</code></pre> '
     }
   ]
 }) }}
+
+{# removed for now as don't need the multiple versions problem
+{
+  item: 'check when you install your prototype that you are using the right version of Node.js - you may need to install and use a different version. If you need to make prototypes for both NHS.UK and GOV.UK you can switch versions of node with a <a href="https://github.com/nvm-sh/nvm">node version manager</a>'
+},
+#}
 
 {{ list({
   title: "Don’t",
@@ -57,11 +60,11 @@ When you are installing and running your prototype:
 
 
 
-<h2>Making pages</h2>
+<h2 class="nhsuk-heading-m">Making pages</h2>
 
 <p>
   When you are making pages:
-</p>  
+</p>
 
 {{ list({
   title: "Do",
@@ -93,10 +96,7 @@ When you are installing and running your prototype:
       item: 'copy pages from the GOV.UK design system or GOV.UK prototype kit and expect them to work - you may need to copy over extra code like CSS to make them work properly'
     },
     {
-      item: 'use GOV.UK macro naming conventions as they will not work'
-    },
-    {
-      item: 'use GOV.UK typography classes as they will not work'
+      item: 'use GOV.UK macro naming conventions or typography classes as they will not work'
     }
   ]
 }) }}
@@ -107,6 +107,10 @@ When you are installing and running your prototype:
 <p>You can also add default session data in <code class="language-markup">data/session-data-defaults.js</code></p>
 
 <p>Unlike the GOV.UK Prototype Kit, if you save any changes the the routes file, the app will restart and any session data will revert to the default.</p>
+
+<h2 class="nhsuk-heading-m">Publishing your prototype online</h2>
+
+<p>Set the password using the variable <code class="app-code">PROTOTYPE_PASSWORD</code> - check the <a href="/how-tos/publish-your-prototype-online">guide to publish your prototype online</a> for more details.</p>
 
 <h2>Help and support</h2>
 

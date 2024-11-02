@@ -9,21 +9,6 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
-// Install guide branching
-router.post('/install', (req, res) => {
-  const { install } = req.session.data;
-
-  if (install === 'Simple') {
-    res.redirect('/install/simple');
-  } else if (install === 'Developer') {
-    res.redirect('/install/advanced');
-  } else if (install === 'Download') {
-    res.redirect('/install/download-zip');
-  } else {
-    res.redirect('/install');
-  }
-});
-
 // Install - Mac or Windows branching
 router.post('/install/mac', (req, res) => {
   const { machine } = req.session.data;

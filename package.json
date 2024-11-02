@@ -2,7 +2,7 @@
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
   "prototypeKitVersion": "5.0.0",
-  "description": "Rapidly create HTML prototypes of NHS websites and services.",
+  "description": "Website and documentation for the NHS.UK prototype kit.",
   "main": "app.js",
   "scripts": {
     "build": "gulp build",
@@ -17,7 +17,7 @@
   "author": "https://github.com/nhsuk/",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.25.9",
+    "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "body-parser": "^1.20.3",
     "browser-sync": "^3.0.3",
@@ -37,7 +37,7 @@
     "nhsuk-frontend": "^9.0.1",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "sass": "^1.80.4"
+    "sass": "^1.80.5"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

@@ -1,32 +1,58 @@
-
-{% set pageTitle = "Add a textarea to question 2" %}
-{% set next = { "title" : "Show the user’s answers on your ‘Check answers’ page" , "link" : "show-users-answers" } %}
-{% set prev = { "title" : "Use components from the Design System" , "link" : "use-components" } %}
-
-{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
-
-{% block makePrototype %}
+{% set pageTitle = "Add a textarea to question 2" %} {% set next = { "title" :
+"Show the user’s answers on your ‘Check answers’ page" , "link" :
+"show-users-answers" } %} {% set prev = { "title" : "Use components from the
+Design System" , "link" : "use-components" } %} {% extends
+'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 <ol class="nhsuk-list nhsuk-list--number">
-<li>Go to the <a href="https://design-system.service.gov.uk/components/textarea/">textarea page of the Design System</a>.</li>
-<li>Select the <strong>Nunjucks</strong> tab, then <strong>Copy code</strong>.</li>
-<li>Open <code class="language-markup" >{{exampleRadios.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
-<li>Replace the 2 example <code class="language-markup" >&lt;p&gt;...&lt;/p&gt;</code> paragraphs with the code you copied.</li>
-<li>Delete the old <code class="language-markup" >&lt;h1&gt;</code> tag with "{{exampleTextArea.title}}" (again the example code comes with an accessible heading for the question).</li>
+  <li>
+    Go to the
+    <a href="https://design-system.service.gov.uk/components/textarea/"
+      >textarea page of the Design System</a
+    >.
+  </li>
+  <li>
+    Select the <strong>Nunjucks</strong> tab, then <strong>Copy code</strong>.
+  </li>
+  <li>
+    Open <code class="language-markup">{{exampleRadios.url}}.html</code> in your
+    <code class="language-markup">app/views</code> folder.
+  </li>
+  <li>
+    Replace the 2 example
+    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraphs with
+    the code you copied.
+  </li>
+  <li>
+    Delete the old <code class="language-markup">&lt;h1&gt;</code> tag with
+    "{{exampleTextArea.title}}" (again the example code comes with an accessible
+    heading for the question).
+  </li>
 </ol>
 
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
-<li>Under <code class="language-markup" >label</code>, change <code class="language-markup" >text</code> from "Can you provide more detail?" to "{{exampleTextArea.title}}".</li>
-<li>Change the <code class="language-markup" >id</code> and <code class="language-markup" >name</code> to <code class="language-markup" >{{exampleTextArea.legend}}</code>.</li>
-<li>We don’t need a hint, so remove it and the comma just before it.</li>
-<li>We also want to make the page a title, so in the <code class="language-markup" >label</code> area add <code class="language-markup" > classes: "nhsuk-label--l",</code> and <code class="language-markup" >isPageHeading: true</code> </li>
-
+  <li>
+    Under <code class="language-markup">label</code>, change
+    <code class="language-markup">text</code> from "Can you provide more
+    detail?" to "{{exampleTextArea.title}}".
+  </li>
+  <li>
+    Change the <code class="language-markup">id</code> and
+    <code class="language-markup">name</code> to
+    <code class="language-markup">{{exampleTextArea.legend}}</code>.
+  </li>
+  <li>We don’t need a hint, so remove it and the comma just before it.</li>
+  <li>
+    We also want to make the page a title, so in the
+    <code class="language-markup">label</code> area add
+    <code class="language-markup"> classes: "nhsuk-label--l",</code> and
+    <code class="language-markup">isPageHeading: true</code>
+  </li>
 </ol>
 
 <p>Your component code should now look like this:</p>
 
-
-<p><pre class="app-pre"><code class="language-markup" >&#123;&#123; textarea({
+<pre class="app-pre"><code class="language-markup" >&#123;&#123; textarea({
 name: "{{exampleTextArea.legend}}",
 id: "{{exampleTextArea.legend}}",
 label: {
@@ -34,15 +60,19 @@ label: {
   classes: "nhsuk-label--l",
   isPageHeading: true
 }
-}) &#125;&#125;</code></pre></p> 
+}) &#125;&#125;</code></pre>
 <p>Your page should now look like this:</p>
 <figure>
-
-<p>
-  <img src="/images/tutorial-textarea.png" style="max-width: 100%;" alt="Web page with the heading &quot;{{exampleTextArea.title}}&quot;, a textarea and continue button" />
-</p>
-<figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
+  <p>
+    <img
+      src="/images/tutorial-textarea.png"
+      style="max-width: 100%"
+      alt='Web page with the heading "{{exampleTextArea.title}}", a textarea and continue button'
+    />
+  </p>
+  <figcaption class="govuk-body">
+    Screenshot of how your prototype should look.
+  </figcaption>
 </figure>
-
 
 {% endblock %}

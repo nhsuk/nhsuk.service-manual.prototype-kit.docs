@@ -1,37 +1,77 @@
+{% set pageTitle = "Use components from the Design System" %} {% set next = {
+"title" : "Add a textarea to question 2" , "link" : "use-components-2" } %} {%
+set prev = { "title" : "Link your pages together" , "link" :
+"link-pages-together" } %} {% extends 'how-tos/build-basic-prototype/_BASE.njk'
+%} {% block makePrototype %}
 
-{% set pageTitle = "Use components from the Design System" %}
-{% set next = { "title" : "Add a textarea to question 2" , "link" : "use-components-2" } %}
-{% set prev = { "title" : "Link your pages together" , "link" : "link-pages-together" } %}
-
-
-{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
-
-{% block makePrototype %}
-
- <p>You can copy example code from the NHS Design System to add page elements like radios and text inputs - we call these ‘components’.</p>
+<p>
+  You can copy example code from the NHS Design System to add page elements like
+  radios and text inputs - we call these ‘components’.
+</p>
 <h2 id="html-and-nunjucks">HTML and Nunjucks</h2>
 <p>HTML is the language used to create web pages.</p>
-<p>Nunjucks is another language we can run in the Prototype Kit, to make HTML for us. Short, simple Nunjucks code can create much longer, more complex HTML.</p>
-<p>In the Design System, components have both Nunjucks and HTML example code. Either will work in the Prototype Kit.</p>
+<p>
+  Nunjucks is another language we can run in the Prototype Kit, to make HTML for
+  us. Short, simple Nunjucks code can create much longer, more complex HTML.
+</p>
+<p>
+  In the Design System, components have both Nunjucks and HTML example code.
+  Either will work in the Prototype Kit.
+</p>
 <h2 id="add-radios-to-question-1">Add radios to question 1</h2>
 <ol class="nhsuk-list nhsuk-list--number">
-<li>Go to the <a href="https://service-manual.nhs.uk/design-system/components/radios">radios component in the Design System</a>.</li>
-<li>Select the <strong>Nunjucks</strong> tab under the third example, then <strong>Copy code</strong>.</li>
-<li>Open <code class="language-markup" >{{exampleRadios.url}}.html</code> in your <code class="language-markup" >app/views</code> folder.</li>
-<li>Replace the 2 example <code class="language-markup" >&lt;p&gt;...&lt;/p&gt;</code> paragraphs with the code you copied.</li>
-<li>The example comes with a heading that is connected to the answers for accessibility, so delete the old <code class="language-markup" >&lt;h1&gt;</code> tag with "{{exampleRadios.title}}".</li>
+  <li>
+    Go to the
+    <a href="https://service-manual.nhs.uk/design-system/components/radios"
+      >radios component in the Design System</a
+    >.
+  </li>
+  <li>
+    Select the <strong>Nunjucks</strong> tab under the third example, then
+    <strong>Copy code</strong>.
+  </li>
+  <li>
+    Open <code class="language-markup">{{exampleRadios.url}}.html</code> in your
+    <code class="language-markup">app/views</code> folder.
+  </li>
+  <li>
+    Replace the 2 example
+    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraphs with
+    the code you copied.
+  </li>
+  <li>
+    The example comes with a heading that is connected to the answers for
+    accessibility, so delete the old
+    <code class="language-markup">&lt;h1&gt;</code> tag with
+    "{{exampleRadios.title}}".
+  </li>
 </ol>
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
-<li>Under <code class="language-markup" >legend</code>, change <code class="language-markup" >text</code> from "Do you know your NHS number?" to "{{exampleRadios.title}}".</li>
-<li>Change <code class="language-markup" >name</code> to <code class="language-markup" >{{exampleRadios.legend}}</code>.</li>
-<li>Delete the <code class="language-markup" >&#123% set hint %&#125</code> code</li> 
-<li>In the <code class="language-markup" >hint: &#123; html:</code> area replace <code class="language-markup" >hintHtml</code> and add <code class="language-markup" >"For example, things moving when you have strong feelings or hearing someone’s thoughts."</code>.</li>
-
+  <li>
+    Under <code class="language-markup">legend</code>, change
+    <code class="language-markup">text</code> from "Do you know your NHS
+    number?" to "{{exampleRadios.title}}".
+  </li>
+  <li>
+    Change <code class="language-markup">name</code> to
+    <code class="language-markup">{{exampleRadios.legend}}</code>.
+  </li>
+  <li>
+    Delete the
+    <code class="language-markup">&#123;% set hint %&#125;</code> code.
+  </li>
+  <li>
+    In the <code class="language-markup">hint: &#123; html:</code> area replace
+    <code class="language-markup">hintHtml</code> and add "For example, things moving when you have strong feelings or hearing
+      someone’s thoughts.".
+  </li>
+</ol>
 <p>Your component code should now look like this:</p>
 
-
-<p><pre class="app-pre language-markup"><code class="language-markup" >&#123;&#123; radios({
+<pre
+  class="app-pre language-markup"
+><code class="language-markup" >&#123;&#123; radios({
   idPrefix: "{{exampleRadios.legend}}",
   name: "{{exampleRadios.legend}}",
   fieldset: {
@@ -58,14 +98,20 @@
       text: "I'm not sure"
     }
   ]
-}) &#125;&#125;</code></pre></p>
+}) &#125;&#125;</code></pre>
 
 <p>Your page should now look like this:</p>
 <figure>
-
-<p><img src="/images/tutorial-radios.png" style="max-width:100%" alt="Web page with the heading &quot;Have you had symptoms of magical power in the last 30 days?&quot;, 3 radios and a continue button"></p>
-<figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
+  <p>
+    <img
+      src="/images/tutorial-radios.png"
+      style="max-width: 100%"
+      alt='Web page with the heading "Have you had symptoms of magical power in the last 30 days?", 3 radios and a continue button'
+    />
+  </p>
+  <figcaption class="govuk-body">
+    Screenshot of how your prototype should look.
+  </figcaption>
 </figure>
-
 
 {% endblock %}

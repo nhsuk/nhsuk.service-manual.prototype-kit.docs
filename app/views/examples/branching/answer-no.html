@@ -6,6 +6,13 @@
   Example - Branching - No
 {% endblock %}
 
+{% block beforeContent %}
+  {{ backLink({
+    href: "/examples/branching",
+    text: "Back"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="nhsuk-grid-row">
@@ -18,11 +25,6 @@
         <p>
           You do not know your NHS number.
         </p>
-
-        {{ backLink({
-          "href": "/examples/branching",
-          "text": "Back to How to do branching"
-        }) }}
 
     </div>
   </div>

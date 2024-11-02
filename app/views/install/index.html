@@ -1,42 +1,56 @@
-{% extends 'layout.html' %}
+{% extends 'layout.html' %} {% block pageTitle %} Get started - NHS.UK prototype
+kit {% endblock %} {% block beforeContent %} {{ breadcrumb({ href: "/", text:
+"Home" }) }} {% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl">Get started</h1>
 
-{% block pageTitle %}
- Get started - NHS.UK prototype kit
-{% endblock %}
+    <p>
+      To use the kit you’ll need some basic knowledge of HTML, for example what
+      tags and attributes are and how to copy and paste code.
+    </p>
 
-{% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
-{% endblock %}
+    <p>
+      You can learn basic HTML and CSS at
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+        >mdn</a
+      >, <a href="https://www.codecademy.com">codecademy</a> or other online
+      tutorials.
+    </p>
 
-{% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <p>You’ll also need to install some other tools and software.</p>
 
-      <h1 class="nhsuk-heading-xl">Get started</h1>
+    <p>Choose from the:</p>
 
-      <p>To use the kit you’ll need some basic knowledge of HTML, for example what tags and attributes are and how to copy and paste code.</p>
+    <ul>
+      <li>
+        <a href="/install/simple">install guide</a> – for those new to
+        prototyping in code
+      </li>
+      <li>
+        <a href="/install/advanced">advanced install guide</a> – for those
+        familiar with prototyping in code
+      </li>
+    </ul>
 
-      <p>You can learn basic HTML and CSS at <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">mdn</a>, <a href="https://www.codecademy.com">codecademy</a> or other online tutorials.</p>
+    <h2 class="nhsuk-heading-m">Updating</h2>
 
-      <p>You’ll also need to install some other tools and software.</p>
+    <p>
+      If you have already got an NHS prototype but need to upgrade it to the
+      latest version, see the
+      <a href="/how-tos/updating-the-kit">update guide</a>.
+    </p>
 
-      <p>Choose from the:</p>
-
-      <ul>
-        <li><a href="/install/simple">install guide</a> – for those new to prototyping in code</li>
-        <li><a href="/install/advanced">advanced install guide</a> – for those familiar with prototyping in code</li>
-      </ul>
-
-      <h2 class="nhsuk-heading-m">Updating</h2>
-
-      <p>If you have already got an NHS prototype but need to upgrade it to the latest version, see the <a href="/how-tos/updating-the-kit">update guide</a>.</p>
-
-  <h2 class="nhsuk-heading-m">Switching from the GOV.UK Prototype Kit</h2>
-  <p>If you are new to the NHS.UK prototype kit but are familiar with the GOV.UK Prototype Kit, you can find out <a href="/how-tos/switching-from-govuk-prototype-kit">how the NHS.UK prototype kit is different from the GOV.UK Prototype Kit</a>.<p>
-
-    </div>
+    <h2 class="nhsuk-heading-m">Switching from the GOV.UK Prototype Kit</h2>
+    <p>
+      If you are new to the NHS.UK prototype kit but are familiar with the
+      GOV.UK Prototype Kit, you can find out
+      <a href="/how-tos/switching-from-govuk-prototype-kit"
+        >how the NHS.UK prototype kit is different from the GOV.UK Prototype
+        Kit</a
+      >.
+    </p>
   </div>
+</div>
 {% endblock %}

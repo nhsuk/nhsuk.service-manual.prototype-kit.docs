@@ -10,10 +10,15 @@
       {
         href: "/",
         text: "Home"
+      },
+      {
+        href: "/install",
+        text: "Get started"
       }
     ],
-    href: "/install",
-    text: "Get started"
+
+    href: "/install/simple",
+    text: "Install guide"
   }) }}
 {% endblock %}
 
@@ -23,7 +28,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        <span class="nhsuk-caption-l">Step 2 of 8</span>
+        <span class="nhsuk-caption-l">Step 2 of 8: {{system | default ("[add operating system with 'system']") }}</span>
         Node.js LTS version
       </h1>
 

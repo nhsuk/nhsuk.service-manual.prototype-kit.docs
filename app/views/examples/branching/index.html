@@ -24,33 +24,30 @@
 
       <form action="/examples/branching/answer" method="post">
 
-        {% call fieldset({
-          legend: {
-            text: "Do you know your NHS number?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
         {{ radios({
-          "idPrefix": "know-nhs-number",
-          "name": "know-nhs-number",
-          "items": [
+          fieldset: {
+            legend: {
+              text: "Do you know your NHS number?",
+              classes: "nhsuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          },
+          idPrefix: "know-nhs-number",
+          name: "know-nhs-number",
+          items: [
             {
-              "value": "Yes",
-              "text": "Yes"
+              value: "Yes",
+              text: "Yes"
             },
             {
-              "value": "No",
-              "text": "No"
+              value: "No",
+              text: "No"
             }
           ]
         }) }}
 
-        {% endcall %}
-
         {{ button({
-          "text": "Continue"
+          text: "Continue"
         }) }}
 
       </form>

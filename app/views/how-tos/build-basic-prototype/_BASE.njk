@@ -16,24 +16,22 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ breadcrumb({
-  items: [
-    {
-      href: "/",
-      text: "Home"
-    },
-    {
-      href: "/how-tos",
-    text: "How to guides"
-    },
-    {
-      href: "/how-tos/build-basic-prototype/index",
-      text: "Build a basic prototype"
-    }
-  ]
-
-}) }}
-
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/how-tos",
+      text: "How to guides"
+      },
+      {
+        href: "/how-tos/build-basic-prototype/index",
+        text: "Build a basic prototype"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Installation on an NHS England Windows laptop - NHS.UK prototype kit
+  Set up the prototype kit on an NHS England Windows laptop - NHS.UK prototype kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,23 +21,17 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Installation on an NHS England Windows laptop</h1>
+      <h1 class="nhsuk-heading-l">Set up the prototype kit on an NHS England Windows laptop</h1>
 
-      <p>If you have a Windows laptop issued by NHS England corporate IT, then you can largely follow the <a href="/install/windows/terminal">install guide for Windows</a> but there are some additional steps.</p>
+      <p>If you have a Windows laptop issued by NHS England corporate IT, before you start any of the install guides you will need to:</p>
 
-      <h2 class="nhsuk-heading-m">Install software dependencies</h2>
+      <ol>
+        <li>create a local folder in the right place for your code to work</li>
+        <li>install the software that you need</li>
+      </ol>
 
-      <p>The following can be installed from the Company Portal application:</p>
 
-      <ul>
-        <li>Terminal</li>
-        <li>Visual Studio Code</li>
-        <li>Node.js and NPM</li>
-        <li>Git for Windows</li>
-        <li>Github Desktop</li>
-      </ul>
-
-      <h2>Creating a local folder</h2>
+      <h2 class="nhsuk-heading-m">1. Create a local folder for your prototypes</h2>
 
       <p>Within the root of your OneDrive create a new folder named <code><strong>DevWspace</strong></code>.</p>
 
@@ -47,7 +41,30 @@
 
       <pre class="app-pre"><code class="app-code">"C:\Users\%username%\OneDrive - NHS\DevWspace"</code></pre>
 
-      <p>Change the default path location for all the developer programs you use and move any existing prototypes you currently have to this new location.</p>
+      <p>Use this folder:</p>
+        <ul>
+        <li>for any prototypes that you make</li>
+          <li>path for any software for your kit that asks for a ‘path’ - ask a developer on your team if you need help</li>
+      </ul>
+
+
+      <h2 class="nhsuk-heading-m">2. Install the software you need to use the kit</h2>
+
+      <p>Go to the Company Portal application to install this software:</p>
+
+      <ul>
+        <li>Terminal</li>
+        <li>Visual Studio Code</li>
+        <li>Node.js and NPM</li>
+        <li>Git for Windows</li>
+        <li>Github Desktop</li>
+      </ul>
+
+      <p>You may need to restart your computer to finish installing the software.</p>
+
+      <h2 class="nhsuk-heading-m">What to do next</h2>
+
+      <p>After you have finished these steps you can continue to <a href="/install/simple">install guide</a> or the <a href="/install/advanced">advanced install guide</a>.</p>
 
     </div>
   </div>

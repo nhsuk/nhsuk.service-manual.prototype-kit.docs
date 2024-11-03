@@ -36,16 +36,9 @@
       install.
     </p>
 
-    <div class="nhsuk-inset-text">
-      <p>
-        If you are using a NHS England Windows laptop,
-        you must do some
-        <a href="/install/nhs-england-windows-laptops"
-          >extra steps for NHS England Windows laptops before you start</a
-        >
-        .
-      </p>
-    </div>
+
+    {% from 'install/nhs-england-windows-laptops.html' import nhsEnglandLaptop %}
+    {{nhsEnglandLaptop()}}
 
     {{ actionLink({ text: "Start install guide", href: "/install/mac-or-windows" }) }}
 

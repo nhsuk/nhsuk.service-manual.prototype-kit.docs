@@ -17,6 +17,9 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
       Installing and running the NHS.UK prototype kit
     </h2>
 
+    {% from 'install/nhs-england-windows-laptops.html' import nhsEnglandLaptop %}
+    {{nhsEnglandLaptop()}}
+
     <p>When you are installing and running your prototype:</p>
 
     {{ list({ title: "Do", type: "tick", items: [ { item: '<a

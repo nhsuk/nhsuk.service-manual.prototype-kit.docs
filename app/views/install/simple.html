@@ -36,9 +36,7 @@
       install.
     </p>
 
-
-    {% from 'install/nhs-england-windows-laptops.html' import nhsEnglandLaptop %}
-    {{nhsEnglandLaptop()}}
+    {% include "install/_nhs-england-laptop-warning.html" %}
 
     {{ actionLink({ text: "Start install guide", href: "/install/mac-or-windows" }) }}
 

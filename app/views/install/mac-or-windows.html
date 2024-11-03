@@ -10,10 +10,14 @@
       {
         href: "/",
         text: "Home"
+      },
+      {
+        href: "/install",
+        text: "Get started"
       }
     ],
-    href: "/install",
-    text: "Get started"
+    href: "/install/simple",
+    text: "Install guide"
   }) }}
 {% endblock %}
 
@@ -23,42 +27,33 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <form action="/install/mac" method="post">
-
-        {% call fieldset({
-          legend: {
-            text: "What computer are you using?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
         {{ radios({
-          "idPrefix": "machine",
-          "name": "machine",
-          "items": [
+          fieldset: {
+            legend: {
+              text: "What computer are you using?",
+              classes: "nhsuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          },
+          idPrefix: "machine",
+          name: "machine",
+          items: [
             {
-              "value": "Mac",
-              "text": "Mac"
+              value: "Mac",
+              text: "Mac"
             },
             {
-              "value": "Windows",
-              "text": "Windows"
+              value: "Windows",
+              text: "Windows"
             }
           ]
         }) }}
 
-        {% endcall %}
-
         {{ button({
-          "text": "Continue"
+          text: "Continue"
         }) }}
 
       </form>
-
-      {{ backLink({
-        "href": "/install",
-        "text": "Back to Install guide"
-      }) }}
 
     </div>
 

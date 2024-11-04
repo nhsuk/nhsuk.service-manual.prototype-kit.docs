@@ -30,7 +30,7 @@ Use 'NHS.UK' for products that are for delivery teams and not the public (find o
 Use 'NHS England Windows laptops' instructions for people using corporate laptops.
 
 #### NHS.UK prototype kit
-'NHS.UK' is in caps and 'prototype kit' in lower case (except where the NHS.UK is shown as a logo when it is then presented as NHS Prototype kit). Write out in full the first time it is used on a page, then call 'the kit'. Do not use 'prototype kit' if you can.
+'NHS.UK' is in caps and 'prototype kit' in lower case (except where the NHS.UK is shown as a logo when it is then presented as 'NHS Prototype kit'). Write out in full the first time it is used on a page, then call 'the kit'. Do not use 'prototype kit' if you can.
  
 #### terminal
 Lower case. Only use for Mac and Linux instructions. Usually it will be 'the terminal'.

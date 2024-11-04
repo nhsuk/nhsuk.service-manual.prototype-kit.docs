@@ -38,7 +38,7 @@
     "nhsuk-frontend": "^9.0.1",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "sass": "^1.80.5"
+    "sass": "^1.80.6"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

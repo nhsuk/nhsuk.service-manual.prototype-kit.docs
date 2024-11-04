@@ -81,21 +81,9 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
     GOV.UK macro naming conventions or GOV.UK typography classes as they will
     not work' } ] }) }}
     <h2 class="nhsuk-heading-m">Using routing and session data</h2>
-
     <p>
-      You can define routes to do branching logic or other custom behaviour in
-      the same way as the GOV.UK Prototype Kit.
-    </p>
-
-    <p>
-      You can also add default session data in
-      <code class="language-markup">data/session-data-defaults.js</code>
-    </p>
-
-    <p>
-      Unlike the GOV.UK Prototype Kit, if you save any changes the the routes
-      file, the app will restart and any session data will revert to the
-      default.
+      When you save any changes to <code class="language-markup">routes.js</code>
+      file, the app will restart. This will also delete all session data and reset them with any values set in <code class="language-markup">data/session-data-defaults.js</code>.
     </p>
 
     <h2 class="nhsuk-heading-m">Publishing your prototype online</h2>

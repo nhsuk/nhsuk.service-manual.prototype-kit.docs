@@ -29,6 +29,7 @@ Title case.
 Use ‘NHS.UK’ for products that are for delivery teams and not the public (find out more on the [NHS health writing A-Z](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#N))This includes the NHS.UK prototype kit, NHS.UK design system, NHS.UK service manual or NHS.UK website.
 
 #### NHS England laptops
+
 Use ‘NHS England Windows laptops’ instructions for people using corporate laptops.
 
 #### NHS.UK prototype kit

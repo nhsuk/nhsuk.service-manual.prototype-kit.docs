@@ -18,7 +18,7 @@ We normally use the [NHS content guide](https://service-manual.nhs.uk/content) f
 
 ### command line
 
-Lower case. Only use for Windows instructions. Nortmally it will be ‘the command line’.
+Lower case. Only use for Windows instructions. Normally it will be ‘the command line’.
 
 #### GOV.UK Prototype Kit, GOV.UK Design System and other GOV.UK products
 

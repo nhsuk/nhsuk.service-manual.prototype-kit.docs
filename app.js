@@ -39,16 +39,14 @@ app.locals.serviceName = config.serviceName;
 // Use cookie middleware to parse cookies
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  if (req.secure) {
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
     // Set Strict-Transport-Security header to
     // ensure that browsers only use HTTPS
     res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
-  } else {
-    console.log('not secure');
-  }
-  next();
-});
+    next();
+  });
+}
 
 // Nunjucks configuration for application
 const appViews = [

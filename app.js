@@ -45,8 +45,8 @@ app.use((req, res, next) => {
     // ensure that browsers only use HTTPS
     res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   }
-  next()
-})
+  next();
+});
 
 // Nunjucks configuration for application
 const appViews = [

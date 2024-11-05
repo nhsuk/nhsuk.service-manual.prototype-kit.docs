@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Why use the kit - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Why use the NHS.UK prototype kit</h1>
+
+      <p class="nhsuk-lede-text">The NHS.UK prototype kit lets you make HTML prototypes of NHS.UK services.</p>
+
+
+      <h2 class="nhsuk-heading-m">When to use the NHS.UK prototype kit</h2>
+
+      <p>This kit lets you make HTML prototypes with the same front-end code as the NHS website. This means that you can:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>create a service that looks and behaves like NHS online services, on mobile and desktop</li>
+        <li>test on the user‘s device and with assistive technology (for example, a screen reader)</li>
+        <li>show different pages based on user input (called '<a href="./how-tos/branching">branching</a>') to test journey flows
+        </li>
+        <li><a href="./how-tos/publish-your-prototype-online">share them by publishing on the web</a></li>
+        <li>make design decisions within the constraints of the web</li>
+        <li>share understanding of design ideas, flows and behaviours with the whole team – including those that use assistive technology</li>
+        <li><a href="./how-tos/git">use common tools like Git and GitHub</a> for collaboration and project history</li>
+      </ul>
+
+      <p>If your service is in the <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-alpha-phase-works">alpha phase</a> or <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works">beta phase</a> and does not use the NHS.UK prototype kit for testing with users, you may get <a href="https://www.gov.uk/service-manual/design/making-prototypes#when-to-use-prototypes">feedback in your service assessment report to use the kit</a>.</p>
+
+      <h3 class="nhsuk-heading-s">Do not use the NHS.UK prototype kit for real services</h3>
+
+      <p>
+      You must not use prototype code for production. When your service is ready to move into production, the code needs to meet different standards. For example, it needs to be secure and perform well with large volumes of traffic.
+      </p>
+
+
+      <h2 class="nhsuk-heading-m">When to use other prototyping tools</h2>
+      <p>
+       Sometimes you may want to use different tools for prototyping, for example if you:
+        </p>
+
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li>want to draw different journeys as a team activity</li>
+          <li>need to make screens with people who are not comfortable using code</li>
+          <li>
+            are designing screens that will not use the same components or patterns as the NHS website, for example clinician services
+          </li>
+         </ul>
+<P>You can get examples of other <a href="https://design-system.service.gov.uk/community/resources-and-tools/">community resources from the GOV.UK Design System</a>. You may need to change these to use NHS.UK branding.</p>
+    </div>
+
+  </div>
+{% endblock %}

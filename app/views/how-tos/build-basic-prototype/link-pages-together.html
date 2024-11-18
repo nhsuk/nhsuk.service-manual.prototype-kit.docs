@@ -51,14 +51,14 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
     <li>
       Find the line
       <code class="language-markup"
-        >&lt;form class="form" action="/url/of/next/page"
+        >&lt;form class="form" action="/templates/check-your-answers"
         method="post"&gt;</code
       >.
     </li>
     <li>
       Change the value of the
       <code class="language-markup">action</code> attribute from
-      <code class="language-markup">/url/of/next/page</code> to
+      <code class="language-markup">/templates/check-your-answers</code> to
       <code class="language-markup">/{{exampleTextArea.url}}</code>.
     </li>
   </ol>
@@ -83,14 +83,14 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
     <li>
       Find the line
       <code class="language-markup"
-        >&lt;form class="form" action="/url/of/next/page"
+        >&lt;form class="form" action="/templates/check-your-answers"
         method="post"&gt;</code
       >.
     </li>
     <li>
       Change the value of the
       <code class="language-markup">action</code> attribute from
-      <code class="language-markup">/url/of/next/page</code> to
+      <code class="language-markup">/templates/check-your-answers</code> to
       <code class="language-markup">/{{exampleCheckAnswers.url}}</code>.
     </li>
   </ol>
@@ -100,9 +100,32 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
     >
     and select <strong>Continue</strong> to check the button works.
   </p>
+
+
+  <h2 id="link-{{exampleCheckAnswers.url}}-to-your-{{exampleConfirmation.url}}-page">
+    Link '{{exampleCheckAnswers.title}}' to your '{{exampleConfirmation.title}}' page
+  </h2>
+  <ol class="nhsuk-list nhsuk-list--number">
+
+    <li>
+      Open <code class="language-markup">{{exampleCheckAnswers.url}}.html</code> in
+      your <code class="language-markup">app/views</code> folder.
+    </li>
+    <li>
+      Find the <code class="language-markup">&lt;a&gt;</code> tag with 'Accept and send registration' inside.
+    </li>
+    <li>
+      Change the value of the
+      <code class="language-markup">href</code> attribute from
+      <code class="language-markup">/templates/confirmation-page</code> to
+      <code class="language-markup">/{{exampleConfirmation.url}}</code>.
+    </li>
+  </ol>
   <p>
-    The 'Check answers' page template links to the ‘Confirmation’ page by
-    default. So you do not need to change the ‘Check answers’ page.
+    <a href="http://localhost:3000/{{exampleTextArea.url}}"
+      >Go to http://localhost:3000/{{exampleCheckAnswers.url}}</a
+    >
+    and select <strong>Accept and send registration</strong> to check the button works.
   </p>
 
   {% endblock %}

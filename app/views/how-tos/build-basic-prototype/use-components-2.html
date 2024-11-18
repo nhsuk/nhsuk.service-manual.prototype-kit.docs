@@ -18,19 +18,19 @@ Design System" , "link" : "use-components" } %} {% extends
     <code class="language-markup">app/views</code> folder.
   </li>
   <li>
-    Replace the 2 example
-    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraphs with
-    the code you copied.
+    Replace the code from
+    <code class="language-markup">&lcub;&lcub; radios({</code> to when it finishes on <code class="language-markup">}) &rcub;&rcub;</code>
+    with the code that you copied.
   </li>
   <li>
-    Delete the old <code class="language-markup">&lt;h1&gt;</code> tag with
-    "{{exampleTextArea.title}}" (again the example code comes with an accessible
-    heading for the question).
+    Delete the example
+    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
   </li>
 </ol>
 
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
+  <li>Delete <code class="language-markup">&#123;% from "govuk/components/textarea/macro.njk" import govukTextarea %}</code>.</li>
   <li>
     Under <code class="language-markup">label</code>, change
     <code class="language-markup">text</code> from "Can you provide more

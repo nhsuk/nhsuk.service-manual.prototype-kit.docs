@@ -16,7 +16,7 @@ If you want to contribute to the NHS.UK prototype kit guidance, then read our [c
 
 We normally use the [NHS content guide](https://service-manual.nhs.uk/content) for terms. But there are some terms that are only used in the guidance for the kit:
 
-### command line
+#### command line
 
 Lower case. Only use for Windows instructions. Normally it will be ‘the command line’.
 
@@ -27,19 +27,35 @@ Title case.
 
 #### NHS, NHS.UK, NHS England
 
-Use ‘NHS.UK’ for products that are for delivery teams and not the public (find out more on the [NHS health writing A-Z](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#N))This includes the NHS.UK prototype kit, NHS.UK design system, NHS.UK service manual or NHS.UK website.
+
+We are changing how we talk about tools for delivery teams. These used to be called 'NHS.UK' products but we are now removing the '.UK'. This means that we talk about the:
+
+* NHS frontend (though this is still sometimes called 'NHS.UK frontend')
+* NHS digital service manual
+* NHS design system
+* NHS prototype kit
+
+> We are changing how we talk about the Service M
+
+For talking to the public about the website (find out more on the [NHS health writing A-Z](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#N))
+
 
 #### NHS England laptops
 
 Use ‘NHS England Windows laptops’ instructions for people using corporate laptops.
 
-#### NHS.UK prototype kit
+#### NHS prototype kit
 
-‘NHS.UK’ is in caps and ‘prototype kit’ in lower case (except where the NHS.UK is shown as a logo when it is then presented as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
+‘NHS’ is in caps and ‘prototype kit’ in lower case (except where the NHS.UK is shown as a logo when it is then presented as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
 
 #### terminal
 
 Lower case. Only use for Mac and Linux instructions. Usually it will be ‘the terminal’.
+
+#### Visual Studio Code
+
+Title case. When you use it for the first time in a guide, start with 'Visual Studio Code (also known as VS Code)'.
+
 
 ## Support
 

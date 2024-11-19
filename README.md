@@ -46,7 +46,7 @@ Use ‘NHS England Windows laptops’ instructions for people using corporate la
 
 #### NHS prototype kit
 
-‘NHS’ is in caps and ‘prototype kit’ in lower case (except where the NHS.UK is shown as a logo when it is then presented as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
+‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
 
 #### terminal
 

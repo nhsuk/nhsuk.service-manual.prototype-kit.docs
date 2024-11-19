@@ -35,8 +35,6 @@ We are changing how we talk about tools for delivery teams. These used to be cal
 * NHS design system
 * NHS prototype kit
 
-> We are changing how we talk about the Service M
-
 For talking to the public about the website (find out more on the [NHS health writing A-Z](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#N))
 
 

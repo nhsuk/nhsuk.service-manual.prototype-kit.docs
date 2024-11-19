@@ -1,11 +1,11 @@
 {% set pageTitle = "Let the user change their answers" %} {% set next = {
 "title" : "Show different pages depending on user input" , "link" : "branching"
-} %} {% set prev = { "title" : "Show the user’s answers on your ‘Check answers’
+} %} {% set prev = { "title" : "Show the user's answers on your 'Check answers'
 page" , "link" : "show-users-answers" } %} {% extends
 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
-<h2 id="make-the-change-links-work">Make the ‘Change’ links work</h2>
+<h2 id="make-the-change-links-work">Make the "Change" links work</h2>
 <p>
-  Make the <strong>Change</strong> links on the ‘{{exampleCheckAnswers.title}}’
+  Make the <strong>Change</strong> links on the "{{exampleCheckAnswers.title}}"
   page work by adding the right links.
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
@@ -23,11 +23,11 @@ page" , "link" : "show-users-answers" } %} {% extends
   </li>
 </ol>
 <p>
-  If you select a <strong>Change</strong> link, you’ll go back to the right
+  If you select a <strong>Change</strong> link, you'll go back to the right
   question page, but your answer will not appear yet.
 </p>
 <h2 id="show-the-users-answer-in-question-1">
-  Show the user’s answer in question 1
+  Show the user's answer in question&nbsp;1
 </h2>
 <p>
   Radios and checkboxes have a
@@ -39,7 +39,7 @@ page" , "link" : "show-users-answers" } %} {% extends
   in your <code class="language-markup">app/views</code> folder.
 </p>
 <p>
-  For each of the <code class="language-markup">items</code>, we’ll add a
+  For each of the <code class="language-markup">items</code>, we'll add a
   <code class="language-markup">checked</code> value, like this:
 </p>
 <pre tabindex="0"><code class="language-markup" >&#123;
@@ -70,7 +70,7 @@ page" , "link" : "show-users-answers" } %} {% extends
   page, then going back.
 </p>
 <h2 id="show-the-users-answer-in-question-2">
-  Show the user’s answer in question 2
+  Show the user's answer in question&nbsp;2
 </h2>
 <p>
   Text inputs and textareas have a <code class="language-markup">value</code> to

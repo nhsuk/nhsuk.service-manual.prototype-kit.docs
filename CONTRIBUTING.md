@@ -1,8 +1,8 @@
 # Contribution guidelines
 
-Thank you for your interest in contributing to NHS.UK prototype kit website, we really appreciate it. There are a number of ways that you can contribute – reporting bugs, fixing bugs, suggesting new features or writing documentation.
+Thank you for your interest in contributing to NHS prototype kit website, we really appreciate it. There are a number of ways that you can contribute – reporting bugs, fixing bugs, suggesting new features or writing documentation.
 
-This repository contains the documentation and guidance for the NHS.UK prototype kit. For the prototype kit itself, see [http://github.com/nhsuk/nhsuk-prototype-kit](http://github.com/nhsuk/nhsuk-prototype-kit) on GitHub.
+This repository contains the documentation and guidance for the NHS prototype kit. For the prototype kit itself, see [http://github.com/nhsuk/nhsuk-prototype-kit](http://github.com/nhsuk/nhsuk-prototype-kit) on GitHub.
 
 If you’re not sure whether an issue relates to the kit or the website for it, don’t worry, issues can be moved if needed.
 

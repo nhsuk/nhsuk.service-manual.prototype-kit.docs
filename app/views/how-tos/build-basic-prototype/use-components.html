@@ -35,19 +35,18 @@ set prev = { "title" : "Link your pages together" , "link" :
     <code class="language-markup">app/views</code> folder.
   </li>
   <li>
-    Replace the 2nd example
-    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraphs with
-    the code you copied.
+    Replace the code from
+    <code class="language-markup">&lcub;&lcub; radios({</code> to when it finishes on <code class="language-markup">}) &rcub;&rcub;</code>
+    with the code you copied.
   </li>
   <li>
-    The example comes with a heading that is connected to the answers for
-    accessibility, so delete the old
-    <code class="language-markup">&lt;h1&gt;</code> tag with
-    "{{exampleRadios.title}}".
+    Delete the example
+    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
   </li>
 </ol>
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
+<li>Delete the three lines starting with <code class="language-markup">&#123;% from %&#125;</code>.</li>
   <li>
     Under <code class="language-markup">legend</code>, change
     <code class="language-markup">text</code> from "Do you know your NHS
@@ -58,8 +57,8 @@ set prev = { "title" : "Link your pages together" , "link" :
     <code class="language-markup">{{exampleRadios.legend}}</code>.
   </li>
   <li>
-    Delete the
-    <code class="language-markup">&#123;% set hint %&#125;</code> code.
+    Delete the code from
+    <code class="language-markup">&#123;% set hint %&#125;</code>...<code class="language-markup">&#123%- endset %}</code> code.
   </li>
   <li>
     In the <code class="language-markup">hint: &#123; html:</code> area replace
@@ -70,13 +69,12 @@ set prev = { "title" : "Link your pages together" , "link" :
 <p>Your component code should now look like this:</p>
 
 <pre
-  class="app-pre language-markup"
-><code class="language-markup" >&#123;&#123; radios({
-  idPrefix: "{{exampleRadios.legend}}",
-  name: "{{exampleRadios.legend}}",
+  class="app-pre language-markup"><code class="language-markup" >&#123;{ radios({
+  idPrefix: "example-hints",
+  name: "example-hints",
   fieldset: {
     legend: {
-    text: "{{exampleRadios.title}}",
+      text: "Do you know your NHS number?",
       classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
@@ -85,19 +83,19 @@ set prev = { "title" : "Link your pages together" , "link" :
     html: "For example, things moving when you have strong feelings or hearing someone's thoughts."
   },
   items: [
-   {
+  {
     value: "yes",
-    text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    },
-    {
-      value: "not sure",
-      text: "I'm not sure"
-    }
-  ]
+    text: "Yes, I know my NHS number"
+  },
+  {
+    value: "no",
+    text: "No, I do not know my NHS number"
+  },
+  {
+    value: "not sure",
+    text: "I'm not sure"
+  }
+]
 }) &#125;&#125;</code></pre>
 
 <p>Your page should now look like this:</p>

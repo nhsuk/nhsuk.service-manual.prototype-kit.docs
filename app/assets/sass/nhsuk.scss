@@ -1,4 +1,11 @@
-@import 'node_modules/nhsuk-frontend/packages/core/settings/colours';
+@import 'node_modules/nhsuk-frontend/packages/core/settings/all';
+@import 'node_modules/nhsuk-frontend/packages/core/tools/all';
+
+// NHS.UK website template styles
+//
+// This CSS is all used to re-create some of the NHS.UK website
+// styles within the example templates. It will likely need updating
+// as the NHS.UK website updates.
 
 // ==========================================================================
 // Log in link
@@ -92,7 +99,7 @@
   }
  }
 
- 
+
 // ==========================================================================
 // Feedback form
 // ==========================================================================
@@ -599,4 +606,39 @@ main .app-list-signage a[href=""]:focus {
 // except the links in blue blocks
 main .app-list-signage a[href=""] {
   color: $color_nhsuk-white;
+}
+
+// ==========================================================================
+// COMPONENTS / #RELATED-NAV
+// ==========================================================================
+
+.nhsuk-related-nav {
+  border-top: 1px solid $nhsuk-border-color;
+
+  @include mq($until: desktop) {
+    margin-top: nhsuk-spacing(7);
+  }
+}
+
+.nhsuk-related-nav__heading {
+  @include nhsuk-typography-responsive(19, $override-line-height: 1.2);
+
+  margin-bottom: 12px;
+  padding-top: nhsuk-spacing(3);
+}
+
+.nhsuk-related-nav__list {
+  @include nhsuk-typography-responsive(16);
+
+  list-style: none;
+  padding-left: 0;
+}
+
+// ==========================================================================
+// COMPONENTS / #LIST-BORDER
+// ==========================================================================
+
+.nhsuk-list--border li {
+  border-bottom: 1px solid $color_nhsuk-grey-4;
+  padding: 8px 0 16px;
 }

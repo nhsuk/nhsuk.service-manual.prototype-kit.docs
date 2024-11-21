@@ -10,16 +10,16 @@ page" , "link" : "show-users-answers" } %} {% extends
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    In the <code class="language-markup">&lt;a&gt;</code> tag under
-    <code class="language-markup">{{ data['how-many-balls'] }}</code>, change
-    the href attribute from <code class="language-markup">#</code> to
-    <code class="language-markup">/{{exampleRadios.url}}</code>
+    Find the value
+    <code class="language-markup">data['{{exampleRadios.legend}}']</code>, then change the
+    the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
+    <code class="language-markup">'/{{exampleRadios.url}}'</code>
   </li>
   <li>
-    In the <code class="language-markup">&lt;a&gt;</code> tag under
-    <code class="language-markup">{{ data['most-impressive-trick'] }}</code>,
-    change the href attribute from <code class="language-markup">#</code> to
-    <code class="language-markup">/{{exampleTextArea.url}}</code>
+    Find the value
+    <code class="language-markup">data['{{exampleTextArea.legend}}']</code>, then change the
+    the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
+    <code class="language-markup">'/{{exampleTextArea.url}}'</code>
   </li>
 </ol>
 <p>
@@ -82,8 +82,8 @@ page" , "link" : "show-users-answers" } %} {% extends
   <code class="language-markup">app/views</code> folder.
 </p>
 <p>
-  Add
-  <code class="language-markup">value: data['{{exampleRadios.legend}}']</code>
+  Go to  <code class="language-markup">id: "example",</code> and add a new line
+  <code class="language-markup">value: data['{{exampleRadios.legend}}'],</code>
   like this:
 </p>
 
@@ -91,13 +91,13 @@ page" , "link" : "show-users-answers" } %} {% extends
    textarea({
     name: "example",
     id: "example",
+    value: data['details'],
     label: {
       text: "Tell us your symptoms of magical powers",
       classes: "nhsuk-label--l",
       isPageHeading: true
-    },
-    value: data['details']
-  }) 
+    }
+  })
 
   &#125;&#125;</code></pre>
 

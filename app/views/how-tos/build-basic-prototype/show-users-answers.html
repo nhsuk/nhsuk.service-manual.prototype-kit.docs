@@ -16,15 +16,15 @@ question 2" , "link" : "use-components-2" } %} {% extends
     your <code class="language-markup">app/views</code> folder.
   </li>
   <li>
-    Find the <code class="language-markup">&lt;dt&gt;</code> tag that contains
-    the text "NHS number".
+    Find the <code class="language-markup">key</code> that contains
+    the text 'NHS number'.
   </li>
   <li>Change "NHS number" to "{{exampleRadios.summary}}".</li>
   <li>
-    In the <code class="language-markup">&lt;dd&gt;</code> tag on the next line,
-    change "485 777 3456" to
+    In <code class="language-markup">value</code> on the next line,
+    change '485 777 3456' to
     <code class="language-markup"
-      >&#123;&#123; data['{{exampleRadios.legend}}'] &#125;&#125;</code
+      >data['{{exampleRadios.legend}}']</code
     >.
   </li>
 </ol>
@@ -33,16 +33,8 @@ question 2" , "link" : "use-components-2" } %} {% extends
   the <code class="language-markup">name</code> attribute from the
   <code class="language-markup">&lt;input&gt;</code> on the question page.
 </p>
-<p>Update the screen reader text. Change this</p>
-<pre
-  tabindex="0"
-><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
-</code></pre>
-<p>to</p>
-<pre
-  tabindex="0"
-><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; {{exampleRadios.summary | lower }}&lt;/span&gt;
-</code></pre>
+<p>Update the screen reader text – on the next line <code class="language-markup">visuallyHiddenText</code> change
+ 'NHS number' to '{{exampleRadios.summary | lower }}'.
 <p>
   Screen readers will read this out but it will not appear on the page. Without
   this hidden text, screen reader users would just hear "Change" and not know
@@ -51,28 +43,22 @@ question 2" , "link" : "use-components-2" } %} {% extends
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find the <code class="language-markup">&lt;dt&gt;</code> tag that contains
-    the text "Name".
+    Find the <code class="language-markup">key</code> that contains
+    the text 'Name'.
   </li>
   <li>Change "Name" to "{{exampleTextArea.summary}}".</li>
   <li>
-    In the <code class="language-markup">&lt;dd&gt;</code> tag on the next line,
-    change "Kevin Francis" to
-    <code class="language-markup"
-      >&#123;&#123; data['{{exampleTextArea.legend}}'] &#125;&#125;</code
+    In the <code class="language-markup">value</code> on the next line,
+    change 'Kevin Francis' to
+    <code class="language-markup">
+      data['{{exampleTextArea.legend}}']</code
     >.
   </li>
+  <li>
+    On the next line <code class="language-markup">visuallyHiddenText</code> change
+     'name' to '{{exampleTextArea.summary | lower }}'
+  </li>
 </ol>
-<p>Change</p>
-<pre
-  tabindex="0"
-><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; name&lt;/span&gt;
-</code></pre>
-<p>to</p>
-<pre
-  tabindex="0"
-><code class="language-markup" >&lt;span class="govuk-visually-hidden"&gt; {{exampleTextArea.legend | lower}}&lt;/span&gt;
-</code></pre>
 <p>
   <a href="http://localhost:3000/{{exampleStart.url}}"
     >Go to http://localhost:3000/{{exampleStart.url}}</a
@@ -88,21 +74,12 @@ question 2" , "link" : "use-components-2" } %} {% extends
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find and delete the whole
-    <code class="language-markup">&lt;div&gt;</code> that starts with
-    <code class="language-markup"
-      >&lt;div class="govuk-summary-list__row"&gt;</code
-    >
-    and contains "Contact information".
+    Find the
+    <code class="language-markup">,</code> (comma) after the details you have changed, and delete this and everything up to the <code class="language-markup">]</code> (square bracket).
+
+
   </li>
-  <li>
-    Find and delete the whole
-    <code class="language-markup">&lt;div&gt;</code> that starts with
-    <code class="language-markup"
-      >&lt;div class="govuk-summary-list__row"&gt;</code
-    >
-    and contains "Contact details".
-  </li>
+
   <li>
     Delete everything from the line that contains "Medical details" down to the
     line before "Now send your application".
@@ -113,15 +90,15 @@ question 2" , "link" : "use-components-2" } %} {% extends
 
   {{ '<div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-  
+
       <h1 class="nhsuk-heading-l">
         Check your answers before sending your application
       </h1>
-  
+
       <h2 class="nhsuk-heading-m">
         Personal details
       </h2>
-  
+
       {{ summaryList({
         rows: [
           {
@@ -134,7 +111,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
             actions: {
               items: [
                 {
-                  href: "/magical-powers",
+                  href: "#",
                   text: "Change",
                   visuallyHiddenText: "magical power symptoms in the last 30 days"
                 }
@@ -151,7 +128,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
             actions: {
               items: [
                 {
-                  href: "/details",
+                  href: "#",
                   text: "Change",
                   visuallyHiddenText: "details of symptoms"
                 }
@@ -160,27 +137,27 @@ question 2" , "link" : "use-components-2" } %} {% extends
           }
         ]
       }) }}
-  
-  
+
+
       <h2 class="nhsuk-heading-m">
         Now send your application
       </h2>
-  
+
       <p>
         By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
       </p>
-  
+
       <p>
         Your details will be sent to Rose Medical Practice to begin your registration.
       </p>
-  
+
       <a href="/confirmation-page" class="nhsuk-button">
         Accept and send registration
       </a>
-  
+
     </div>
   </div>' | escape }}
-  
+
 </code></pre>
 
 {% endblock %}

@@ -17,23 +17,38 @@
   }) }}
 {% endblock %}
 
+
 {% block footer %}
-  {{ footer({
-    links: [
-      {
-        label: "About and support",
-        URL: "/about"
-      },
-      {
-        label: "NHS prototype kit on GitHub",
-        URL: "https://github.com/nhsuk/nhsuk-prototype-kit"
-      },
-      {
-        label: "Cookies",
-        URL: "/cookies"
-      }
-    ]
-  }) }}
+
+{{ footer({
+  links: [
+    {
+      URL: "/accessibility-statement",
+      label: "Accessibility statement"
+    },
+    {
+      URL: "/about",
+      label: "Support"
+    },
+    {
+      URL: "/cookies",
+      label: "Cookies"
+    },
+    {
+      URL: "/privacy-policy",
+      label: "Privacy policy"
+    },
+    {
+      URL: "/terms-conditions",
+      label: "Terms and conditions"
+    },
+    {
+      URL: "https://service-manual.nhs.uk",
+      label: "NHS digital service manual"
+    }
+  ]
+})}}
+
 {% endblock %}
 
 {% block bodyEnd %}

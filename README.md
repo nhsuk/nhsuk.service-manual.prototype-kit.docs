@@ -20,10 +20,24 @@ We normally use the [NHS content guide](https://service-manual.nhs.uk/content) f
 
 Lower case. Only use for Windows instructions. Normally it will be ‘the command line’.
 
+#### Git, git, Github
+
+Git has an upper case G when talking about a version control system (for example 'use GitHub '), and lower case G when part of code, for example `git status`.
+
+GitHub is camel case with an upper case H - for example, 'use GitHub Desktop'.
+
 
 #### GOV.UK Prototype Kit, GOV.UK Design System and other GOV.UK products
 
 Title case.
+
+#### Headings and tab titles
+Use sentence case, for example 'How to download the prototype kit'.
+Tab titles (the title of the page as shown in the browser tab) may be different from the page H1, for example a tab title may say 'How to download the prototype kit' and the H1 say 'Download the prototype kit'.
+
+#### JavaScript
+
+Camel case with an upper case S.
 
 #### NHS, NHS.UK, NHS England
 
@@ -44,11 +58,11 @@ Use ‘NHS England Windows laptops’ instructions for people using corporate la
 
 #### NHS prototype kit
 
-‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
+‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Try to avoid ‘prototype kit’.
 
 #### terminal
 
-Lower case. Only use for Mac and Linux instructions. Usually it will be ‘the terminal’.
+Lower case. Usually it will be ‘the terminal’.
 
 #### Visual Studio Code
 

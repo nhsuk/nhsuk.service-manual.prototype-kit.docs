@@ -52,3 +52,10 @@ p .app-code {
 .nhsuk-table__cell {
   padding: 16px 16px 16px 0;
 }
+
+
+// fix with bug for buttons when inverted - should be removed when source code is fixed
+
+.nhsuk-button--reverse, .nhsuk-button--reverse:link .nhsuk-button--reverse:visited, .nhsuk-button--reverse:active, .nhsuk-button--reverse:hover {
+  color: $color_nhsuk-blue !important;
+}

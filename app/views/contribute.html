@@ -1,0 +1,224 @@
+{% extends 'layout.html' %}
+{% block pageTitle %} Contribute - NHS prototype kit
+{% endblock %}
+{% block beforeContent %}
+{{ breadcrumb({ href: "/", text: "Home" }) }}
+{% endblock %}
+{% block content %}
+
+{# the board is a long string to this is made a variable for consistency #}
+{% set board = "https://github.com/orgs/nhsuk/projects/24/views/1" %}
+{# the labels string is also tricky to making a variable #}
+{% set label = "?filterQuery=label%3A" %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 id="contribute-to-the-nhs-prototype-kit">
+      Contribute to the NHS prototype kit
+    </h1>
+    <p>
+      The NHS prototype kit is a community project supported by the NHS service
+      manual team. Anyone can help make it better.
+    </p>
+    <p>
+      You can view what the community is working on from our
+      <a href="{{board}}"
+        >open project board on GitHub</a
+      >
+      - if you cannot see this board then contact the service manual team and
+      they will tell you.
+    </p>
+    <p>
+      Community work on the kit and its website are tracked on one shared
+      project board but the code (&#39;code repositories&#39;) is in different
+      places - you can view the code for the kit on the
+      <a href="https://github.com/nhsuk/nhsuk-prototype-kit/"
+        >nhsuk-prototype-kit code repository</a
+      >
+      and the guidance on the
+      <a href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs"
+        >nhsuk.service-manual.prototype-kit.docs code repository</a
+      >
+    </p>
+    <h2 id="why-contribute-to-the-kit">Why contribute to the kit</h2>
+    <p>If you contribute to the kit:</p>
+    <ul>
+      <li>
+        this keeps it up-to-date as an accessible and open way to make HTML
+        prototypes of NHS services
+      </li>
+      <li>
+        you will become part of an active and supportive community that will
+        help you learn and develop your skills with the kit
+      </li>
+      <li>
+        we will credit you in our update notes and other supporting information
+        unless you tell us not to (for example, because you want to stay
+        anonymous)
+      </li>
+    </ul>
+    <p>
+      If you are employed by NHS England, you will usually be able to use
+      examples of contributing to the kit as part of your yearly performance
+      review - talk to your line manager about how to include it in your
+      performance objectives.
+    </p>
+    <h2 id="how-you-can-contribute-to-the-kit">
+      How you can contribute to the kit
+    </h2>
+    <p>
+      There are many different ways that you can contribute, depending on your
+      skill and interests. You do not have to be an expert in coding.
+    </p>
+    <p>Right now you can:</p>
+    <ul>
+      <li>add or improve documentation for people using the kit</li>
+      <li>
+        do quality assurance or accessibility testing of new features or
+        guidance
+      </li>
+      <li>fix bugs or build new features for the NHS prototype kit</li>
+      <li>improve the contribution process</li>
+    </ul>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+
+      <p>Soon you will also be able to:</p>
+      <ul>
+        <li>
+          take part in user research on using the kit (labelled user research in
+          the project board)
+        </li>
+        <li>help do user research on the kit</li>
+        <li>
+          help to run training sessions to install and build a basic prototype
+        </li>
+        <li>help us improve the process of contributing to the kit</li>
+      </ul>
+      <p>
+        We will update this page when we are ready to have these types of
+        contributions. If you are interested in helping us start doing these
+        contributions, <a href="/about">contact us</a>.
+      </p>
+    </div>
+    <h3 id="add-or-improve-documentation-for-people-using-the-kit">
+      Add or improve documentation for people using the kit
+    </h3>
+    <p>You can also help improve the guidance for:</p>
+    <ul>
+      <li>this document site</li>
+      <li>the pages that people view when they download and install the kit</li>
+    </ul>
+    <p>
+      This includes: writing to the
+      <a href="https://service-manual.nhs.uk/content">NHS content guide</a> (and
+      <a
+        href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/blob/main/README.md"
+        >standardising terms that we only use in the kit</a
+      >) and making the structure of the site easy to use.
+    </p>
+    <p>
+      Existing things we want to do for guidance are labelled &#39;<a
+        href="{{board}}{{label}}Documentation"
+        >documentation</a
+      >&#39; on our project board on on the lists of things we want to do for
+      the kit. You can also add your own.
+    </p>
+    <h3 id="do-quality-assurance-or-accessibility-testing">
+      Do quality assurance or accessibility testing
+    </h3>
+    <p>
+      You can make sure that the code in our kit is robust and accessible by:
+    </p>
+    <ul>
+      <li>
+        running automated and manual tests against WCAG 2.2 AA specifications
+      </li>
+      <li>helping us set up pipelines for automated testing in GitHub</li>
+    </ul>
+    <p>
+      Accessibility issues are labelled &#39;<a
+        href="{{board}}{{label}}Accessibility"
+        >accessibility</a
+      >&#39; on our project board on on the lists of things we want to do for
+      the kit. You can also add your own.
+    </p>
+    <h3
+      id="fix-bugs-or-build-new-features-enhancements-for-the-nhs-prototype-kit"
+    >
+      Fix bugs or build new features (&#39;enhancements&#39;) for the NHS
+      prototype kit
+    </h3>
+    <p>You can help:</p>
+    <ul>
+      <li>fix bugs in the kit</li>
+      <li>
+        add features that have been added to NHS Frontend and the NHS design
+        system but are not in the kit yet
+      </li>
+      <li>
+        add functionality that is not yet in the NHS prototype kit but is in
+        other prototype kits - for example is in the GOV.UK Prototype kit
+      </li>
+      <li>build features that make it easier to use the NHS prototype kit</li>
+    </ul>
+    <p>
+      Existing things we want to do for new features are labelled
+      <a
+        href='{{board}}{{label}}"%3Abug%3A+Bug"'
+        >&#39;bug&#39;</a
+      >
+      or
+      <a
+        href="{{board}}{{label}}%22Enhancement%3A+feature+request%22"
+        >Enhancement : feature request’</a
+      >&#39; on our project board on on the lists of things we want to do for
+      the kit. There are also labels for
+      <a
+        href="{{board}}{{label}}Javascript"
+        >Javascript</a
+      >,
+      <a
+        href="{{board}}{{label}}Nunjucks"
+        >Nunjucks</a
+      >
+      or
+      <a
+        href="https://github.com/orgs/nhsuk/projects/24/views/1?filterQuery=label%3ASASS%20%2F%20CSS"
+        >SASS / CSS</a
+      >
+      .
+    </p>
+    <p>You can also add your own bugs or ideas for features.</p>
+    <h3 id="improve-the-contribution-process">
+      Improve the contribution process
+    </h3>
+    <p>
+      We want to make the process of contributing as easy and as accessible as
+      possible. Existing things we want to do to improve the contribution
+      process are labelled
+      <a
+        href="{{board}}{{label}}%22Contribution+process%22"
+        >&#39;Contribution&#39;</a
+      >. You can also add your own.
+    </p>
+    <h2 id="get-started-with-a-contribution">
+      Get started with a contribution
+    </h2>
+    <p>If you are confident with code you can create issues with GitHub.</p>
+    <p>
+      The team and wider community usually review new issues at least once a
+      week and will add comments about what will happen next.
+    </p>
+
+    <p>
+      We also have weekly alignment meetings on
+      a Monday afternoon at 4pm which are optional but helpful if you want to
+      check with a person - ask the service manual team for an invite.
+      </p>
+      <p>
+      If you need help or have questions, you can find out how to do so on <a href="/about">support</a>.
+      </p>
+  </div>
+</div>
+{% endblock %}

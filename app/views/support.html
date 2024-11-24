@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Cookies - NHS prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 id="support">Support</h1>
+      <p>The NHS prototype kit is maintained by <a href="https://service-manual.nhs.uk/service-manual-team">NHS England service manual team</a> with help from community contributors. If you&#39;ve got a question or need support you can:</p>
+      <ul>
+          <li><a href="mailto:england.service-manual@nhs.net?subject=NHS%20prototype%20kit%20-%20About">email the service manual team</a></li>
+          <li>use Slack - if you have an NHS England email or have been given access to the NHS England slack instance you can use the <a href="https://nhsdigitalcorporate.enterprise.slack.com/archives/C042J3MTJG2">NHS England #prototype-kit slack channel</a>. If you do not you can also use the <a href="https://nhs-service-manual.slack.com/messages/CFYL2GDGW"> NHS digital service manual #prototype-kit Slack channel</a></li>
+          <li>add a bug or view issues on on GitHub for the <a href="https://github.com/nhsuk/nhsuk-prototype-kit/issues">prototype kit</a> or  <a href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues">this documentation site</a>  </li>
+        </ul>
+      <p>You can also get involved with <a href="/about#contributing">contributing</a>.</p>
+      <p>There is a different place to <a href="https://service-manual.nhs.uk/get-in-touch">get support for the NHS general service manual (including the design system)</a>.</p>
+
+
+    </div>
+
+  </div>
+{% endblock %}

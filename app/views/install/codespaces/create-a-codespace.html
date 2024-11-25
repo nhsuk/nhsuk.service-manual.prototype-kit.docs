@@ -1,0 +1,20 @@
+{% set installEnvironment = "Codespaces" %}
+
+{% extends "install/terminal.html" %}
+
+{% block pageTitle %}
+  NHS prototype kit - Command Prompt
+{% endblock %}
+
+{% block branchingContent %}
+  <p class="nhsuk-lede-text">The first thing you need to do is create a new codespace for your prototype kit.</p>
+{% endblock %}
+
+{% block pagination %}
+  {{ pagination({
+    "previousUrl": "/install/mac-or-windows",
+    "previousPage": "Mac or Windows",
+    "nextUrl": "/install/windows/node",
+    "nextPage": "Step 2: Install Node.js"
+  }) }}
+{% endblock %}

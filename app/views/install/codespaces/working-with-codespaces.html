@@ -1,0 +1,69 @@
+{% set installEnvironment = "Codespaces" %}
+{% set current_step = 2 %}
+
+{% block pageTitle %}
+    NHS prototype kit - Working with Codespaces
+{% endblock %}
+
+{% extends 'install/codespace.html' %}
+
+{% block beforeContent %}
+    {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+    href: "/install/codespaces/",
+    text: "Codespaces"
+      }
+    ],
+    href: "/install/codespaces/working-with-codespaces",
+    text: "Step " + current_step + ": Working with Codespaces"
+  }) }}
+{% endblock %}
+
+{% block stepHeader %}
+    Working with Codespaces
+{% endblock %}
+
+{% block page_content %}
+
+    <p class="nhsuk-lede-text">Some useful tips and links to help you with GitHub Codespaces.</p>
+
+    <p>Codespaces are a virtual computer in the cloud, when working in a Codespace you should imagine that the files in the Codespace are like the files on your computer.
+
+    </p>
+
+    <p>Any changes you make are not shared with anybody else until you commit them to Git and push them to the repository.</p>
+
+    <p>The Codespace gives you a full code editor and user interface for managing your changes with github.</p>
+
+    <p>GitHub has a useful
+        <a href="https://docs.github.com/en/codespaces/getting-started/quickstart">Quickstart guide to working with Codespaces</a>
+    </p>
+
+    <h2>Things to remember when using Github Codespaces for NHS Prototypes</h2>
+
+    <ol class="nhsuk-list nhsuk-list--number">
+        <li>GitHub Codespaces are automatically deleted after they have been stopped and have remained inactive for a defined number of days, by default this is 30 days.</li>
+        <li>Any uncommitted and unpushed changes in a Codespace are lost when the Codespace is deleted. As they would be if changes were deleted on your computer before pushing them to the repository.</li>
+        <li>It is not recommended to use Codespaces as the public host for your prototypes, for that please continue to use services like Heroku or Render. So that you can reliably password protect them.</li>
+    </ol>
+
+    <h2>Get going</h2>
+
+    <p>
+        <a href="/how-tos/build-basic-prototype/index">Build a basic prototype</a>
+        or
+        <a href="/how-tos/index">view other guides</a>.</p>
+
+{% endblock %}
+
+{% block pagination %}
+    {{ pagination({
+    "previousUrl": "/install/codespaces/create-a-codespace",
+    "previousPage": "Step 1: Create a Codespace"
+  }) }}
+{% endblock %}

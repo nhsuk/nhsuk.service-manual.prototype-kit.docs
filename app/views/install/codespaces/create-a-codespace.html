@@ -1,20 +1,83 @@
 {% set installEnvironment = "Codespaces" %}
-
-{% extends "install/terminal.html" %}
+{% set current_step = '1' %}
 
 {% block pageTitle %}
-  NHS prototype kit - Command Prompt
+  NHS prototype kit - Create a codespace
 {% endblock %}
 
-{% block branchingContent %}
-  <p class="nhsuk-lede-text">The first thing you need to do is create a new codespace for your prototype kit.</p>
+{% extends 'install/codespace.html' %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+    href: "/install/codespaces/",
+    text: "Codespaces"
+      }
+    ],
+    href: "/install/codespaces/create-a-codespace",
+    text: "Create a Codespace"
+  }) }}
+{% endblock %}
+
+{% block stepHeader %}
+  Create a Codespace
+{% endblock %}
+
+{% block page_content %}
+
+  <p class="nhsuk-lede-text">To use the kit within a Codespace you will first need to create one.</p>
+
+  <h2>1. Go to the prototype repository</h2>
+
+  <p>Go to the GitHub repository for the prototype you wish to use. For this guide we will be using the
+    <a href="https://github.com/nhsuk/nhsuk-prototype-kit">NHSUK Prototype Kit repository</a>.
+  </p>
+
+  <h2>2. Create a new Codespace</h2>
+
+  <p>On every Github repository page is a 'Code' button which is used to get a copy of or to use the code held within the git repository.</p>
+
+  <p>Locate the button, click it, a dialogue box will open, at the top of the dialogue click the 'Codespaces' tab.</p>
+  <p>Next click on the 'Create codespace on main' button. Which will open your new codespace in a new browser tab or window.</p>
+
+  <p><img class="app-img-guide nhsuk-u-margin-bottom-0" alt="Screenshot of the location of create a codespace on main button" src="/images/codespaces/create-a-codespace.png"></p>
+  <p>The 'Create codespace on main' button will either be shown as a large button or a small plus symbol after the label 'your workspaces in the cloud'.</p>
+
+  <h2>3. Codespace setup begins</h2>
+
+  <p>The Codespace will open in a new tab (or window) and begin the setup process.</p>
+
+  <p>You will see an interface building with a progress message showing that the space (known as a 'container') is being created or rebuilt.</p>
+
+  {{
+        insetText({
+            html: '<p>This can take between 30 seconds and 5 minutes</p>'
+        })
+    }}
+
+  <h2>4. NHS Prototype Kit starts</h2>
+
+  <p>Once the Codespace has been created, you will then see the 'terminal' tab with commands being exectuted to start the prototype kit.</p>
+  <p>When the prototype has started it will open a preview window displaying the homepage of the prototype.</p>
+
+  <h2>5. Codespace setup complete</h2>
+
+  <p>You now have a copy of the NHSUK Prototype Kit installed and running within a new Github Codespace.</p>
+
+  <p>This means you can create and edit prototypes entirely in your browser.</p>
+
 {% endblock %}
 
 {% block pagination %}
   {{ pagination({
-    "previousUrl": "/install/mac-or-windows",
-    "previousPage": "Mac or Windows",
-    "nextUrl": "/install/windows/node",
-    "nextPage": "Step 2: Install Node.js"
+    "previousUrl": "/install/codespaces/index",
+    "previousPage": "Get started",
+    "nextUrl": "/install/codespaces/working-with-codespaces",
+    "nextPage": "Step 2: Working with Codespaces"
   }) }}
 {% endblock %}

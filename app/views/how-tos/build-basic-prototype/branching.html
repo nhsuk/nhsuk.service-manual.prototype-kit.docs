@@ -5,13 +5,13 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 
 <p>
-  Our first question asks the user if they have had symptoms of magical powers
-  in the last 30 days. We’re going to send them to an ‘ineligible’ page if
+  Our 1st question asks the user if they have had symptoms of magical powers
+  in the last 30 days. We're going to send them to an "ineligible" page if
   answer anything other than yes. Sending users to different pages based on
   their input is called branching.
 </p>
 <p>
-  To do this, we’re going to need an
+  To do this, we're going to need an
   <code class="language-markup">{{exampleIneligible.url}}.html</code> page, and
   some logic to decide when to send users there.
 </p>
@@ -22,7 +22,7 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
   pages.
 </p>
 <p>
-  The route takes the answer the user gave to the first question and either
+  The route takes the answer the user gave to the 1st question and either
   sends them to the next question or the ineligible page, depending on their
   answer.
 </p>
@@ -39,7 +39,7 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
   </li>
   <li>
     <p>
-      Update the content to tell the user why they’re ineligible and what they
+      Update the content to tell the user why they're ineligible and what they
       can do next.
     </p>
   </li>
@@ -52,14 +52,14 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
 </p>
 <h2 id="create-a-route">Create a route</h2>
 <p>
-  We’re going to write some logic to process the user’s answer to question 1. If
-  the user has had magical symptoms in the last 30 days, we’ll send them to
-  question 2. If they answer with anything else, we’ll send them to the
+  We're going to write some logic to process the user's answer to question 1. If
+  the user has had magical symptoms in the last 30 days, we'll send them to
+  question 2. If they answer with anything else, we'll send them to the
   ineligible page.
 </p>
 <p>
   Currently, the <code class="language-markup">{{exampleRadios.url}}</code> page
-  sends the user directly to question 2. Instead, we’re going to send them to a
+  sends the user directly to question 2. Instead, we're going to send them to a
   special URL where we can run some code to check their answer.
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
@@ -101,14 +101,14 @@ res.redirect('/{{exampleIneligible.url}}')
 </code></pre>
 <ol start="4"class="nhsuk-list nhsuk-list--number">
   <li>
-    Check it works. Selecting ‘Yes’ should send you to the next question. Any
+    Check it works. Selecting "Yes" should send you to the next question. Any
     other answer should send you to the ineligible page.
   </li>
 </ol>
 <h2 id="if-it-does-not-work">If it does not work</h2>
 <p>
   If you do not get a page, check in the terminal to see if the kit has crashed.
-  This is a common problem if there’s a typo in the JavaScript. If so, the kit
+  This is a common problem if there's a typo in the JavaScript. If so, the kit
   will try to tell you the line number with the issue.
 </p>
 <p>If the kit crashes, you will see something like this on the terminal:</p>
@@ -131,11 +131,11 @@ at Module._compile (module.js:570:32)
 [14:11:50] [nodemon] app crashed - waiting for file changes before starting…
 </code></pre>
 <p>
-  The first line of this sample output ends with
+  The 1st line of this sample output ends with
   <code class="language-markup">/app/routes.js:12</code>.
 </p>
 <p>
-  The '12' suggests there’s probably an issue on line 12 or the line before it.
+  The "12" suggests there's probably an issue on line 12 or the line before it.
   In this case, the issue was a missing bracket.
 </p>
 

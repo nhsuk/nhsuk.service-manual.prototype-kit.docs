@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  How to guides - NHS.UK prototype kit
+  How to guides - NHS prototype kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,13 +14,40 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
+<div class="nhsuk-u-reading-width">
       <h1>Guides</h1>
 
       <p class="nhsuk-lede-text">These guides will show you how to use the prototype kit, from creating a simple page to building complex user journeys.</p>
+</div>
+    </div>
 
-      <h2>Build a basic prototype</h2>
+</div>
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-one-half">
+      <h2 class="nhsuk-heading-s">Download and install</h2>
+
+      <ul class="nhsuk-list">
+        <li>
+          <a href="/install/index">Get started</a>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>
+          <a href="/install/simple">Install guide</a>
+        </li>
+        <li>
+          <a href="/install/advanced">Advanced install guide</a>
+        </li>
+        <li>
+          <a href="/install/nhs-england-windows-laptops">Set up the prototype kit on an NHS England Windows laptop</a>
+        </li>
+        </ul>
+      </li>
+      </ul>
+
+
+      <h2 class="nhsuk-heading-s">Build a basic prototype tutorial</h2>
       <ul class="nhsuk-list">
         <li>
           <a href="/how-tos/build-basic-prototype/index">Before you start the tutorial</a>
@@ -35,7 +62,7 @@
               <a href="/how-tos/build-basic-prototype/link-pages-together">Link your pages together</a>
             </li>
             <li>
-              <a href="/how-tos/build-basic-prototype/use-components">Use components from the Design System</a>
+              <a href="/how-tos/build-basic-prototype/use-components">Use components from the design system</a>
             </li>
             <li>
               <a href="/how-tos/build-basic-prototype/show-users-answers">Show the user's answers</a>
@@ -53,36 +80,33 @@
         </li>
       </ul>
 
+    </div>
+    <div class="nhsuk-grid-column-one-half">
 
-      <h2>Learn the basics</h2>
+        <h2 class="nhsuk-heading-s">General use</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/making-pages">Making pages</a></li>
-        <li><a href="/how-tos/adding-assets">Adding CSS, JavaScript and Images</a></li>
+        <li><a href="/how-tos/adding-assets">Adding CSS, JavaScript and images</a></li>
         <li><a href="/how-tos/components">Using components</a></li>
-      </ul>
-
-      <h2>Create journeys with data</h2>
-
-      <ul class="nhsuk-list">
         <li><a href="/how-tos/passing-data-page">Passing data page to page</a></li>
-        <li><a href="/how-tos/branching">Branching</a><br><span class="nhsuk-body-s">(show a different page based on user input)</span></li>
+        <li><a href="/how-tos/branching">Branching</a> – show a different page based on user input</li>
       </ul>
 
-      <h2>Share your prototype</h2>
+        <h2 class="nhsuk-heading-s">Share your prototype</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/git">Setting up Git</a></li>
         <li><a href="/how-tos/publish-your-prototype-online">Publish your prototype online</a></li>
       </ul>
 
-      <h2>Updating the kit</h2>
+        <h2 class="nhsuk-heading-s">Updating the kit</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/updating-the-kit">Updating the kit</a></li>
       </ul>
 
-      <h2>Advanced usage</h2>
+        <h2 class="nhsuk-heading-s">Advanced use</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/switching-from-govuk-prototype-kit">Switching from the GOV.UK Prototype Kit</a></li>

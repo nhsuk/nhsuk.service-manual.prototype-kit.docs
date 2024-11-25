@@ -1,6 +1,6 @@
-# NHS.UK prototype kit documentation
+# NHS prototype kit documentation
 
-This repository contains the content and code for the guidance website for the NHS.UK prototype kit.
+This repository contains the content and code for the guidance website for the NHS prototype kit.
 
 For the code for the NHS prototype kit itself, see [nhsuk-prototype-kit on GitHub](https://github.com/nhsuk/nhsuk-prototype-kit).
 
@@ -10,7 +10,7 @@ Start the code by running `npm run watch`.
 
 ## Contribute
 
-If you want to contribute to the NHS.UK prototype kit guidance, then read our [contributing guidelines](CONTRIBUTING.md).
+If you want to contribute to the NHS prototype kit guidance, then read our [contributing guidelines](CONTRIBUTING.md).
 
 ### Style guide
 
@@ -20,10 +20,24 @@ We normally use the [NHS content guide](https://service-manual.nhs.uk/content) f
 
 Lower case. Only use for Windows instructions. Normally it will be ‘the command line’.
 
+#### Git, git, Github
+
+Git has an upper case G when talking about a version control system (for example 'use GitHub '), and lower case G when part of code, for example `git status`.
+
+GitHub is camel case with an upper case H - for example, 'use GitHub Desktop'.
+
 
 #### GOV.UK Prototype Kit, GOV.UK Design System and other GOV.UK products
 
 Title case.
+
+#### Headings and tab titles
+Use sentence case, for example 'How to download the prototype kit'.
+Tab titles (the title of the page as shown in the browser tab) may be different from the page H1, for example a tab title may say 'How to download the prototype kit' and the H1 say 'Download the prototype kit'.
+
+#### JavaScript
+
+Camel case with an upper case S.
 
 #### NHS, NHS.UK, NHS England
 
@@ -44,11 +58,11 @@ Use ‘NHS England Windows laptops’ instructions for people using corporate la
 
 #### NHS prototype kit
 
-‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Do not use ‘prototype kit’ if you can.
+‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Try to avoid ‘prototype kit’.
 
 #### terminal
 
-Lower case. Only use for Mac and Linux instructions. Usually it will be ‘the terminal’.
+Lower case. Usually it will be ‘the terminal’.
 
 #### Visual Studio Code
 
@@ -57,4 +71,4 @@ Title case. When you use it for the first time in a guide, start with 'Visual St
 
 ## Support
 
-The NHS.UK prototype kit guidance website is maintained by NHS England. [Email us](<mailto:[england.service-manual@nhs.net](mailto:england.service-manual@nhs.net)>), open a [Github issue](https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues/new) or get in touch on the [NHS digital service manual Slack workspace](https://join.slack.com/t/nhs-service-manual/shared_invite/enQtNTIyOTEyNjU3NDkyLTk4NDQ3YzkwYzk1Njk5YjAxYTI5YTVkZmUxMGQ0ZjA3NjMyM2ZkNjBlMWMxODVjZjYzNzg1ZmU4MWY1NmE2YzE).
+The NHS prototype kit guidance website is maintained by NHS England. [Email us](<mailto:[england.service-manual@nhs.net](mailto:england.service-manual@nhs.net)>), open a [Github issue](https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues/new) or get in touch on the [NHS digital service manual Slack workspace](https://join.slack.com/t/nhs-service-manual/shared_invite/enQtNTIyOTEyNjU3NDkyLTk4NDQ3YzkwYzk1Njk5YjAxYTI5YTVkZmUxMGQ0ZjA3NjMyM2ZkNjBlMWMxODVjZjYzNzg1ZmU4MWY1NmE2YzE).

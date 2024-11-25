@@ -1,11 +1,11 @@
-{% set pageTitle = "Show the user’s answers on the ‘Check answers’ page" %} {%
+{% set pageTitle = "Show the user's answers on the Check answers page" %} {%
 set next = { "title" : "Let the user change their answers" , "link" :
 "let-user-change-answers" } %} {% set prev = { "title" : "Add a textarea to
 question 2" , "link" : "use-components-2" } %} {% extends
 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 
 <p>
-  The Prototype Kit stores answers that users enter. This means you can make
+  The prototype kit stores answers that users enter. This means you can make
   more realistic prototypes, for example by showing answers for users to check.
 </p>
 <h2 id="show-the-answer-to-question-1">Show the answer to question 1</h2>
@@ -19,7 +19,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
     Find the <code class="language-markup">key</code> that contains
     the text 'NHS number'.
   </li>
-  <li>Change 'NHS number' to '{{exampleRadios.summary}}'.</li>
+  <li>Change "NHS number" to "{{exampleRadios.summary}}".</li>
   <li>
     In <code class="language-markup">value</code> on the next line,
     change '485 777 3456' to
@@ -37,8 +37,8 @@ question 2" , "link" : "use-components-2" } %} {% extends
  'NHS number' to '{{exampleRadios.summary | lower }}'.
 <p>
   Screen readers will read this out but it will not appear on the page. Without
-  this hidden text, screen reader users would just hear “Change” and not know
-  what it’s for.
+  this hidden text, screen reader users would just hear "Change" and not know
+  what it's for.
 </p>
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
 <ol class="nhsuk-list nhsuk-list--number">
@@ -46,7 +46,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
     Find the <code class="language-markup">key</code> that contains
     the text 'Name'.
   </li>
-  <li>Change 'Name' to '{{exampleTextArea.summary}}'.</li>
+  <li>Change "Name" to "{{exampleTextArea.summary}}".</li>
   <li>
     In the <code class="language-markup">value</code> on the next line,
     change 'Kevin Francis' to
@@ -69,7 +69,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
   Delete the remaining example answers
 </h2>
 <p>
-  On the ‘Check answers’ template page, there are example answers that you do
+  On the "Check answers" template page, there are example answers that you do
   not need.
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
@@ -81,8 +81,8 @@ question 2" , "link" : "use-components-2" } %} {% extends
   </li>
 
   <li>
-    Delete everything from the line that contains 'Medical details' down to the
-    line before 'Now send your application'.
+    Delete everything from the line that contains "Medical details" down to the
+    line before "Now send your application".
   </li>
 </ol>
 <p>Your code should now look like this:</p>
@@ -144,11 +144,11 @@ question 2" , "link" : "use-components-2" } %} {% extends
       </h2>
 
       <p>
-        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
       </p>
 
       <p>
-        Your details with be sent to Rose Medical Practice to begin your registration.
+        Your details will be sent to Rose Medical Practice to begin your registration.
       </p>
 
       <a href="/confirmation-page" class="nhsuk-button">

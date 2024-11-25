@@ -2,7 +2,7 @@
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
   "prototypeKitVersion": "5.1.0",
-  "description": "Website and documentation for the NHS.UK prototype kit.",
+  "description": "Website and documentation for the NHS prototype kit.",
   "main": "app.js",
   "scripts": {
     "build": "gulp build",

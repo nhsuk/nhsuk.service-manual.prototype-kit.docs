@@ -8,9 +8,8 @@
 {% block content %}
 
 {# the board is a long string to this is made a variable for consistency #}
-{% set board = "https://github.com/orgs/nhsuk/projects/24/views/1" %}
-{# the labels string is also tricky to making a variable #}
-{% set label = "?filterQuery=label%3A" %}
+{% set githubBoardUrl = "https://github.com/orgs/nhsuk/projects/24/views/1" %}
+{% set githubLabelQuery = "?filterQuery=label%3A" %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <h1 class="nhsuk-heading-xl" id="contribute-to-the-nhs-prototype-kit">
@@ -21,7 +20,7 @@
       manual team. Anyone can help make it better.
     </p>
     <p>
-      <a href="{{board}}">View project board on GitHub</a>
+      <a href="{{githubBoardUrl}}">View project board on GitHub</a>
     </p>
     <h2 id="why-contribute-to-the-kit">Why contribute to the kit</h2>
     <p>Help keep the kit up-to-date as an accessible and open way to make HTML prototypes of NHS services.</p>
@@ -46,8 +45,7 @@
         do quality assurance or accessibility testing of new features or
         guidance
       </li>
-      <li>fix bugs</li>
-      <li>add new features</li>
+      <li>fix bugs or add new features</li>
       <li>improve the contribution process</li>
     </ul>
 
@@ -56,7 +54,7 @@
     </h3>
     <p>You can also help improve the content for:</p>
     <ul>
-      <li>this document site</li>
+      <li>this website</li>
       <li>the pages that people view when they download and install the kit</li>
     </ul>
     <p>
@@ -68,11 +66,11 @@
       >) and making the structure of the site easy to use.
     </p>
     <p>
-      Existing things we want to do for guidance are labelled &#39;<a
-        href="{{board}}{{label}}Content"
+      Existing things we want to do for guidance are labelled <a
+        href="{{githubBoardUrl}}{{githubLabelQuery}}Content"
         >content</a
-      >&#39; on our project board on on the lists of things we want to do for
-      the kit. You can also add your own.
+      > on our project board on on the lists of things we want to do for
+      the kit.
     </p>
     <h3 id="do-quality-assurance-or-accessibility-testing">
       Do quality assurance or accessibility testing
@@ -88,58 +86,38 @@
     </ul>
     <p>
       Accessibility issues are labelled <a
-        href="{{board}}{{label}}Accessibility"
+        href="{{githubBoardUrl}}{{githubLabelQuery}}Accessibility"
         >accessibility</a
       > on our project board on on the lists of things we want to do for
-      the kit. You can also add your own.
+      the kit.
     </p>
     <h3
       id="fix-bugs-or-build-new-features-enhancements-for-the-nhs-prototype-kit"
     >
-      Fix bugs or build new features (&#39;enhancements&#39;) for the NHS
-      prototype kit
+     Fix bugs or add build new features
     </h3>
-    <p>You can help:</p>
-    <ul>
-      <li>fix bugs in the kit</li>
-      <li>
-        add features that have been added to NHS Frontend and the NHS design
-        system but are not in the kit yet
-      </li>
-      <li>
-        add functionality that is not yet in the NHS prototype kit but is in
-        other prototype kits - for example is in the GOV.UK Prototype kit
-      </li>
-      <li>build features that make it easier to use the NHS prototype kit</li>
-    </ul>
+
     <p>
-      Existing things we want to do for new features are labelled
-      <a
-        href='{{board}}{{label}}"%3Abug%3A+Bug"'
-        >&#39;bug&#39;</a
-      >
+      Known bugs that we need to fix are labelled
+      <a href='{{githubBoardUrl}}{{githubLabelQuery}}"%3Abug%3A+Bug"'>bug</a>
+      on our project board.
+    </p>
+
+    <p> Ideas for features are labelled
+      <a href='{{githubBoardUrl}}{{githubLabelQuery}}"type%3A+enhancement+💡"'
+        >type: enhancement 💡</a
+      >.
+    </p>
+
+    <p>
+      We also label bugs or features on the type of code skills needed:
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}Javascript">Javascript</a>,
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}Nunjucks">Nunjucks</a>
       or
-      <a
-        href="{{board}}{{label}}%22Enhancement%3A+feature+request%22"
-        >Enhancement : feature request’</a
-      >&#39; on our project board on on the lists of things we want to do for
-      the kit. There are also labels for
-      <a
-        href="{{board}}{{label}}Javascript"
-        >Javascript</a
-      >,
-      <a
-        href="{{board}}{{label}}Nunjucks"
-        >Nunjucks</a
-      >
-      or
-      <a
-        href="{{board}}{{label}}SASS%20%2F%20CSS"
-        >SASS / CSS</a
-      >
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}SASS%20%2F%20CSS">SASS / CSS</a>
       .
     </p>
-    <p>You can also add your own bugs or ideas for features.</p>
+
     <h3 id="improve-the-contribution-process">
       Improve the contribution process
     </h3>
@@ -147,10 +125,9 @@
       We want to make the process of contributing as easy and as accessible as
       possible. Existing things we want to do to improve the contribution
       process are labelled
-      <a
-        href="{{board}}{{label}}%22Contribution+process%22"
-        >&#39;Contribution&#39;</a
-      >. You can also add your own.
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}%22Contribution+process%22"
+        >contribution</a
+      >.
     </p>
     <h2 id="get-started-with-a-contribution">
       Get started with a contribution
@@ -158,15 +135,23 @@
     <p>You can create issues using GitHub for the:</p>
 
     <ul class="nhsuk-list nhsuk-list--bullet">
-      <li><a href="https://github.com/nhsuk/nhsuk-prototype-kit/">prototype kit</a></li>
-      <li><a href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs">website for the prototype kit</a></li>
+      <li>
+        <a href="https://github.com/nhsuk/nhsuk-prototype-kit/"
+          >prototype kit</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs"
+          >website for the prototype kit</a
+        >
+      </li>
     </ul>
 
     <p>
       The team and wider community usually review new issues at least once a
       week and will add comments about what will happen next.
     </p>
-
   </div>
 </div>
 {% endblock %}

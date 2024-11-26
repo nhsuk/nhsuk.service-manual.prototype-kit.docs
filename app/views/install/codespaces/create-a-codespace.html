@@ -2,7 +2,7 @@
 {% set current_step = '1' %}
 
 {% block pageTitle %}
-  NHS prototype kit - Create a codespace
+  Create a codespace - NHS prototype kit
 {% endblock %}
 
 {% extends 'install/codespace.html' %}
@@ -16,11 +16,9 @@
       },
       {
     href: "/install/codespaces/",
-    text: "Codespaces"
+    text: "Install the kit in your web browser"
       }
-    ],
-    href: "/install/codespaces/create-a-codespace",
-    text: "Create a Codespace"
+    ]
   }) }}
 {% endblock %}
 
@@ -48,26 +46,22 @@
   <p><img class="app-img-guide nhsuk-u-margin-bottom-0" alt="Screenshot of the location of create a codespace on main button" src="/images/codespaces/create-a-codespace.png"></p>
   <p>The 'Create codespace on main' button will either be shown as a large button or a small plus symbol after the label 'your workspaces in the cloud'.</p>
 
-  <h2>3. Codespace setup begins</h2>
+  <h2>3. Wait for the Codespace setup to finish</h2>
 
   <p>The Codespace will open in a new tab (or window) and begin the setup process.</p>
 
   <p>You will see an interface building with a progress message showing that the space (known as a 'container') is being created or rebuilt.</p>
 
-  {{
-        insetText({
-            html: '<p>This can take between 30 seconds and 5 minutes</p>'
-        })
-    }}
+  <p>This can take between 30 seconds and 5 minutes.</p>
 
-  <h2>4. NHS Prototype Kit starts</h2>
+  <h2>4. Check that it has worked</h2>
 
   <p>Once the Codespace has been created, you will then see the 'terminal' tab with commands being exectuted to start the prototype kit.</p>
   <p>When the prototype has started it will open a preview window displaying the homepage of the prototype.</p>
 
-  <h2>5. Codespace setup complete</h2>
+<!--  <h2>5. Codespace setup complete</h2> -->
 
-  <p>You now have a copy of the NHSUK Prototype Kit installed and running within a new Github Codespace.</p>
+  <p>You now have a copy of the NHS prototype kit installed and running within a new GitHub Codespace.</p>
 
   <p>This means you can create and edit prototypes entirely in your browser.</p>
 

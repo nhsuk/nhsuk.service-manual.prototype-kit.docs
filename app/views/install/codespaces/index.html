@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Set up the prototype kit on GitHub Codespaces - NHS prototype kit
+  Install and use the kit with your web browser - NHS prototype kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,9 +15,7 @@
         href: "/install/",
         text: "Get started"
       }
-    ],
-    href: "/install/codespaces/",
-    text: "Codespaces"
+    ]
   }) }}
 {% endblock %}
 
@@ -25,42 +23,45 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Set up the prototype kit on GitHub Codespaces</h1>
-      <h2>What is a Codespace?</h2>
+      <h1>Install and use the kit with your web browser</h1>
 
-      <p>A GitHub Codespace is a virtual computer in the cloud where you can write and test code (such as an NHS Prototype Kit) without needing to install anything on your own computer.</p>
+      <p class="nhsuk-body-l">If you cannot install the kit on your computer (for example, beause you are not allowed to install Node.js) you can use an online service to edit and run code using your web browser.</p>
+
+
+      <p>Services that you can use include:<p>
+
+      <ul>
+        <li>
+        GitHub Codespaces - free for a certain number of hours per month (<a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces">Codespaces billing guidance</a>)
+        </li>
+        <li>
+        Gitpod
+        </li>
+        </ul>
+
+        <p>For this guide we are using GitHub Codespaces.</p>
+
 
       <h2>Before you begin</h2>
 
-      <p>You do not need any technical knowledge to follow along.</p>
+      <p>You do not need any technical knowledge to use this guide.</p>
 
       <p>You will need a
-        <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out">Github account</a>.
+        <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out">GitHub account</a>.
       </p>
 
-      <p>This guide will show you how to get setup in 2 key steps.</p>
-
+      <p>We will show you how to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>set up the Codespace
+          </li>
+        <li>work with the Codespace</li>
+        </ul>
       <p>
-        Installation typically takes up to 5 minutes.
+        Installation usually takes up to 5 minutes.
       </p>
 
-      {% set codespaceCostHTML %}
-      <p>Codespaces is a feature of GitHub which is free of charge for a set number of hours per month</p>
-      <p>
-        There would be a cost if you needed to continue using it beyond the free allowance.</p>
-      <p>See
-        <a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces">billing for Codespaces</a>
-        to ensure using them will meet your needs.
-      </p>
-      {% endset %}
 
-      {{
-        insetText({
-            html: codespaceCostHTML
-        })
-    }}
-
-      {{ actionLink({ text: "Start Codespaces guide", href: "/install/codespaces/create-a-codespace", classes: "nhsuk-u-margin-top-x nhsuk-heading-l" }) }}
+      {{ actionLink({ text: "Start guide for using the kit in a web browser", href: "/install/codespaces/create-a-codespace", classes: "nhsuk-u-margin-top-x nhsuk-heading-l" }) }}
 
     </div>
   </div>

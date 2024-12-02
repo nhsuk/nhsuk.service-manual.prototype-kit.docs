@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Use filters to change how answers appear - NHS prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1>Use filters to change how answers appear</h1>
+
+    {{ insetText({ html: '
+    <p>
+      To use filters, you need to know how to
+      <a href="passing-data-page">pass data from page to page</a>.
+    </p>
+    ' })}}
+
+    <p>
+      The kit stores data from all answers that users give in a prototype, so
+      that you can use or show the answers later. To change the format of how
+      these answers appear, you can apply filters. You can:</p>
+
+    <ul class="nshuk-list nhsuk-list-bullet">
+      <li>use existing Nunjucks filters</li>
+      <li>create a Nunjucks filter</li>
+      <li>import filters from other projects</li>
+    </ul>
+    <h2 class="nhsuk-heading-m">Use existing Nunjucks filters</h2>
+    <p>
+      You can
+      <a
+        href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters"
+        >use existing Nunjucks filters</a
+      >
+      in the kit. For example, you can use the Nunjucks
+      <code>upper</code> filter to change the format of text to upper case:
+    </p>
+
+    <pre
+      class="app-pre"
+    ><code class="app-code">&#123;{ data['name'] | upper }}</code></pre>
+
+    <h2 class="nhsuk-heading-m">Create a Nunjucks filter</h2>
+    <p>
+      Add your own filters to the <code>filters.js</code> file. Filters are
+      written in JavaScript.
+    </p>
+    <pre
+      class="app-pre"
+    ><code class="app-code">module.exports = function (env) { /* eslint-disable-line func-names,no-unused-vars */
+  const filters = {};
+
+  filters.uppercase = function(content) {
+    return content.toUpperCase()
+  }
+  return filters;
+};</code>
+</pre>
+    <p>Then use it on a page like this:</p>
+    <pre
+      class="app-pre"
+    ><code class="app-code">&#123;{ data['name'] | uppercase }&#125;</code></pre>
+
+    <h3 class="nhsuk-heading-s">Use HTML in a Nunjucks filter</h3>
+    <p>If you want to use HTML in a filter, write the filter:</p>
+    <pre
+      class="app-pre"
+    ><code class="app-code">{{ " filters.bold = function (content) {
+  return '<strong>' + content + '</strong>';
+  // remember to use 'safe' after to get the HTML formatting
+}" | escape }} </code></pre>
+    <p>Then use it on a page with the extra filter <code>safe</code>:</p>
+    <pre
+      class="app-pre"
+    ><code class="app-code">{{"{{ data['name'] | bold | safe }}" | escape }}</code></pre>
+    <p>
+      Safe makes the filter format the HTML and not just show the code
+      <code>{{"<strong></strong>" | escape }}</code>.
+    </p>
+
+    <p>You can also use these filters together:</p>
+    <pre
+      class="app-pre"
+    ><code class="app-code">{{"{{ data['name'] | upper |  bold | safe }}" | escape }}</code></pre>
+
+    <h2 class="nhsuk-heading-m">Import filters from other projects</h2>
+    <p>
+      You can import filters from other projects like the <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">x-govuk Prototype Filters
+      project</a>. If you want to do this, you will need to install it first - follow the instructions for 'Using with earlier versions of the Prototype Kit'.
+    </p>
+
+    <p>For example, you can <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">use existing x-govuk date filters</a> to add dates that will change in your prototype. </p>
+<p>To show today's date when a user submits their application:</p>
+<pre
+      class="app-pre"
+    ><code class="app-code">You submitted your application on {{'{{ "today" | govukDate }}' | safe }} .
+</code></pre>
+<p>To display a time:</p>
+<pre
+      class="app-pre"
+    ><code class="app-code">You signed into your account at {{'{{ "now" | govukTime }}' | escape }}.
+</code></pre>
+<h3 class="nhsuk-heading-s" id="change-the-format-of-a-date">Change the format of a date</h3>
+<p>You can change how dates appear, so that you display the name of the month instead of a number. </p>
+<p>To show the month 'March':</p>
+<pre
+      class="app-pre"
+    ><code class="app-code">{{'{{ 3 | monthName }}' | escape }}
+</code></pre>
+<p>To shorten (or 'truncate') the month 'March' to 'Mar':</p>
+<pre
+      class="app-pre"
+    ><code class="app-code">{{'{{ 3 | monthName("truncate") }}' | escape }}
+</code></pre>
+<h3 class="nhsuk-heading-s" id="show-how-many-days-have-passed">Show how many days have passed</h3>
+<p>To show how long it's been since a user submitted their application:</p>
+<pre class="app-pre" ><code class="app-code">{{"{% set dateSubmitted = '2023-09-18' %}"}}
+{{"<p>You submitted your application {{ dateSubmitted | daysAgo | plural('day') }} ago</p>" | escape }}
+</code></pre>
+<h3 class="nhsuk-heading-s" id="show-when-a-user-is-eligible">Show when a user is eligible</h3>
+<p>You can use filters to show when someone is eligible to use your service. For example, if they must be 18 to apply:</p>
+<pre
+      class="app-pre"
+    ><code class="app-code">{{"{% set dateOfBirth = '2010-09-18' %}"}}
+{{"<p>You can apply for a juggling licence on {{ dateOfBirth | duration(18, 'years') | govukDate }}</p>" | escape }}
+</code></pre>
+  </div>
+</div>
+{% endblock %}

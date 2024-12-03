@@ -47,7 +47,7 @@ Filters - NHS prototype kit
 
     <pre
       class="app-pre"
-    ><code class="app-code">&#123;{ data['name'] | upper }}</code></pre>
+    ><code class="app-code">{{ "{{data['name'] | upper }}" | escape }}</code></pre>
 
     <h2 class="nhsuk-heading-m">Create a Nunjucks filter</h2>
     <p>
@@ -97,7 +97,7 @@ Filters - NHS prototype kit
       If you are confident with Javascript, you can install and import filters from other projects like the X-GOVUK Prototype Filters
       project.
       </p>
-      <p>You will need to change your <code>filters.js</code> file using the the instructions for 'Using with earlier versions of the Prototype Kit'.
+      <p>You will need to change your <code>filters.js</code> file using the instructions for 'Using with earlier versions of the Prototype Kit'.
     </p>
     <p>
       <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">Go to the X-GOV.UK GOV.UK Prototype filters project</a>

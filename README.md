@@ -60,6 +60,10 @@ Use ‘NHS England Windows laptops’ instructions for people using corporate la
 
 ‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Try to avoid ‘prototype kit’.
 
+#### quotation marks
+
+Use straight quotes only (not smart or curly quotes). More detail is in the <a href="https://service-manual.nhs.uk/content/formatting-and-punctuation#quotation-marks">Formatting and punctuation</a> part of the Digital service manual content guide.
+
 #### terminal
 
 Lower case. Usually it will be ‘the terminal’.

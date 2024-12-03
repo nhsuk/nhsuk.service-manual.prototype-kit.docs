@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Use filters to change how answers appear - NHS prototype kit
+Filters - NHS prototype kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,7 +12,10 @@ Use filters to change how answers appear - NHS prototype kit
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
-    <h1>Use filters to change how answers appear</h1>
+    <h1>Filters</h1>
+    <p class="nhsuk-lede-text">
+      Change how answers and dates are shown.
+      </p>
 
     {{ insetText({ html: '
     <p>
@@ -29,7 +32,7 @@ Use filters to change how answers appear - NHS prototype kit
     <ul class="nshuk-list nhsuk-list-bullet">
       <li>use existing Nunjucks filters</li>
       <li>create a Nunjucks filter</li>
-      <li>import filters from other projects</li>
+      <li>use filters from other projects</li>
     </ul>
     <h2 class="nhsuk-heading-m">Use existing Nunjucks filters</h2>
     <p>
@@ -89,14 +92,17 @@ Use filters to change how answers appear - NHS prototype kit
       class="app-pre"
     ><code class="app-code">{{"{{ data['name'] | upper |  bold | safe }}" | escape }}</code></pre>
 
-    <h2 class="nhsuk-heading-m">Import filters from other projects</h2>
+    <h2 class="nhsuk-heading-m">Use filters from other projects</h2>
     <p>
       You can import filters from other projects like the <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">x-govuk Prototype Filters
       project</a>. If you want to do this, you will need to install it first - follow the instructions for 'Using with earlier versions of the Prototype Kit'.
     </p>
 
     <p>For example, you can <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">use existing x-govuk date filters</a> to add dates that will change in your prototype. </p>
-<p>To show today's date when a user submits their application:</p>
+
+    <h3 class="nhsuk-heading-s" id="show-and-format-a-date">Show and format a date</h3>
+
+    <p>To show today's date when a user submits their application:</p>
 <pre
       class="app-pre"
     ><code class="app-code">You submitted your application on {{'{{ "today" | govukDate }}' | safe }} .

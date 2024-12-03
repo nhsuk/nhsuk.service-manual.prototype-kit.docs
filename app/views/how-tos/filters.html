@@ -59,7 +59,7 @@ Filters - NHS prototype kit
     ><code class="app-code">module.exports = function (env) { /* eslint-disable-line func-names,no-unused-vars */
   const filters = {};
 
-  filters.uppercase = function(content) {
+  filters.uppercase = function (content) {
     return content.toUpperCase()
   }
   return filters;
@@ -74,7 +74,7 @@ Filters - NHS prototype kit
     <p>If you want to use HTML in a filter, write the filter:</p>
     <pre
       class="app-pre"
-    ><code class="app-code">{{ " filters.bold = function (content) {
+    ><code class="app-code">{{"filters.bold = function (content) {
   return '<strong>' + content + '</strong>';
   // remember to use the 'safe' filter afterwards to get the HTML formatting
 }" | escape }} </code></pre>
@@ -83,7 +83,7 @@ Filters - NHS prototype kit
       class="app-pre"
     ><code class="app-code">{{"{{ data['name'] | bold | safe }}" | escape }}</code></pre>
     <p>
-      Safe makes the filter format the HTML and not just show the code
+      Using <code>safe</code> makes the text show with the HTML formatting and not just the code
       <code>{{"<strong></strong>" | escape }}</code>.
     </p>
 

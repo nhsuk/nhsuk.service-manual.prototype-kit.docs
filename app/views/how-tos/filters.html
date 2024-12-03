@@ -14,7 +14,7 @@ Filters - NHS prototype kit
   <div class="nhsuk-grid-column-three-quarters">
     <h1>Filters</h1>
     <p class="nhsuk-lede-text">
-      Change how answers and dates are shown.
+      Change how answers are shown.
       </p>
 
     {{ insetText({ html: '
@@ -32,7 +32,7 @@ Filters - NHS prototype kit
     <ul class="nshuk-list nhsuk-list-bullet">
       <li>use existing Nunjucks filters</li>
       <li>create a Nunjucks filter</li>
-      <li>use filters from other projects</li>
+      <li>use filters from other projects (recommended for advanced users only)</li>
     </ul>
     <h2 class="nhsuk-heading-m">Use existing Nunjucks filters</h2>
     <p>
@@ -92,50 +92,17 @@ Filters - NHS prototype kit
       class="app-pre"
     ><code class="app-code">{{"{{ data['name'] | upper |  bold | safe }}" | escape }}</code></pre>
 
-    <h2 class="nhsuk-heading-m">Use filters from other projects</h2>
+    <h2 class="nhsuk-heading-m">Use filters from other projects (recommended for advanced users only)</h2>
     <p>
-      You can import filters from other projects like the <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">x-govuk Prototype Filters
-      project</a>. If you want to do this, you will need to install it first - follow the instructions for 'Using with earlier versions of the Prototype Kit'.
+      If you are confident with Javascript, you can install and import filters from other projects like the X-GOVUK Prototype Filters
+      project.
+      </p>
+      <p>You will need to change your <code>filters.js</code> file using the the instructions for 'Using with earlier versions of the Prototype Kit'.
     </p>
-
-    <p>For example, you can <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">use existing x-govuk date filters</a> to add dates that will change in your prototype. </p>
-
-    <h3 class="nhsuk-heading-s" id="show-and-format-a-date">Show and format a date</h3>
-
-    <p>To show today's date when a user submits their application:</p>
-<pre
-      class="app-pre"
-    ><code class="app-code">You submitted your application on {{'{{ "today" | govukDate }}' | safe }} .
-</code></pre>
-<p>To display a time:</p>
-<pre
-      class="app-pre"
-    ><code class="app-code">You signed into your account at {{'{{ "now" | govukTime }}' | escape }}.
-</code></pre>
-<h3 class="nhsuk-heading-s" id="change-the-format-of-a-date">Change the format of a date</h3>
-<p>You can change how dates appear, so that you display the name of the month instead of a number. </p>
-<p>To show the month 'March':</p>
-<pre
-      class="app-pre"
-    ><code class="app-code">{{'{{ 3 | monthName }}' | escape }}
-</code></pre>
-<p>To shorten (or 'truncate') the month 'March' to 'Mar':</p>
-<pre
-      class="app-pre"
-    ><code class="app-code">{{'{{ 3 | monthName("truncate") }}' | escape }}
-</code></pre>
-<h3 class="nhsuk-heading-s" id="show-how-many-days-have-passed">Show how many days have passed</h3>
-<p>To show how long it's been since a user submitted their application:</p>
-<pre class="app-pre" ><code class="app-code">{{"{% set dateSubmitted = '2023-09-18' %}"}}
-{{"<p>You submitted your application {{ dateSubmitted | daysAgo | plural('day') }} ago</p>" | escape }}
-</code></pre>
-<h3 class="nhsuk-heading-s" id="show-when-a-user-is-eligible">Show when a user is eligible</h3>
-<p>You can use filters to show when someone is eligible to use your service. For example, if they must be 18 to apply:</p>
-<pre
-      class="app-pre"
-    ><code class="app-code">{{"{% set dateOfBirth = '2010-09-18' %}"}}
-{{"<p>You can apply for a juggling licence on {{ dateOfBirth | duration(18, 'years') | govukDate }}</p>" | escape }}
-</code></pre>
+    <p>
+      <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">Go to the X-GOV.UK GOV.UK Prototype filters project</a>
+    </p>
+   
   </div>
 </div>
 {% endblock %}

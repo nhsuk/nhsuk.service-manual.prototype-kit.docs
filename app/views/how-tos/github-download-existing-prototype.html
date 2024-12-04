@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block pageTitle %} Download an existing prototype from GitHub
+- NHS prototype kit {% endblock %} {% block beforeContent %} {% include
+"how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-heading-xl">Download an existing prototype from GitHub    </h1>
+
+    <p>
+      To store your new prototype in GitHub, you need to
+      <a href="github-desktop">set up GitHub Desktop</a>.
+    </p>
+<p>
+    You can work with others on an existing prototype. For example, if you're joining a team that has a prototype.
+</p>
+    <h2 class="nhsuk-heading-m">
+        Download the prototype
+    </h2>
+<p>To work on an existing prototype, you'll need to download (or 'clone') the repository.
+</p>
+    <ol class="nhsuk-list nhsuk-list--number">
+      <li>
+        Go to the prototype's repository on GitHub (if you do not have a link, ask your team).
+      </li>
+      <li>
+        Select the <strong>Code</strong> button and <strong>Open with GitHub Desktop</strong>.
+      </li>
+      <li>
+        Choose a local path. This should be your prototypes folder.
+      </li>
+    </ol>
+    <h2 class="nhsuk-heading-m">
+        Open the prototype
+    </h2>
+
+    <ol class="nhsuk-list nhsuk-list--number">
+      <li>
+        In GitHub Desktop, select <strong>Open in Visual Studio Code</strong>.
+      </li>
+      <li>
+        Go to the terminal in Visual Studio Code. Select <strong>Terminal</strong> and <strong>New Terminal</strong>.
+      </li>
+      <li>In the terminal, run <code>npm install</code></li>
+    </ol>
+  </div>
+</div>
+{% endblock %}

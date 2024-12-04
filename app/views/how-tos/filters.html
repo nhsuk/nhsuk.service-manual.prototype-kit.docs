@@ -52,15 +52,42 @@ Filters - NHS prototype kit
       Add your own filters to the <code>filters.js</code> file. Filters are
       written in JavaScript. 
     </p>
-    <p>Creating filters may need help from a developer, but if someone else has made one you can paste them in to your filters.js file.</p>
-    <p>For example this filter will let you change the first letter of an answer to upper case, for example from "a test" to "A test". </p>
-
-
-    <h2 class="nhsuk-heading-m">Add a filter</h2>
-    <p>
-      Add your own filters to the <code>filters.js</code> file. Filters are
-      written in JavaScript. 
+    <p>Creating filters may need help from a developer, but if someone else has made one you can paste them in to your filters.js file. 
+      
+      </p>
+      <h3 class="nhsuk-heading-s">Use examples that are already in your filters.js file</h3>
+      <p>
+      You can see some examples in the file.</p>
+    <p>For example, find and copy this code in your file:
     </p>
+
+    <pre
+  class="app-pre"
+>
+<code class="app-code">filters.sayHi = function(name,tone) {
+      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
+    }</code></pre>
+
+<p>Then find this line (usually line 39)
+  <pre
+  class="app-pre"
+>
+<code class="app-code">------------------------------------------------------------------ */</code></pre>
+
+</p>
+
+<p>Then paste the code you just copied and save your changes. You will be able to the filter on on a page: </p>
+
+<pre
+class="app-pre"
+><code class="app-code">{{ "{{ 'Joel' | greetings('formal') }}" | escape }} </code></pre>
+  
+  
+  <p>It will show as 'Greetings, Joel!'. </p>
+
+
+  <h3 class="nhsuk-heading-s">Use examples from other NHS prototypes</h3>
+
     <p>If someone else using the NHS prototype kit has made a filter, you can paste them in to your file.</p>
     <p>For example this filter will let you change text to sentence case, for example from "a test" to "A test". </p>
 
@@ -78,34 +105,15 @@ Filters - NHS prototype kit
   return input.charAt(0).toUpperCase() + input.slice(1); 
 };</code></pre>
 
-<p>Go to <code>filters.js</code> and add it after <code>const filters = {};</code> and before <code>};</code>  </p>
-</pre>
-    <p>Check that your file looks like this:</p>
-    <pre 
-    <pre
-      class="app-pre"
-    ><code class="app-code">module.exports = function (env) { /* eslint-disable-line func-names,no-unused-vars */
-  const filters = {};
-
-  filters.sentenceCase = function (input){
-    // check the input
-    // blank: do not do anything
-    if (!input) return ''; 
-     // not text: do not do anything
-    if (typeof input !== 'string') return input;
-    // is a string/text
-    // text: change first character to uppercase and put it back in the string
-    return input.charAt(0).toUpperCase() + input.slice(1); 
-  }; 
-};</code></pre>
-    <p>Then use it on a page like this:</p>
+  
+  <p>When you have added it to your filters.js file, you can use it on a page like this:</p>
     <pre
       class="app-pre"
     ><code class="app-code">{{ "{{ data['name'] | sentenceCase }}" | escape }} </code></pre>
    
 
  
-    <h3 class="nhsuk-heading-s">Use HTML in a Nunjucks filter</h3>
+    <h3 class="nhsuk-heading-s">Make a filter that uses HTML</h3>
     <p>If you want to use HTML in a filter, write the filter:</p>
     <pre
       class="app-pre"

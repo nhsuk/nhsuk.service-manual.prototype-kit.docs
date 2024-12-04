@@ -17,12 +17,10 @@ Filters - NHS prototype kit
       Change how answers are shown.
       </p>
 
-    {{ insetText({ html: '
     <p>
       To use filters, you need to know how to
       <a href="passing-data-page">pass data from page to page</a>.
     </p>
-    ' })}}
 
     <p>
       The kit stores data from all answers that users give in a prototype, so
@@ -31,7 +29,7 @@ Filters - NHS prototype kit
 
     <ul class="nshuk-list nhsuk-list-bullet">
       <li>use existing Nunjucks filters</li>
-      <li>create a Nunjucks filter</li>
+      <li>add a filter</li>
       <li>use filters from other projects (recommended for advanced users only)</li>
     </ul>
     <h2 class="nhsuk-heading-m">Use existing Nunjucks filters</h2>
@@ -49,27 +47,64 @@ Filters - NHS prototype kit
       class="app-pre"
     ><code class="app-code">{{ "{{data['name'] | upper }}" | escape }}</code></pre>
 
-    <h2 class="nhsuk-heading-m">Create a Nunjucks filter</h2>
+    <h2 class="nhsuk-heading-m">Add a filter</h2>
     <p>
       Add your own filters to the <code>filters.js</code> file. Filters are
-      written in JavaScript.
+      written in JavaScript. 
     </p>
+    <p>Creating filters may need help from a developer, but if someone else has made one you can paste them in to your filters.js file.</p>
+    <p>For example this filter will let you change the first letter of an answer to upper case, for example from "a test" to "A test". </p>
+
+
+    <h2 class="nhsuk-heading-m">Add a filter</h2>
+    <p>
+      Add your own filters to the <code>filters.js</code> file. Filters are
+      written in JavaScript. 
+    </p>
+    <p>If someone else using the NHS prototype kit has made a filter, you can paste them in to your file.</p>
+    <p>For example this filter will let you change text to sentence case, for example from "a test" to "A test". </p>
+
+    <pre
+      class="app-pre"
+    >
+<code class="app-code">filters.sentenceCase = function (input){
+  // check the input
+  // blank: do not do anything
+  if (!input) return ''; 
+   // not text: do not do anything
+  if (typeof input !== 'string') return input;
+  // is a string/text
+  // text: change first character to uppercase and put it back in the string
+  return input.charAt(0).toUpperCase() + input.slice(1); 
+};</code></pre>
+
+<p>Go to <code>filters.js</code> and add it after <code>const filters = {};</code> and before <code>};</code>  </p>
+</pre>
+    <p>Check that your file looks like this:</p>
+    <pre 
     <pre
       class="app-pre"
     ><code class="app-code">module.exports = function (env) { /* eslint-disable-line func-names,no-unused-vars */
   const filters = {};
 
-  filters.uppercase = function (content) {
-    return content.toUpperCase()
-  }
-  return filters;
-};</code>
-</pre>
+  filters.sentenceCase = function (input){
+    // check the input
+    // blank: do not do anything
+    if (!input) return ''; 
+     // not text: do not do anything
+    if (typeof input !== 'string') return input;
+    // is a string/text
+    // text: change first character to uppercase and put it back in the string
+    return input.charAt(0).toUpperCase() + input.slice(1); 
+  }; 
+};</code></pre>
     <p>Then use it on a page like this:</p>
     <pre
       class="app-pre"
-    ><code class="app-code">&#123;{ data['name'] | uppercase }&#125;</code></pre>
+    ><code class="app-code">{{ "{{ data['name'] | sentenceCase }}" | escape }} </code></pre>
+   
 
+ 
     <h3 class="nhsuk-heading-s">Use HTML in a Nunjucks filter</h3>
     <p>If you want to use HTML in a filter, write the filter:</p>
     <pre
@@ -94,10 +129,28 @@ Filters - NHS prototype kit
 
     <h2 class="nhsuk-heading-m">Use filters from other projects (recommended for advanced users only)</h2>
     <p>
-      If you are confident with Javascript, you can install and import filters from other projects like the X-GOVUK Prototype Filters
-      project.
+      If you are confident with Javascript, you can get filters from other places. 
       </p>
-      <p>You will need to change your <code>filters.js</code> file using the instructions for 'Using with earlier versions of the Prototype Kit'.
+
+  
+         <p>If your filters you are trying to use start with 'add Filter' (for example the <a href="https://mozilla.github.io/nunjucks/api.html#custom-filters">Custom Filters in the Nunjucks documentation</a>), you will need to change them to work in the NHS prototype kit.
+          </p><p>
+          For example, if you have a filter like this:</p>
+          <pre
+          class="app-pre"
+        ><code class="app-code">env.addFilter('shorten', function(str, count) {
+          return str.slice(0, count || 5);
+      }); </code></pre>
+       
+      <p>change <code>env.addFilter('shorten, function',</code> to <code>filters.shorten = function</code> and remove <code>)</code> at the end.</p>
+      <p>The code will then look like this:</p>
+      <pre
+      class="app-pre"
+    ><code class="app-code">filters.shorten = function(str, count) {
+      return str.slice(0, count || 5);
+  };</code></pre>
+
+      <p>One project with a lot of tools is the XGOV-UK Prototype Filters plugin. If you want to use this plugin, you will need to change your <code>filters.js</code> file using the instructions for 'Using with earlier versions of the Prototype Kit'.
     </p>
     <p>
       <a href="https://x-govuk.github.io/govuk-prototype-filters/get-started/">Go to the X-GOV.UK GOV.UK Prototype filters project</a>

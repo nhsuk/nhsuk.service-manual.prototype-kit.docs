@@ -1,6 +1,26 @@
 {% extends "layout.html" %} {% block pageTitle %} Download an existing prototype from GitHub
-- NHS prototype kit {% endblock %} {% block beforeContent %} {% include
-"how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
+- NHS prototype kit {% endblock %} 
+
+
+{% block beforeContent %}  
+{{ breadcrumb({
+  items: [
+    {
+      href: "/",
+      text: "Home"
+    },
+    {
+      href: "/how-tos",
+      text: "Guides"
+    }, {
+      href: "/how-tos/github/index",
+      text: "Store code online with GitHub and GitHub desktop"
+    }
+  ]
+}) }}
+{% endblock %} 
+
+{% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
@@ -8,7 +28,7 @@
 
     <p>
       To store your new prototype in GitHub, you need to
-      <a href="github-desktop">set up GitHub Desktop</a>.
+      <a href="index">set up GitHub Desktop</a>. If you work for NHS England, you also need to followed <a href="nhs-england">the extra GitHub steps</a>.
     </p>
 <p>
     You can work with others on an existing prototype. For example, if you're joining a team that has a prototype.
@@ -42,6 +62,14 @@
       </li>
       <li>In the terminal, run <code>npm install</code></li>
     </ol>
+
+    <h2 class="nhsuk-heading-m">
+      What do do next
+    </h2>
+    <p>Go to the <a href="/how-tos">other guides</a> to find out how to make a prototype.</p>
+    <p>
+    If other people will be working on the same prototype, find out how to <a href="collaborate">collaborate on prototypes</a>. 
+  </p>
   </div>
 </div>
 {% endblock %}

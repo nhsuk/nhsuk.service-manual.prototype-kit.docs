@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Install and use the kit with your web browser - NHS prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+        href: "/install/",
+        text: "Get started"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Install and use the kit with your web browser</h1>
+
+      <p class="nhsuk-body-l">If you cannot install the kit on your computer (for example, beause you are not allowed to install Node.js) you can use an online service to edit and run code using your web browser.</p>
+
+
+      <p>Services that you can use include:<p>
+
+      <ul>
+        <li>
+        GitHub Codespaces - free for a certain number of hours per month (<a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces">Codespaces billing guidance</a>)
+        </li>
+        <li>
+        Gitpod
+        </li>
+        </ul>
+
+        <p>For this guide we are using GitHub Codespaces.</p>
+
+
+      <h2>Before you begin</h2>
+
+      <p>You do not need any technical knowledge to use this guide.</p>
+
+      <p>You will need a
+        <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out">GitHub account</a>.
+      </p>
+
+      <p>We will show you how to:</p>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>set up the Codespace
+          </li>
+        <li>work with the Codespace</li>
+        </ul>
+      <p>
+        Installation usually takes up to 5 minutes.
+      </p>
+
+
+      {{ actionLink({ text: "Start guide for using the kit in a web browser", href: "/install/codespaces/create-a-codespace", classes: "nhsuk-u-margin-top-x nhsuk-heading-l" }) }}
+
+    </div>
+  </div>
+{% endblock %}

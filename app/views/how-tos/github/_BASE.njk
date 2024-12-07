@@ -33,18 +33,18 @@ GitHub and GitHub desktop" } ] })
       items: [
         {
           href: "index",
-          text: "Set up GitHub and GitHub Desktop",
-          current: ("true" if pageTitle and (pageTitle == "Set up GitHub and GitHub Desktop") else '')  
+          text: "Overview",
+          current: ("true" if pageTitle and (pageTitle == "Overview") else '')  
         },
         {
-          href: "nhs-england",
-          text: "Using GitHub if you work for NHS England", 
-          current: ("true" if (pageTitle and  pageTitle == "Using GitHub if you work for NHS England") else '')  
+          href: "setup-github-desktop",
+          text: "Set up GitHub and GitHub Desktop", 
+          current: ("true" if (pageTitle and  pageTitle == "Set up GitHub and GitHub Desktop") else '')  
         },
         {
           href: "store-new-prototype",
-          text: "Store your new prototype online",
-          current: ("true" if (pageTitle and pageTitle == "Store your new prototype online") else '' ) 
+          text: "Store a new prototype online",
+          current: ("true" if (pageTitle and pageTitle == "Store a new prototype online") else '' ) 
         }
         ,
         {
@@ -69,25 +69,25 @@ GitHub and GitHub desktop" } ] })
     {% endblock %}
 
 
-{% if pageTitle == "Set up GitHub and GitHub Desktop" %}{# first page #}
+{% if pageTitle == "Overview" %}{# first page #}
 
 {{ pagination({
-  nextUrl: "/how-tos/github/nhs-england",
-  nextPage: "Using GitHub if you work for NHS England"
+  nextUrl: "/how-tos/github/setup-github-desktop",
+  nextPage: "Set up GitHub and GitHub Desktop"
 }) }}
 
-{% elif pageTitle == "Using GitHub if you work for NHS England" %}
+{% elif pageTitle == "Set up GitHub and GitHub Desktop" %}
 {{ pagination({
     previousUrl: "/how-tos/github/index",
-    previousPage: "Set up GitHub and GitHub Desktop",
+    previousPage: "Overview",
     nextUrl: "/how-tos/github/store-new-prototype",
-    nextPage: "Store your new prototype online"
+    nextPage: "Store a new prototype online"
 }) }}
 
-{% elif pageTitle == "Store your new prototype online" %}
+{% elif pageTitle == "Store a new prototype online" %}
 {{ pagination({
-    previousUrl: "/how-tos/github/nhs-england",
-    previousPage: "Using GitHub if you work for NHS England",
+    previousUrl: "/how-tos/github/setup-github-desktop",
+    previousPage: "Set up GitHub and GitHub Desktop",
     nextUrl: "/how-tos/github/download-existing-prototype",
     nextPage: "Download an existing prototype"
 }) }}
@@ -95,7 +95,7 @@ GitHub and GitHub desktop" } ] })
 {% elif pageTitle == "Download an existing prototype" %}
 {{ pagination({
     previousUrl: "/how-tos/github/download-existing-prototype",
-    previousPage: "Store your new prototype online",
+    previousPage: "Store a new prototype online",
     nextUrl: "/how-tos/github/collaborate",
     nextPage: "Collaborate on a prototype"
 }) }}

@@ -1,0 +1,57 @@
+{% set pageTitle = "Set up GitHub and GitHub Desktop" %}
+{% extends "how-tos/github/_BASE.njk" %} 
+{% block hub %}
+
+<p>To use GitHub Desktop you need to:</p>
+
+<ol class="nhsuk-list nhsuk-list--number">
+  <li>Install Git.</li>
+  <li>Create a GitHub account.</li>
+  <li>Download and set up the GitHub Desktop app.</li>
+</ol>
+
+
+{{ insetText({
+  html: '<p>
+    If you have never run the NHS prototype kit on your computer, finish the
+    <a href="/install/index">get started guide</a> first. This will mean
+    that you have the right tools to complete these steps.
+  </p>'
+}) }}
+
+  <h2 class="nhsuk-heading-m">1. Install Git</h2>
+<p>The first thing you need to do is <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">install Git (opens in new tab)</a>.</p>
+<p>You do not need to set your name and email address now - you will do that later. </p>
+
+
+<h2 class="nhsuk-heading-m">2. Create a GitHub account</h2>
+
+<p>
+    Go to GitHub.com and <a href="https://github.com/join">create a free GitHub account</a>.</p>
+
+
+<h3 class="nhsuk-heading-s">If you work for NHS England</h3>
+
+<p>
+  Code repositories for NHS England digital teams are usually stored in the
+  <a href="https://github.com/nhsdigital">NHS Digital GitHub organisation</a
+  > shared account.</p> 
+  <p>If you need to work on a prototype stored in this organisation or add a new prototype, it is usually easier to get your account added to the organisation first. An NHS England GitHub administrator must add you - you cannot do it yourself. Ask your team for details about who to talk to.
+  </p>
+
+
+
+
+<h2 class="nhsuk-heading-m">3. Download and set up the GitHub Desktop app</h2>
+    <p><a href="https://desktop.github.com/">Download the GitHub Desktop app</a
+    >.</p>
+
+   <p>Sign in with your GitHub account details.</p>
+
+<p>You can now use GitHub Desktop to work with repositories.
+  A repository contains all of the files in a prototype. You can use the
+  repository to view the file history and work on your prototype with
+  others.
+</p>
+
+{% endblock %}

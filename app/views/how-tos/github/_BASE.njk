@@ -1,9 +1,9 @@
 {% extends "layout.html" %} 
-{% block pageTitle %} {{pageTitle}} - Store code online using Github and GitHub Desktop - NHS prototype kit {% endblock %} 
+{% block pageTitle %} {{pageTitle}} - Store code online using GitHub and GitHub Desktop - NHS prototype kit {% endblock %} 
 {% block beforeContent
 %} 
 
-{% if pageTitle == "Get started"%}
+{% if pageTitle == "Set up GitHub and GitHub Desktop"%}
 {% include "how-tos/includes/breadcrumb.html" %} 
 {% else %}
 {{ breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos",
@@ -24,7 +24,7 @@ GitHub and GitHub desktop" } ] })
           <span class="nhsuk-u-visually-hidden">
           -
           </span>
-            Store code online with Github and Github Desktop
+            Store code online with GitHub and GitHub Desktop
         </span>
       </span>
     </h1>
@@ -33,8 +33,8 @@ GitHub and GitHub desktop" } ] })
       items: [
         {
           href: "index",
-          text: "Get started",
-          current: ("true" if pageTitle and (pageTitle == "Get started") else '')  
+          text: "Set up GitHub and GitHub Desktop",
+          current: ("true" if pageTitle and (pageTitle == "Set up GitHub and GitHub Desktop") else '')  
         },
         {
           href: "nhs-england",
@@ -63,12 +63,13 @@ GitHub and GitHub desktop" } ] })
 
 
 {% block hub %}
-
-
+<p>
+[add text here ]
+</p>
     {% endblock %}
 
 
-{% if pageTitle == "Get started" %}{# first page #}
+{% if pageTitle == "Set up GitHub and GitHub Desktop" %}{# first page #}
 
 {{ pagination({
   nextUrl: "/how-tos/github/nhs-england",
@@ -78,7 +79,7 @@ GitHub and GitHub desktop" } ] })
 {% elif pageTitle == "Using GitHub if you work for NHS England" %}
 {{ pagination({
     previousUrl: "/how-tos/github/index",
-    previousPage: "Get started",
+    previousPage: "Set up GitHub and GitHub Desktop",
     nextUrl: "/how-tos/github/store-new-prototype",
     nextPage: "Store your new prototype online"
 }) }}

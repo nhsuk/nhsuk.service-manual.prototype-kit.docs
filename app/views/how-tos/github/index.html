@@ -1,4 +1,4 @@
-{% set pageTitle = "Get started" %}
+{% set pageTitle = "Set up GitHub and GitHub Desktop" %}
 {% extends "how-tos/github/_BASE.njk" %} 
 {% block hub %}
 
@@ -23,14 +23,15 @@
       </li>
     </ul>
 
-    <div class="nhsuk-inset-text">
-      <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>
+
+    {{ insetText({
+      html: '<p>
         If you have never run the NHS prototype kit on your computer, finish the
         <a href="/install/index">get started guide</a> first. This will mean
         that you have the right tools to complete these steps.
-      </p>
-    </div>
+      </p>'
+    }) }}
+
 
     <h2 class="nhsuk-heading-m">Set up GitHub Desktop</h2>
 

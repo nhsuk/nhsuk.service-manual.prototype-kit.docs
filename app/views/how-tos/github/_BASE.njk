@@ -43,14 +43,14 @@ GitHub and GitHub desktop" } ] })
         },
         {
           href: "store-new-prototype",
-          text: "Store a new prototype online",
-          current: ("true" if (pageTitle and pageTitle == "Store a new prototype online") else '' ) 
+          text: "Store a new prototype on GitHub",
+          current: ("true" if (pageTitle and pageTitle == "Store a new prototype on GitHub") else '' ) 
         }
         ,
         {
           href: "/how-tos/github/download-existing-prototype",
-          text: "Download an existing prototype",
-          current: ("true" if (pageTitle and pageTitle == "Download an existing prototype") else '' ) 
+          text: "Download an existing prototype from GitHub",
+          current: ("true" if (pageTitle and pageTitle == "Download an existing prototype from GitHub") else '' ) 
         }
         ,
         {
@@ -81,21 +81,21 @@ GitHub and GitHub desktop" } ] })
     previousUrl: "/how-tos/github/index",
     previousPage: "Overview",
     nextUrl: "/how-tos/github/store-new-prototype",
-    nextPage: "Store a new prototype online"
+    nextPage: "Store a new prototype on GitHub"
 }) }}
 
-{% elif pageTitle == "Store a new prototype online" %}
+{% elif pageTitle == "Store a new prototype on GitHub" %}
 {{ pagination({
     previousUrl: "/how-tos/github/setup-github-desktop",
     previousPage: "Set up GitHub and GitHub Desktop",
     nextUrl: "/how-tos/github/download-existing-prototype",
-    nextPage: "Download an existing prototype"
+    nextPage: "Download an existing prototype from GitHub"
 }) }}
 
-{% elif pageTitle == "Download an existing prototype" %}
+{% elif pageTitle == "Download an existing prototype from GitHub" %}
 {{ pagination({
-    previousUrl: "/how-tos/github/download-existing-prototype",
-    previousPage: "Store a new prototype online",
+    previousUrl: "/how-tos/github/store-new-prototype",
+    previousPage: "Store a new prototype on GitHub",
     nextUrl: "/how-tos/github/collaborate",
     nextPage: "Collaborate on a prototype"
 }) }}
@@ -104,7 +104,7 @@ GitHub and GitHub desktop" } ] })
 
 {{ pagination({
   previousUrl: "/how-tos/github/download-existing-prototype",
-  previousPage: "Download an existing prototype"
+  previousPage: "Download an existing prototype from GitHub"
 }) }}
 
 {% endif %}

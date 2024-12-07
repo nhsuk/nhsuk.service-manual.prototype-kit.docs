@@ -1,13 +1,6 @@
-{% extends "layout.html" %} {% block pageTitle %} Store your code online with
-GitHub and GitHub Desktop - NHS prototype kit {% endblock %} {% block
-beforeContent %} {% include "how-tos/includes/breadcrumb.html" %} {% endblock %}
-{% block content %}
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-three-quarters">
-    <h1 class="nhsuk-heading-xl">
-      Store your code online with GitHub and GitHub Desktop
-    </h1>
+{% set pageTitle = "Get started" %}
+{% extends "how-tos/github/_BASE.njk" %} 
+{% block hub %}
 
     <p>
       GitHub is a way to store code online so you can collaborate with others.
@@ -45,7 +38,7 @@ beforeContent %} {% include "how-tos/includes/breadcrumb.html" %} {% endblock %}
       <li>
         <a href="https://github.com/join">Create a free GitHub account</a> - if
         you work for NHS England you must also
-        <a href="nhs-england"
+        <a href="/how-tos/github/nhs-england"
           >set up your account to be publish code in the right place</a
         >.
       </li>
@@ -71,17 +64,17 @@ beforeContent %} {% include "how-tos/includes/breadcrumb.html" %} {% endblock %}
 
     <ul class="nhsuk-list nhsuk-list--bullet">
       <li>
-        <a href="store-new-prototype">store your new prototype in GitHub</a>
+        <a href="/how-tos/github/store-new-prototype">store your new prototype in GitHub</a>
       </li>
       <li>
-        <a href="download-existing-prototype"
+        <a href="/how-tos/github/download-existing-prototype"
           >download an existing prototype from GitHub</a
         >
       </li>
     </ul>
     <p>
       After you have stored or downloaded a prototype, you can
-      <a href="collaborate">collaborate with other people on your code</a>.
+      <a href="/how-tos/github/collaborate">collaborate with other people on your code</a>.
     </p>
     <p>
       You can also
@@ -90,6 +83,5 @@ beforeContent %} {% include "how-tos/includes/breadcrumb.html" %} {% endblock %}
         >find out about how to use GitHub Desktop on the GitHub website</a
       >.
     </p>
-  </div>
-</div>
+
 {% endblock %}

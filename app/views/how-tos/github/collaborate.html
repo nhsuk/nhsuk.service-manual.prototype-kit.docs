@@ -1,14 +1,6 @@
-{% extends "layout.html" %} {% block pageTitle %} Collaborate on prototypes
-using GitHub Desktop - NHS prototype kit {% endblock %} {% block beforeContent
-%} {{ breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos",
-text: "Guides" }, { href: "/how-tos/github/index", text: "Store code online with
-GitHub and GitHub desktop" } ] }) }} {% endblock %} {% block content %}
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-three-quarters">
-    <h1 class="nhsuk-heading-xl">
-      Collaborate on prototypes using GitHub Desktop
-    </h1>
+{% set pageTitle = "Collaborate on a prototype" %}
+{% extends "how-tos/github/_BASE.njk" %} 
+{% block hub %}
 
     <p>
       When you store a prototype on GitHub, you can collaborate on your code
@@ -125,6 +117,4 @@ GitHub and GitHub desktop" } ] }) }} {% endblock %} {% block content %}
       If there is a conflict, you must manually resolve the change - ask a
       developer on your team to help.
     </p>
-  </div>
-</div>
 {% endblock %}

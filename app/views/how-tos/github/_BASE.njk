@@ -1,0 +1,112 @@
+{% extends "layout.html" %} 
+{% block pageTitle %} {{pageTitle}} - Store code online using Github and GitHub Desktop - NHS prototype kit {% endblock %} 
+{% block beforeContent
+%} 
+
+{% if pageTitle == "Get started"%}
+{% include "how-tos/includes/breadcrumb.html" %} 
+{% else %}
+{{ breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos",
+text: "Guides" }, { href: "/how-tos/github/index", text: "Store code online with
+GitHub and GitHub desktop" } ] }) 
+}} 
+{% endif %}
+{% endblock %} 
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <h1>
+      <span role="text">
+        {{pageTitle | default("pageTitle")}}
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+          <span class="nhsuk-u-visually-hidden">
+          -
+          </span>
+            Store code online with Github and Github Desktop
+        </span>
+      </span>
+    </h1>
+
+    {{ contentsList({
+      items: [
+        {
+          href: "index",
+          text: "Get started",
+          current: ("true" if pageTitle and (pageTitle == "Get started") else '')  
+        },
+        {
+          href: "nhs-england",
+          text: "Using GitHub if you work for NHS England", 
+          current: ("true" if (pageTitle and  pageTitle == "Using GitHub if you work for NHS England") else '')  
+        },
+        {
+          href: "store-new-prototype",
+          text: "Store your new prototype online",
+          current: ("true" if (pageTitle and pageTitle == "Store your new prototype online") else '' ) 
+        }
+        ,
+        {
+          href: "/how-tos/github/download-existing-prototype",
+          text: "Download an existing prototype",
+          current: ("true" if (pageTitle and pageTitle == "Download an existing prototype") else '' ) 
+        }
+        ,
+        {
+          href: "/how-tos/github/collaborate",
+          text: "Collaborate on a prototype",
+          current: ("true" if (pageTitle and pageTitle == "Collaborate on a prototype") else '') 
+        }
+      ]
+    }) }}
+
+
+{% block hub %}
+
+
+    {% endblock %}
+
+
+{% if pageTitle == "Get started" %}{# first page #}
+
+{{ pagination({
+  nextUrl: "/how-tos/github/nhs-england",
+  nextPage: "Using GitHub if you work for NHS England"
+}) }}
+
+{% elif pageTitle == "Using GitHub if you work for NHS England" %}
+{{ pagination({
+    previousUrl: "/how-tos/github/index",
+    previousPage: "Get started",
+    nextUrl: "/how-tos/github/store-new-prototype",
+    nextPage: "Store your new prototype online"
+}) }}
+
+{% elif pageTitle == "Store your new prototype online" %}
+{{ pagination({
+    previousUrl: "/how-tos/github/nhs-england",
+    previousPage: "Using GitHub if you work for NHS England",
+    nextUrl: "/how-tos/github/download-existing-prototype",
+    nextPage: "Download an existing prototype"
+}) }}
+
+{% elif pageTitle == "Download an existing prototype" %}
+{{ pagination({
+    previousUrl: "/how-tos/github/download-existing-prototype",
+    previousPage: "Store your new prototype online",
+    nextUrl: "/how-tos/github/collaborate",
+    nextPage: "Collaborate on a prototype"
+}) }}
+
+{% else %}{# last page #}
+
+{{ pagination({
+  previousUrl: "/how-tos/github/download-existing-prototype",
+  previousPage: "Download an existing prototype"
+}) }}
+
+{% endif %}
+  </div>
+</div>
+{% endblock %}

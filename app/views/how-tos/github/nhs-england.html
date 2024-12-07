@@ -1,13 +1,6 @@
-{% extends "layout.html" %} {% block pageTitle %} Using GitHub if you work for
-NHS England - NHS prototype kit {% endblock %} {% block beforeContent %} {{
-breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos", text:
-"Guides" }, { href: "/how-tos/github/index", text: "Store code online with
-GitHub and GitHub desktop" } ] }) }} {% endblock %} {% block content %}
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-three-quarters">
-    <h1 class="nhsuk-heading-xl">Using GitHub if you work for NHS England</h1>
-
+{% set pageTitle = "Using GitHub if you work for NHS England" %}
+{% extends "how-tos/github/_BASE.njk" %} 
+{% block hub %}
     <p>
       Code repositories for NHS England digital teams are usually stored in the
       <a href="https://github.com/nhsdigital">NHS Digital GitHub organisation</a
@@ -44,6 +37,4 @@ GitHub and GitHub desktop" } ] }) }} {% endblock %} {% block content %}
       own account), you can transfer it into the NHS Digital organisation. Ask
       your team for help on what to do.
     </p>
-  </div>
-</div>
 {% endblock %}

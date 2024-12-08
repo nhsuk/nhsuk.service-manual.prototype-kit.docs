@@ -1,0 +1,100 @@
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  How to setup Git - NHS prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        How to use layouts
+      </h1>
+
+
+    <p>Layouts let you share a common design across pages. For example, to include the name of your service or use the NHS.UK footer on every page in your service.</p>
+<p>If your pages share a custom header and footer, you can add them to one shared layout file. To change those parts of the page in future, you can change them once and they will update on all the pages that use that layout.</p>
+<p>To make a page use a layout, you need to add an <code>extends</code> line at the top of the file. For example if you want to extend a layout called admin, use:</p>
+<p><code>{{'{% extends "layouts/admin.html" %}' | escape }}</code></p>
+<p>The Prototype Kit comes with a layout file for you to edit. You can also add more layouts if you need to.</p>
+<h2 id="adding-layouts">Adding layouts</h2>
+<p>In your code editor, open <code>app/views/layouts.html</code>.</p>
+<p>Note the line:</p>
+<pre tabindex="0" class="app-pre"><code class="language-markup">{{'{% extends "template.html" %}' | escape }}
+</code></pre>
+<p>It means this layout extends a standard layout that comes with the Prototype Kit. It loads the default code needed for NHS.UK branded pages, along with the functionality in the kit, such as automatically storing data.</p>
+<p>You can make changes to existing blocks and define your own blocks in your layout.</p>
+<h2 id="unbranded-pages">Unbranded pages</h2>
+<p>If you do not want to use the NHS.UK logo or footer, you can choose to use unbranded pages in your prototype. </p>
+<h2 id="using-blocks">Using blocks</h2>
+<p>Blocks are how layouts and pages share code. For example, there is a block called <code>header</code> for the header content on every page.</p>
+<p>These are some of the default blocks on the <a href="https://service-manual.nhs.uk/design-system/styles/page-template">template page on the NHS.UK Design System</a>.</p>
+<h3 id="header-block">Header block</h3>
+<p>You can make changes to the existing NHS.UK header using the <code>header</code> block. This example adds navigation:</p>
+<pre tabindex="0" class="app-pre"><code class="language-markup">{{'{% block header %}
+{{ header({
+  transactionalService: {
+      name: "Find your NHS number",
+      href: "https://www.nhs.uk/nhs-services/online-services/find-nhs-number/"
+    },
+    showNav: "true",
+    showSearch: "false",
+    primaryLinks: [
+    {
+        href: "#1",
+        text: "Navigation item 1",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Navigation item 2"
+      },
+      {
+        href: "#3",
+        text: "Navigation item 3"
+      }
+    ]
+  })
+}}
+{% endblock %}' | escape }}
+</code></pre>
+<p>Read more about <a href="https://service-manual.nhs.uk/design-system/components/header">headers in the NHS.UK Design System</a>.</p>
+<h3 id="footer-block">Footer block</h3>
+<p>You can make changes to the existing NHS footer using the <code>footer</code> block:</p>
+<pre class="app-pre"><code class="language-markup">{{'{% block footer %} 
+{{ footer({
+meta: {
+ items: [
+   {
+     href: "/privacy",
+     text: "Privacy policy"
+   },
+   {
+     href: "/manage-prototype",
+     text: "Manage your prototype"
+   },
+   {
+     href: "/manage-prototype/clear-data",
+     text: "Clear data"
+   }
+ ],
+ visuallyHiddenTitle: "Footer links"
+}
+}) }}
+{% endblock %}' | escape }}
+</code></pre>
+<p>Read more about <a href="https://service-manual.nhs.uk/design-system/components/footer">footers in the NHS.UK Design System</a>.</p>
+<h2 id="stylesheets-css-and-javascript">Stylesheets (CSS) and JavaScript</h2>
+<p>You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. <a href="/how-tos/adding-assets">Find out more about adding CSS and JavaScript</a>.</p>
+
+  </div>
+  </div>
+
+  {% endblock %}

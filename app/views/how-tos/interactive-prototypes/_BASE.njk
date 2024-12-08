@@ -1,0 +1,155 @@
+{% extends "layout.html" %} 
+{% block pageTitle %} {{pageTitle}} - Use data to change your prototype - NHS prototype kit {% endblock %} 
+{% block beforeContent
+%} 
+
+{% if pageTitle == "Overview"%}
+{% include "how-tos/includes/breadcrumb.html" %} 
+{% else %}
+{{ breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos",
+text: "Guides" }, { href: "/how-tos/interactive-prototypes/index", text: "Use data to change your prototype" } ] }) 
+}} 
+{% endif %}
+{% endblock %} 
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <h1>
+      <span role="text">
+        {{pageTitle | default("pageTitle")}}
+        <span class="nhsuk-caption-xl nhsuk-caption--bottom">
+          <span class="nhsuk-u-visually-hidden">
+          -
+          </span>
+            Use data to change your prototype
+        </span>
+      </span>
+    </h1>
+
+    {{ contentsList({
+      items: [
+        {
+          href: "index",
+          text: "Overview",
+          current: ("true" if pageTitle and (pageTitle == "Overview") else '')  
+        }
+        ,
+        {
+          href: "/how-tos/interactive-prototypes/session",
+          text: "Store data in session",
+          current: ("true" if (pageTitle and pageTitle == "Store data in session") else '') 
+        }  
+        ,
+        {
+          href: "pass-data",
+          text: "Pass data from page to page", 
+          current: ("true" if (pageTitle and  pageTitle == "Pass data from page to page") else '')  
+        }
+        
+        ,
+        {
+          href: "/how-tos/interactive-prototypes/conditional-content",
+          text: "Change the content within a page based on a user's answers",
+          current: ("true" if (pageTitle and pageTitle == "Change the content within a page based on a user's answers") else '') 
+        }  
+        ,
+        
+        {
+          href: "create-routes",
+          text: "Create routes",
+          current: ("true" if (pageTitle and pageTitle == "Create routes") else '' ) 
+        }
+
+        ,        
+        {
+          href: "/how-tos/interactive-prototypes/branching-journeys-radios",
+          text: "Branching using radios",
+          current: ("true" if (pageTitle and pageTitle == "Branching using radios") else '' ) 
+        }
+        ,
+        {
+          href: "/how-tos/interactive-prototypes/branching-journeys-checkboxes",
+          text: "Branching using checkboxes",
+          current: ("true" if (pageTitle and pageTitle == "Branching using checkboxes") else '') 
+        }
+             
+      ]
+    }) }}
+
+
+{% block hub %}
+<p>
+[add text here ]
+</p>
+    {% endblock %}
+
+
+{% if pageTitle == "Overview" %}{# first page #}
+
+{{ pagination({
+    nextUrl: "/how-tos/interactive-prototypes/session",
+    nextPage: "Store data in session"
+}) }}
+
+
+{% elif pageTitle == "Store data in session" %}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/index",
+    previousPage: "Overview",
+    nextUrl: "/how-tos/interactive-prototypes/pass-data",
+    nextPage: "Pass data from page to page"
+}) }}
+
+
+{% elif pageTitle == "Pass data from page to page" %}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/pass-data",
+    previousPage: "Store data in session",
+    nextUrl: "/how-tos/interactive-prototypes/conditional-content",
+    nextPage: "Change the content within a page based on a user's answers"
+}) }}
+
+{% elif pageTitle == "Change the content within a page based on a user's answers" %}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/pass-data",
+    previousPage: "Pass data from page to page",
+    nextUrl: "/how-tos/interactive-prototypes/create-routes",
+    nextPage: "Create routes"
+}) }}
+
+{% elif pageTitle == "Create routes" %}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/conditional-content",
+    previousPage: "Change the content within a page based on a user's answers",
+    nextUrl: "/how-tos/interactive-prototypes/branching-journeys-radios",
+    nextPage: "Branching using radios"
+}) }}
+
+{# elif pageTitle == "Branching (show different pages based on a user's answers)" #}
+{# pagination({
+    previousUrl: "/how-tos/interactive-prototypes/create-routes",
+    previousPage: "Create routes",
+    nextUrl: "/how-tos/interactive-prototypes/branching-journeys-radios",
+    nextPage: "Branching using radios"
+}) #}
+
+{% elif pageTitle == "Branching using radios" %}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/create-routes",
+    previousPage: "Create routes",
+    nextUrl: "/how-tos/interactive-prototypes/branching-journeys-checkboxes",
+    nextPage: "Branching using checkboxes"
+}) }}
+
+{% else %} {# pageTitle == "Branching using checkboxes" #}
+{{ pagination({
+    previousUrl: "/how-tos/interactive-prototypes/branching-journeys-radios",
+    previousPage: "Branching using radios"
+}) }}
+
+{% endif %}
+  </div>
+</div>
+{% endblock %}

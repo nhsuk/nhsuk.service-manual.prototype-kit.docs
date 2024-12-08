@@ -1,0 +1,74 @@
+{% set pageTitle = "Create routes" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+    <p>You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form and show different pages based on answers given by the user (also called branching).</p>
+<p>To do this you will need to create 'routes' - rules for the Prototype Kit to respond to certain web addresses (URLs), in the file <code>app/routes.js</code></p>
+<h2 id="requests-and-responses">Requests and responses</h2>
+<p><img src="/images/request-response.svg" alt="Diagram showing a browser on a laptop with an arrow labelled 'request' going to a server. An arrow labelled 'response' comes back to the laptop."></p>
+<p>When you enter <code>http://localhost:3000/start</code> in a browser, the browser sends a request to the server - the Prototype Kit. The kit processes that request and sends a response.</p>
+<p>The kit looks in the <code>app/views</code> folder for a file called <code>start.html</code>. It adds the NHS.UK header and footer, and sends the whole start page back as a response to the browser.</p>
+<p>If the kit cannot find <code>start.html</code> in <code>app/views</code>, it will send an 'Error: not found' page instead.</p>
+<h2 id="routes">Routes</h2>
+<p>You can control the response to any request by adding routes to the <code>app/routes.js</code> file. Routes are written in JavaScript.</p>
+<p>This is an example of a route:</p>
+<pre tabindex="0"><code class="language-markup language-js">router.post('/live-in-uk-answer', function(request, response) {
+
+var liveInUK = request.session.data['live-in-uk']
+if (liveInUK == "Yes"){
+    response.redirect("/next-question")
+} else {
+    response.redirect("/ineligible")
+}
+})
+</code></pre>
+<p>In this example, the user was asked if they live in the UK, with 'Yes' and 'No' radio buttons to answer.</p>
+<p>This route sends the user to a different page depending on their answer.</p>
+<p>Let's look at each bit of this route code separately.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">router.post</code></pre>
+<p>The router handles all the requests. There are 2 ways a browser can make a request: 'get' and 'post'.</p>
+<ul>
+<li>a get request is when you enter an address in the browser or follow a link</li>
+<li>a post request is when you submit your answer to a form with a button</li>
+</ul>
+<p>This route will only run when the request is post, not get.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">'/live-in-uk-answer'</code></pre>
+<p>This is called the request path. On the question page, the form has an <code>action</code> with the same path.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">function(request, response)</code></pre>
+<p>This is our function (piece of code) to process the request. It has access to 2 variables (pieces of data):</p>
+<ul>
+<li>request - contains information from the browser, including the user's answers</li>
+<li>response - lets us send instructions to the browser, for example the next page to redirect to</li>
+</ul>
+
+
+<pre tabindex="0"><code class="language-markup language-js">var liveInUK = request.session.data['live-in-uk']</code></pre>
+<p>To send users to different pages based on their answers, the kit stores all answers in a variable called <code>request.session.data</code>.</p>
+<p>We need the answer to 'Do you live in the UK?' <code>['live-in-uk']</code></p>
+<p>We use <code>var liveInUK =</code> to copy <code>request.session.data['live-in-uk']</code> to a shorter variable. This makes it easier to type later on.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">if (liveInUK == "Yes"){</code></pre>
+<p>This code checks whether the answer to 'Do you live in the UK' is 'Yes'.</p>
+<p>Note the double = symbol for checking an answer. A single = makes a copy as we did above.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/next-question")</code></pre>
+<p>Because the user's answer is 'Yes', our <code>response</code> is to <code>redirect</code> them to <code>/next-question</code> - as they are eligible to use the service.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">} else {</code></pre>
+<p>If the user's answer was not 'Yes', we use <code>else</code> to set a different response.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/ineligible")</code></pre>
+<p>Our <code>response</code> is to <code>redirect</code> them to <code>/ineligible</code> - they are not eligible to continue in the service.</p>
+
+<p><a href="https://expressjs.com/en/guide/routing.html">Advanced documentation for routes</a>.</p>
+
+
+
+{% endblock %}

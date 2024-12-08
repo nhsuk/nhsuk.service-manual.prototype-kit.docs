@@ -1,0 +1,154 @@
+{% set pageTitle = "Branching using checkboxes" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+    <p>You can create branches using any form fields, including checkboxes and radios. In this example we will use checkboxes.</p>
+<p>We will look at an example question to ask the user what food they eat. If the user:</p>
+<ul>
+<li>eats meat, we will take them to a page with specific questions about meat </li>
+<li>does not eat meat, we will send them to a different path that skips the questions about meat</li>
+</ul>
+<p>Sending users to different pages based on their answers is called branching.</p>
+<h2 id="create-the-page">Create the page</h2>
+<p>Create a page that has a form with checkboxes, using this code:</p>
+<pre tabindex="0"><code class="language-js">&lt;form class="form" action="/food-answer" method="post"&gt;
+
+{{'{{' | escape }} checkboxes({
+name: "food",
+values: data["food"],
+fieldset: {
+legend: {
+  text: "What types of food do you eat?",
+  isPageHeading: true,
+  classes: "nhsuk-fieldset__legend--l"
+}
+},
+hint: {
+text: "Select all that apply."
+},
+items: [
+{
+  value: "Meat",
+  text: "Meat"
+},
+{
+  value: "Milk or dairy",
+  text: "Milk or dairy"
+},
+{
+  value: "Bread or rice",
+  text: "Bread or rice"
+},
+{
+  value: "Fruit or vegetables",
+  text: "Fruit or vegetables"
+}
+
+]
+}) }}
+
+{{'{{ button({
+text: "Continue"
+}) }}' | escape }}
+
+&lt;/form&gt;
+</code></pre>
+<p>In the checkboxes component, the <code>name</code> is "food". The name is important - it is where the kit stores the answer to the question. Names cannot have spaces, so use hyphens instead and use lowercase for simplicity.</p>
+<p>The button needs to be between the 2 <code>form</code> tags. Do not add an <code>href</code> to the button - this will turn it into a link and means it no longer submits the form.</p>
+<h2 id="using-routes">Using routes</h2>
+<p>We need some logic to decide when to send users to different pages. This kind of logic goes in a file called <code>app/routes.js</code>, which is written in JavaScript. Routes tell the kit what to do when the user goes to specific pages.</p>
+<p>The route takes the answer the user gave to the question and either sends them to the next question or the ineligible page, depending on their answer.</p>
+
+<p><a href="create-routes">Find out more about routes</a></p>
+
+<h3 id="how-we-set-the-route-from-the-page">How we set the route from the page</h3>
+<p>In the page's form tag, we have an action "/food-answer" and a method "post":</p>
+<pre tabindex="0"><code class="language-js">&lt;form class="form" action="/food-answer" method="post"&gt;
+</code></pre>
+<p>The action is where the form data goes and the method is <code>post</code> because we are sending (posting) data.</p>
+<p>This will make a <code>post</code> request to the path <code>/food-answer</code>, we will write a route to respond to that request.</p>
+<h2 id="create-a-route">Create a route</h2>
+<p>We're going to write some logic to process the user's answer to the question.</p>
+<p>We will look at 2 example routes for checkboxes:</p>
+<ol>
+<li>A specific answer is selected (and it does not matter if any other answer is selected)</li>
+<li>Only a specific answer is selected</li>
+</ol>
+<h3 id="example-1-a-specific-answer-is-selected-and-it-does-not-matter-if-any-other-answer-is-selected">Example 1: A specific answer is selected (and it does not matter if any other answer is selected)</h3>
+<p>In this first example we will check if the user selected the 'Meat' checkbox. We don't care if they selected any other checkboxes.</p>
+<p>In <code>app/routes.js</code> we need to add a route to process the answer from the form.</p>
+<ol>
+<li>Open <code>/app/routes.js</code></li>
+<li>Add this code to the end of the file (this is called a route):</li>
+</ol>
+<pre tabindex="0"><code class="language-js">router.post('/food-answer', function(request, response) {
+
+var food = request.session.data['food']
+if (food.includes("Meat")){
+    response.redirect("/meat")
+} else {
+    response.redirect("/next-question")
+}
+})
+</code></pre>
+<p>Let's look at what each line in the route does.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">router.post</code></pre>
+<p>This route is for a post request - the same as the <code>method</code> we set on the form. We use a post request to send the kit new information (like the user's answer to the question).</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">'/food-answer'</code></pre>
+<p>This is the path for the route - the same as the <code>action</code> we set on the form.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">var food = request.session.data['food']</code></pre>
+<p>To send users to different pages based on their answers, the kit stores all answers in a variable called <code>request.session.data</code>.</p>
+<p>We need the answer to 'What do you export?', so we use the <code>name</code> we set on the component: <code>food</code></p>
+<p>We use <code>var food =</code> to copy <code>request.session.data['food']</code> to a shorter variable. This makes it easier to type later on.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">if (food.includes("Meat")){</code></pre>
+<p>Answers to checkboxes are stored as lists (called 'arrays') in the kit.</p>
+<p>This code checks whether the array stored for food includes the answer 'Meat'. This is the same as the <code>value</code> we set on one of our checkboxes.</p>
+<p>As long as the answer 'Meat' is selected, it does not matter if any other checkbox is also selected. We'll see how to check for a single answer in the 2nd example.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/meat')</code></pre>
+<p>Because the user's answer includes 'Meat', our <code>response</code> is to <code>redirect</code> them to <code>/fruit</code> - a page with specific questions about fruit.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">} else {</code></pre>
+<p>If the user's answer does not include 'Meat', we use <code>else</code> to set a different response.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/next-question")</code></pre>
+<p>Our <code>response</code> is to <code>redirect</code> them to <code>/next-question</code> - skipping the page with specific questions about fruit.</p>
+<h3 id="example-2-only-a-specific-answer-is-selected">Example 2: Only a specific answer is selected</h3>
+<p>Add this line at the top of <code>routes.js</code>:</p>
+<pre tabindex="0"><code class="language-js">const util = require('util')
+</code></pre>
+<p>The <code>util</code> module lets you do some extra checks for the data. You can find read about <a href="https://nodejs.org/api/util.html">util on the node.js website</a>.</p>
+<p>Then add this route:</p>
+<pre tabindex="0"><code class="language-js">router.post('/food-answer', function(request, response) {
+
+var food = request.session.data['food']
+if (util.deepStrictEqual(food, ['Meat'])){
+    response.redirect("/meat')
+} else {
+    response.redirect("/next-question")
+}
+})
+</code></pre>
+<p>This is all the same as our first example, but instead of <code>food.includes</code> we have:</p>
+<pre tabindex="0"><code class="language-js">util.deepStrictEqual(food, ['Meat'])
+</code></pre>
+<p>This checks whether the array stored for food only has the answer 'Meat', and no other answer.</p>
+<p>We could also check for 2 specific answers:</p>
+<pre tabindex="0"><code class="language-js">util.deepStrictEqual(food, ['Meat', 'Milk or dairy'])
+</code></pre>
+<p>Note the order is the same as the checkboxes, that's important - checking <code>['Milk or dairy', 'Meat']</code> will not work.</p>
+
+
+
+ 
+
+{% endblock %}

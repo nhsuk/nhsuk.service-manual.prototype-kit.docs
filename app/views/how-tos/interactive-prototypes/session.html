@@ -1,0 +1,61 @@
+{% set pageTitle = "Store data in session" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+    <p>When a user answers questions in your prototype, their answers are stored in session data.</p>
+<p>To clear session data, use the incognito mode or private browsing for each user and close that window when they're done.</p>
+<h2 id="how-to-use">How to use</h2>
+<p>Create a route function in your <code>app/routes.js</code> file and refer to <code>req.session</code>.</p>
+<h3 id="accessing-fields-from-the-session">Accessing fields from the session</h3>
+<p>For example, when submitting the following (simplified) HTML:</p>
+<pre tabindex="0"><code class="language-html">&lt;input name="first-name" value="Sarah"&gt;
+&lt;input name="last-name" value="Philips"&gt;
+</code></pre>
+<p>You'll have a <code>req.session.data</code> object in your route function:</p>
+<pre tabindex="0"><code class="language-js">{
+'first-name': 'Sarah',
+'last-name': 'Philips'
+}
+</code></pre>
+<p>These 2 field values can be accessed in JavaScript as:</p>
+<pre tabindex="0"><code class="language-js">req.session.data['first-name']
+req.session.data['last-name']
+</code></pre>
+<p>Or in views as:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ data['first-name'] }}
+{{ data['last-name'] }}" | escape }}
+</code></pre>
+<h3 id="accessing-nested-fields-from-the-session">Accessing nested fields from the session</h3>
+<p>Session data can also be nested for easy grouping. For example answers from multiple family members:</p>
+<pre tabindex="0"><code class="language-html">&lt;input name="claimant[first-name]" value="Sarah"&gt;
+&lt;input name="claimant[last-name]" value="Philips"&gt;
+
+&lt;input name="partner[first-name]" value="Michael"&gt;
+&lt;input name="partner[last-name]" value="Philips"&gt;
+</code></pre>
+<p>You'll have a nested <code>req.session.data</code> object in your route function:</p>
+<pre tabindex="0"><code class="language-js">{
+claimant: {
+    'first-name': 'Sarah',
+    'last-name': 'Philips'
+},
+partner: {
+    'first-name': 'Michael',
+    'last-name': 'Philips'
+}
+}
+</code></pre>
+<p>These 4 field values can be accessed in your route function as:</p>
+<pre tabindex="0"><code class="language-js">req.session.data['claimant']['first-name']
+req.session.data['claimant']['last-name']
+req.session.data['partner']['first-name']
+req.session.data['partner']['last-name']
+</code></pre>
+<p>Or in views as:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ data['claimant']['first-name'] }}
+{{ data['claimant']['last-name'] }}
+{{ data['partner']['first-name'] }}
+{{ data['partner']['last-name'] }}" | escape }}
+</code></pre>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% set pageTitle = "Overview" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+      <p>The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.</p>
+
+      <p>
+
+            <h2 class="nhsuk-heading-m">Key concepts</h2>
+<p>
+If you do not know how data works in the kit:
+</p>
+<ul class="nhsuk-list nhsuk-list--bullet">
+<li> 
+go to <a href="session">storing data in session</a>
+</li><li>
+<a href="pass-data">passing data from page to page</a>
+</li><li>
+<a href="create-routes">using routes</a>
+</li>
+</ul>
+<h2 class="nhsuk-heading-m">Using data</h2>
+
+<p>
+There are different ways of using data to change your prototype:
+</p>
+<ul class="nhsuk-list nhsuk-list--bullet">
+      <li> 
+<a href="conditional-content">change the content within a page</a> (called 'conditional' content)
+</li>
+<li>
+send the user to different pages (called 'branching') - this means that the user will only see the pages that are relevant to them. There are different ways to do branching depending on if you are using <a href="branching-journeys-radios">radios</a> or <a href="branching-journeys-checkboxes">checkboxes</a>
+</li>
+</ul>
+{{ insetText({
+      html: '<p>You can also get a basic understanding of how to make prototypes interactive by using the <a href="/how-tos/build-basic-prototype/index">build a basic prototype tutorial</a>.
+      </p>'
+
+
+})}}
+
+{% endblock %}

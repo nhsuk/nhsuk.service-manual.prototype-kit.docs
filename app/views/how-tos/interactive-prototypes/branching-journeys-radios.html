@@ -1,0 +1,111 @@
+{% set pageTitle = "Branching using radios" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+    <p>You can create branches from any form fields, including checkboxes and radios. In this example we will use radios.</p>
+<p>Our example question will ask the user where they live. We're going to send them to an 'ineligible' page if they live in any country other than England.</p>
+<p>Sending users to different pages based on their answers is called branching.</p>
+<h2 id="create-the-page">Create the page</h2>
+<p>Create a page that has a form with radio buttons, using this code:</p>
+<pre tabindex="0"><code class="language-js">&lt;form class="form" action="/country-answer" method="post"&gt;
+
+{{"{{" | escape }} radios({
+name: "country",
+value: data['country'],
+fieldset: {
+legend: {
+  text: "Where do you live?",
+  isPageHeading: true,
+  classes: "nhsuk-fieldset__legend--l"
+}
+},
+items: [
+{
+  value: "England",
+  text: "England"
+},
+{
+  value: "Scotland",
+  text: "Scotland"
+},
+{
+  value: "Wales",
+  text: "Wales"
+},
+{
+  value: "Northern Ireland",
+  text: "Northern Ireland"
+}
+]
+}) }}
+
+{{'{{ button({
+text: "Continue"
+}) }}' | escape }}
+
+&lt;/form&gt;
+</code></pre>
+<p>In the radios component, the <code>name</code> is "country". The name is important - it is where the kit stores the answer to the question. Names cannot have spaces, so use hyphens instead and use lowercase for simplicity.</p>
+<h2 id="using-routes">Using routes</h2>
+<p>We need some logic to decide when to send users to different pages. This kind of logic goes in a file called <code>app/routes.js</code>, which is written in JavaScript. Routes tell the kit what to do when the user goes to specific pages.</p>
+<p>The route takes the answer the user gave to the question and either sends them to the next question or the ineligible page, depending on their answer.</p>
+
+<p><a href="create-routes">Find out more about routes</a></p>
+
+<h3 id="how-we-set-the-route-from-the-page">How we set the route from the page</h3>
+<pre tabindex="0"><code class="language-js">&lt;form class="form" action="/country-answer" method="post"&gt;
+</code></pre>
+<p>The action is where the form data goes and the method is <code>post</code> because we are sending (posting) data.</p>
+<p>This will make a <code>post</code> request to the path <code>/country-answer</code>, we will write a route to respond to that request.</p>
+<h2 id="create-a-route">Create a route</h2>
+<p>We're going to write some logic to process the user's answer to the question.</p>
+<p>If the user lives in England, we'll send them to the next question. If they answer with anything else, we'll send them to the ineligible page. </p>
+<p>In <code>app/routes.js</code> we need to add a route to process the answer from the form.</p>
+<ol>
+<li>Open <code>app/routes.js</code>.</li>
+<li>Add this code to the end of the file (this is called a route):</li>
+</ol>
+<pre tabindex="0"><code class="language-js">router.post('/country-answer', function(request, response) {
+
+var country = request.session.data['country']
+if (country == "England"){
+    response.redirect("/age")
+} else {
+    response.redirect("/ineligible-country")
+}
+})
+</code></pre>
+<p>Let's look at what each line in the route does.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">router.post</code></pre>
+<p>This route is for a post request - the same as the <code>method</code> we set on the form. We use a post request to send the kit new information (like the user's answer to the question).</p>
+
+
+    <pre tabindex="0"><code class="language-markup language-js">'/country-answer'</code></pre>
+<p>This is the path for the route - the same as the 'action' we set on the form.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">var country = request.session.data['country']</code></pre>
+<p>To send users to different pages based on their answers, the kit stores all answers in a variable called <code>request.session.data</code>.</p>
+<p>We need the answer to 'Where do you live?', so we use the <code>name</code> we set on the component: <code>country</code></p>
+<p>We use <code>var country =</code> to copy <code>request.session.data['country']</code> to a shorter variable. This makes it easier to type later on.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">if (country == "England"){</code></pre>
+<p>This code checks whether the answer to <code>country</code> is 'England'. This is the same as the <code>value</code> we set on one of our radios.</p>
+<p>Note the double = symbol for checking an answer. A single = makes a copy as we did above.</p>
+
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/next-question")</code></pre>
+<p>Because the user's answer is 'England', our <code>response</code> is to <code>redirect</code> them to <code>/next-question</code> - as they are eligible to use the service.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">} else {</code></pre>
+<p>If the user's answer was not 'England', we use <code>else</code> to set a different response.</p>
+
+<pre tabindex="0"><code class="language-markup language-js">response.redirect("/ineligible-country")</code></pre>
+<p>Our <code>response</code> is to <code>redirect</code> them to <code>/ineligible-country</code> - they are not eligible to continue in the service.</p>
+
+
+ 
+
+{% endblock %}

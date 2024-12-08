@@ -1,0 +1,118 @@
+{% set pageTitle = "Pass data from page to page" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+<p>The kit stores data from answers that users give in a prototype using the <code>name</code> attribute of the input.</p>
+<p>For example, when a user enters their first name you could have this input:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ input({
+  name: 'first-name'
+}) }}" | escape }}
+</code></pre>
+<p>You can show what the user entered later on like this:</p>
+<pre tabindex="0"><code class="language-js">{{"<p>
+  {{ data['first-name'] }}
+</p>" | escape }}
+</code></pre>
+<p>Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a for loop:</p>
+<pre tabindex="0"><code class="language-js">{{"<ul>
+{% for country in data['countries'] %}
+<li>{{ country }}</li>
+{% endfor %}
+</ul>" | escape }}
+</code></pre>
+<h3 id="show-answers-in-inputs">Show answers in inputs</h3>
+<p>If a user goes back to a page where they entered data, they would expect to see the answer they gave.</p>
+<p>Most inputs use the <code>value</code> option:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ input({
+  name: 'first-name',
+  value: data['first-name']
+}) }}" | escape }}
+</code></pre>
+<p>For checkboxes the option is <code>values</code>, since more than one can be selected.</p>
+<h3 id="show-content-if-users-have-not-answered-optional-questions">Show content if users have not answered optional questions</h3>
+<p>You can show content if data is currently blank using <code>or</code>, for example:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ data['first-name'] or 'First name not given' }}" | safe }}
+</code></pre>
+<p>You can also use this in a component. For example to show that a user has not answered an optional question on Check your answers:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ summaryList({
+rows: [
+  {
+    key: {
+      text: 'First name'
+    },
+    value: {
+      text: data['first-name'] or 'First name not given'
+    }
+  }
+]
+})}}" | safe }}
+</code></pre>
+<h3 id="set-default-data">Set default data</h3>
+<p>You can set default data in your prototype. This will appear without the user having to enter anything. </p>
+<p>For example, if you want to test a journey where the user returns to review or update their information.</p>
+<p>If the user changes this data in the prototype, their new answers are saved.</p>
+<p>Add default data to your <code>app/data/session-data-defaults.js</code> file.</p>
+<p>For example, to set default data for the 'First name' and 'Over 18' inputs in the passing data example add:</p>
+<pre tabindex="0"><code class="language-js">module.exports = {
+
+'first-name': 'Amina',
+'over-18': 'yes'
+
+}
+</code></pre>
+<h3 id="use-links-to-set-data">Use links to set data</h3>
+<p>You can use links to set data. If you want to test different scenarios, you can have links to set data for each scenario.</p>
+<p>To set data from a link, add a <code>?</code> to the <code>href</code> followed by the data you want to set:</p>
+<pre tabindex="0"><code class="language-js">&lt;a href="/start?first-name=Amina"&gt;
+</code></pre>
+<p>To clear data from a link, as above without the equals sign and the value:</p>
+<pre tabindex="0"><code class="language-js">&lt;a href="/start?first-name"&gt;
+</code></pre>
+<p>To set more than one piece of data in a link, use an <code>&amp;</code> between them:</p>
+<pre tabindex="0"><code class="language-js">&lt;a href="/start?first-name=Amina&amp;over-18=yes"&gt;
+</code></pre>
+<p>To clear more than one piece of data in a link, as above without the equals sign and the value:</p>
+<pre tabindex="0"><code class="language-js">&lt;a href="/start?first-name&amp;over-18"&gt;
+</code></pre>
+<p>If the user changes this data in the prototype, their new answers will be saved.</p>
+<h2 id="advanced-features">Advanced features</h2>
+<h3 id="checkboxes-and-radios-using-html">Checkboxes and radios using HTML</h3>
+<p>If you are using the HTML components instead of Nunjucks, you need to use the <code>checked</code> function for radios and checkboxes. For example:</p>
+<pre tabindex="0"><code class="language-js">&lt;input class="nhsuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" {{ checked('waste','mines') }}&gt;
+</code></pre>
+<h3 id="use-the-data-on-the-server">Use the data on the server</h3>
+<p>You can access the data on the server in a route function.</p>
+<p>For example for an input with <code>name="first-name"</code>:</p>
+<pre tabindex="0"><code class="language-js">var firstName = req.session.data['first-name']
+</code></pre>
+<h3 id="nested-values">Nested values</h3>
+<p>For complex data you can use nested values, for example:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ input({
+  name: 'claimant[first-name]'
+}) }}" | safe }}
+</code></pre>
+<p>You can show what the user entered later on like this:</p>
+<pre tabindex="0"><code class="language-js">{{"&lt;p&gt;
+  {{ data['claimant']['first-name'] }}
+&lt;/p&gt;" | safe }}
+</code></pre>
+<p>You can set the value in an input like this:</p>
+<pre tabindex="0"><code class="language-js">{{"{{ input({
+  name: 'first-name',
+  value: data['claimant']['first-name']
+}) }}" | escape }}
+</code></pre>
+<p>You can access the data on the server in a route function:</p>
+<pre tabindex="0"><code class="language-js">var firstName = req.session.data['claimant']['first-name']
+</code></pre>
+<h3 id="ignore-inputs">Ignore inputs</h3>
+<p>To prevent an input being stored, use an underscore at the start of the name.</p>
+<pre tabindex="0"><code class="language-js">{{"{{ input({
+  name: '_secret'
+}) }}" | escape }}
+</code></pre>
+
+    
+
+
+{% endblock %}

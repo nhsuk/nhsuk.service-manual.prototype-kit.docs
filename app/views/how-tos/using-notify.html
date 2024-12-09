@@ -1,0 +1,152 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Use GOV.UK Notify to prototype emails and text messages - NHS prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Use GOV.UK Notify to prototype emails and text messages
+      </h1>
+
+    <p>You can use <a href="https://www.notifications.service.gov.uk/">GOV.UK Notify</a> to send text messages or emails when users
+interact with your prototype. For example you could send users a
+confirmation email at the end of a journey.</p>
+
+{{ insetText({
+    html: "<p>GOV.UK Notify is different from <a href='https://notify.nhs.uk/'>NHS Notify</a>. NHS Notify is not set up to be used with the kit yet. </p>"
+})}}
+
+<h2 id="sign-up-for-a-govuk-notify-account">Sign up for a GOV.UK Notify account</h2>
+<p>You need an account before you can use GOV.UK Notify to send text messages or emails.</p>
+<p>If you have an NHS or government email address you can <a href="https://www.gov.uk/notify">sign up for a GOV.UK Notify account</a>.</p>
+<p>If you register with an NHS email address, GOV.UK Notify emails will have NHS branding.</p>
+<h2 id="getting-an-api-key">Getting an API key</h2>
+<p>An API key is like a password that lets your prototype talk to Notify.
+Your prototype sends this key every time it asks Notify to do something.</p>
+<p>To get a key:</p>
+<ul>
+<li>sign into GOV.UK Notify</li>
+<li>go to the 'API integration' page</li>
+<li>select 'API keys'</li>
+<li>select the 'Create an API' button</li>
+<li>choose the 'Team and guest list' option</li>
+<li>copy the key to your clipboard</li>
+</ul>
+<h3 id="saving-your-key-on-your-computer">Saving your key on your computer</h3>
+<p>This will let your prototype talk to Notify while it's running on your
+computer.</p>
+<ol>
+<li><p>Create a file called <code>.env</code> in your prototype folder. </p>
+</li>
+<li><p>To save the key on your computer, add this line to the end of the <code>.env</code>
+file in your prototype (where <code>xxxxxxx</code> is the key you've copied from
+Notify):</p>
+</li>
+</ol>
+<pre tabindex="0"><code class="language-shell">NOTIFYAPIKEY=xxxxxxx
+</code></pre>
+<p>Your prototype will load the key from your <code>.env</code> file. If you don't
+have a <code>.env</code> file then run your prototype (with the <code>npm start</code>
+command) and it will create one for you.</p>
+<h3 id="saving-the-key-on-heroku">Saving the key on Heroku</h3>
+<p>This will let your prototype talk to Notify if it's running on
+Heroku.</p>
+<p>To save the key on Heroku, go to the settings page of your app, click
+'Reveal config vars' and fill in the 2 textboxes like this (where
+xxxxxxx is the key you've copied from Notify):</p>
+<pre tabindex="0"><code class="language-shell">KEY          | VALUE
+-------------|----------
+NOTIFYAPIKEY | xxxxxxx
+</code></pre>
+<h3 id="keeping-your-key-safe">Keeping your key safe</h3>
+<p>It's important that you keep your key secret. If you put it in
+the <code>.env</code> file it's safe – that file isn't published on GitHub. If you
+do accidentally publish your key somewhere you will need to sign into Notify and revoke it.</p>
+<h2 id="add-the-notify-code-to-your-prototype">Add the Notify code to your prototype</h2>
+<p>In the terminal run:</p>
+
+<pre tabindex="0"><code class="language-javascript">npm install notifications-node-client</code></pre>
+
+
+
+<p>In your code editor, add this code to the top of routes.js:</p>
+<pre tabindex="0"><code class="language-javascript">var NotifyClient = require('notifications-node-client').NotifyClient,
+notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+</code></pre>
+<h2 id="sending-your-first-email">Sending your first email</h2>
+<p>Make a page with a form to collect the user's email address. For
+example:</p>
+<pre tabindex="0"><code class="language-javascript">{{ "{%" | escape }} extends "layout.html" %}
+
+{{ "{%" | escape }} block content %}
+
+&lt;div class="nhsuk-grid-row"&gt;
+&lt;div class="nhsuk-grid-column-two-thirds"&gt;
+  &lt;form class="form" method="post"&gt;
+
+    {{"{{" | escape }} input({
+      label: {
+        text: "Email Address"
+      },
+      id: "email-address",
+      name: "emailAddress",
+      type: "email",
+      autocomplete: "email",
+      spellcheck: false
+    }) }}
+
+    {{"{{" | escape }} button({
+      text: "Continue"
+    })}}
+
+  &lt;/form&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+{{ "{%" | escape }} endblock %}
+</code></pre>
+<p>Save this page as <code>email-address-page.html</code>.</p>
+<p>Then add this code to <code>app/routes.js</code> at the end of the file.</p>
+<pre tabindex="0"><code class="language-javascript">// The URL here needs to match the URL of the page that the user is on
+// when they type in their email address
+router.post('/email-address-page', function (req, res) {
+
+notify.sendEmail(
+// this long string is the template ID, copy it from the template
+// page in GOV.UK Notify. It's not a secret so it's fine to put it
+// in your code.
+'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+// `emailAddress` here needs to match the name of the form field in
+// your HTML page
+req.body.emailAddress
+);
+
+// This is the URL the users will be redirected to once the email
+// has been sent
+res.redirect('/confirmation-page');
+
+});
+</code></pre>
+<h3 id="testing-it-out">Testing it out</h3>
+<p>Now when you type your email address into the page and press the green
+button you should get an email. You should also be able to see the email
+you've sent on the GOV.UK Notify dashboard.</p>
+<p>Because your account is in trial mode you'll only be able to send emails
+to yourself. If you're doing user research you can add the participants
+email addresses to the 'guest list' in GOV.UK Notify. This will let you
+send them emails too. You'll need to collect their email addresses and
+get consent to use them before doing your research.</p>
+<h2 id="more-things-you-can-do-with-govuk-notify">More things you can do with GOV.UK Notify</h2>
+<p><a href="https://docs.notifications.service.gov.uk/node.html">Documentation for using the GOV.UK Notify API</a></p>
+
+  </div>
+  </div>
+  {% endblock %}

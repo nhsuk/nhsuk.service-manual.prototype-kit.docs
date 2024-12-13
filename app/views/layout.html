@@ -9,6 +9,7 @@
 
 {% block header %}
   {{ header({
+    classes: "app-header--left-aligned",
     homeHref: "/",
     ariaLabel: "NHS Prototype Kit homepage",
     service: {
@@ -23,6 +24,10 @@
       {
         label: "Guides",
         url: "/how-tos"
+      },
+      {
+        label: "Contribute",
+        url: "/contribute"
       },
       {
         label: "Support",

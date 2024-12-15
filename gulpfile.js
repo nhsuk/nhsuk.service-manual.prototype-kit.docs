@@ -91,7 +91,7 @@ function startBrowserSync(done) {
       proxy: 'localhost:' + port,
       port: port + 1000,
       ui: false,
-      files: ['app/views/**/*.*', 'docs/views/**/*.*'],
+      files: ['app/views/**/*.*', 'lib/example-templates/**/*.*'],
       ghostMode: false,
       open: false,
       notify: true,
@@ -109,13 +109,19 @@ function watch() {
   gulp.watch('app/assets/**/**/*.*', compileAssets);
 }
 
+function setWatchEnv(done) {
+  process.env.WATCH = 'true';
+  done();
+}
+
 exports.watch = watch;
 exports.compileStyles = compileStyles;
 exports.compileScripts = compileScripts;
 exports.cleanPublic = cleanPublic;
+exports.setWatchEnv = setWatchEnv;
 
 gulp.task(
   'build',
   gulp.series(cleanPublic, compileStyles, compileScripts, compileAssets)
 );
-gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch));
+gulp.task('default', gulp.series(setWatchEnv, startNodemon, startBrowserSync, watch));

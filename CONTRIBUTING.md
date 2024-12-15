@@ -1,21 +1,23 @@
 # Contribution guidelines
 
-Thank you for your interest in contributing to NHS prototype kit website, we really appreciate it. There are a number of ways that you can contribute – reporting bugs, fixing bugs, suggesting new features or writing documentation.
-
-This repository contains the documentation and guidance for the NHS prototype kit. For the prototype kit itself, see [http://github.com/nhsuk/nhsuk-prototype-kit](http://github.com/nhsuk/nhsuk-prototype-kit) on GitHub.
-
-If you’re not sure whether an issue relates to the kit or the website for it, don’t worry, issues can be moved if needed.
+Thank you for your interest in contributing to NHS prototype kit, we really appreciate it. There are a number of ways that you can contribute – reporting bugs, fixing bugs, suggesting new features or writing documentation.
 
 ## Contributing
 
 If you’ve got an idea or suggestion you can:
 
-* email [england.service-manual@nhs.net](mailto:england.service-manual@nhs.net)
+* email [service-manual@nhs.net](mailto:service-manual@nhs.net)
 * get in touch on the [NHS digital service manual Slack workspace](https://nhs-service-manual.slack.com/messages/CFYL2GDGW)
-* [create a GitHub issue](https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues/new)
+* [create a GitHub issue](https://github.com/nhsuk/nhsuk-prototype-kit/issues/new)   
 
-## Reporting bugs
+## Raising bugs
 
-When reporting bugs please explain the issue in good detail and provide a guide to how to replicate it.
+When raising bugs please explain the issue in good detail and provide a guide to how to replicate it.
 
-[Raise a bug](https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues/new?template=BUG_REPORT.md)
+[Raise a bug](https://github.com/nhsuk/nhsuk-prototype-kit/issues/new?template=BUG_REPORT.md) 
+
+## Suggesting features
+
+Please raise feature requests as issues before contributing any code.
+
+This ensures they are discussed properly before any time is spent on them.

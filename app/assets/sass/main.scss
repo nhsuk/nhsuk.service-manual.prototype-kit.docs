@@ -7,3 +7,10 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+
+// This is a temporary fix to remove the 'Home' link in
+// the primary navigation which is added Header primary nav.
+// Should be able to remove this after the next NHS Frontend update.
+.nhsuk-header__navigation-item--home {
+  display: none;
+}

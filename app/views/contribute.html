@@ -1,0 +1,146 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Contribute - NHS prototype kit
+{% endblock %}
+{% block beforeContent %}
+  {{ breadcrumb({ href: "/", text: "Home" }) }}
+{% endblock %}
+{% block content %}
+
+{# the board is a long string to this is made a variable for consistency #}
+{% set githubBoardUrl = "https://github.com/orgs/nhsuk/projects/24/views/1" %}
+{% set githubLabelQuery = "?filterQuery=label%3A" %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 class="nhsuk-heading-xl" id="contribute-to-the-nhs-prototype-kit">
+      Contribute
+    </h1>
+    <p>
+      The NHS prototype kit is a community project supported by the NHS service
+      manual team. Anyone can help make it better.
+    </p>
+    <p>
+      <a href="{{githubBoardUrl}}?filterQuery=">View project board on GitHub</a>
+    </p>
+    <h2 class="nhsuk-heading-l" id="why-contribute-to-the-kit">Why contribute to the kit</h2>
+    <ul>
+      <li>Help keep the kit up-to-date as an accessible and open way to make HTML prototypes of NHS services.</li>
+      <li>Be part of an active and supportive community that will help you learn and develop your skills with the kit.</li>
+      <li>We will credit you in our update notes and other supporting information, unless you tell us not to.</li>
+      <li>If you're employed by NHS England, you can use examples of contributing to the kit as part of your performance reviews – talk to your line manager about how to include it in your objectives.</li>
+    </ul>
+   
+    </p>
+    <h2 class="nhsuk-heading-l" id="how-you-can-contribute-to-the-kit">
+      How you can contribute to the kit
+    </h2>
+    <p>
+      There are many ways to contribute. You do not have to be an expert in coding.
+    </p>
+    <p>You can:</p>
+    <ul>
+      <li>add or improve content for people using the kit</li>
+      <li>
+        do quality assurance or accessibility testing of new features or
+        guidance
+      </li>
+      <li>fix bugs or build new features</li>
+      <li>improve the contribution process</li>
+    </ul>
+
+    <h3 class="nhsuk-heading-m" id="add-or-improve-documentation-for-people-using-the-kit">
+      Add or improve content for people using the kit
+    </h3>
+    <p>You can help improve the content for this website and the pages that people view when they download and install the kit.</p>
+
+    <p>This includes:</p>
+    <ul>
+      <li>making the guidance easy to understand and use</li>
+      <li>writing in line with the <a href="https://service-manual.nhs.uk/content">NHS content guide</a> (including standardising terms for <a href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/blob/main/README.md">the style guide for the kit in GitHub</a>)</li>
+    </ul>  
+
+    <p>
+      Existing things we want to do for guidance are labelled <a
+        href="{{githubBoardUrl}}{{githubLabelQuery}}Content"
+        >content on our project board in GitHub.</a>
+    </p>
+    <h3 class="nhsuk-heading-m" id="do-quality-assurance-or-accessibility-testing">
+      Do quality assurance or accessibility testing
+    </h3>
+    <p>
+      You can make sure that the code in our kit is robust and accessible by:
+    </p>
+    <ul>
+      <li>
+        running automated and manual tests against WCAG 2.2 AA specifications
+      </li>
+      <li>helping us set up pipelines for automated testing in GitHub</li>
+    </ul>
+    <p>
+      Accessibility issues are labelled <a
+        href="{{githubBoardUrl}}{{githubLabelQuery}}Accessibility"
+        >accessibility on our project board</a>.
+    </p>
+    <h3 class="nhsuk-heading-m"
+      id="fix-bugs-or-build-new-features-enhancements-for-the-nhs-prototype-kit"
+    >
+     Fix bugs or build new features
+    </h3>
+
+    <p>
+      Known bugs that we need to fix are labelled
+      <a href='{{githubBoardUrl}}{{githubLabelQuery}}"%3Abug%3A+Bug"'>bug on our project board.</a>
+    </p>
+
+    <p> Ideas for features are labelled
+      <a href='{{githubBoardUrl}}{{githubLabelQuery}}"type%3A+enhancement+💡"'
+        >type: enhancement 💡</a
+      >.
+    </p>
+
+    <p>
+      We also label bugs or features by the type of code skills needed:
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}Javascript">JavaScript</a>,
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}Nunjucks">Nunjucks</a>
+      or
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}SASS%20%2F%20CSS">SASS/CSS</a>
+      .
+    </p>
+
+    <h3 class="nhsuk-heading-m" id="improve-the-contribution-process">
+      Improve the contribution process
+    </h3>
+    <p>
+      We want to make the process of contributing as easy and as accessible as
+      possible. Existing things we want to do to improve the contribution
+      process are labelled
+      <a href="{{githubBoardUrl}}{{githubLabelQuery}}%22Contribution+process%22"
+        >contribution process on the project board</a
+      >.
+    </p>
+    <h2 class="nhsuk-heading-l" id="get-started-with-a-contribution">
+      Get started with a contribution
+    </h2>
+    <p>You can:</p>
+
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        <a href="https://github.com/nhsuk/nhsuk-prototype-kit/issues"
+          >create issues for the kit using GitHub</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues"
+          >create issues for the website for the kit using GitHub</a
+        >
+      </li>
+    </ul>
+
+    <p>
+      The team and wider community usually review new issues at least once a
+      week and will add comments about what will happen next.
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -82,16 +82,16 @@ page" , "link" : "show-users-answers" } %} {% extends
   <code class="language-markup">app/views</code> folder.
 </p>
 <p>
-  Go to  <code class="language-markup">id: "example",</code> and add a new line
-  <code class="language-markup">value: data['{{exampleRadios.legend}}'],</code>
+  Go to  <code class="language-markup">id: "{{exampleTextArea.legend}}",</code> and add a new line
+  <code class="language-markup">value: data['{{exampleTextArea.legend}}'],</code>
   like this:
 </p>
 
 <pre class="app-pre"><code class="language-markup" >&#123;&#123;
    textarea({
-    name: "example",
-    id: "example",
-    value: data['details'],
+    name: "{{exampleTextArea.legend}}",
+    id: "{{exampleTextArea.legend}}",
+    value: data['{{exampleTextArea.legend}}'],
     label: {
       text: "Tell us your symptoms of magical powers",
       classes: "nhsuk-label--l",

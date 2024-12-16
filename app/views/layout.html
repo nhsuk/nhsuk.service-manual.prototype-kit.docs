@@ -9,11 +9,31 @@
 
 {% block header %}
   {{ header({
+    classes: "app-header--left-aligned",
     homeHref: "/",
     ariaLabel: "NHS Prototype Kit homepage",
     service: {
       name: serviceName
-    }
+    },
+    showNav: "true",
+    primaryLinks: [
+      {
+        label: "Get started",
+        url: "/install"
+      },
+      {
+        label: "Guides",
+        url: "/how-tos"
+      },
+      {
+        label: "Contribute",
+        url: "/contribute"
+      },
+      {
+        label: "Support",
+        url: "/support"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -21,8 +41,16 @@
   {{ footer({
     links: [
       {
-        label: "About and support",
+        label: "About",
         URL: "/about"
+      },
+      {
+        label: "Support",
+        URL: "/support"
+      },
+      {
+        label: "Updates",
+        URL: "/whats-new/updates"
       },
       {
         label: "NHS prototype kit on GitHub",

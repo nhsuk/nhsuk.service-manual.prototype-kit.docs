@@ -65,6 +65,10 @@ set prev = { "title" : "Link your pages together" , "link" :
     <code class="language-markup">hintHtml</code> and add "For example, things moving when you have strong feelings or hearing
       someone's thoughts".
   </li>
+  <li>
+    In the <code class="language-markup">items: &#123; text:</code> areas delete all the text after "Yes" and "No"
+  
+  </li>
 </ol>
 <p>Your component code should now look like this:</p>
 
@@ -74,7 +78,7 @@ set prev = { "title" : "Link your pages together" , "link" :
   name: "example-hints",
   fieldset: {
     legend: {
-      text: "Do you know your NHS number?",
+      text: "{{ exampleRadios.title }}"" ,
       classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
@@ -85,11 +89,11 @@ set prev = { "title" : "Link your pages together" , "link" :
   items: [
   {
     value: "yes",
-    text: "Yes, I know my NHS number"
+    text: "Yes"
   },
   {
     value: "no",
-    text: "No, I do not know my NHS number"
+    text: "No"
   },
   {
     value: "not sure",

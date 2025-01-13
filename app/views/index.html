@@ -7,13 +7,21 @@
     <div class="nhsuk-width-container nhsuk-hero--border">
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-one-half">
-          <div class="nhsuk-hero__wrapper">
+          <div class="nhsuk-hero__wrapper nhsuk-u-padding-bottom-0">
             <h1 class="nhsuk-heading-l">
               Rapidly create HTML prototypes of NHS services
             </h1>
-            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">
+            <p class="nhsuk-body-l">
               Use prototypes to get valuable feedback and insights from user research or the people you work with.
-            </p>
+
+<p class="nhsuk-u-margin-bottom-0">
+{{ button({
+  text: "Get started",
+  href: "/install",
+  classes: "nhsuk-button--reverse"
+}) }}
+</p>
+
           </div>
         </div>
         <div class="nhsuk-grid-column-one-half">
@@ -29,7 +37,10 @@
     <div class="nhsuk-grid-column-full">
 
       <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+    <!-- hidden as hopefully not needed with 'get started' as action button  -->
+    <!--
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
           {{ card({
             "href": "/install",
             "clickable": "true",
@@ -38,7 +49,24 @@
             "description": "Download and installation guides"
           }) }}
         </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      -->
+    <!--  end hidden section -->
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+
+      <div class="nhsuk-card nhsuk-card--clickable">
+    <div class="nhsuk-card__content">
+
+<strong class="nhsuk-tag nhsuk-u-margin-right-3 " >
+  What's new
+</strong>
+
+      <h2 class="nhsuk-card__heading nhsuk-heading-xs nhsuk-u-margin-bottom-0 nhsuk-u-display-inline-block nhsuk-u-font-weight-normal"><a class="nhsuk-card__link" href="/whats-new/updates">Version 5.1.0 released 12 November 2024</a></h2>
+
+    </div>
+  </div>
+
+</li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
           {{ card({
             "href": "/how-tos",
             "clickable": "true",
@@ -47,22 +75,29 @@
             "description": "Learn to create pages, use components, add data and more"
           }) }}
         </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+  <!--
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
           {{ card({
-            "href": "page-templates",
+            "href": "updates",
             "clickable": "true",
-            "heading": "Page templates",
+            "heading": "What's new",
             "headingClasses": "nhsuk-heading-m",
-            "description": "Copy and paste page templates into your project"
+            "description": "Check what changes have been made to the kit recently"
+          }) }}
+        </li>
+-->
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            "href": "about",
+            "clickable": "true",
+            "heading": "Support",
+            "headingClasses": "nhsuk-heading-m",
+            "description": "Contact the team to get help and support"
           }) }}
         </li>
       </ul>
 
-      <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-6">
-
-      <div class="nhsuk-u-reading-width">
-        <p class="nhsuk-u-margin-bottom-0"><a href="https://service-manual.nhs.uk">Visit the NHS digital service manual</a> for guidance and examples.</p>
-      </div>
 
     </div>
   </div>

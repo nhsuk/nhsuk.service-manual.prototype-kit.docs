@@ -1,0 +1,105 @@
+{% set pageTitle = "Change the content within a page based on a user's answers" %}
+{% extends "how-tos/interactive-prototypes/_BASE.njk" %} 
+{% block hub %}
+
+
+<p>To change the content within a page based on a user's answers, you need to know <a href="pass-data">how to pass data from page to page</a>.</p>
+
+
+<p>There are 2 ways to show content based on a user's answers. You can either <a href="branching-journeys">send the user to different pages</a> (called 'branching') or change the content within a page (called 'conditional' content).</p>
+<p>Branching is better when most of the content on the page is different.</p>
+<h2 id="if-statements">If statements</h2>
+<p>We can use <code>if</code> statements to show conditional content, in the format: </p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (condition) %} 
+The content you want to appear 
+{{'{%' | escape }} endif %}
+</code></pre>
+<p>The content will only appear when your <code>if</code> statement is true.</p>
+<p>For example, to show specific content when the user answers Scotland:</p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland") %}
+&lt;div class="nhsuk-inset-text"&gt;
+    This service is also available in Gaelic.
+&lt;/div&gt;
+{{'{%' | escape }} endif %}
+</code></pre>
+<h3 id="conditional-content-for-any-other-answer">Conditional content for any other answer</h3>
+<p>An example with conditional content when the answer is Scotland and different content for any other answer: </p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is also available in Gaelic.
+&lt;/div&gt;
+
+{{'{%' | escape }} else %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is available in other languages.
+&lt;/div&gt;
+
+{{'{%' | escape }} endif %}
+</code></pre>
+<h3 id="conditional-content-for-2-specific-answers">Conditional content for 2 specific answers</h3>
+<p>An example with conditional content when the answer is Scotland and different content for Wales: </p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is also available in Gaelic.
+&lt;/div&gt;
+
+{{'{%' | escape }} elseif (data['country'] == "Wales") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is also available in Welsh.
+&lt;/div&gt;
+
+{{'{%' | escape }} endif %}
+</code></pre>
+<h3 id="combine-conditions">Combine conditions</h3>
+<p>An example with the same conditional content for the answer Scotland or Northern Ireland:</p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland" or data['country'] == "Northern Ireland") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is also available in Gaelic and Irish.
+&lt;/div&gt;
+
+{{'{%' | escape }} endif %}
+</code></pre>
+<p>An example with conditional content when the answer for 'country' is Scotland and the answer for 'nationality' is French:</p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland" and data['nationality'] == "French") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+&lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+    This service is also available in Gaelic and French.
+&lt;/div&gt;
+
+{{'{%' | escape }} endif %}
+</code></pre>
+<h3 id="multiple-conditions">Multiple conditions</h3>
+<p>An example where the 'country' is Scotland and the content is different based on the 'nationality':</p>
+<pre tabindex="0"><code class="language-js">{{'{%' | escape }} if (data['country'] == "Scotland") %}
+
+&lt;div class="nhsuk-inset-text"&gt;
+    &lt;span class="nhsuk-u-visually-hidden"&gt;Information: &lt;/span&gt;
+
+    {{'{%' | escape }} if (data['nationality'] == "Northern Irish") %}
+
+        This service is also available in Gaelic and Irish.
+
+    {{'{%' | escape }} elseif (data['nationality'] == "French") %}
+
+        This service is also available in Gaelic and French.
+
+    {{'{%' | escape }} endif %}
+
+&lt;/div&gt;
+
+{{'{%' | escape }} endif %}
+</code></pre>
+
+
+{% endblock %}

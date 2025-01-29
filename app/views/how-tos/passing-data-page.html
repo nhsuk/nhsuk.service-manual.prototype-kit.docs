@@ -10,91 +10,100 @@
 
 {% block content %}
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>Passing data page to page</h1>
 
-      <p class="nhsuk-lede-text">You may want to use or display data a user has entered over a few screens.</p>
+      <p>The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.</p>
 
-      <p>The prototype kit includes a simple way of saving data entered in forms, as well as displaying the saved data.</p>
+      <p><a href="/examples/passing-data/passing-data-question-name">View an example of what passing data looks like in a prototype.</a></p>
 
-      <p>Data is stored locally on the computer running the prototype and disappears at the end of the session, when the browser window is closed.</p>
-
-      <p><a href="/examples/passing-data/passing-data-question-name">You can see an example here</a></p>
-
-      <p>The code for the example can be found in:</p>
-
-      <pre class="app-pre"><code>docs/views/examples/passing-data</code></pre>
 
       <h2>How to use</h2>
 
-      <p>The kit stores data from inputs using the name attribute of the input.</p>
+      <p>When a user answers questions, their answer is saved within the 'data' object using the <code>name</code> attribute of the input.</p>
 
-      <p>For example, if you have this input:</p>
+      <p>For example, if you use this input to collect a user’s name:</p>
 
-      <pre class="app-pre"><code class="language-markup">&lt;input name="first-name"&gt;</code></pre>
+      <pre class="app-pre"><code class="language-markup">{% raw %}{{ input({
+  label: {
+    text: "Full name"
+  },
+  id: "full-name",
+  name: "fullName"
+}) }}
+{% endraw %}</code></pre>
 
       <p>You can show what the user entered later on like this:</p>
 
-      <pre class="app-pre"><code class="language-markup">&lt;p&gt;&#123;&#123; data&#91;'first-name'&#93; &#125;&#125;&lt;/p&gt;</code></pre>
+      <pre class="app-pre"><code class="language-markup">{% raw %}<p>{{ data.fullName }}</p>{% endraw %}</code></pre>
+
+      <p>Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a <code>for</code> loop:</p>
+
+      <pre class="app-pre"><code class="language-markup">{{"<ul>
+  {% for condition in data.conditions %}
+    <li>{{ condition }}</li>
+  {% endfor %}
+</ul>" | escape }}</code></pre>
 
       <h3>Showing answers in inputs</h3>
+
       <p>If a user goes back to a page where they entered data, they would expect to see the answer they gave.</p>
 
-      <p>For a text input:</p>
+      <p>Most inputs use the <code>value</code> option:</p>
 
-      <pre class="app-pre"><code class="language-markup">&lt;input name="first-name" value="&#123;&#123; data&#91;'first-name'&#93; &#125;&#125;"&gt;</code></pre>
+      <pre class="app-pre"><code class="language-markup">{% raw %}{{ input({
+  label: {
+    text: "Full name"
+  },
+  id: "full-name",
+  name: "fullName",
+  value: data.fullName
+}) }}
+{% endraw %}</code></pre>
 
-      <p>For a radio or checkbox input you need to use the "checked" function:</p>
-
-      <pre class="app-pre"><code class="language-markup">&lt;input name="know-nhs-number" type="radio" value="Yes" &#123;&#123; checked("know-nhs-number", "Yes") &#125;&#125;&gt;</code></pre>
-
-      <h3>Clearing data</h3>
-      <p>To clear the data (for example, at the end of a user research session) click the "Clear data" link in the footer.</p>
-
-
-      <h3>Using the data in Nunjucks macros</h3>
-
-      <p>Example using the "checked" function in a checkbox component macro:</p>
+      <p>For a radios and checkboxes you need to use the "checked" filter:</p>
 
       <pre class="app-pre"><code>&#123;&#123; checkboxes({
-  "idPrefix": "condition",
-  "name": "condition",
-  "fieldset": {
-    "legend": {
-      "text": "Have you ever had any of these conditions?",
-      "classes": "nhsuk-fieldset__legend--l",
-      "isPageHeading": true
+  idPrefix: "conditions",
+  name: "conditions",
+  fieldset: {
+    legend: {
+      text: "Have you ever had any of these conditions?",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
     }
   },
-  "hint": {
-    "text": "Select all that apply"
+  hint: {
+    text: "Select all that apply"
   },
-  "items": [
+  items: [
     {
-      "value": "Asthma",
-      "text": "Asthma",
+      value: "Asthma",
+      text: "Asthma",
       checked: checked("condition", "Asthma")
     },
     {
-      "value": "Cancer",
-      "text": "Cancer",
-      "checked": checked("condition", "Cancer")
+      value: "Cancer",
+      text: "Cancer",
+      checked: checked("condition", "Cancer")
     },
     {
-      "value": "Lung disease (like emphysema or bronchitis)",
-      "text": "Lung disease (like emphysema or bronchitis)",
-      "checked": checked("condition", "Lung disease (like emphysema or bronchitis)")
+      value: "Lung disease",
+      text: "Lung disease",
+      checked: checked("condition", "Lung disease")
     },
     {
-      "value": "Diabetes",
-      "text": "Diabetes",
-      "checked": checked("condition", "Diabetes")
+      value: "Diabetes",
+      text: "Diabetes",
+      checked: checked("condition", "Diabetes")
     }
   ]
 }) &#125;&#125;</code></pre>
 
+      <h3>Clearing data</h3>
+
+      <p>To clear the data, for example at the end of a user research session, ask the user to close their browser.</p>
     </div>
 
   </div>

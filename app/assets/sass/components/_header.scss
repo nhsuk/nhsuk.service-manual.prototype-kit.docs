@@ -1,0 +1,5 @@
+// This modifier overrides the default behaviour which is to
+// justify the items in the nav when there are 4 or more.
+.app-header--left-aligned .nhsuk-header__navigation-list {
+  justify-content: initial;
+}

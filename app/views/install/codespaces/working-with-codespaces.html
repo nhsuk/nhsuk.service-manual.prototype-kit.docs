@@ -1,0 +1,66 @@
+{% set installEnvironment = "Codespaces" %}
+{% set current_step = 2 %}
+
+{% block pageTitle %}
+  Editing the kit with Codespaces -  NHS prototype kit
+{% endblock %}
+
+{% extends 'install/codespace.html' %}
+
+{% block beforeContent %}
+    {{ breadcrumb({
+    items: [
+      {
+        href: "/",
+        text: "Home"
+      },
+      {
+    href: "/install/codespaces/",
+    text: "Install the kit in your web browser"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block stepHeader %}
+    Editing the kit with Codespaces
+{% endblock %}
+
+{% block page_content %}
+
+    <p class="nhsuk-lede-text">If you are using the browser to edit the kit, you need to manage changes in Codespaces.</p>
+
+    <h2>Save changes</h2>
+
+    <p>Changes you make are not shared with anybody else until you commit them to Git and push them to the repository.</p>
+
+    <p>You can use the Codespace code editor and user interface to manage changes with GitHub. You can use the
+        <a href="https://docs.github.com/en/codespaces/getting-started/quickstart#committing-and-pushing-your-changes">quickstart guide for working with Codespaces</a>.
+    </p>
+
+    <h2>Manage prototypes</h2>
+
+    <p>When a Codespace is deleted, you will lose any changes you have not commited and pushed to a repository.</p>
+    <p>GitHub Codespaces are automatically deleted after they have been stopped and have remained inactive for a defined number of days, default is 30 days.</p>
+
+
+
+    <h2>Publish prototypes online</h2>
+
+    <p>Codespaces are temporary and do not usually have passwords. You will need to use a different service to <a href='/how-tos/publish-your-prototype-online'>publish your prototypes online</a>.</p>
+
+    <h2>Get going</h2>
+
+    <p>
+        <a href="/how-tos/build-basic-prototype/index">Build a basic prototype</a>
+        or
+        <a href="/how-tos/index">view other guides</a>.</p>
+
+{% endblock %}
+
+{% block pagination %}
+    {{ pagination({
+    "previousUrl": "/install/codespaces/create-a-codespace",
+    "previousPage": "Step 1: Create a Codespace"
+  }) }}
+{% endblock %}

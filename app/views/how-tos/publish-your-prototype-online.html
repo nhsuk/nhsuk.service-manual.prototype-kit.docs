@@ -14,42 +14,60 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>Publish your prototype online</h1>
-      <p>Publishing your prototype online means you can:</p>
-      <ul>
-        <li>share it with others, such as colleagues</li>
-        <li>test it with users</li>
-      </ul>
+
+      <p>Publishing your prototype online means you can share it with others and test it with users.</p>
+
       <p>You'll need a hosting service to publish prototypes online.</p>
 
-      <h2>Hosting services</h2>
-      <p>The NHS prototype kit runs on any hosting service that supports Node.js.</p>
-      <p>Your organisation may already use a hosting service for the prototype kit. Check with your digital team about which platform to use.</p>
-      <p>For example:</p>
-      <ul>
-      <li>Heroku (requires payment) – see <a href="https://devcenter.heroku.com/articles/github-integration">GitHub integration on Heroku website</a></li>
-      <li>Railway – see <a href="https://railway.app/new/github">Deploy repository on Railway website</a></li>
-      </ul>
-      <p>In Railway, you need to set the command to get started. Go to Settings > Deploy and set it to <code class="app-code">npm run start</code>.</p>
-      <p>Some hosting services may automatically deploy your prototype every time you merge new changes in the connected GitHub repository. You may be able to enable automatic deploys. If it hasn't automatically updated your prototype, you will need to do this manually.</p>
 
-      <h2>Setting a password</h2>
+      <h2>Hosting services</h2>
+
+      <p>The NHS prototype kit runs on any hosting service that supports Node.js. This means it does not run on 'static' hosting services like GitHub Pages or Netlify.</p>
+
+      <p>Your organisation may already use a hosting service for the prototype kit. Check with your digital team about which platform to use.</p>
+
+      <p>The kit has been tested with:</p>
+
+      <ul>
+        <li><a href="https://www.heroku.com">Heroku</a></li>
+        <li><a href="https://railway.com/">Railway</a></li>
+      </ul>
+
+      <h3>If you are using GitHub to store your code online</h3>
+
+      <p>Many hosting services have an option to automatically update your published prototype every time you push new changes to the connected GitHub repository.</p>
+
+      <p>See <a href="https://devcenter.heroku.com/articles/github-integration">GitHub integration for Heroku</a> and <a href="https://docs.railway.com/guides/services#deploying-from-a-github-repo">deploying from a GitHub for Railway</a>.</p>
+
+      <h3>Other ways to publish your prototype onto a hosting service</h3>
+
+      <p>Hosting services also let you publish your prototype from the terminal using Git or a command line interface (CLI).</p>
+
+      <p>See <a href="https://devcenter.heroku.com/articles/git">deploying with Git on Heroku</a> and <a href="https://docs.railway.com/guides/cli">using the CLI for Railway</a>.</p>
+
+      <h2>Using environment variables</h2>
+
+      <p>Some options within the kit need to be set with your hosting service using environment variables (also known as configuration variables).</p>
+
+      <p>See <a href="https://devcenter.heroku.com/articles/config-vars">configuration variables for Heroku</a> and <a href="https://docs.railway.app/develop/variables">using variables for Railway</a>.</p>
+
+      <p>For other hosting services, check the documentation for how to set environment variables.</p>
+
+      <h3>Setting a password</h3>
+
       <p>When running the prototype kit online, you must set a password. This is to stop anyone accidentally finding your prototype and mistaking it for a real service.</p>
-      <p>To set a password, check your hosting services documentation on how to set "environment variables". (It may have a slightly different name like "config vars" or "variables".)</p>
+
       <p>The password should be set using the variable <code class="app-code">PROTOTYPE_PASSWORD</code>.</p>
 
       <p>If you are using an older version of the prototype kit (before v4.12.0) you will also need to set a username using the variable <code class="app-code">PROTOTYPE_USERNAME</code>.</p>
 
-      <p>In Railway, you also need to create:</p>
-      <ul>
-        <li>a variable called <code class="app-code">NODE_ENV</code> and set the value to <code class="app-code">production</code></li>
-        <li>a variable called <code class="app-code">USE_AUTH</code> with the value of <code class="app-code">true</code></li>
-      </ul>
+      <h3>Setting production mode</h3>
 
-      <p>Read more about:</p>
-      <ul>
-        <li><a href="https://catalins.tech/heroku-environment-variables/">How to set environment variables on Heroku, on the Catalin's Tech website</a></li>
-        <li><a href="https://docs.railway.app/develop/variables">Variables, on Railway's website</a></li>
-      </ul>
+      <p>You should also set <code class="app-code">NODE_ENV</code> variable to the value <code class="app-code">production</code>.</p>
+
+      <p>This will improve the speed of the prototype slightly, and make sure that the prototype uses HTTPS.</p>
+
+      <p>On Heroku and Railway this will have been set for your automatically.</p>
     </div>
 
   </div>

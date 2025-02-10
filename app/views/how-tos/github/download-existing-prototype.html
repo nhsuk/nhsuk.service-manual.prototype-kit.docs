@@ -1,0 +1,38 @@
+{% set pageTitle = "Download an existing prototype from GitHub" %}
+{% extends "how-tos/github/_BASE.njk" %} 
+{% block hub %}
+
+
+    <p>
+      After you have <a href="/how-tos/github/setup-github-desktop">set up GitHub Desktop</a>, you can work with others on an existing prototype. For example, if you're
+      joining a team that has a prototype.
+    </p>
+    <h2 class="nhsuk-heading-m">Download the prototype</h2>
+    <p>
+      To work on an existing prototype, you'll need to download (or "clone") the
+      repo.
+    </p>
+    <ol class="nhsuk-list nhsuk-list--number">
+      <li>
+        Go to the prototype's repo on GitHub. If you do not have a link,
+        ask your team.
+      </li>
+      <li>
+        Select the <strong>Code</strong> button and
+        <strong>Open with GitHub Desktop</strong>.
+      </li>
+      <li>Choose a local path. This should be your prototypes folder.</li>
+    </ol>
+    <h2 class="nhsuk-heading-m">Open the prototype</h2>
+
+    <ol class="nhsuk-list nhsuk-list--number">
+      <li>
+        In GitHub Desktop, select <strong>Open in Visual Studio Code</strong>.
+      </li>
+      <li>
+        Go to the terminal in Visual Studio Code. Select
+        <strong>Terminal</strong> and <strong>New Terminal</strong>.
+      </li>
+      <li>In the terminal, run <code>npm install</code></li>
+    </ol>
+{% endblock %}

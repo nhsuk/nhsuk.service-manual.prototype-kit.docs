@@ -86,7 +86,7 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
 router.post('/{{exampleRadios.url}}-answer', function (req, res) {
 
 // Make a variable and give it the value from '{{exampleRadios.legend}}'
-var magicPowers = req.session.data['{{exampleRadios.legend}}']
+var magicPowers = req.session.data.{{exampleRadios.legend}}
 
 // Check whether the variable matches a condition
 if (magicPowers == "yes"){

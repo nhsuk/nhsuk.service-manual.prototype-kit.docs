@@ -62,7 +62,7 @@
 }) }}
 {% endraw %}</code></pre>
 
-      <p>For a radios and checkboxes you need to use the "checked" filter:</p>
+      <p>For checkboxes and dates you need to use the <code>values</code> option (plural) instead:</p>
 
       <pre class="app-pre"><code>&#123;&#123; checkboxes({
   idPrefix: "conditions",
@@ -74,32 +74,31 @@
       isPageHeading: true
     }
   },
+  values: data.conditions,
   hint: {
     text: "Select all that apply"
   },
   items: [
     {
       value: "Asthma",
-      text: "Asthma",
-      checked: checked("condition", "Asthma")
+      text: "Asthma"
     },
     {
       value: "Cancer",
-      text: "Cancer",
-      checked: checked("condition", "Cancer")
+      text: "Cancer"
     },
     {
       value: "Lung disease",
-      text: "Lung disease",
-      checked: checked("condition", "Lung disease")
+      text: "Lung disease"
     },
     {
       value: "Diabetes",
-      text: "Diabetes",
-      checked: checked("condition", "Diabetes")
+      text: "Diabetes"
     }
   ]
 }) &#125;&#125;</code></pre>
+
+      <p>Being able to set checkboxes and radios in this way was added in <a href="https://github.com/nhsuk/nhsuk-frontend/releases/tag/v9.2.0">NHS Frontend version 9.2.0</a>.</p>
 
       <h3>Clearing data</h3>
 

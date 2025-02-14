@@ -93,7 +93,6 @@ app.use(bodyParser.urlencoded({
 // Automatically store all data users enter
 if (useAutoStoreData === 'true') {
   app.use(utils.autoStoreData);
-  utils.addCheckedFunction(nunjucksAppEnv);
 }
 
 // Warn if node_modules folder doesn't exist

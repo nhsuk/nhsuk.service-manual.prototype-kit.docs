@@ -11,13 +11,13 @@ page" , "link" : "show-users-answers" } %} {% extends
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Find the value
-    <code class="language-markup">data['{{exampleRadios.legend}}']</code>, then change the
+    <code class="language-markup">data.{{exampleRadios.legend}}</code>, then change the
     the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
     <code class="language-markup">'/{{exampleRadios.url}}'</code>
   </li>
   <li>
     Find the value
-    <code class="language-markup">data['{{exampleTextArea.legend}}']</code>, then change the
+    <code class="language-markup">data.{{exampleTextArea.legend}}</code>, then change the
     the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
     <code class="language-markup">'/{{exampleTextArea.url}}'</code>
   </li>
@@ -30,38 +30,46 @@ page" , "link" : "show-users-answers" } %} {% extends
   Show the user's answer in question&nbsp;1
 </h2>
 <p>
-  Radios and checkboxes have a
-  <code class="language-markup">checked</code> option to set whether they are
-  selected (checked) or not when the page loads.
+  Radios let you select which option should be pre-selected by setting a <code class="language-markup">value</code> option to the value of the selected option.
 </p>
 <p>
   Open the <code class="language-markup">{{exampleRadios.url}}.html</code> file
   in your <code class="language-markup">app/views</code> folder.
 </p>
 <p>
-  For each of the <code class="language-markup">items</code>, we'll add a
-  <code class="language-markup">checked</code> value, like this:
+  Update the radios component to add <code class="language-markup">value: data.magicalPowers</code>, like this:
 </p>
-<pre tabindex="0"><code class="language-markup" >&#123;
-  value: "yes",
-  text: "Yes",
-  checked: checked("magical-powers", "yes")
-&#125;,
-&#123;
-  value: "no",
-  text: "No",
-  checked: checked("magical-powers", "no")
-  &#125;,
-  &#123;
-  value: "not sure",
-  text: "I'm not sure",
-  checked: checked("magical-powers", "not sure")
-  &#125;,
-</code></pre>
-<p>
-  In each case make sure the spelling is exactly the same as the
-  <code class="language-markup">value</code>.
-</p>
+<pre
+  class="app-pre language-markup"><code class="language-markup" >&#123;{ radios({
+  idPrefix: "magical-powers",
+  name: "magicalPowers",
+  fieldset: {
+    legend: {
+      text: "{{ exampleRadios.title }}"" ,
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    html: "For example, things moving when you have strong feelings or hearing someone's thoughts."
+  },
+  value: data.magicalPowers,
+  items: [
+  {
+    value: "yes",
+    text: "Yes"
+  },
+  {
+    value: "no",
+    text: "No"
+  },
+  {
+    value: "not sure",
+    text: "I'm not sure"
+  }
+]
+}) &#125;&#125;</code></pre>
+
 <p>
   <a href="http://localhost:3000/{{exampleRadios.url}}"
     >Go to http://localhost:3000/{{exampleRadios.url}}</a
@@ -73,7 +81,7 @@ page" , "link" : "show-users-answers" } %} {% extends
   Show the user's answer in question&nbsp;2
 </h2>
 <p>
-  Text inputs and textareas have a <code class="language-markup">value</code> to
+  Text inputs and textareas work in a similar way to radios, adding <code class="language-markup">value</code> to
   set what text appears in them when the page loads.
 </p>
 <p>
@@ -83,7 +91,7 @@ page" , "link" : "show-users-answers" } %} {% extends
 </p>
 <p>
   Go to  <code class="language-markup">id: "{{exampleTextArea.legend}}",</code> and add a new line
-  <code class="language-markup">value: data['{{exampleTextArea.legend}}'],</code>
+  <code class="language-markup">value: data.{{exampleTextArea.legend}},</code>
   like this:
 </p>
 
@@ -91,7 +99,7 @@ page" , "link" : "show-users-answers" } %} {% extends
    textarea({
     name: "{{exampleTextArea.legend}}",
     id: "{{exampleTextArea.legend}}",
-    value: data['{{exampleTextArea.legend}}'],
+    value: data.{{exampleTextArea.legend}},
     label: {
       text: "Tell us your symptoms of magical powers",
       classes: "nhsuk-label--l",

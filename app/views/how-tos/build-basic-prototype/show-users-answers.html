@@ -24,7 +24,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
     In <code class="language-markup">value</code> on the next line,
     change '485 777 3456' to
     <code class="language-markup"
-      >data['{{exampleRadios.legend}}']</code
+      >data.{{exampleRadios.legend}}</code
     >.
   </li>
 </ol>
@@ -51,7 +51,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
     In the <code class="language-markup">value</code> on the next line,
     change 'Kevin Francis' to
     <code class="language-markup">
-      data['{{exampleTextArea.legend}}']</code
+      data.{{exampleTextArea.legend}}</code
     >.
   </li>
   <li>
@@ -106,7 +106,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
               text: "Magical power symptoms in the last 30 days"
             },
             value: {
-              text: data["magical-powers"]
+              text: data.magical-powers
             },
             actions: {
               items: [
@@ -123,7 +123,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
               text: "Details of symptoms"
             },
             value: {
-              text: data["details"]
+              text: data.details
             },
             actions: {
               items: [

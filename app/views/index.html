@@ -11,9 +11,15 @@
             <h1 class="nhsuk-heading-l">
               Rapidly create HTML prototypes of NHS services
             </h1>
-            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-5">
               Use prototypes to get valuable feedback and insights from user research or the people you work with.
             </p>
+
+            {{ button({
+              text: "Get started",
+              href: "/install",
+              classes: "nhsuk-button--reverse nhsuk-u-margin-bottom-2"
+            }) }}
           </div>
         </div>
         <div class="nhsuk-grid-column-one-half">
@@ -26,44 +32,20 @@
 
 {% block content %}
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          {{ card({
-            "href": "/install",
-            "clickable": "true",
-            "heading": "Get started",
-            "headingClasses": "nhsuk-heading-m",
-            "description": "Download and installation guides"
-          }) }}
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          {{ card({
-            "href": "/how-tos",
-            "clickable": "true",
-            "heading": "Guides",
-            "headingClasses": "nhsuk-heading-m",
-            "description": "Learn to create pages, use components, add data and more"
-          }) }}
-        </li>
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          {{ card({
-            "href": "page-templates",
-            "clickable": "true",
-            "heading": "Page templates",
-            "headingClasses": "nhsuk-heading-m",
-            "description": "Copy and paste page templates into your project"
-          }) }}
-        </li>
-      </ul>
-
-      <hr class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-6">
-
-      <div class="nhsuk-u-reading-width">
-        <p class="nhsuk-u-margin-bottom-0"><a href="https://service-manual.nhs.uk">Visit the NHS digital service manual</a> for guidance and examples.</p>
-      </div>
-
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-m">Realistic</h2>
+      <p>Create a prototype that behaves like the real thing, across devices, using components and styles from the NHS Design System.
+      </p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-m">Accessible</h2>
+      <p>Test designs with people who use assistive technology, including screen readers, voice control and screen magnification.
+      </p>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-m">Free and open source</h2>
+      <p>No licence fees to pay. No need for procurement. Use with common free tools like Git and GitHub for collaboration.
+      </p>
     </div>
   </div>
 {% endblock %}

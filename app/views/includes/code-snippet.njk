@@ -1,0 +1,5 @@
+{% macro codeSnippet(code="", language='html') %}
+  <div class="app-code-snippet">
+    <pre><code>{{ (caller() if caller else code) | highlight(language) | safe }}</code></pre>
+  </div>
+{% endmacro %}

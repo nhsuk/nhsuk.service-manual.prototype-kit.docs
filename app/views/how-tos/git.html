@@ -28,17 +28,17 @@
 
       <h2 id="install-git">1. Check if you have Git installed</h2>
 
-      <p>Open a terminal, type <code class="app-code">git --version</code> and press enter.</p>
+      <p>Open a terminal, type <code>git --version</code> and press enter.</p>
 
       <p>If git is installed you will see something similar to this:</p>
 
-      <pre class="app-pre"><code class="app-code"></code>git version 1.9.1</code></pre>
+      {{ codeSnippet(code="git version 1.9.1", language="text") }}
 
       <p>You can now <a href="#git-user-password">set a username and password</a>.</p>
 
       <p>If git is not installed you will see this:</p>
 
-      <pre class="app-pre"><code class="app-code"></code>$ git: command not found</code></pre>
+      {{ codeSnippet(code="$ git: command not found", language="text") }}
 
       <p>You will need to <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">install Git (opens in new tab)</a> before continuing.</p>
 
@@ -46,9 +46,12 @@
 
       <p>Once Git is installed, you should set your user name and email address.</p>
 
-      <pre class="app-pre"><code class="app-code">git config --global user.name "YOUR NAME"<br>git config --global user.email "YOUR EMAIL ADDRESS"</code></pre>
+      {% call codeSnippet() %}
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL ADDRESS"
+      {% endcall %}
 
-      <p>For example, <code class="app-code">git config --global user.name "Kevin Francis"</code></p>
+      <p>For example, <code>git config --global user.name "Kevin Francis"</code></p>
 
       <div class="nhsuk-inset-text">
         <p>If you have a <a href="https://github.com/">GitHub</a> account, use the same email address for both.</p>
@@ -60,7 +63,7 @@
 
       <p>In your prototype folder, enter in the terminal:</p>
 
-      <pre class="app-pre"><code class="app-code">git init</code></pre>
+      {{ codeSnippet(code="git init", language="sh") }}
 
       <img class="app-img-guide" alt="Screenshot of git init" src="/images/git/git-init.png" />
 
@@ -70,7 +73,7 @@
 
       <p>You can view the current status of your project with the command:</p>
 
-      <pre class="app-pre"><code class="app-code">git status</code></pre>
+      {{ codeSnippet(code="git status", language="sh") }}
 
       <p>This will show you some basic information, such as which files have recently been modified.</p>
 
@@ -79,7 +82,7 @@
       <p>As this is a new Git repo, all files in the kit will be listed as having changed.</p>
 
       <div class="nhsuk-inset-text">
-        <p>It's a good idea to run <code class="app-code">git status</code> anytime you're confused. Git will give you additional information depending on what's currently going on to help you out.</p>
+        <p>It's a good idea to run <code>git status</code> anytime you're confused. Git will give you additional information depending on what's currently going on to help you out.</p>
       </div>
 
       <h2 id="first-git-commit">5. Doing your first commit</h2>
@@ -88,11 +91,11 @@
 
       <p>Add all files that have changes by running:</p>
 
-      <pre class="app-pre"><code class="app-code">git add .</code></pre>
+      {{ codeSnippet(code="git add .", language="sh") }}
 
       <h3>Check "git status"</h3>
 
-      <p>Run <code class="app-code">git status</code> to check the files you've got in the stage. You will see a list of all the files just added under the heading <code class="app-code">Changes to be committed</code>.</p>
+      <p>Run <code>git status</code> to check the files you've got in the stage. You will see a list of all the files just added under the heading <code>Changes to be committed</code>.</p>
 
       <img class="app-img-guide" alt="Screenshot of git status with added files" src="/images/git/git-status-add.png" />
 
@@ -100,7 +103,7 @@
 
       <p>Enter in the terminal:</p>
 
-      <pre class="app-pre"><code class="app-code">git commit -m "First commit"</code></pre>
+      {{ codeSnippet(code="git commit -m \"First commit\"", language="sh") }}
 
       <img class="app-img-guide" alt="Screenshot of git commit" src="/images/git/git-commit.png" />
 
@@ -110,7 +113,7 @@
 
       <h2 id="check-git-status-again">6. Check "git status" again</h2>
 
-      <p>Run <code class="app-code">git status</code> again, and it should say <code class="app-code">Nothing to commit</code> - all the changes you selected have been saved.</p>
+      <p>Run <code>git status</code> again, and it should say <code>Nothing to commit</code> - all the changes you selected have been saved.</p>
 
       <img class="app-img-guide" alt="Screenshot of git status after committing files" src="/images/git/git-status-clean.png" />
 

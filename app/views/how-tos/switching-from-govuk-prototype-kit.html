@@ -24,10 +24,7 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
     {{ list({ title: "Do", type: "tick", items: [ { item: 'get the kit either by <a
       href="https://prototype-kit.service-manual.nhs.uk/download"
       >downloading it as a zip</a
-    > or by <a href="https://github.com/nhsuk/nhsuk-prototype-kit">cloning or downloading a copy from GitHub</a>' }, { item: 'start your local server by entering in the terminal:
-    <pre
-      class="app-pre"
-    ><code class="language-markup">npm run watch</code></pre>
+    > or by <a href="https://github.com/nhsuk/nhsuk-prototype-kit">cloning or downloading a copy from GitHub</a>' }, { item: 'start your local server by running <code>npm run watch</code>
     ' } ] }) }} {# removed for now as don't need the multiple versions problem {
     item: 'check when you install your prototype that you are using the right
     version of Node.js – you may need to install and use a different version. If
@@ -58,15 +55,13 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
       >NHS macro naming conventions</a
     >
     which do not have a prefix, for example
-    <code class="language-markup">{{ radios }}</code> instead of
-    <code class="language-markup">{{ govukRadios }}</code>' }, { item: 'use
+    <code>{{ radios }}</code> instead of
+    <code>{{ govukRadios }}</code>' }, { item: 'use
     <a href="https://service-manual.nhs.uk/design-system/styles/typography"
       >NHS typography classes</a
     >
     on headings and other text, for example
-    <pre
-      class="app-pre"
-    ><code class="language-markup">' + '<p class="nhsuk-body">nhsuk-body</p>' | escape  + '</code></pre>
+    <code>' + '<p class="nhsuk-body">nhsuk-body</p>' | escape + '</code>
     ' }, { item: 'know that the NHS prototype kit does not have some
     functionality that is in the GOV.UK one, for example the interface to create
     pages from templates' }, { item: 'know that plugins designed for the GOV.UK
@@ -76,7 +71,7 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
       >GOV.UK Prototype Kit filters plugin</a
     >
     you must use instructions for earlier versions of the kit and make changes
-    in <code class="language-markup">filters.js</code>.' } ] }) }} {{ list({
+    in <code>filters.js</code>.' } ] }) }} {{ list({
     title: "Don't", type: "cross", items: [ { item: 'copy pages from the GOV.UK
     Prototype Kit or GOV.UK Design System and expect them to work – you may need
     to copy over extra code like CSS to make them work properly' }, { item: 'use
@@ -84,15 +79,15 @@ include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
     not work' } ] }) }}
     <h2 class="nhsuk-heading-m">Using routing and session data</h2>
     <p>
-      When you save any changes to <code class="language-markup">routes.js</code>
-      file, the app will restart. This will also delete all session data and reset them with any values set in <code class="language-markup">data/session-data-defaults.js</code>.
+      When you save any changes to <code>routes.js</code>
+      file, the app will restart. This will also delete all session data and reset them with any values set in <code>data/session-data-defaults.js</code>.
     </p>
 
     <h2 class="nhsuk-heading-m">Publishing your prototype online</h2>
 
     <p>
       Set the password using the variable
-      <code class="app-code">PROTOTYPE_PASSWORD</code>. Check the
+      <code>PROTOTYPE_PASSWORD</code>. Check the
       <a href="/how-tos/publish-your-prototype-online"
         >guide to publish your prototype online</a
       >

@@ -35,11 +35,11 @@
       {% block branchingContent %}
       {% endblock %}
 
-      <pre class="app-pre"><code class="app-code">npm install</code></pre>
+      {{ codeSnippet(code="npm install", language="sh") }}
 
       <p>The install may take up to a minute.</p>
 
-      <p>While installing it may <code class="app-code">WARN</code> about some items - this is ok. As long as there are no <code class="app-code">ERRORs</code> you can continue.</p>
+      <p>While installing it may <code>WARN</code> about some items - this is ok. As long as there are no <code>ERRORs</code> you can continue.</p>
 
       {% block branchingImage %}
       {% endblock %}

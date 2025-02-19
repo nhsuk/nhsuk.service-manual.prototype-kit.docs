@@ -25,26 +25,30 @@
 
       <p>For example, if you use this input to collect a user’s name:</p>
 
-      <pre class="app-pre"><code class="language-markup">{% raw %}{{ input({
+      {% call codeSnippet(language='js') %}{% raw %}{{ input({
   label: {
     text: "Full name"
   },
   id: "full-name",
   name: "fullName"
 }) }}
-{% endraw %}</code></pre>
+{% endraw %}{% endcall %}
 
       <p>You can show what the user entered later on like this:</p>
 
-      <pre class="app-pre"><code class="language-markup">{% raw %}<p>{{ data.fullName }}</p>{% endraw %}</code></pre>
+      {% call codeSnippet(language='html') %}{% raw %}
+      <p>{{ data.fullName }}</p>
+      {% endraw %}{% endcall %}
 
       <p>Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a <code>for</code> loop:</p>
 
-      <pre class="app-pre"><code class="language-markup">{{"<ul>
-  {% for condition in data.conditions %}
-    <li>{{ condition }}</li>
+      {% call codeSnippet(language='html') %}{% raw %}
+<ul>
+  {% for condition in conditions %}
+    <li>test</li>
   {% endfor %}
-</ul>" | escape }}</code></pre>
+</ul>
+      {% endraw %}{% endcall %}
 
       <h3>Showing answers in inputs</h3>
 
@@ -52,7 +56,8 @@
 
       <p>Most inputs use the <code>value</code> option:</p>
 
-      <pre class="app-pre"><code class="language-markup">{% raw %}{{ input({
+      {% call codeSnippet(language='js') %}{% raw %}
+{{ input({
   label: {
     text: "Full name"
   },
@@ -60,11 +65,12 @@
   name: "fullName",
   value: data.fullName
 }) }}
-{% endraw %}</code></pre>
+      {% endraw %}{% endcall %}
 
       <p>For checkboxes and dates you need to use the <code>values</code> option (plural) instead:</p>
 
-      <pre class="app-pre"><code>&#123;&#123; checkboxes({
+      {% call codeSnippet(language='js') %}{% raw %}
+{{ checkboxes({
   idPrefix: "conditions",
   name: "conditions",
   fieldset: {
@@ -96,7 +102,7 @@
       text: "Diabetes"
     }
   ]
-}) &#125;&#125;</code></pre>
+}){% endraw %}{% endcall %}
 
       <p>Being able to set checkboxes and radios in this way was added in <a href="https://github.com/nhsuk/nhsuk-frontend/releases/tag/v9.2.0">NHS Frontend version 9.2.0</a>.</p>
 

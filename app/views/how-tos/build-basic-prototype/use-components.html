@@ -31,54 +31,54 @@ set prev = { "title" : "Link your pages together" , "link" :
     <strong>Copy code</strong>.
   </li>
   <li>
-    Open <code class="language-markup">{{exampleRadios.url}}.html</code> in your
-    <code class="language-markup">app/views</code> folder.
+    Open <code>{{exampleRadios.url}}.html</code> in your
+    <code>app/views</code> folder.
   </li>
   <li>
     Replace the code from
-    <code class="language-markup">&lcub;&lcub; radios({</code> to when it finishes on <code class="language-markup">}) &rcub;&rcub;</code>
+    <code>&lcub;&lcub; radios({</code> to when it finishes on <code>}) &rcub;&rcub;</code>
     with the code you copied.
   </li>
   <li>
     Delete the example
-    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
+    <code>&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
   </li>
 </ol>
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
-<li>Delete the three lines starting with <code class="language-markup">&#123;% from %&#125;</code>.</li>
+<li>Delete the three lines starting with <code>&#123;% from %&#125;</code>.</li>
   <li>
-    Under <code class="language-markup">legend</code>, change
-    <code class="language-markup">text</code> from "Do you know your NHS
+    Under <code>legend</code>, change
+    <code>text</code> from "Do you know your NHS
     number?" to "{{exampleRadios.title}}".
   </li>
   <li>
-    Change <code class="language-markup">name</code> to
-    <code class="language-markup">{{exampleRadios.legend}}</code>.
+    Change <code>name</code> to
+    <code>{{exampleRadios.legend}}</code>.
   </li>
   <li>
     Delete the code from
-    <code class="language-markup">&#123;% set hint %&#125;</code>...<code class="language-markup">&#123%- endset %}</code> code.
+    <code>&#123;% set hint %&#125;</code>...<code>&#123%- endset %}</code> code.
   </li>
   <li>
-    In the <code class="language-markup">hint: &#123; html:</code> area replace
-    <code class="language-markup">hintHtml</code> and add "For example, things moving when you have strong feelings or hearing
+    In the <code>hint: &#123; html:</code> area replace
+    <code>hintHtml</code> and add "For example, things moving when you have strong feelings or hearing
       someone's thoughts".
   </li>
   <li>
-    In the <code class="language-markup">items: &#123; text:</code> areas delete all the text after "Yes" and "No"
+    In the <code>items: &#123; text:</code> areas delete all the text after "Yes" and "No"
 
   </li>
 </ol>
 <p>Your component code should now look like this:</p>
 
-<pre
-  class="app-pre language-markup"><code class="language-markup" >&#123;{ radios({
+{% call codeSnippet(language='js') %}{% raw %}
+{{ radios({
   idPrefix: "magical-powers",
   name: "magicalPowers",
   fieldset: {
     legend: {
-      text: "{{ exampleRadios.title }}"" ,
+      text: "Have you felt symptoms of magical powers in the last 30 days?",
       classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
@@ -100,7 +100,7 @@ set prev = { "title" : "Link your pages together" , "link" :
     text: "I'm not sure"
   }
 ]
-}) &#125;&#125;</code></pre>
+}) }}{% endraw %}{% endcall %}
 
 <p>Your page should now look like this:</p>
 <figure class="nhsuk-figure">

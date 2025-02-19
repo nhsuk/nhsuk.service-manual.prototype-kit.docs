@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const nunjucks = require('nunjucks');
 const sessionInMemory = require('express-session');
+const highlightjs = require('highlight.js');
 
 // Run before other code to make sure variables from .env are available
 dotenv.config();
@@ -64,6 +65,11 @@ nunjucksConfig.express = app;
 
 const nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig);
 nunjucksAppEnv.addGlobal('version', packageInfo.version);
+
+nunjucksAppEnv.addFilter('highlight', (code, language) => {
+  const languages = language ? [language] : false;
+  return highlightjs.highlightAuto(code.trim(), languages).value;
+});
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv);

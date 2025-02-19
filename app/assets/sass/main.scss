@@ -3,6 +3,11 @@
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/figure';
+@import 'components/code-snippet';
+
+@import 'styles/code';
+@import 'styles/highlight';
+
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...

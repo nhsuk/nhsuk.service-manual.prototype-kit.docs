@@ -31,7 +31,7 @@
 
       <p>Styles can also be added to individual templates via the <code>customStyles</code> template block:</p>
 
-      {% call codeSnippet(language='html') %}{% raw %}
+      {% call codeSnippet({language: "html"}) %}{% raw %}
 {% block customStyles %}
   <style type="text/css">
     body { background-color: pink; }
@@ -49,7 +49,7 @@
 
       <p>Import this file into your <code>main.scss</code> file without the underscore:</p>
 
-      {% call codeSnippet(language='js') %}
+      {% call codeSnippet({language: "js"}) %}
         @import "admin";
       {% endcall %}
 
@@ -67,7 +67,7 @@
 
       <p>For example if you add an image named <code>user.png</code>, use it in your page like this:</p>
 
-      {% call codeSnippet(language='html') %}
+      {% call codeSnippet({language: "html"}) %}
       <img src="/images/user.png" alt="User icon">
       {% endcall %}
 
@@ -81,7 +81,7 @@
 
       <p>For example if you create a subfolder in <code>assets</code> called <code>downloads</code> and add a PDF named <code>report.pdf</code>, link to it like this:</p>
 
-      {% call codeSnippet(language='html') %}
+      {% call codeSnippet({language: "html"}) %}
 <a href="/downloads/report.pdf">
   Download report (PDF only, 1MB)
 </a>

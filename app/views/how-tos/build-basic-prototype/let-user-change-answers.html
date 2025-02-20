@@ -40,7 +40,7 @@ page" , "link" : "show-users-answers" } %} {% extends
   Update the radios component to add <code>value: data.magicalPowers</code>, like this:
 </p>
 
-{% call codeSnippet(language='js') %}{% raw %}
+{% call codeSnippet({language: "js"}) %}{% raw %}
 {{ radios({
   idPrefix: "magical-powers",
   name: "magicalPowers",
@@ -96,7 +96,7 @@ page" , "link" : "show-users-answers" } %} {% extends
   like this:
 </p>
 
-{% call codeSnippet(language='js') %}{% raw %}
+{% call codeSnippet({language: "js"}) %}{% raw %}
 {{ textarea({
   name: "details",
   id: "details",

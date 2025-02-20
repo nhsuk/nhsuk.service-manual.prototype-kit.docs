@@ -25,7 +25,7 @@
 
       <p>For example, if you use this input to collect a user’s name:</p>
 
-      {% call codeSnippet(language='js') %}{% raw %}{{ input({
+      {% call codeSnippet({language: "js"}) %}{% raw %}{{ input({
   label: {
     text: "Full name"
   },
@@ -36,13 +36,13 @@
 
       <p>You can show what the user entered later on like this:</p>
 
-      {% call codeSnippet(language='html') %}{% raw %}
+      {% call codeSnippet({language: "html"}) %}{% raw %}
       <p>{{ data.fullName }}</p>
       {% endraw %}{% endcall %}
 
       <p>Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a <code>for</code> loop:</p>
 
-      {% call codeSnippet(language='html') %}{% raw %}
+      {% call codeSnippet({language: "html"}) %}{% raw %}
 <ul>
   {% for condition in conditions %}
     <li>test</li>
@@ -56,7 +56,7 @@
 
       <p>Most inputs use the <code>value</code> option:</p>
 
-      {% call codeSnippet(language='js') %}{% raw %}
+      {% call codeSnippet({language: "js"}) %}{% raw %}
 {{ input({
   label: {
     text: "Full name"
@@ -69,7 +69,7 @@
 
       <p>For checkboxes and dates you need to use the <code>values</code> option (plural) instead:</p>
 
-      {% call codeSnippet(language='js') %}{% raw %}
+      {% call codeSnippet({language: "js"}) %}{% raw %}
 {{ checkboxes({
   idPrefix: "conditions",
   name: "conditions",

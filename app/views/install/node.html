@@ -43,7 +43,7 @@
       {% block branchingContent %}
       {% endblock %}
 
-      {{ codeSnippet(code="node --version", language="sh") }}
+      {{ codeSnippet({code: "node --version", language: "sh"}) }}
 
       {% block branchingImage %}
       {% endblock %}
@@ -77,7 +77,7 @@
 
       <p>To check it is installed correctly you can run:</p>
 
-      {{ codeSnippet(code="node --version", language="sh") }}
+      {{ codeSnippet({code: "node --version", language: "sh"}) }}
 
       {% block branchingImageTwo %}
       {% endblock %}

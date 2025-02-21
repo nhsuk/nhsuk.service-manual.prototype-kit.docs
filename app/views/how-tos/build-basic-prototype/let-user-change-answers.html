@@ -11,15 +11,15 @@ page" , "link" : "show-users-answers" } %} {% extends
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Find the value
-    <code class="language-markup">data.{{exampleRadios.legend}}</code>, then change the
-    the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
-    <code class="language-markup">'/{{exampleRadios.url}}'</code>
+    <code>data.{{exampleRadios.legend}}</code>, then change the
+    the <code>href</code> value from <code>'#'</code> to
+    <code>'/{{exampleRadios.url}}'</code>
   </li>
   <li>
     Find the value
-    <code class="language-markup">data.{{exampleTextArea.legend}}</code>, then change the
-    the <code class="language-markup">href</code> value from <code class="language-markup">'#'</code> to
-    <code class="language-markup">'/{{exampleTextArea.url}}'</code>
+    <code>data.{{exampleTextArea.legend}}</code>, then change the
+    the <code>href</code> value from <code>'#'</code> to
+    <code>'/{{exampleTextArea.url}}'</code>
   </li>
 </ol>
 <p>
@@ -30,22 +30,23 @@ page" , "link" : "show-users-answers" } %} {% extends
   Show the user's answer in question&nbsp;1
 </h2>
 <p>
-  Radios let you select which option should be pre-selected by setting a <code class="language-markup">value</code> option to the value of the selected option.
+  Radios let you select which option should be pre-selected by setting a <code>value</code> option to the value of the selected option.
 </p>
 <p>
-  Open the <code class="language-markup">{{exampleRadios.url}}.html</code> file
-  in your <code class="language-markup">app/views</code> folder.
+  Open the <code>{{exampleRadios.url}}.html</code> file
+  in your <code>app/views</code> folder.
 </p>
 <p>
-  Update the radios component to add <code class="language-markup">value: data.magicalPowers</code>, like this:
+  Update the radios component to add <code>value: data.magicalPowers</code>, like this:
 </p>
-<pre
-  class="app-pre language-markup"><code class="language-markup" >&#123;{ radios({
+
+{% call codeSnippet({ language: "js" }) %}{% raw %}
+{{ radios({
   idPrefix: "magical-powers",
   name: "magicalPowers",
   fieldset: {
     legend: {
-      text: "{{ exampleRadios.title }}",
+      text: "Have you felt symptoms of magical powers in the last 30 days?",
       classes: "nhsuk-fieldset__legend--l",
       isPageHeading: true
     }
@@ -68,7 +69,7 @@ page" , "link" : "show-users-answers" } %} {% extends
     text: "I'm not sure"
   }
 ]
-}) &#125;&#125;</code></pre>
+}) }}{% endraw %}{% endcall %}
 
 <p>
   <a href="http://localhost:3000/{{exampleRadios.url}}"
@@ -81,33 +82,31 @@ page" , "link" : "show-users-answers" } %} {% extends
   Show the user's answer in question&nbsp;2
 </h2>
 <p>
-  Text inputs and textareas work in a similar way to radios, adding <code class="language-markup">value</code> to
+  Text inputs and textareas work in a similar way to radios, adding <code>value</code> to
   set what text appears in them when the page loads.
 </p>
 <p>
   Open the
-  <code class="language-markup">{{exampleTextArea.url}}.html</code> file in your
-  <code class="language-markup">app/views</code> folder.
+  <code>{{exampleTextArea.url}}.html</code> file in your
+  <code>app/views</code> folder.
 </p>
 <p>
-  Go to  <code class="language-markup">id: "{{exampleTextArea.legend}}",</code> and add a new line
-  <code class="language-markup">value: data.{{exampleTextArea.legend}},</code>
+  Go to  <code>id: "{{exampleTextArea.legend}}",</code> and add a new line
+  <code>value: data.{{exampleTextArea.legend}},</code>
   like this:
 </p>
 
-<pre class="app-pre"><code class="language-markup" >&#123;&#123;
-   textarea({
-    name: "{{exampleTextArea.legend}}",
-    id: "{{exampleTextArea.legend}}",
-    value: data.{{exampleTextArea.legend}},
-    label: {
-      text: "Tell us your symptoms of magical powers",
-      classes: "nhsuk-label--l",
-      isPageHeading: true
-    }
-  })
-
-  &#125;&#125;</code></pre>
+{% call codeSnippet({ language: "js" }) %}{% raw %}
+{{ textarea({
+  name: "details",
+  id: "details",
+  value: data.details,
+  label: {
+    text: "Tell us your symptoms of magical powers",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  }
+}) }}{% endraw %}{% endcall %}
 
 <p>
   <a href="http://localhost:3000/{{exampleTextArea.url}}"

@@ -12,12 +12,12 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
 </p>
 <p>
   To do this, we're going to need an
-  <code class="language-markup">{{exampleIneligible.url}}.html</code> page, and
+  <code>{{exampleIneligible.url}}.html</code> page, and
   some logic to decide when to send users there.
 </p>
 <p>
   This kind of logic goes in a file called
-  <code class="language-markup">app/routes.js</code>, which is written in
+  <code>app/routes.js</code>, which is written in
   JavaScript. Routes tell the kit what to do when the user goes to specific
   pages.
 </p>
@@ -31,10 +31,10 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
   <li>
     <p>
       Make an
-      <code class="language-markup">{{exampleIneligible.url}}.html</code> page
-      by copying <code class="language-markup">content-page.html</code> from
-      <code class="language-markup">lib/example-templates</code> to
-      <code class="language-markup">app/views</code>.
+      <code>{{exampleIneligible.url}}.html</code> page
+      by copying <code>content-page.html</code> from
+      <code>lib/example-templates</code> to
+      <code>app/views</code>.
     </p>
   </li>
   <li>
@@ -58,47 +58,46 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
   ineligible page.
 </p>
 <p>
-  Currently, the <code class="language-markup">{{exampleRadios.url}}</code> page
+  Currently, the <code>{{exampleRadios.url}}</code> page
   sends the user directly to question 2. Instead, we're going to send them to a
   special URL where we can run some code to check their answer.
 </p>
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     <p>
-      In <code class="language-markup">{{exampleRadios.url}}.html</code> change
+      In <code>{{exampleRadios.url}}.html</code> change
       the form action to
-      <code class="language-markup">/{{exampleRadios.url}}-answer</code>.
+      <code>/{{exampleRadios.url}}-answer</code>.
     </p>
   </li>
   <li>
-    <p>Open <code class="language-markup">/app/routes.js</code>.</p>
+    <p>Open <code>/app/routes.js</code>.</p>
   </li>
   <li>
     <p>
       Insert new JavaScript into line 5, before
-      <code class="language-markup">module.exports = router</code>.
+      <code>module.exports = router</code>.
     </p>
   </li>
 </ol>
-<pre
-  tabindex="0"
-><code class="language-markup" >// Run this code when a form is submitted to '{{exampleRadios.url}}-answer'
+{% call codeSnippet({ language: "js" }) %}
+// Run this code when a form is submitted
+// to '/{{exampleRadios.url}}-answer'
 router.post('/{{exampleRadios.url}}-answer', function (req, res) {
 
-// Make a variable and give it the value from '{{exampleRadios.legend}}'
-var magicPowers = req.session.data.{{exampleRadios.legend}}
+  // Make a variable and give it the value from '{{exampleRadios.legend}}'
+  var magicPowers = req.session.data.{{exampleRadios.legend}}
 
-// Check whether the variable matches a condition
-if (magicPowers == "yes"){
-// Send user to next page
-res.redirect('/{{exampleTextArea.url}}')
-} else {
-// Send user to ineligible page
-res.redirect('/{{exampleIneligible.url}}')
-}
-
+  // Check whether the variable matches a condition
+  if (magicPowers == "yes"){
+  // Send user to next page
+    res.redirect('/{{exampleTextArea.url}}')
+  } else {
+  // Send user to ineligible page
+    res.redirect('/{{exampleIneligible.url}}')
+  }
 })
-</code></pre>
+{% endcall %}
 <ol start="4"class="nhsuk-list nhsuk-list--number">
   <li>
     Check it works. Selecting "Yes" should send you to the next question. Any
@@ -112,9 +111,9 @@ res.redirect('/{{exampleIneligible.url}}')
   will try to tell you the line number with the issue.
 </p>
 <p>If the kit crashes, you will see something like this on the terminal:</p>
-<pre
-  tabindex="0"
-><code class="language-markup" >/Users/name/projects/{{exampleServiceURL}}-prototype/app/routes.js:12
+
+{% call codeSnippet({ language: "bash" }) %}
+/Users/name/projects/{{exampleServiceURL}}-prototype/app/routes.js:12
 });
 ^
 SyntaxError: Unexpected token }
@@ -129,10 +128,10 @@ at require (internal/module.js:20:19)
 at Object.&lt;anonymous&gt; (/Users/[username]/projects/{{exampleServiceURL}}-prototype/server.js:7:14)
 at Module._compile (module.js:570:32)
 [14:11:50] [nodemon] app crashed - waiting for file changes before starting…
-</code></pre>
+{% endcall %}
 <p>
   The 1st line of this sample output ends with
-  <code class="language-markup">/app/routes.js:12</code>.
+  <code>/app/routes.js:12</code>.
 </p>
 <p>
   The "12" suggests there's probably an issue on line 12 or the line before it.

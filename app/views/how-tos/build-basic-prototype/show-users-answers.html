@@ -12,28 +12,28 @@ question 2" , "link" : "use-components-2" } %} {% extends
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Open
-    <code class="language-markup">{{exampleCheckAnswers.url}}.html</code> in
-    your <code class="language-markup">app/views</code> folder.
+    <code>{{exampleCheckAnswers.url}}.html</code> in
+    your <code>app/views</code> folder.
   </li>
   <li>
-    Find the <code class="language-markup">key</code> that contains
+    Find the <code>key</code> that contains
     the text 'NHS number'.
   </li>
   <li>Change "NHS number" to "{{exampleRadios.summary}}".</li>
   <li>
-    In <code class="language-markup">value</code> on the next line,
+    In <code>value</code> on the next line,
     change '485 777 3456' to
-    <code class="language-markup"
+    <code
       >data.{{exampleRadios.legend}}</code
     >.
   </li>
 </ol>
 <p>
   This is how we show data a user has entered – '{{exampleRadios.legend}}' is
-  the <code class="language-markup">name</code> attribute from the
-  <code class="language-markup">&lt;input&gt;</code> on the question page.
+  the <code>name</code> attribute from the
+  <code>&lt;input&gt;</code> on the question page.
 </p>
-<p>Update the screen reader text – on the next line <code class="language-markup">visuallyHiddenText</code> change
+<p>Update the screen reader text – on the next line <code>visuallyHiddenText</code> change
  'NHS number' to '{{exampleRadios.summary | lower }}'.
 <p>
   Screen readers will read this out but it will not appear on the page. Without
@@ -43,19 +43,19 @@ question 2" , "link" : "use-components-2" } %} {% extends
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find the <code class="language-markup">key</code> that contains
+    Find the <code>key</code> that contains
     the text 'Name'.
   </li>
   <li>Change "Name" to "{{exampleTextArea.summary}}".</li>
   <li>
-    In the <code class="language-markup">value</code> on the next line,
+    In the <code>value</code> on the next line,
     change 'Kevin Francis' to
-    <code class="language-markup">
+    <code>
       data.{{exampleTextArea.legend}}</code
     >.
   </li>
   <li>
-    On the next line <code class="language-markup">visuallyHiddenText</code> change
+    On the next line <code>visuallyHiddenText</code> change
      'name' to '{{exampleTextArea.summary | lower }}'
   </li>
 </ol>
@@ -75,7 +75,7 @@ question 2" , "link" : "use-components-2" } %} {% extends
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Find the
-    <code class="language-markup">,</code> (comma) after the details you have changed, and delete this and everything up to the <code class="language-markup">]</code> (square bracket).
+    <code>,</code> (comma) after the details you have changed, and delete this and everything up to the <code>]</code> (square bracket).
 
 
   </li>
@@ -86,78 +86,77 @@ question 2" , "link" : "use-components-2" } %} {% extends
   </li>
 </ol>
 <p>Your code should now look like this:</p>
-<pre tabindex="0"><code class="language-markup" >
 
-  {{ '<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">
-        Check your answers before sending your application
-      </h1>
+    <h1 class="nhsuk-heading-l">
+      Check your answers before sending your application
+    </h1>
 
-      <h2 class="nhsuk-heading-m">
-        Personal details
-      </h2>
+    <h2 class="nhsuk-heading-m">
+      Personal details
+    </h2>
 
-      {{ summaryList({
-        rows: [
-          {
-            key: {
-              text: "Magical power symptoms in the last 30 days"
-            },
-            value: {
-              text: data.magicalPowers
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "magical power symptoms in the last 30 days"
-                }
-              ]
-            }
+    {{ summaryList({
+      rows: [
+        {
+          key: {
+            text: "Magical power symptoms in the last 30 days"
           },
-          {
-            key: {
-              text: "Details of symptoms"
-            },
-            value: {
-              text: data.details
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "details of symptoms"
-                }
-              ]
-            }
+          value: {
+            text: data.magicalPowers
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "magical power symptoms in the last 30 days"
+              }
+            ]
           }
-        ]
-      }) }}
+        },
+        {
+          key: {
+            text: "Details of symptoms"
+          },
+          value: {
+            text: data.details
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "details of symptoms"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
 
-      <h2 class="nhsuk-heading-m">
-        Now send your application
-      </h2>
+    <h2 class="nhsuk-heading-m">
+      Now send your application
+    </h2>
 
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
+    <p>
+      By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+    </p>
 
-      <p>
-        Your details will be sent to Rose Medical Practice to begin your registration.
-      </p>
+    <p>
+      Your details will be sent to Rose Medical Practice to begin your registration.
+    </p>
 
-      <a href="/confirmation-page" class="nhsuk-button">
-        Accept and send registration
-      </a>
+    <a href="/confirmation-page" class="nhsuk-button">
+      Accept and send registration
+    </a>
 
-    </div>
-  </div>' | escape }}
-
-</code></pre>
+  </div>
+</div>
+{% endraw %}{% endcall %}
 
 {% endblock %}

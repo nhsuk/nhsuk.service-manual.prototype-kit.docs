@@ -14,53 +14,54 @@ design system" , "link" : "use-components" } %} {% extends
     Select the <strong>Nunjucks</strong> tab, then <strong>Copy code</strong>.
   </li>
   <li>
-    Open <code class="language-markup">{{exampleTextArea.url}}.html</code> in your
-    <code class="language-markup">app/views</code> folder.
+    Open <code>{{exampleTextArea.url}}.html</code> in your
+    <code>app/views</code> folder.
   </li>
   <li>
     Replace the code from
-    <code class="language-markup">&lcub;&lcub; radios({</code> to when it finishes on <code class="language-markup">}) &rcub;&rcub;</code>
+    <code>&lcub;&lcub; radios({</code> to when it finishes on <code>}) &rcub;&rcub;</code>
     with the code that you copied.
   </li>
   <li>
     Delete the example
-    <code class="language-markup">&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
+    <code>&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
   </li>
 </ol>
 
 <h3 id="customise-the-example-code">Customise the example code</h3>
 <ol class="nhsuk-list nhsuk-list--number">
-  <li>Delete <code class="language-markup">&#123;% from "textarea/macro.njk" import textarea %}</code>.</li>
+  <li>Delete <code>&#123;% from "textarea/macro.njk" import textarea %}</code>.</li>
   <li>
-    Under <code class="language-markup">label</code>, change
-    <code class="language-markup">text</code> from "Can you provide more
+    Under <code>label</code>, change
+    <code>text</code> from "Can you provide more
     detail?" to "{{exampleTextArea.title}}".
   </li>
   <li>
-    Change the <code class="language-markup">id</code> and
-    <code class="language-markup">name</code> to
-    <code class="language-markup">{{exampleTextArea.legend}}</code>.
+    Change the <code>id</code> and
+    <code>name</code> to
+    <code>{{exampleTextArea.legend}}</code>.
   </li>
   <li>We don't need a hint, so remove it and the comma just before it.</li>
   <li>
     We also want to make the page a title, so in the
-    <code class="language-markup">label</code> area add
-    <code class="language-markup"> classes: "nhsuk-label--l",</code> and
-    <code class="language-markup">isPageHeading: true</code>
+    <code>label</code> area add
+    <code> classes: "nhsuk-label--l",</code> and
+    <code>isPageHeading: true</code>
   </li>
 </ol>
 
 <p>Your component code should now look like this:</p>
 
-<pre class="app-pre"><code class="language-markup" >&#123;&#123; textarea({
-name: "{{exampleTextArea.legend}}",
-id: "{{exampleTextArea.legend}}",
-label: {
-  text: "{{exampleTextArea.title}}",
-  classes: "nhsuk-label--l",
-  isPageHeading: true
-}
-}) &#125;&#125;</code></pre>
+{% call codeSnippet({ language: "js" }) %}{% raw %}
+{{ textarea({
+  name: "details",
+  id: "details",
+  label: {
+    text: "Tell us your symptoms of magical powers",
+    classes: "nhsuk-label--l",
+    isPageHeading: true
+  }
+}) }} {% endraw %}{% endcall %}
 <p>Your page should now look like this:</p>
 <figure class="nhsuk-figure">
   <img

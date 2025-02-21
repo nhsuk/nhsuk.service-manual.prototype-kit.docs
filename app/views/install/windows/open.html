@@ -4,7 +4,7 @@
 {% block branchingContent %}
   <p>Go to your prototype by entering in the Command Prompt:</p>
 
-  <pre class="app-pre"><code class="app-code">cd Documents/Projects/find-a-pharmacy</code></pre>
+  {{ codeSnippet({ code: "cd Documents/Projects/find-a-pharmacy", language: "sh" }) }}
 
   <img class="app-img-guide nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-6" alt="Screenshot of navigating to project in the command prompt" src="/images/windows/cd.png" />
 {% endblock %}

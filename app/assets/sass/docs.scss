@@ -11,33 +11,6 @@
   background-color: $color_nhsuk-grey-4 !important;
 }
 
-// <pre> and <code> tag styles
-.app-pre {
-  @include nhsuk-responsive-margin(4, "bottom");
-
-  background: $color_nhsuk-white;
-  border: 1px solid $nhsuk-border-color;
-  overflow: auto;
-  margin-top: 0;
-  padding: nhsuk-spacing(3);
-  position: relative;
-}
-
-li .app-code,
-p .app-code {
-  background: $color_nhsuk-white;
-  border: 1px solid $nhsuk-border-color;
-  padding: nhsuk-spacing(1) nhsuk-spacing(3);
-  font-size: 0.8em;
-}
-
-.nhsuk-expander .app-pre,
-.nhsuk-expander p .app-code,
-.nhsuk-expander li .app-code {
-  background: $color_nhsuk-grey-5;
-  border: 1px solid $color_nhsuk-grey-4;
-}
-
 // Installation guide screenshots
 .app-img-guide {
   width: 100%;

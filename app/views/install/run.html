@@ -35,7 +35,8 @@
       {% block branchingContent %}
       {% endblock %}
 
-      <pre class="app-pre"><code class="app-code">npm run watch</code></pre>
+      {{ codeSnippet({ code: "npm run watch", language: "sh" }) }}
+
 
       <p>After the kit has started, you should see a message telling you that the kit is running:</p>
 

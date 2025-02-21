@@ -80,7 +80,7 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
     </p>
   </li>
 </ol>
-{% call codeSnippet({language: "js"}) %}
+{% call codeSnippet({ language: "js" }) %}
 // Run this code when a form is submitted
 // to '/{{exampleRadios.url}}-answer'
 router.post('/{{exampleRadios.url}}-answer', function (req, res) {
@@ -112,7 +112,7 @@ router.post('/{{exampleRadios.url}}-answer', function (req, res) {
 </p>
 <p>If the kit crashes, you will see something like this on the terminal:</p>
 
-{% call codeSnippet({language: "bash"}) %}
+{% call codeSnippet({ language: "bash" }) %}
 /Users/name/projects/{{exampleServiceURL}}-prototype/app/routes.js:12
 });
 ^

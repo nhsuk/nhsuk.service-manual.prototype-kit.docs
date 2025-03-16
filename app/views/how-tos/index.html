@@ -13,131 +13,60 @@
 
 {% block content %}
   <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-full">
-
-<div class="nhsuk-u-reading-width">
+    <div class="nhsuk-grid-column-two-thirds">
       <h1>Guides</h1>
 
-      <p class="nhsuk-lede-text">These guides will show you how to use the prototype kit, from creating a simple page to building complex user journeys.</p>
-</div>
+      <p class="nhsuk-lede-text">These guides show you how to use the prototype kit, from creating a simple page to building complex user journeys.</p>
     </div>
-
-</div>
+  </div>
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-one-third">
-      <h2 class="nhsuk-heading-s">Download and install</h2>
-
-      <ul class="nhsuk-list">
-        <li>
-          <a href="/install/index">Get started</a>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>
-          <a href="/install/simple">Install guide</a>
-        </li>
-        <li>
-          <a href="/install/advanced">Advanced install guide</a>
-        </li>
-        <li>
-          <a href="/install/nhs-england-windows-laptops">Set up the kit on an NHS England Windows laptop</a>
-        </li>
-        <li>
-          <a href="/install/codespaces">Install and use the kit with your web browser</a>
-        </li>
-        </ul>
-      </li>
-      </ul>
-
-
-      <h2 class="nhsuk-heading-s">Build a basic prototype tutorial</h2>
-      <ul class="nhsuk-list">
-        <li>
-          <a href="/how-tos/build-basic-prototype/index">Before you start the tutorial</a>
-          <ol class="nhsuk-list nhsuk-list--number">
-            <li>
-              <a href="/how-tos/build-basic-prototype/open-prototype-in-editor">Open your prototype in your editor</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/create-pages">Create pages</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/link-pages-together">Link your pages together</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/use-components">Use components from the design system</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/show-users-answers">Show the user's answers</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/let-user-change-answers">Let the user change their answers</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/branching">Show different pages depending on user input (branching)</a>
-            </li>
-            <li>
-              <a href="/how-tos/build-basic-prototype/link-index-page-start-page">Link your index page to your start page</a>
-            </li>
-          </ol>
-        </li>
-      </ul>
+      {{ card({
+        href: "how-tos/build-basic-prototype/index",
+        clickable: "true",
+        headingLevel: 5,
+        heading: "Tutorial: building a basic prototype",
+        description: "Learn how to use the prototype kit with step by step instructions.",
+        headingClasses: "nhsuk-heading-s",
+        classes: "nhsuk-u-margin-bottom-5"
+      }) }}
 
     </div>
     <div class="nhsuk-grid-column-one-third">
-
-        <h2 class="nhsuk-heading-s">General use</h2>
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">General use</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/making-pages">Making pages</a></li>
         <li><a href="/how-tos/adding-assets">Adding CSS, JavaScript and images</a></li>
         <li><a href="/how-tos/components">Using components</a></li>
         <li><a href="/how-tos/passing-data-page">Passing data page to page</a></li>
-        <li><a href="/how-tos/branching">Branching</a> – show a different page based on user input</li>
-
+        <li><a href="/how-tos/branching">Branching – showing different pages based on user input</a></li>
       </ul>
-
-        <h2 class="nhsuk-heading-s">Storing and sharing code</h2>
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Storing and sharing code</h2>
 
       <ul class="nhsuk-list">
-       
-          <li><a href="/how-tos/github/index">Store your code online with GitHub and GitHub Desktop</a>
-          <ul class="nhsuk-list nhsuk-list--bullet">
-              <li><a href="/how-tos/github/setup-github-desktop">Set up GitHub and GitHub Desktop</a></li>
-
-            <li><a href="/how-tos/github/store-new-prototype">Store a new prototype on GitHub</a></li>
-    
-         <li><a href="/how-tos/github/download-existing-prototype">Download an existing prototype from GitHub</a></li>
-          <li><a href="/how-tos/github/collaborate">Collaborate on prototypes using GitHub Desktop</a></li>
-          </ul>
-        </li>
+        <li><a href="/how-tos/github">Store your code online with GitHub and GitHub Desktop</a>
         <li><a href="/how-tos/git">Set up Git using the terminal</a></li>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-third">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Publishing your prototype</h2>
 
-</ul>
-
-
-</div>
-<div class="nhsuk-grid-column-one-third">
-        <h2 class="nhsuk-heading-s">Sharing your prototype</h2>
-
-        <ul class="nhsuk-list">
+      <ul class="nhsuk-list">
         <li><a href="/how-tos/publish-your-prototype-online">Publish your prototype online</a></li>
       </ul>
 
-
-        <h2 class="nhsuk-heading-s">Updating the kit</h2>
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Updating the kit</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/updating-the-kit">Updating the kit</a></li>
       </ul>
 
-        <h2 class="nhsuk-heading-s">Advanced use</h2>
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Advanced use</h2>
 
       <ul class="nhsuk-list">
         <li><a href="/how-tos/switching-from-govuk-prototype-kit">Switching from the GOV.UK Prototype Kit</a></li>
       </ul>
-
     </div>
-
   </div>
 {% endblock %}

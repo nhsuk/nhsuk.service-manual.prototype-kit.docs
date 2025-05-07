@@ -20,21 +20,15 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">Reset data</h1>
+
+      <p class="nhsuk-body">This will reset all of the data entered in this session.</p>
 
       <form method="post">
-
-        {{ card({
-          "heading": "Clear data",
-          "headingLevel": "1",
-          "descriptionHtml": "<p>This will clear all of the data entered in this session.</p>"
-        }) }}
-
         {{ button({
-          "text": "Clear the data"
+          text: "Reset all data"
         }) }}
-
       </form>
-
     </div>
   </div>
 {% endblock %}

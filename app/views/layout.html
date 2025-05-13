@@ -1,8 +1,48 @@
 <!-- Extends the layout from /views/template.html -->
-{% extends "template.html" %}
+{% extends "template.njk" %}
 
-{% block headCSS %}
+{%- from 'skip-link/macro.njk' import skipLink %}
+{%- from 'action-link/macro.njk' import actionLink %}
+{%- from 'breadcrumb/macro.njk' import breadcrumb %}
+{%- from 'card/macro.njk' import card %}
+{%- from 'character-count/macro.njk' import characterCount %}
+{%- from 'contents-list/macro.njk' import contentsList %}
+{%- from 'details/macro.njk' import details %}
+{%- from 'header/macro.njk' import header %}
+{%- from 'hero/macro.njk' import hero %}
+{%- from 'footer/macro.njk' import footer %}
+{%- from 'do-dont-list/macro.njk' import list %}
+{%- from 'images/macro.njk' import image %}
+{%- from 'inset-text/macro.njk' import insetText %}
+{%- from 'pagination/macro.njk' import pagination %}
+{%- from 'skip-link/macro.njk' import skipLink %}
+{%- from 'tables/macro.njk' import table %}
+{%- from 'warning-callout/macro.njk' import warningCallout %}
+{%- from 'back-link/macro.njk' import backLink %}
+{%- from 'button/macro.njk' import button %}
+{%- from 'checkboxes/macro.njk' import checkboxes %}
+{%- from 'date-input/macro.njk' import dateInput %}
+{%- from 'error-message/macro.njk' import errorMessage %}
+{%- from 'error-summary/macro.njk' import errorSummary %}
+{%- from 'fieldset/macro.njk' import fieldset %}
+{%- from 'hint/macro.njk' import hint %}
+{%- from 'input/macro.njk' import input %}
+{%- from 'label/macro.njk' import label %}
+{%- from 'radios/macro.njk' import radios %}
+{%- from 'select/macro.njk' import select %}
+{%- from 'summary-list/macro.njk' import summaryList %}
+{%- from 'tabs/macro.njk' import tabs %}
+{%- from 'tag/macro.njk' import tag %}
+{%- from 'textarea/macro.njk' import textarea %}
+{%- from 'panel/macro.njk' import panel %}
+
+{%- from 'includes/code-snippet.njk' import codeSnippet %}
+
+{% set assetPath = '/nhsuk-frontend/assets' %}
+
+{% block head %}
   <link href="/css/main.css" rel="stylesheet">
+  <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 {% endblock %}
 
 {% block header %}

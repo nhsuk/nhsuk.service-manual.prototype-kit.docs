@@ -17,13 +17,35 @@
 
       <p class="nhsuk-lede-text">You can show a user different pages, depending on how they've answered a question.
 
-      <p><a href="/examples/branching">You can see an example here</a></p>
+      <p>To do this, add some javascript to your <code>routes.js</code> file.</p>
 
-      <p>The code for the example can be found in :</p>
+      <p>Here is an example:</p>
 
-      {% call codeSnippet({ language: "html" }) %}
-/documentation_routes.js
-docs/views/examples/branching
+      {% call codeSnippet({ language: "javascript" }) %}
+// Called when answering question about whether NHS number is known
+router.post('/answer-do-you-know-your-nhs-number', (req, res) => {
+
+  // Make a variable and give it the value from 'nhsNumberKnown'
+  const nhsNumberKnown = req.session.data['nhsNumberKnown'];
+
+  // Check whether the variable matches a condition
+  if (nhsNumberKnown === 'Yes') {
+
+    // Send user to a page where they’ll enter their NHS number
+    res.redirect('/enter-nhs-number');
+
+  } else if (nhsNumberKnown === 'No') {
+
+    // Send user to a page where they can find their NHS number
+    res.redirect('/find-nhs-number');
+
+  } else {
+
+    // Send user back to the question page
+    res.redirect('/do-you-know-your-nhs-number');
+
+  }
+});
       {% endcall %}
 
     </div>

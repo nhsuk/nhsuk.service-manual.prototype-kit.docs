@@ -1,3 +1,5 @@
+@use "node_modules/nhsuk-frontend/packages/nhsuk" as *;
+
 // Highlight JS overrides
 $color-syntax--body: #28333b;
 $color-syntax--comment: #757575;

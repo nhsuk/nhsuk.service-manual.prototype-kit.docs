@@ -2,9 +2,9 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/figure';
 @import 'components/code-snippet';
 @import 'components/header';
+@import 'components/image';
 
 @import 'styles/code';
 @import 'styles/highlight';

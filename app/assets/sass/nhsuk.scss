@@ -1,5 +1,5 @@
-@import 'node_modules/nhsuk-frontend/packages/core/settings';
-@import 'node_modules/nhsuk-frontend/packages/core/tools';
+@use 'node_modules/nhsuk-frontend/packages/core/settings' as *;
+@use 'node_modules/nhsuk-frontend/packages/core/tools' as *;
 
 // NHS.UK website template styles
 //

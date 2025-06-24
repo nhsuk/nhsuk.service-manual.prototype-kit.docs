@@ -1,14 +1,15 @@
 // Import NHS.UK frontend library
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+@forward "node_modules/nhsuk-frontend/packages/nhsuk";
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/figure';
-@import 'components/code-snippet';
-@import 'components/header';
+@forward 'components/figure';
+@forward 'components/code-snippet';
+@forward 'components/header';
 
-@import 'styles/code';
-@import 'styles/highlight';
+@forward 'styles/code';
+@forward 'styles/highlight';
 
+@use "node_modules/nhsuk-frontend/packages/nhsuk" as *;
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...

@@ -103,15 +103,13 @@ set prev = { "title" : "Link your pages together" , "link" :
 }) }}{% endraw %}{% endcall %}
 
 <p>Your page should now look like this:</p>
-<figure class="nhsuk-figure">
-  <img
-      src="/images/tutorial-radios.png"
-      class="nhsuk-figure__image"
-      alt='Web page with the heading "Have you had symptoms of magical power in the last 30 days?", 3 radios and a continue button'
-    />
-  <figcaption class="nhsuk-figure__caption">
-    Screenshot of how your prototype should look.
-  </figcaption>
-</figure>
+
+{{ image({
+  src: "/images/tutorial-radios.png",
+  alt: "Web page with the heading ‘Have you had symptoms of magical power in the last 30 days?’, 3 radios and a continue button",
+  caption: "Screenshot of how your prototype should look.",
+  classes: "app-image--full-width"
+}) }}
+
 
 {% endblock %}

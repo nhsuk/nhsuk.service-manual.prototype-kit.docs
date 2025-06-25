@@ -63,15 +63,12 @@ design system" , "link" : "use-components" } %} {% extends
   }
 }) }} {% endraw %}{% endcall %}
 <p>Your page should now look like this:</p>
-<figure class="nhsuk-figure">
-  <img
-    src="/images/tutorial-textarea.png"
-    class="nhsuk-figure__image"
-    alt='Web page with the heading "{{exampleTextArea.title}}", a textarea and continue button'
-  />
-  <figcaption class="nhsuk-figure__caption">
-    Screenshot of how your prototype should look.
-  </figcaption>
-</figure>
+
+{{ image({
+  src: "/images/tutorial-textarea.png",
+  alt: "Web page with the heading ‘Tell us your symptoms of magical powers’, a textarea and continue button",
+  caption: "Screenshot of how your prototype should look.",
+  classes: "app-image--full-width"
+}) }}
 
 {% endblock %}

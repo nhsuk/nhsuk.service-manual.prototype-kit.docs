@@ -1,7 +1,7 @@
 {
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
-  "prototypeKitVersion": "6.2.0",
+  "prototypeKitVersion": "6.3.0",
   "description": "Website and documentation for the NHS prototype kit.",
   "main": "app.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
-    "gulp": "^5.0.0",
+    "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
@@ -39,13 +39,13 @@
     "nhsuk-frontend": "^9.5.1",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
-    "sass-embedded": "^1.88.0"
+    "sass-embedded": "^1.89.2"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
-    "jest": "^29.7.0"
+    "jest": "^30.0.2"
   },
   "engines": {
     "node": "^20"

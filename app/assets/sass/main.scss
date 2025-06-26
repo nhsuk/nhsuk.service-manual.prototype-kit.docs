@@ -2,9 +2,9 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/figure';
 @import 'components/code-snippet';
 @import 'components/header';
+@import 'components/image';
 
 @import 'styles/code';
 @import 'styles/highlight';
@@ -41,10 +41,3 @@
 .nhsuk-table__cell {
   padding: 16px 16px 16px 0;
 }
-
-// Temporary fix until this is fixed in NHS frontend
-// See https://github.com/nhsuk/nhsuk-frontend/pull/1292
-.nhsuk-hero a.nhsuk-button {
-  color: $nhsuk-text-color;
-}
-

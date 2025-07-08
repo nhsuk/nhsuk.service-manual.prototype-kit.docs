@@ -3,16 +3,27 @@ together" , "link" : "link-pages-together" } %} {% set prev = { "title" : "Open
 your prototype in your editor" , "link" : "open-prototype-in-editor" } %} {%
 extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 
-<p>Create pages by copying template files that come with the prototype kit.</p>
+<p>Create pages by copying examples from the <a href="https://service-manual.nhs.uk/design-system/patterns">patterns section of the NHS Service manual</a>.</p>
 <h2 id="create-a-start-page">Create a start page</h2>
 <p>
-  Copy the <code>{{exampleStart.url}}.html</code> file
-  from <code>lib/example-templates</code> to
-  <code>app/views</code>.
+  Create an empty file named <code>{{exampleStart.url}}.html</code> in your <code>app/views</code> folder.
 </p>
+
+<p>Visit the <a href="https://service-manual.nhs.uk/design-system/patterns/start-page">start page pattern</a> and select the Nunjucks option under the first example. This will reveal the Nunjucks code.</p>
+
+<p>Copy the Nunjucks code into your empty file. There is a ‘Copy code’ button to make this easier.</p>
+
+<p>Add this line to the very top of your code:</p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% endraw %}{% endcall %}
+
 <p>
   Preview the pages in your prototype by going to
-  ht<span>tp</span>://localhost:3000/name-of-HTML-file in your web browser. For
+  <code>http://localhost:3000/name-of-file</code> in your web browser.</p>
+
+<p>For
   example,
   <a href="http://localhost:3000/{{exampleStart.url}}"
     >go to http://localhost:3000/{{exampleStart.url}}</a
@@ -49,18 +60,22 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
   should see your service name change on the Start page.
 </p>
 <h2 id="question-pages">Question pages</h2>
-<p>
-  Make 2 copies of the
-  <code>question-page.html</code> file from
-  <code>lib/example-templates</code> to
-  <code>app/views</code>.
-</p>
-<p>Rename the 2 file copies to:</p>
-<ul class="nhsuk-list nhsuk-list--bullet">
 
+<p>Create 2 empty files for question pages in <code>app/views</code> named:</p>
+
+<ul class="nhsuk-list nhsuk-list--bullet">
   <li><code>{{exampleRadios.url}}.html</code></li>
   <li><code>{{exampleTextArea.url}}.html</code></li>
 </ul>
+
+<p>Visit  the <a href="https://service-manual.nhs.uk/design-system/patterns/question-pages">question page pattern</a> and copy the Nunjucks from the example into each file.</p>
+
+<p>As before, add this line to the top of each file:</p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% endraw %}{% endcall %}
+
 <p>Go to the following URLs to check your pages:</p>
 <ul class="nhsuk-list nhsuk-list--bullet">
 
@@ -88,12 +103,19 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
   to "{{exampleTextArea.title}}".
 </p>
 <h2 id="{{exampleCheckAnswers.url}}-page">Check answers page</h2>
+
 <p>
-  Copy the
-  <code>{{exampleCheckAnswers.url}}.html</code> file
-  from <code>lib/example-templates</code> to
-  <code>app/views</code>.
+  Create an empty file named <code>{{exampleCheckAnswers.url}}.html</code> in <code>app/views</code>.
 </p>
+
+<p>Copy the Nunjucks code from the <a href="https://service-manual.nhs.uk/design-system/patterns/check-answers">check answers pattern page</a> and add it to the file.</p>
+
+<p>Add this line to the top of the file:</p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% endraw %}{% endcall %}
+
 <p>
   Go to
   <a href="http://localhost:3000/{{exampleCheckAnswers.url}}"
@@ -103,12 +125,19 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 </p>
 
 <h2 id="confirmation-page">Confirmation page</h2>
+
 <p>
-  Copy the
-  <code>{{exampleConfirmation.url}}.html</code> file
-  from <code>lib/example-templates</code> to
-  <code>app/views</code>.
+  Create an empty file named <code>{{exampleConfirmation.url}}.html</code> in <code>app/views</code>.
 </p>
+
+<p>Copy the Nunjucks code from the <a href="https://service-manual.nhs.uk/design-system/patterns/confirmation-page">confirmation page pattern</a> into the file.</p>
+
+<p>Add this line to the top of the file:</p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% endraw %}{% endcall %}
+
 <p>
   Go to
   <a href="http://localhost:3000/{{exampleConfirmation.url}}"

@@ -32,10 +32,26 @@ their answers" , "link" : "let-user-change-answers" } %} {% extends
     <p>
       Make an
       <code>{{exampleIneligible.url}}.html</code> page
-      by copying <code>content-page.html</code> from
-      <code>lib/example-templates</code> to
+      by copying this code to
       <code>app/views</code>.
     </p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% set pageName = "Ineligible" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageName }}</h1>
+
+    </div>
+  </div>
+{% endblock %}
+{% endraw %}{% endcall %}
+
+
   </li>
   <li>
     <p>

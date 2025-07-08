@@ -18,22 +18,28 @@
 
       <h1 class="nhsuk-heading-xl">Page templates</h1>
 
-      <p>You can find some example templates for pages in the <strong>/lib/example-templates</strong> folder within your prototype (or /docs/templates in older versions of the kit).</p>
+      <p>You can find some example page templates in <a href="https://service-manual.nhs.uk/design-system/patterns">patterns section of the NHS service manual</a>.</p>
 
       <p>These include:</p>
 
       <ul>
-        <li>content pages</li>
-        <li>question pages</li>
-        <li>check your answers</li>
-        <li>a confirmation page</li>
+        <li><a href="https://service-manual.nhs.uk/design-system/patterns/question-pages">question pages</a></li>
+        <li><a href="https://service-manual.nhs.uk/design-system/patterns/confirmation-page">confirmation pages</a></li>
+        <li><a href="https://service-manual.nhs.uk/design-system/patterns/check-answers">check answers pages</a></li>
+        <li><a href="https://service-manual.nhs.uk/design-system/patterns/complete-multiple-tasks">task list pages</a></li>
       </ul>
 
-      <p>To use one, copy and paste it from there into your <strong>/app/views</strong> folder.</p>
+      <p>To use one, copy and paste the Nunjucks code from the page into a new file in your <strong>/app/views</strong> folder.</p>
 
-      <p>There are also some templates for <a href="https://service-manual.nhs.uk/design-system/patterns">common patterns</a> in the NHS service manual.</p>
+      <p>The file name should end with <code>.html</code> and not contain any spaces, for example <code>what-are-your-symptoms.html</code></p>
 
-      <h2 class="nhsuk-heading-m">NHS website pages</h2>
+      <p>You will also need to add this line of code to the top of each page:</p>
+
+{% call codeSnippet({ language: "html" }) %}{% raw %}
+{% extends "layout.html" %}
+{% endraw %}{% endcall %}
+
+      <h2 class="nhsuk-heading-m nhsuk-u-margin-top-6">NHS website pages</h2>
 
       <p>If you are prototyping a service which includes pages on the NHS website, you can use these additional templates:</p>
 

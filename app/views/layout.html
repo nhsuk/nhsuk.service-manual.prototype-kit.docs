@@ -40,6 +40,12 @@
 
 {% set assetPath = '/nhsuk-frontend/assets' %}
 
+{% block pageTitle -%}
+  {%- if errors === true or (errors | length) %}Error: {% endif -%}
+  {%- if pageName %}{{ pageName }} – {% endif -%}
+  NHS Prototype kit
+{%- endblock %}
+
 {% block head %}
   <link href="/css/main.css" rel="stylesheet">
 {% endblock %}
@@ -54,19 +60,25 @@
       items: [
         {
           text: "Get started",
-          href: "/install"
+          href: "/install",
+          active: (currentSection == "Get started"),
+          current: (pageName == "Get started")
         },
         {
           text: "Guides",
-          href: "/how-tos"
+          href: "/how-tos",
+          active: (currentSection == "Guides"),
+          current: (pageName == "Guides")
         },
         {
           text: "Contribute",
-          href: "/contribute"
+          href: "/contribute",
+          current: (pageName == "Contribute")
         },
         {
           text: "Support",
-          href: "/support"
+          href: "/support",
+          current: (pageName == "Support")
         }
       ]
     }

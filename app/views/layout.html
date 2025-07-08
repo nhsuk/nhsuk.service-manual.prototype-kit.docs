@@ -42,7 +42,6 @@
 
 {% block head %}
   <link href="/css/main.css" rel="stylesheet">
-  <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 {% endblock %}
 
 {% block header %}
@@ -107,6 +106,11 @@
 {% endblock %}
 
 {% block bodyEnd %}
+  <script src="/nhsuk-frontend/nhsuk-frontend.min.js" type="module"></script>
+  <script type="module">
+    import { initAll } from '/nhsuk-frontend/nhsuk-frontend.min.js'
+    initAll()
+  </script>
   {% block scripts %}
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}

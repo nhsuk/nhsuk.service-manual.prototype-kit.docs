@@ -18,14 +18,6 @@
   background-color: $color_nhsuk-grey-4 !important;
 }
 
-
-// This is a temporary fix to remove the 'Home' link in
-// the primary navigation which is added Header primary nav.
-// Should be able to remove this after the next NHS Frontend update.
-.nhsuk-header__navigation-item--home {
-  display: none;
-}
-
 // Installation guide screenshots
 .app-img-guide {
   width: 100%;

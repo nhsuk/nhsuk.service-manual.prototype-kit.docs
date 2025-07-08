@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Get started - NHS prototype kit
-{% endblock %}
+{% set currentSection = "Get started" %}
+{% set pageName = "Get started" %}
 
 {% block beforeContent %}
   {{ breadcrumb({ href: "/", text: "Home" }) }}
@@ -11,7 +10,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <h1 class="nhsuk-heading-xl">Get started</h1>
+      <h1 class="nhsuk-heading-xl">{{ pageName }}</h1>
 
       <p>To use the kit you'll need some basic knowledge of HTML, for example what tags and attributes are and how to copy and paste code.</p>
 

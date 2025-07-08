@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  How to guides - NHS prototype kit
-{% endblock %}
+{% set currentSection = "Guides" %}
+
+{% set pageName = "Guides" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -14,7 +14,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <h1>Guides</h1>
+      <h1>{{ pageName }}</h1>
 
       {{ card({
         href: "how-tos/build-basic-prototype/index",

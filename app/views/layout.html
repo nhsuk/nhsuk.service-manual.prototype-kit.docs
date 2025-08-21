@@ -87,32 +87,34 @@
 
 {% block footer %}
   {{ footer({
-    links: [
-      {
-        label: "About",
-        URL: "/about"
-      },
-      {
-        label: "Support",
-        URL: "/support"
-      },
-      {
-        label: "Updates",
-        URL: "/whats-new/updates"
-      },
-      {
-        label: "Page templates",
-        URL: "/page-templates"
-      },
-      {
-        label: "NHS prototype kit on GitHub",
-        URL: "https://github.com/nhsuk/nhsuk-prototype-kit"
-      },
-      {
-        label: "Cookies",
-        URL: "/cookies"
-      }
-    ]
+    meta: {
+      items: [
+        {
+          text: "About",
+          href: "/about"
+        },
+        {
+          text: "Support",
+          href: "/support"
+        },
+        {
+          text: "Updates",
+          href: "/whats-new/updates"
+        },
+        {
+          text: "Page templates",
+          href: "/page-templates"
+        },
+        {
+          text: "NHS prototype kit on GitHub",
+          href: "https://github.com/nhsuk/nhsuk-prototype-kit"
+        },
+        {
+          text: "Cookies",
+          href: "/cookies"
+        }
+      ]
+    }
   }) }}
 {% endblock %}
 

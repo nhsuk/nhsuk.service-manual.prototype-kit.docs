@@ -145,7 +145,7 @@ app.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk')));
+app.use('/nhsuk-frontend/assets', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk/assets')));
 
 // Use custom application routes
 app.use('/', routes);

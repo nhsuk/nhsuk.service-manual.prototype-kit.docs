@@ -1,10 +1,11 @@
 {% extends 'layout.html' %}
-{% block pageTitle %}
-  Contribute - NHS prototype kit
-{% endblock %}
+
+{% set pageName = "Contribute" %}
+
 {% block beforeContent %}
   {{ breadcrumb({ href: "/", text: "Home" }) }}
 {% endblock %}
+
 {% block content %}
 
 {# the board is a long string to this is made a variable for consistency #}
@@ -29,7 +30,7 @@
       <li>We will credit you in our update notes and other supporting information, unless you tell us not to.</li>
       <li>If you're employed by NHS England, you can use examples of contributing to the kit as part of your performance reviews – talk to your line manager about how to include it in your objectives.</li>
     </ul>
-   
+
     </p>
     <h2 class="nhsuk-heading-l" id="how-you-can-contribute-to-the-kit">
       How you can contribute to the kit
@@ -57,7 +58,7 @@
     <ul>
       <li>making the guidance easy to understand and use</li>
       <li>writing in line with the <a href="https://service-manual.nhs.uk/content">NHS content guide</a> (including standardising terms for <a href="https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/blob/main/README.md">the style guide for the kit in GitHub</a>)</li>
-    </ul>  
+    </ul>
 
     <p>
       Existing things we want to do for guidance are labelled <a

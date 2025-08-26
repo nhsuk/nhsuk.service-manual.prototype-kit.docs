@@ -585,27 +585,27 @@
 // reset visited link colour as all links are empty
 main a[href=""]:visited,
 main a[href=""]:visited .nhsuk-action-link__text {
-  color: $nhsuk-link-color;
+  color: $nhsuk-link-colour;
 }
 // and hover link colour
 main a[href=""]:hover,
 main a[href=""]:hover .nhsuk-action-link__text {
-  color: $nhsuk-link-hover-color;
+  color: $nhsuk-link-hover-colour;
 }
 // and active link colour
 main a[href=""]:active,
 main a[href=""]:active .nhsuk-action-link__text {
-  color: $nhsuk-link-active-color;
+  color: $nhsuk-link-active-colour;
 }
 // and focus link colour
 main a[href=""]:focus,
 main a[href=""]:focus .nhsuk-action-link__text,
 main .app-list-signage a[href=""]:focus {
-  color: $nhsuk-focus-text-color;
+  color: $nhsuk-focus-text-colour;
 }
 // except the links in blue blocks
 main .app-list-signage a[href=""] {
-  color: $color_nhsuk-white;
+  color: nhsuk-colour("white");
 }
 
 // ==========================================================================
@@ -613,7 +613,7 @@ main .app-list-signage a[href=""] {
 // ==========================================================================
 
 .nhsuk-related-nav {
-  border-top: 1px solid $nhsuk-border-color;
+  border-top: 1px solid $nhsuk-border-colour;
 
   @include mq($until: desktop) {
     margin-top: nhsuk-spacing(7);
@@ -637,6 +637,6 @@ main .app-list-signage a[href=""] {
 // ==========================================================================
 
 .nhsuk-list--border li {
-  border-bottom: 1px solid $color_nhsuk-grey-4;
+  border-bottom: 1px solid nhsuk-colour("grey-4");
   padding: 8px 0 16px;
 }

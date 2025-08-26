@@ -1,7 +1,7 @@
 // Code snippet
 .app-code-snippet {
-  background-color: $color_nhsuk-white;
-  border: 1px solid $nhsuk-border-color;
+  background-color: nhsuk-colour("white");
+  border: 1px solid $nhsuk-border-colour;
   overflow: auto;
   padding: nhsuk-spacing(1) nhsuk-spacing(3);
   margin-bottom: nhsuk-spacing(3);

@@ -1,41 +1,59 @@
-{% set pageTitle = "Create pages" %} {% set next = { "title" : "Link your pages
-together" , "link" : "link-pages-together" } %} {% set prev = { "title" : "Open
-your prototype in your editor" , "link" : "open-prototype-in-editor" } %} {%
-extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
+{% set pageTitle = "Create pages" %}
+{% set next = {
+  "title" : "Link your pages together",
+  "link" : "link-pages-together"
+} %}
+{% set prev = {
+  "title" : "Open your prototype in your editor",
+  "link" : "open-prototype-in-editor"
+} %}
+{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
 
 <p>Create pages by copying examples from the <a href="https://service-manual.nhs.uk/design-system/patterns">patterns section of the NHS Service manual</a>.</p>
+
 <h2 id="create-a-start-page">Create a start page</h2>
+
 <p>
   Create an empty file named <code>{{exampleStart.url}}.html</code> in your <code>app/views</code> folder.
 </p>
 
-<p>Visit the <a href="https://service-manual.nhs.uk/design-system/patterns/start-page">start page pattern</a> and select the Nunjucks option under the first example. This will reveal the Nunjucks code.</p>
-
-<p>Copy the Nunjucks code into your empty file. There is a ‘Copy code’ button to make this easier.</p>
-
-<p>Add this line to the very top of your code:</p>
+<p>Add this line to the very top of your file:</p>
 
 {% call codeSnippet({ language: "html" }) %}{% raw %}
 {% extends "layout.html" %}
 {% endraw %}{% endcall %}
 
 <p>
-  Preview the pages in your prototype by going to
-  <code>http://localhost:3000/name-of-file</code> in your web browser.</p>
+  This line tells the kit to use the standard page layout for your page. You'll need it on all pages you create.
+</p>
 
-<p>For
-  example,
-  <a href="http://localhost:3000/{{exampleStart.url}}"
-    >go to http://localhost:3000/{{exampleStart.url}}</a
-  >
+<p>Visit the <a href="https://service-manual.nhs.uk/design-system/patterns/start-page">start page pattern</a> and select the Nunjucks option under the first example. This will reveal the Nunjucks code.</p>
+
+<p>Copy the Nunjucks code into your file, below the line we added at the start. There is a ‘Copy code’ button to make this easier.</p>
+
+<p>
+  Preview the pages in your prototype by going to
+  <code>http://localhost:3000/name-of-file</code> in your web browser. You don’t use the file extension in URLs.
+</p>
+
+<p>
+  For example,
+  <a href="http://localhost:3000/{{exampleStart.url}}">
+    go to http://localhost:3000/{{exampleStart.url}}
+  </a>
   to preview <code>{{exampleStart.url}}.html</code>.
 </p>
+
 <h3 id="change-the-service-name">Change the service name</h3>
+
 <p>
   You'll normally edit the HTML to make changes to pages, but the service name
   is in a config file. This is so we can change it in one place to update it on
   every page in your prototype.
 </p>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Open the <code>config.js</code> file in your
@@ -50,15 +68,18 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
     save your change.
   </li>
 </ol>
+
 <p>
   You must save every time you make a change to a file. In most code editors, a
   dot appears in the tab for any file that has unsaved changes.
 </p>
+
 <p>
   Normally your changes will automatically show in the browser without
   refreshing. But for this config change, you need to refresh the page. You
   should see your service name change on the Start page.
 </p>
+
 <h2 id="question-pages">Question pages</h2>
 
 <p>Create 2 empty files for question pages in <code>app/views</code> named:</p>
@@ -68,47 +89,43 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
   <li><code>{{exampleTextArea.url}}.html</code></li>
 </ul>
 
-<p>Visit the <a href="https://service-manual.nhs.uk/design-system/patterns/question-pages">question page pattern</a> and copy the Nunjucks from the example into each file.</p>
-
-<p>As before, add this line to the top of each file:</p>
+<p>
+  As before, add this line to the top of each file:
+</p>
 
 {% call codeSnippet({ language: "html" }) %}{% raw %}
 {% extends "layout.html" %}
 {% endraw %}{% endcall %}
 
-<p>Go to the following URLs to check your pages:</p>
-<ul class="nhsuk-list nhsuk-list--bullet">
+<p>
+  Visit the <a href="https://service-manual.nhs.uk/design-system/patterns/question-pages">question page pattern</a> to see some example question pages.
+</p>
 
-  <li>
-    <a href="http://localhost:3000/{{exampleRadios.url}}"
+<p>
+  Find the first example with radios and copy the Nunjucks in to the first file. Copy the Nunjucks in to the first file you made.
+</p>
+
+<p>
+  The example includes a default radio question 'Where do you live', but we don't actually need this as we'll add our own components from the design system later. Delete the radio component by deleting all the code from <code>{% raw %}{{ radios({{% endraw %}</code> to <code>{% raw %}}) }}{% endraw %}</code>.
+</p>
+
+<p>
+  Preview the page by visiting <a href="http://localhost:3000/{{exampleRadios.url}}"
       >http://localhost:3000/{{exampleRadios.url}}</a
-    >
-  </li>
-  <li>
-    <a href="http://localhost:3000/{{exampleTextArea.url}}"
+    > in your browser. You should be left with a back link and a continue button.
+</p>
+
+<p>
+  For <code>{{exampleTextArea.url}}.html</code> you can copy all the code from the <code>{{exampleRadios.url}}.html</code> page we just made. Check it works by visiting <a href="http://localhost:3000/{{exampleTextArea.url}}"
       >http://localhost:3000/{{exampleTextArea.url}}</a
-    >
-  </li>
-</ul>
-<p>
-  In the <code>{{exampleRadios.url}}.html</code> file,
-  change the text after <code>"legend": {
-    "text": </code>
-  from "Heading or question goes here" to "{{exampleRadios.title}}".
+    > in your browser.
 </p>
-<p>
-  In the <code>{{exampleTextArea.url}}.html</code> file,
-  change the text after <code>"legend": {
-    "text": </code>
-  to "{{exampleTextArea.title}}".
-</p>
+
 <h2 id="{{exampleCheckAnswers.url}}-page">Check answers page</h2>
 
 <p>
   Create an empty file named <code>{{exampleCheckAnswers.url}}.html</code> in <code>app/views</code>.
 </p>
-
-<p>Copy the Nunjucks code from the <a href="https://service-manual.nhs.uk/design-system/patterns/check-answers">check answers pattern page</a> and add it to the file.</p>
 
 <p>Add this line to the top of the file:</p>
 
@@ -116,12 +133,14 @@ extends 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 {% extends "layout.html" %}
 {% endraw %}{% endcall %}
 
+<p>Copy the Nunjucks code from the <a href="https://service-manual.nhs.uk/design-system/patterns/check-answers">check answers pattern page</a> and add it to the file.</p>
+
 <p>
   Go to
   <a href="http://localhost:3000/{{exampleCheckAnswers.url}}"
     >http://localhost:3000/{{exampleCheckAnswers.url}}</a
   >
-  to check.
+  to check it works.
 </p>
 
 <h2 id="confirmation-page">Confirmation page</h2>

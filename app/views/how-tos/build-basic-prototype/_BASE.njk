@@ -6,13 +6,41 @@
 {# list of URLS, titles and questions for reference - existing NHS templates are hardcoded but these are tokenised for ease of change #}
 
 {% set exampleServiceName = "Order a test to check if you have magical powers" %}
+
 {% set exampleServiceURL = "magical-powers" %}
-{% set exampleStart = { url: "start-page" }  %}
-{% set exampleRadios = { "url" : "magical-powers", "title" : "Have you felt symptoms of magical powers in the last 30 days?", "legend" : "magicalPowers", "summary" : "Symptoms of magical powers" }  %}
-{% set exampleTextArea = { "url" : "details", "title" : "Tell us your symptoms of magical powers", legend: "details", "summary" : "Details of the symptoms" } %}
-{% set exampleCheckAnswers = { url: "check-your-answers", title : "Check your answers" }  %}
-{% set exampleConfirmation = { url: "confirmation-page", title:  "Confirmation" } %}
-{% set exampleIneligible = { url: "ineligible" }  %}
+
+{% set exampleStart = {
+  url: "start-page"
+}  %}
+{% set exampleRadios = {
+  "url": "magical-powers",
+  "legendText": "Have you felt symptoms of magical powers in the last 30 days?",
+  "name": "hasSymptoms",
+  "hint": "For example, things moving when you have strong feelings or hearing someone's thoughts",
+  "summaryListKey": "Symptoms of magical powers"
+ }  %}
+
+{% set exampleTextArea = {
+  "url": "details",
+  "labelText": "Tell us your symptoms of magical powers",
+  "name": "details",
+  "hint": "Details of the symptoms",
+  "summaryListKey": "Details of the symptoms"
+ } %}
+
+{% set exampleCheckAnswers = {
+  "url": "check-your-answers",
+  "title": "Check your answers"
+}  %}
+
+{% set exampleConfirmation = {
+  "url": "confirmation-page",
+  "title": "Confirmation"
+} %}
+
+{% set exampleIneligible = {
+  "url": "ineligible"
+}  %}
 
 {% block pageTitle %}
  {{ pageTitle | default("Add title with 'pageTitle'")}} - {{sectionName}} - NHS prototype kit
@@ -27,10 +55,10 @@
       },
       {
         href: "/how-tos",
-      text: "Guides"
+        text: "Guides"
       },
       {
-        href: "/how-tos/build-basic-prototype/index",
+        href: "/how-tos/build-basic-prototype",
         text: "Build a basic prototype"
       }
     ]
@@ -42,24 +70,22 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-{% if not noCaption %}<span class="nhsuk-caption-xl">{{sectionName}}</span>{% endif %}
+      {% if not noCaption %}<span class="nhsuk-caption-xl">{{sectionName}}</span>{% endif %}
+
       <h1 class="nhsuk-heading-xl">
-        {{ pageTitle | default("Add title with 'pageTitle'")}}
+        {{ pageTitle | default("Add title with 'pageTitle'") | safe }}
       </h1>
 
-{% block makePrototype %}
+      {% block makePrototype %}
+        <p>Add text in makePrototype block </p>
+      {% endblock %}
 
-   <p>Add text in makePrototype block </p>
-{% endblock %}
-
-{{ pagination({
-  previousUrl: prev.link if prev ,
-  previousPage: prev.title if prev ,
-  nextUrl: next.link if next ,
-  nextPage: next.title if next
-}) }}
-
+      {{ pagination({
+        previousUrl: prev.link if prev,
+        previousPage: prev.title if prev,
+        nextUrl: next.link if next,
+        nextPage: next.title if next
+      }) }}
     </div>
-
   </div>
 {% endblock %}

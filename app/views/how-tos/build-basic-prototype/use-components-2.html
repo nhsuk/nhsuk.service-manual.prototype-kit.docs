@@ -1,8 +1,21 @@
-{% set pageTitle = "Add a textarea to question 2" %} {% set next = { "title" :
-"Show the user's answers on your Check answers page" , "link" :
-"show-users-answers" } %} {% set prev = { "title" : "Use components from the
-design system" , "link" : "use-components" } %} {% extends
-'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
+{% set pageTitle = "Add a textarea to question&nbsp;2" %}
+{% set next = {
+  "title": "Show the user's answers on your Check answers page" ,
+  "link": "show-users-answers"
+ } %}
+{% set prev = {
+  "title": "Use components from the design system" ,
+  "link": "use-components"
+} %}
+
+{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
+<p>
+  Our <code>{{exampleTextArea.url}}.html</code> page is going to have a textarea component to collect details of the users symptoms.
+</p>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
     Go to the
@@ -18,34 +31,27 @@ design system" , "link" : "use-components" } %} {% extends
     <code>app/views</code> folder.
   </li>
   <li>
-    Replace the code from
-    <code>&lcub;&lcub; radios({</code> to when it finishes on <code>}) &rcub;&rcub;</code>
-    with the code that you copied.
-  </li>
-  <li>
-    Delete the example
-    <code>&lt;p&gt;...&lt;/p&gt;</code> paragraph at the bottom of the page.
+    Paste the component inside the <code>&lt;form&gt;</code> tag, before the continue button.
   </li>
 </ol>
 
 <h3 id="customise-the-example-code">Customise the example code</h3>
+
 <ol class="nhsuk-list nhsuk-list--number">
-  <li>Delete <code>&#123;% from "textarea/macro.njk" import textarea %}</code>.</li>
   <li>
-    Under <code>label</code>, change
-    <code>text</code> from "Can you provide more
-    detail?" to "{{exampleTextArea.title}}".
+    Delete <code>&#123;% from "textarea/macro.njk" import textarea %}</code>. These import lines are not needed in the prototype kit.
   </li>
   <li>
-    Change the <code>id</code> and
-    <code>name</code> to
-    <code>{{exampleTextArea.legend}}</code>.
+    Under <code>label</code>, change <code>text</code> from "Can you provide more detail?" to "{{ exampleTextArea.labelText }}".
   </li>
-  <li>We don't need a hint, so remove it and the comma just before it.</li>
   <li>
-    We also want to make the page a title, so in the
-    <code>label</code> area add
-    <code> classes: "nhsuk-label--l",</code> and
+    Change the <code>id</code> and <code>name</code> to <code>{{ exampleTextArea.name }}</code>.
+  </li>
+  <li>
+    We don't need a hint, so remove it and the comma just before it.
+  </li>
+  <li>
+    We also want to make the label be the page <code>h1</code>, so in the <code>label</code> area add <code>classes: "nhsuk-label--l",</code> and
     <code>isPageHeading: true</code>
   </li>
 </ol>
@@ -62,6 +68,7 @@ design system" , "link" : "use-components" } %} {% extends
     isPageHeading: true
   }
 }) }} {% endraw %}{% endcall %}
+
 <p>Your page should now look like this:</p>
 
 {{ image({

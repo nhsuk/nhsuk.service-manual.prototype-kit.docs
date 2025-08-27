@@ -1,7 +1,7 @@
 {
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
-  "prototypeKitVersion": "6.3.0",
+  "prototypeKitVersion": "7.0.0",
   "description": "Website and documentation for the NHS prototype kit.",
   "main": "app.js",
   "scripts": {

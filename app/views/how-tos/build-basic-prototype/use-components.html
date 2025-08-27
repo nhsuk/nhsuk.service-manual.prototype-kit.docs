@@ -1,8 +1,15 @@
-{% set pageTitle = "Use components from the design system" %} {% set next = {
-"title" : "Add a textarea to question 2" , "link" : "use-components-2" } %} {%
-set prev = { "title" : "Link your pages together" , "link" :
-"link-pages-together" } %} {% extends 'how-tos/build-basic-prototype/_BASE.njk'
-%} {% block makePrototype %}
+{% set pageTitle = "Use components from the design system" %}
+{% set next = {
+  "title": "Add a textarea to question 2" ,
+  "link": "use-components-2"
+} %}
+{% set prev = {
+  "title": "Link your pages together" ,
+  "link": "link-pages-together"
+} %}
+{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
 
 <p>
   You can copy example code from the NHS design system to add page elements like
@@ -47,6 +54,9 @@ set prev = { "title" : "Link your pages together" , "link" :
 
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
+    Delete <code>&#123;% from "radios/macro.njk" import radios %}</code>. These import lines are not needed in the prototype kit.
+  </li>
+  <li>
     Change <code>name</code> <strong>and</strong> <code>idPrefix</code> to <code>{{exampleRadios.name}}</code>.
   </li>
   <li>
@@ -61,7 +71,9 @@ set prev = { "title" : "Link your pages together" , "link" :
   </li>
 </ol>
 
-<p>Your component code should now look like this:</p>
+<p>
+  Your component code should now look like this:
+</p>
 
 {% call codeSnippet({ language: "js" }) %}{% raw %}
 

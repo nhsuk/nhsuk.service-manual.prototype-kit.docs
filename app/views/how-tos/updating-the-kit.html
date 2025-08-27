@@ -19,12 +19,9 @@
         Updating the kit
       </h1>
 
-      <div class="nhsuk-inset-text">
-        <p>
-          If you have made any changes outside the <strong>app</strong> folder, this process will destroy those changes.
-          We will try and improve the update process to avoid this, but in the meantime you will need to make a note of your changes outside <strong>app</strong>, and add them back after updating.
-        </p>
-      </div>
+      {{ insetText({
+        html: "<p>If you are upgrading to version 7.0.0 of the NHS prototype kit, this also upgrades NHS frontend to version 10.0.0. You wil need to follow the <a href=\"https://service-manual.nhs.uk/design-system/guides/updating-to-v10\">upgrading to version 10 guide</a> to make any required changes to your code.</p>"
+      }) }}
 
       <ol>
         <li>
@@ -36,7 +33,10 @@
           <img class="app-img-guide nhsuk-u-margin-bottom-0" alt="Screenshot of the project folder with the deleted folders and files" src="/images/updating-the-kit/deleted.png" />
         </li>
         <li>
-          Copy everything from the latest kit to your prototype, apart from the <strong>app</strong> folder.
+          <p>Copy everything from the latest kit to your prototype, apart from the <strong>app</strong> folder.</p>
+
+          <p>If you have made any changes outside the <strong>app</strong> folder, this process will overwrite those changes. We will try and improve the update process to avoid this, but in the meantime you will need to make a note of your changes outside <strong>app</strong>, and add them back after updating.</p>
+
           <img class="app-img-guide nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4" alt="Screenshot of the latest prototype kit folder" src="/images/updating-the-kit/copy.png" />
           <img class="app-img-guide nhsuk-u-margin-bottom-0" alt="Screenshot of the latest prototype kit folder" src="/images/updating-the-kit/paste.png" />
         </li>

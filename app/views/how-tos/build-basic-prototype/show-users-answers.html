@@ -6,85 +6,84 @@ question 2" , "link" : "use-components-2" } %} {% extends
 
 <p>
   The prototype kit stores answers that users enter. This means you can make
-  more realistic prototypes, for example by showing answers for users to check.
+  more realistic prototypes, for example by showing answers for users to check or to branch of to different pages depending on their answer.
 </p>
+
+<p>
+  When storing data, the kit uses the <code>name</code> attribute from the component to save it. We'll use this when looking up the user's answer.
+</p>
+
 <h2 id="show-the-answer-to-question-1">Show the answer to question 1</h2>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Open
-    <code>{{exampleCheckAnswers.url}}.html</code> in
-    your <code>app/views</code> folder.
+    Open <code>{{exampleCheckAnswers.url}}.html</code> in your <code>app/views</code> folder.
   </li>
   <li>
-    Find the <code>key</code> that contains
-    the text 'NHS number'.
+    In the first row, find the <code>key</code> that contains the text "NHS number".
   </li>
-  <li>Change "NHS number" to "{{exampleRadios.summary}}".</li>
   <li>
-    In <code>value</code> on the next line,
-    change '485 777 3456' to
-    <code
-      >data.{{exampleRadios.legend}}</code
-    >.
+    Change "NHS number" to "{{ exampleRadios.summaryListKey }}".
+  </li>
+  <li>
+    In <code>value</code> on the next line, change '485 777 3456' to <code>data.{{ exampleRadios.name }}</code>.
   </li>
 </ol>
+
 <p>
-  This is how we show data a user has entered – '{{exampleRadios.legend}}' is
-  the <code>name</code> attribute from the
-  <code>&lt;input&gt;</code> on the question page.
+  This is how we use data a user has entered – '{{exampleRadios.name}}' is the <code>name</code> attribute from the input component on the question page.
 </p>
-<p>Update the screen reader text – on the next line <code>visuallyHiddenText</code> change
- 'NHS number' to '{{exampleRadios.summary | lower }}'.
+
 <p>
-  Screen readers will read this out but it will not appear on the page. Without
-  this hidden text, screen reader users would just hear "Change" and not know
-  what it's for.
+  In the same row, find the line with <code>visuallyHiddenText</code> and change 'NHS number' to '{{exampleRadios.summaryListKey | lower }}'.
 </p>
+
+<p>
+  The link text will read as "Change {{ exampleRadios.summaryListKey | lower }}" to screen reader users. Screen readers will read this out but it will not appear on the page. Without
+  this hidden text, screen reader users would just hear "Change" and not necessarily know what it relates to.
+</p>
+
 <h2 id="show-the-answer-to-question-2">Show the answer to question 2</h2>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find the <code>key</code> that contains
-    the text 'Name'.
-  </li>
-  <li>Change "Name" to "{{exampleTextArea.summary}}".</li>
-  <li>
-    In the <code>value</code> on the next line,
-    change 'Kevin Francis' to
-    <code>
-      data.{{exampleTextArea.legend}}</code
-    >.
+    In the second row, find the <code>key</code> that contains the text 'Name'.
   </li>
   <li>
-    On the next line <code>visuallyHiddenText</code> change
-     'name' to '{{exampleTextArea.summary | lower }}'
+    Change "Name" to "{{ exampleTextArea.summaryListKey }}".
+  </li>
+  <li>
+    In the <code>value</code> on the next line, change 'Kevin Francis' to <code>data.{{exampleTextArea.name}}</code>.
+  </li>
+  <li>
+    On the line with <code>visuallyHiddenText</code>, change 'name' to '{{exampleTextArea.summaryListKey | lower }}'
   </li>
 </ol>
+
 <p>
-  <a href="http://localhost:3000/{{exampleStart.url}}"
-    >Go to http://localhost:3000/{{exampleStart.url}}</a
-  >
+  <a href="http://localhost:3000/{{exampleStart.url}}">
+    Go to http://localhost:3000/{{exampleStart.url}}
+  </a>
   and answer the questions to check your answers show up correctly.
 </p>
+
 <h2 id="delete-the-remaining-example-answers">
   Delete the remaining example answers
 </h2>
+
 <p>
-  On the "Check answers" template page, there are example answers that you do
-  not need.
+  On the "Check answers" template page, there are example answers that you do not need.
 </p>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find the
-    <code>,</code> (comma) after the details you have changed, and delete this and everything up to the <code>]</code> (square bracket).
-
-
+    Find the <code>,</code> (comma) after the details you have changed, and delete this and everything up to the <code>]</code> (square bracket).
   </li>
-
   <li>
-    Delete everything from the line that contains "Medical details" down to the
-    line before "Now send your application".
+    Delete everything from the line that contains "Medical details" down to the line before "Now send your application".
   </li>
 </ol>
+
 <p>Your code should now look like this:</p>
 
 {% call codeSnippet({ language: "html" }) %}{% raw %}
@@ -103,24 +102,24 @@ question 2" , "link" : "use-components-2" } %} {% extends
       rows: [
         {
           key: {
-            text: "Magical power symptoms in the last 30 days"
+            text: "Symptoms of magical powers"
           },
           value: {
-            text: data.magicalPowers
+            text: data.hasSymptoms
           },
           actions: {
             items: [
               {
                 href: "#",
                 text: "Change",
-                visuallyHiddenText: "magical power symptoms in the last 30 days"
+                visuallyHiddenText: "symptoms of magical powers"
               }
             ]
           }
         },
         {
           key: {
-            text: "Details of symptoms"
+            text: "Details of the symptoms"
           },
           value: {
             text: data.details
@@ -130,14 +129,13 @@ question 2" , "link" : "use-components-2" } %} {% extends
               {
                 href: "#",
                 text: "Change",
-                visuallyHiddenText: "details of symptoms"
+                visuallyHiddenText: "details of the symptoms"
               }
             ]
           }
         }
       ]
     }) }}
-
 
     <h2 class="nhsuk-heading-m">
       Now send your application

@@ -1,9 +1,8 @@
 // Import NHS.UK frontend library
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+@import "node_modules/nhsuk-frontend/dist/nhsuk";
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/code-snippet';
-@import 'components/header';
 @import 'components/image';
 
 @import 'styles/code';
@@ -16,15 +15,7 @@
 
 // Overrides auto reload div background colour
 #hc_extension_bkgnd {
-  background-color: $color_nhsuk-grey-4 !important;
-}
-
-
-// This is a temporary fix to remove the 'Home' link in
-// the primary navigation which is added Header primary nav.
-// Should be able to remove this after the next NHS Frontend update.
-.nhsuk-header__navigation-item--home {
-  display: none;
+  background-color: nhsuk-colour("grey-4") !important;
 }
 
 // Installation guide screenshots

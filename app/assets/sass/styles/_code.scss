@@ -2,7 +2,7 @@
 // This uses the same styling as on the NHS Service Manual
 p code,
 li code {
-  background-color: $color_nhsuk-white;
+  background-color: nhsuk-colour("white");
   color: #d14;
   padding: 2px nhsuk-spacing(2);
   word-break: break-word;

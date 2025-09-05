@@ -10,7 +10,6 @@ const nunjucks = require('nunjucks');
 const sessionInMemory = require('express-session');
 const highlightjs = require('highlight.js');
 
-
 // Local dependencies
 const packageInfo = require('./package.json');
 

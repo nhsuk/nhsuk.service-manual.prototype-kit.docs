@@ -5,14 +5,11 @@ const fs = require('fs');
 // External dependencies
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv');
 const express = require('express');
 const nunjucks = require('nunjucks');
 const sessionInMemory = require('express-session');
 const highlightjs = require('highlight.js');
 
-// Run before other code to make sure variables from .env are available
-dotenv.config();
 
 // Local dependencies
 const packageInfo = require('./package.json');

@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Conditions - Passing data example
-{% endblock %}
+{% set pageName = "Have you ever had any of these conditions?" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -28,7 +26,7 @@
           name: "conditions",
           fieldset: {
             legend: {
-              text: "Have you ever had any of these conditions?",
+              text: pageName,
               classes: "nhsuk-fieldset__legend--l",
               isPageHeading: true
             }

@@ -42,10 +42,6 @@
   "url": "ineligible"
 }  %}
 
-{% block pageTitle %}
- {{ pageTitle | default("Add title with 'pageTitle'")}} - {{sectionName}} - NHS prototype kit
-{% endblock %}
-
 {% block beforeContent %}
   {{ breadcrumb({
     items: [
@@ -73,7 +69,7 @@
       {% if not noCaption %}<span class="nhsuk-caption-xl">{{sectionName}}</span>{% endif %}
 
       <h1 class="nhsuk-heading-xl">
-        {{ pageTitle | default("Add title with 'pageTitle'") | safe }}
+        {{ pageName }}
       </h1>
 
       {% block makePrototype %}

@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  HTML text editor - NHS prototype kit
-{% endblock %}
+{% set pageName = "HTML text editor" %}
 
 {% set currentSection = "Get started" %}
 
@@ -31,7 +29,7 @@
 
       <h1>
         <span class="nhsuk-caption-l">Step 3 of 8{{[":", installEnvironment ] | join(" ") if installEnvironment }}</span>
-        HTML text editor
+        {{ pageName }}
       </h1>
 
       <p class="nhsuk-lede-text">You'll need an HTML text editor to edit and make changes to your prototype.</p>

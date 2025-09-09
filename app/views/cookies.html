@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Cookies - NHS prototype kit
-{% endblock %}
+{% set pageName = "Cookies" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -16,7 +14,7 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Cookies on the NHS prototype kit</h1>
+      <h1>{{ pageName }}</h1>
 
       <p>Cookies are small files saved on your phone, tablet or computer when you visit a website.</p>
 

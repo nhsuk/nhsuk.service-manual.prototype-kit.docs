@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  What is your name? - Passing data example
-{% endblock %}
+{% set pageName = "What is your name?" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -25,7 +23,7 @@
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              What is your name?
+              {{ pageName }}
             </h1>
           </legend>
           <div class="nhsuk-form-group">

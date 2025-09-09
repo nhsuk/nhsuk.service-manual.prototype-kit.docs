@@ -2,9 +2,7 @@
 
 {% set currentSection = "Guides" %}
 
-{% block pageTitle %}
-  Publish your prototype online - NHS prototype kit
-{% endblock %}
+{% set pageName = "Publish your prototype online" %}
 
 {% block beforeContent %}
   {% include "how-tos/includes/breadcrumb.html" %}
@@ -15,7 +13,7 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Publish your prototype online</h1>
+      <h1>{{ pageName }}</h1>
 
       <p>Publishing your prototype online means you can share it with others and test it with users.</p>
 

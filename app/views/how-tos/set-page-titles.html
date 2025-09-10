@@ -2,9 +2,7 @@
 
 {% set currentSection = "Guides" %}
 
-{% block pageTitle %}
-  Set page titles - NHS prototype kit
-{% endblock %}
+{% set pageName = "Set page titles" %}
 
 {% block beforeContent %}
   {% include "how-tos/includes/breadcrumb.html" %}
@@ -14,7 +12,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Set page titles</h1>
+      <h1>{{ pageName }}</h1>
 
       {{ insetText({
         text: "This feature requires version 6.3.0 of the NHS prototype kit or above."

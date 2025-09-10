@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Example - passing data from page to page
-{% endblock %}
+{% set pageName = "Data reset" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -22,7 +20,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-heading-l">
-        Data reset
+        {{ pageName }}
       </h1>
 
       <p class="nhsuk-body">

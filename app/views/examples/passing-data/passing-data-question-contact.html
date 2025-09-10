@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  What is your name? - Passing data example
-{% endblock %}
+{% set pageName = "How would you prefer the GP to contact you?" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -28,7 +26,7 @@
             name: "contact",
             fieldset: {
               legend: {
-                text: "How would you prefer the GP to contact you?",
+                text: pageName,
                 classes: "nhsuk-fieldset__legend--l",
                 isPageHeading: true
               }

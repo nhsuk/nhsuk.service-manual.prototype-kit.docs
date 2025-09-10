@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Install guide - NHS prototype kit
-{% endblock %}
+{% set pageName = "Install guide" %}
 
 {% set currentSection = "Get started" %}
 
@@ -22,7 +20,7 @@
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h1>Install guide</h1>
+    <h1>{{ pageName }}</h1>
 
     <p class="nhsuk-lede-text">
       To start making prototypes you need to setup the right tools to make the

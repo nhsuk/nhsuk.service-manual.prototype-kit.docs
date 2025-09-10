@@ -2,9 +2,7 @@
 
 {% set currentSection = "Guides" %}
 
-{% block pageTitle %}
-  How to make pages - NHS prototype kit
-{% endblock %}
+{% set pageName = "Making pages" %}
 
 {% block beforeContent %}
   {% include "how-tos/includes/breadcrumb.html" %}
@@ -16,7 +14,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        Making pages
+        {{ pageName }}
       </h1>
 
       <p class="nhsuk-lede-text">Use your HTML text editor to make pages.</p>

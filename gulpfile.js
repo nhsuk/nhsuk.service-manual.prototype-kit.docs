@@ -25,7 +25,9 @@ sass.compiler = require('sass-embedded');
 // Compile SASS to CSS
 function compileStyles(done) {
   return gulp
-    .src(['app/assets/sass/**/*.scss'])
+    .src(['app/assets/sass/**/*.scss'], {
+      sourcemaps: true
+    })
     .pipe(
       sass({
         loadPaths: ['node_modules'],

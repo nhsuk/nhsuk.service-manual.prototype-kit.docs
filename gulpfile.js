@@ -5,7 +5,8 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
-const sass = require('gulp-sass')(require('sass-embedded'));
+const gulpSass = require('gulp-sass')
+const dartSass = require('sass-embedded')
 const nodemon = require('gulp-nodemon');
 const PluginError = require('plugin-error')
 
@@ -20,15 +21,21 @@ function cleanPublic() {
   return gulp.src('public', { allowEmpty: true }).pipe(clean());
 }
 
-sass.compiler = require('sass-embedded');
+// Set Sass compiler
+const sass = gulpSass(dartSass)
 
 // Compile SASS to CSS
 function compileStyles(done) {
   return gulp
-    .src(['app/assets/sass/**/*.scss'])
+    .src(['app/assets/sass/**/*.scss'], {
+      sourcemaps: true
+    })
     .pipe(
-      sass()
-      .on('error', (error) => {
+      sass({
+        loadPaths: ['node_modules'],
+        sourceMap: true,
+        sourceMapIncludeSources: true
+      }).on('error', (error) => {
         done(
           new PluginError('compileCSS', error.messageFormatted, {
             showProperties: false

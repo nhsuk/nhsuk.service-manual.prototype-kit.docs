@@ -1,5 +1,6 @@
-@import 'node_modules/nhsuk-frontend/dist/nhsuk/core/settings';
-@import 'node_modules/nhsuk-frontend/dist/nhsuk/core/tools';
+// Import NHS.UK frontend library
+@use "vendor/nhsuk-frontend" as *;
+@forward "vendor/nhsuk-frontend";
 
 // NHS.UK website template styles
 //

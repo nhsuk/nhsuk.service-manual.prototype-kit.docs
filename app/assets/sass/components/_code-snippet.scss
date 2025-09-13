@@ -1,4 +1,5 @@
-@use "node_modules/nhsuk-frontend/packages/nhsuk" as *;
+@use "../vendor/nhsuk-frontend" as *;
+
 
 // Code snippet
 .app-code-snippet {

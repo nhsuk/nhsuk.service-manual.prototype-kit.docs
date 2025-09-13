@@ -1,25 +1,26 @@
-{% extends "layout.html" %} 
-{% block pageTitle %} {{pageTitle}} - Store code online using GitHub and GitHub Desktop - NHS prototype kit {% endblock %} 
-{% block beforeContent
-%} 
+{% extends "layout.html" %}
 
-{% if pageTitle == "Set up GitHub and GitHub Desktop"%}
-{% include "how-tos/includes/breadcrumb.html" %} 
+{% set currentSection = "Guides" %}
+
+{% block beforeContent
+%}
+
+{% if pageName == "Set up GitHub and GitHub Desktop"%}
+{% include "how-tos/includes/breadcrumb.html" %}
 {% else %}
 {{ breadcrumb({ items: [ { href: "/", text: "Home" }, { href: "/how-tos",
 text: "Guides" }, { href: "/how-tos/github/index", text: "Store your code online with
-GitHub and GitHub desktop" } ] }) 
-}} 
+GitHub and GitHub desktop" } ] })
+}}
 {% endif %}
-{% endblock %} 
+{% endblock %}
 {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-three-quarters">
 
     <h1>
-      <span role="text">
-        {{pageTitle | default("pageTitle")}}
+      <span role="text">        
         <span class="nhsuk-caption-xl nhsuk-caption--bottom">
           <span class="nhsuk-u-visually-hidden">
           -
@@ -27,6 +28,7 @@ GitHub and GitHub desktop" } ] })
             Store code online with GitHub and GitHub Desktop
         </span>
       </span>
+      {{ pageName }}
     </h1>
 
     {{ contentsList({
@@ -34,29 +36,29 @@ GitHub and GitHub desktop" } ] })
         {
           href: "/how-tos/github/",
           text: "Overview",
-          current: ("true" if pageTitle and (pageTitle == "Overview") else '')  
+          current: ("true" if pageName and (pageName == "Overview") else '')
         },
         {
           href: "/how-tos/github/setup-github-desktop",
           text: "Set up GitHub and GitHub Desktop",
-          current: ("true" if (pageTitle and  pageTitle == "Set up GitHub and GitHub Desktop") else '')
+          current: ("true" if (pageName and  pageName == "Set up GitHub and GitHub Desktop") else '')
         },
         {
           href: "/how-tos/github/store-new-prototype",
           text: "Store a new prototype on GitHub",
-          current: ("true" if (pageTitle and pageTitle == "Store a new prototype on GitHub") else '' ) 
+          current: ("true" if (pageName and pageName == "Store a new prototype on GitHub") else '' )
         }
         ,
         {
           href: "/how-tos/github/download-existing-prototype",
           text: "Download an existing prototype from GitHub",
-          current: ("true" if (pageTitle and pageTitle == "Download an existing prototype from GitHub") else '' ) 
+          current: ("true" if (pageName and pageName == "Download an existing prototype from GitHub") else '' )
         }
         ,
         {
           href: "/how-tos/github/collaborate",
           text: "Collaborate on a prototype",
-          current: ("true" if (pageTitle and pageTitle == "Collaborate on a prototype") else '') 
+          current: ("true" if (pageName and pageName == "Collaborate on a prototype") else '')
         }
       ]
     }) }}
@@ -69,14 +71,14 @@ GitHub and GitHub desktop" } ] })
     {% endblock %}
 
 
-{% if pageTitle == "Overview" %}{# first page #}
+{% if pageName == "Overview" %}{# first page #}
 
 {{ pagination({
   nextUrl: "/how-tos/github/setup-github-desktop",
   nextPage: "Set up GitHub and GitHub Desktop"
 }) }}
 
-{% elif pageTitle == "Set up GitHub and GitHub Desktop" %}
+{% elif pageName == "Set up GitHub and GitHub Desktop" %}
 {{ pagination({
     previousUrl: "/how-tos/github/index",
     previousPage: "Overview",
@@ -84,7 +86,7 @@ GitHub and GitHub desktop" } ] })
     nextPage: "Store a new prototype on GitHub"
 }) }}
 
-{% elif pageTitle == "Store a new prototype on GitHub" %}
+{% elif pageName == "Store a new prototype on GitHub" %}
 {{ pagination({
     previousUrl: "/how-tos/github/setup-github-desktop",
     previousPage: "Set up GitHub and GitHub Desktop",
@@ -92,7 +94,7 @@ GitHub and GitHub desktop" } ] })
     nextPage: "Download an existing prototype from GitHub"
 }) }}
 
-{% elif pageTitle == "Download an existing prototype from GitHub" %}
+{% elif pageName == "Download an existing prototype from GitHub" %}
 {{ pagination({
     previousUrl: "/how-tos/github/store-new-prototype",
     previousPage: "Store a new prototype on GitHub",

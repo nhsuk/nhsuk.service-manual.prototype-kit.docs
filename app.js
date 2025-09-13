@@ -5,14 +5,10 @@ const fs = require('fs');
 // External dependencies
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv');
 const express = require('express');
 const nunjucks = require('nunjucks');
 const sessionInMemory = require('express-session');
 const highlightjs = require('highlight.js');
-
-// Run before other code to make sure variables from .env are available
-dotenv.config();
 
 // Local dependencies
 const packageInfo = require('./package.json');
@@ -52,9 +48,10 @@ if (process.env.NODE_ENV === 'production') {
 // Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk/components'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk/macros'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/dist'),
 ];
 
 const nunjucksConfig = {
@@ -144,8 +141,7 @@ app.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
-app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
+app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist/nhsuk')));
 
 // Use custom application routes
 app.use('/', routes);

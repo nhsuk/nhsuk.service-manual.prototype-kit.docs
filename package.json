@@ -1,7 +1,7 @@
 {
   "name": "nhsuk-prototype-kit",
   "version": "0.1.0",
-  "prototypeKitVersion": "6.2.0",
+  "prototypeKitVersion": "7.0.1",
   "description": "Website and documentation for the NHS prototype kit.",
   "main": "app.js",
   "scripts": {
@@ -19,24 +19,23 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.8",
+    "@babel/preset-env": "^7.28.3",
     "body-parser": "^1.20.3",
-    "browser-sync": "^3.0.3",
+    "browser-sync": "^3.0.4",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "express-session": "^1.18.1",
-    "gulp": "^5.0.0",
+    "express-session": "^1.18.2",
+    "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-nodemon": "^2.5.0",
-    "gulp-rename": "^2.0.0",
+    "gulp-rename": "^2.1.0",
     "gulp-sass": "^5.1.0",
     "highlight.js": "^11.2.0",
     "lodash": "^4.17.21",
-    "nhsuk-frontend": "^9.5.1",
+    "nhsuk-frontend": "^10.0.0",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "sass-embedded": "^1.89.2"
@@ -45,9 +44,9 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
-    "jest": "^30.0.2"
+    "jest": "^30.1.3"
   },
   "engines": {
-    "node": "^20"
+    "node": "^22"
   }
 }

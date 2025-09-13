@@ -1,5 +1,6 @@
 {% set noCaption = true %}
-{% set pageTitle = "Build a basic prototype using the NHS prototype kit" %}
+
+{% set pageName = "Build a basic prototype using the NHS prototype kit" %}
 
 {% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
 
@@ -18,17 +19,19 @@
   <li>show a confirmation page</li>
 </ul>
 <p>
-  It will take about an hour to finish this tutorial, after you install the prototype kit. 
+  It will take about an hour to finish this tutorial, after you install the prototype kit.
 </p>
 
 <p>
   Our prototype will look a bit like this:
 </p>
 
-<figure class="nhsuk-figure">
-  <img class="nhsuk-figure__image" src="/images/tutorial-overview.png" alt="The first page has the title 'Start page' with the button 'Start now'. This is linked to a 2nd page with the title 'Question 1' and a 'Continue' button. This forks to 2 different pages. 1 is titled 'Ineligible'. 2 is titled Question 2. Question 2 is linked to a page titled 'Check answers'. This links to page 6, titled 'Complete'.">
-  <figcaption class="nhsuk-figure__caption">Diagram of 6 pages connected together</figcaption>
-</figure>
+{{ image({
+  src: "/images/tutorial-overview.png",
+  alt: "The first page has the title 'Start page' with the button 'Start now'. This is linked to a 2nd page with the title 'Question 1' and a 'Continue' button. This forks to 2 different pages. 1 is titled 'Ineligible'. 2 is titled Question 2. Question 2 is linked to a page titled 'Check answers'. This links to page 6, titled 'Complete'.",
+  caption: "Diagram of 6 pages connected together",
+  classes: "app-image--full-width"
+}) }}
 
 <h2>Before you start</h2>
 
@@ -44,8 +47,10 @@
   useful features.
 </p>
 
-<p>
-  <a class="nhsuk-button" href="open-prototype-in-editor">Start now</a>
-</p>
+{{ button({
+  text: "Start now",
+  href: "/how-tos/build-basic-prototype/open-prototype-in-editor"
+}) }}
+
 
 {% endblock %}

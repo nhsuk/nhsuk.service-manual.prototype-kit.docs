@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  How to pass data page to page - NHS prototype kit
-{% endblock %}
+{% set currentSection = "Guides" %}
+
+{% set pageName = "Passing data page to page" %}
 
 {% block beforeContent %}
   {% include "how-tos/includes/breadcrumb.html" %}
@@ -12,7 +12,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Passing data page to page</h1>
+      <h1>{{ pageName }}</h1>
 
       <p>The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.</p>
 

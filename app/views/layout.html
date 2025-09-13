@@ -40,73 +40,90 @@
 
 {% set assetPath = '/nhsuk-frontend/assets' %}
 
+{% block pageTitle -%}
+  {%- if errors === true or (errors | length) %}Error: {% endif -%}
+  {%- if pageName %}{{ pageName }} – {% endif -%}
+  NHS Prototype kit
+{%- endblock %}
+
 {% block head %}
   <link href="/css/main.css" rel="stylesheet">
-  <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 {% endblock %}
 
 {% block header %}
   {{ header({
-    classes: "app-header--left-aligned",
-    homeHref: "/",
-    ariaLabel: "NHS Prototype Kit homepage",
     service: {
-      name: serviceName
+      text: serviceName,
+      href: "/"
     },
-    showNav: "true",
-    primaryLinks: [
-      {
-        label: "Get started",
-        url: "/install"
-      },
-      {
-        label: "Guides",
-        url: "/how-tos"
-      },
-      {
-        label: "Contribute",
-        url: "/contribute"
-      },
-      {
-        label: "Support",
-        url: "/support"
-      }
-    ]
+    navigation: {
+      items: [
+        {
+          text: "Get started",
+          href: "/install",
+          active: (currentSection == "Get started"),
+          current: (pageName == "Get started")
+        },
+        {
+          text: "Guides",
+          href: "/how-tos",
+          active: (currentSection == "Guides"),
+          current: (pageName == "Guides")
+        },
+        {
+          text: "Contribute",
+          href: "/contribute",
+          current: (pageName == "Contribute")
+        },
+        {
+          text: "Support",
+          href: "/support",
+          current: (pageName == "Support")
+        }
+      ]
+    }
   }) }}
 {% endblock %}
 
 {% block footer %}
   {{ footer({
-    links: [
-      {
-        label: "About",
-        URL: "/about"
-      },
-      {
-        label: "Support",
-        URL: "/support"
-      },
-      {
-        label: "Updates",
-        URL: "/whats-new/updates"
-      },
-      {
-        label: "Page templates",
-        URL: "/page-templates"
-      },
-      {
-        label: "NHS prototype kit on GitHub",
-        URL: "https://github.com/nhsuk/nhsuk-prototype-kit"
-      },
-      {
-        label: "Cookies",
-        URL: "/cookies"
-      }
-    ]
+    meta: {
+      items: [
+        {
+          text: "About",
+          href: "/about"
+        },
+        {
+          text: "Support",
+          href: "/support"
+        },
+        {
+          text: "Updates",
+          href: "/whats-new/updates"
+        },
+        {
+          text: "Page templates",
+          href: "/page-templates"
+        },
+        {
+          text: "NHS prototype kit on GitHub",
+          href: "https://github.com/nhsuk/nhsuk-prototype-kit"
+        },
+        {
+          text: "Cookies",
+          href: "/cookies"
+        }
+      ]
+    }
   }) }}
 {% endblock %}
 
 {% block bodyEnd %}
+  <script src="/nhsuk-frontend/nhsuk-frontend.min.js" type="module"></script>
+  <script type="module">
+    import { initAll } from '/nhsuk-frontend/nhsuk-frontend.min.js'
+    initAll()
+  </script>
   {% block scripts %}
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}

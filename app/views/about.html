@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  About - NHS prototype kit
-{% endblock %}
+{% set pageName = "About" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -16,7 +14,7 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>About</h1>
+      <h1>{{ pageName }}</h1>
 
       <p class="nhsuk-lede-text">The NHS prototype kit enables you to make interactive prototypes that look like NHS services, such as the NHS website (<a href="http://nhs.uk">www.nhs.uk</a>). The prototypes you make are a great way to show ideas to others and for conducting user research.</p>
 

@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Install guide - NHS prototype kit
-{% endblock %}
+{% set pageName = "Install guide" %}
+
+{% set currentSection = "Get started" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -20,7 +20,7 @@
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h1>Install guide</h1>
+    <h1>{{ pageName }}</h1>
 
     <p class="nhsuk-lede-text">
       To start making prototypes you need to setup the right tools to make the
@@ -46,7 +46,7 @@
       <li>ask a developer on your team (if you have one)</li>
       <li>email us at <a href="mailto:england.service-manual@nhs.net?subject=NHS prototype kit - Installation">england.service-manual@nhs.net</a></li>
       <li>get in touch on the <a href="https://nhs-service-manual.slack.com/messages/CFYL2GDGW" rel="nofollow">NHS digital service manual #prototype-kit Slack channel</a></li>
-     </ul>  
+     </ul>
     </p>
 
     <h2 class="nhsuk-heading-m">Other install guides</h2>

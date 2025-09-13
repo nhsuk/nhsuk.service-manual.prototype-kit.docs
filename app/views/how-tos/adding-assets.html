@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Adding CSS, JavaScript and images - NHS prototype kit
-{% endblock %}
+{% set currentSection = "Guides" %}
+
+{% set pageName = "Adding CSS, JavaScript and images" %}
 
 {% block beforeContent %}
   {% include "how-tos/includes/breadcrumb.html" %}
@@ -14,7 +14,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        Adding CSS, JavaScript and images
+        {{ pageName }}
       </h1>
 
       <p>The prototype kit comes with standard NHS.UK frontend styles and components for you to use in your prototypes. However, if you need to add your own CSS (cascading style sheets), JavaScript or images, use the <code>/app/assets</code> folder.</p>

@@ -1,99 +1,97 @@
-{% set pageTitle = "Link your pages together" %} {% set next = { "title" : "Use
+{% set pageName = "Link your pages together" %} {% set next = { "title" : "Use
 components from the design system" , "link" : "use-components" } %} {% set prev
 = { "title" : "Create pages" , "link" : "create-pages" } %} {% extends
 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 
 <div class="app-prose-scope">
-  <p>To take users from one page to another, you can use either:</p>
+  <p>To take users from one page to another, you will use either:</p>
   <ul class="nhsuk-list nhsuk-list--bullet">
-    <li>a link (<code>&lt;a&gt;</code> tag)</li>
     <li>
-      a form (<code>&lt;form&gt;</code> tag, when the
-      user inputs data)
+      links – either <code>&lt;a&gt;</code> tags or button components with an <code>href</code> attribute
+    </li>
+    <li>
+      forms – a <code>&lt;form&gt;</code> tag, used when submitting form data
     </li>
   </ul>
 
+  <p>
+    The method used will depend on whether the page is submitting form data (radios, text inputs, etc) to the server. Otherwise we use links.
+  </p>
 
   <h2 id="link-your-start-page-to-question-1">
     Link your start page to question 1
   </h2>
+
   <ol class="nhsuk-list nhsuk-list--number">
     <li>
       Open <code>{{exampleStart.url}}.html</code> in your
       <code>app/views</code> folder.
     </li>
     <li>
-      Find the <code>&lt;a&gt;</code> tag with "Start
-      now" inside.
+      Find the button component. This will start with <code>{% raw %}{{ button({{% endraw %}</code> and have "Start now" inside.
     </li>
     <li>
-      Change the value of the
-      <code>href</code> attribute from
-      <code>#</code> to
-      <code>/{{exampleRadios.url}}</code>.
+      Change the value of the <code>href</code> attribute from <code>#</code> to <code>/{{exampleRadios.url}}</code>.
     </li>
   </ol>
   <p>
     <a href="http://localhost:3000/{{exampleStart.url}}"
       >Go to http://localhost:3000/{{exampleStart.url}}</a
     >
-    and select the <strong>Start now</strong> button to check the link works.
+    and select the <strong>Start now</strong> button to check it works.
   </p>
   <p>
     Links normally appear as text with underlines. We make
     <strong>Start now</strong> look like a button to make it more obvious to
     users.
   </p>
+
   <h2 id="link-question-1-to-question-2">Link question 1 to question 2</h2>
+
   <ol class="nhsuk-list nhsuk-list--number">
     <li>
-      Open <code>{{exampleRadios.url}}.html</code> in
-      your <code>app/views</code> folder.
+      Open <code>{{exampleRadios.url}}.html</code> in your <code>app/views</code> folder.
     </li>
     <li>
-      Find the line
-      <code>&lt;form class="form" action="/templates/check-your-answers"
-        method="post"&gt;</code
+      Find the line <code>&lt;form action="/form-handler" method="post" novalidate&gt;</code
       >.
     </li>
     <li>
-      Change the value of the
-      <code>action</code> attribute from
-      <code>/templates/check-your-answers</code> to
+      Change the value of the <code>action</code> attribute from <code>/form-handler</code> to
       <code>/{{exampleTextArea.url}}</code>.
     </li>
   </ol>
+
   <p>
     <a href="http://localhost:3000/{{exampleRadios.url}}"
       >Go to http://localhost:3000/{{exampleRadios.url}}</a
     >
-    and select <strong>Continue</strong> to check the button works.
+    and select <strong>Continue</strong> to check the button works. The <code>/{{exampleTextArea.url}}</code> page will look the same as the <code>/{{exampleRadios.url}}</code> page because we copied the same code in - but you should see the url change.
   </p>
+
   <p>
     This time it's a real HTML button, not a link. Buttons submit form data –
     the URL is on the form tag, not the button.
   </p>
+
   <h2 id="link-question-2-to-your-{{exampleCheckAnswers.url}}-page">
     Link question 2 to your "Check answers" page
   </h2>
+
   <ol class="nhsuk-list nhsuk-list--number">
     <li>
-      Open <code>{{exampleTextArea.url}}.html</code> in
-      your <code>app/views</code> folder.
+      Open <code>{{exampleTextArea.url}}.html</code> in your <code>app/views</code> folder.
     </li>
     <li>
-      Find the line
-      <code>&lt;form class="form" action="/templates/check-your-answers"
-        method="post"&gt;</code
+      Find the line <code>&lt;form action="/form-handler" method="post" novalidate&gt;</code
       >.
     </li>
     <li>
-      Change the value of the
-      <code>action</code> attribute from
-      <code>/templates/check-your-answers</code> to
+      Change the value of the <code>action</code> attribute from <code>/form-handler</code> to
       <code>/{{exampleCheckAnswers.url}}</code>.
     </li>
   </ol>
+
   <p>
     <a href="http://localhost:3000/{{exampleTextArea.url}}"
       >Go to http://localhost:3000/{{exampleTextArea.url}}</a
@@ -101,36 +99,33 @@ components from the design system" , "link" : "use-components" } %} {% set prev
     and select <strong>Continue</strong> to check the button works.
   </p>
 
-
   <h2 id="link-{{exampleCheckAnswers.url}}-to-your-{{exampleConfirmation.url}}-page">
     Link '{{exampleCheckAnswers.title}}' to your '{{exampleConfirmation.title}}' page
   </h2>
-  <ol class="nhsuk-list nhsuk-list--number">
 
+  <ol class="nhsuk-list nhsuk-list--number">
     <li>
       Open <code>{{exampleCheckAnswers.url}}.html</code> in
       your <code>app/views</code> folder.
     </li>
     <li>
-      Find the <code>&lt;a&gt;</code> tag with 'Accept and send registration' inside.
+      Find the <code>&lt;form&gt;</code> tag button component inside.
     </li>
     <li>
-      Change the value of the
-      <code>href</code> attribute from
-      <code>/templates/confirmation-page</code> to
+      Change the value of the <code>action</code> attribute from <code>/form-handler</code> to
       <code>/{{exampleConfirmation.url}}</code>.
     </li>
   </ol>
+
   <p>
-    <a href="http://localhost:3000/{{exampleTextArea.url}}"
+    <a href="http://localhost:3000/{{exampleCheckAnswers.url}}"
       >Go to http://localhost:3000/{{exampleCheckAnswers.url}}</a
     >
-    and select <strong>Accept and send registration</strong> to check the button works.
+    and select <strong>Confirm and send</strong> to check the button works.
   </p>
 
-
   {{ insetText({
-    HTML: "<p>The back links in your pages do not go to the correct places yet. If you want, you can try and change the links in the back links by using the <a href='https://service-manual.nhs.uk/design-system/components/back-link'>back link component guidance</a>.</p>"
+    html: "<p>The back links in your pages do not go to the correct places yet. If you want, you can try and update the links by using the <a href='https://service-manual.nhs.uk/design-system/components/back-link'>back link component guidance</a>.</p>"
   }) }}
 
   {% endblock %}

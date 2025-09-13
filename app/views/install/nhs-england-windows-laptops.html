@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Set up the prototype kit on an NHS England Windows laptop - NHS prototype kit
-{% endblock %}
+{% set pageName = "Set up the prototype kit on an NHS England Windows laptop" %}
+
+{% set currentSection = "Get started" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -23,7 +23,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-l">Set up the prototype kit on an NHS England Windows laptop</h1>
+      <h1 class="nhsuk-heading-l">{{ pageName }}</h1>
 
       <p>If you have a Windows laptop issued by NHS England corporate IT, before you start any of the install guides you will need to:</p>
 

@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Run the kit - NHS prototype kit
-{% endblock %}
+{% set pageName = "Run the kit" %}
+
+{% set currentSection = "Get started" %}
 
 {% block beforeContent %}
   {{ breadcrumb({

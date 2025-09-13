@@ -1,49 +1,58 @@
-{% set pageTitle = "Let the user change their answers" %} {% set next = {
-"title" : "Show different pages depending on user input" , "link" : "branching"
-} %} {% set prev = { "title" : "Show the user's answers on your 'Check answers'
-page" , "link" : "show-users-answers" } %} {% extends
-'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
+{% set pageName = "Let the user change their answers" %}
+{% set next = {
+  "title": "Show different pages depending on user input",
+  "link": "branching"
+} %}
+{% set prev = {
+  "title": "Show the user's answers on your 'Check answers' page",
+  "link": "show-users-answers"
+} %}
+
+{% extends 'how-tos/build-basic-prototype/_BASE.njk' %}
+
+{% block makePrototype %}
+
 <h2 id="make-the-change-links-work">Make the "Change" links work</h2>
+
 <p>
   Make the <strong>Change</strong> links on the "{{exampleCheckAnswers.title}}"
   page work by adding the right links.
 </p>
+
 <ol class="nhsuk-list nhsuk-list--number">
   <li>
-    Find the value
-    <code>data.{{exampleRadios.legend}}</code>, then change the
-    the <code>href</code> value from <code>'#'</code> to
-    <code>'/{{exampleRadios.url}}'</code>
+    Find the row for <code>{{ exampleRadios.summaryListKey }}</code>, then change the the <code>href</code> value from <code>'#'</code> to <code>'/{{exampleRadios.url}}'</code>
   </li>
   <li>
-    Find the value
-    <code>data.{{exampleTextArea.legend}}</code>, then change the
-    the <code>href</code> value from <code>'#'</code> to
-    <code>'/{{exampleTextArea.url}}'</code>
+    Find the row for <code>{{ exampleTextArea.summaryListKey }}</code>, then change the the <code>href</code> value from <code>'#'</code> to <code>'/{{exampleTextArea.url}}'</code>
   </li>
 </ol>
+
 <p>
   If you select a <strong>Change</strong> link, you'll go back to the right
-  question page, but your answer will not appear yet.
+  question page, but the existing answer will not be pre-filled.
 </p>
+
 <h2 id="show-the-users-answer-in-question-1">
   Show the user's answer in question&nbsp;1
 </h2>
+
 <p>
-  Radios let you select which option should be pre-selected by setting a <code>value</code> option to the value of the selected option.
+  Radios let you select which radio should be pre-selected by setting the <code>value</code> option.
 </p>
+
 <p>
-  Open the <code>{{exampleRadios.url}}.html</code> file
-  in your <code>app/views</code> folder.
+  Open the <code>{{ exampleRadios.url }}.html</code> file in your <code>app/views</code> folder.
 </p>
+
 <p>
-  Update the radios component to add <code>value: data.magicalPowers</code>, like this:
+  Update the radios component to add <code>value: data.{{ exampleRadios.name }},</code>, like this:
 </p>
 
 {% call codeSnippet({ language: "js" }) %}{% raw %}
 {{ radios({
-  idPrefix: "magical-powers",
-  name: "magicalPowers",
+  idPrefix: "has-symptoms",
+  name: "has-symptoms",
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
@@ -52,48 +61,50 @@ page" , "link" : "show-users-answers" } %} {% extends
     }
   },
   hint: {
-    html: "For example, things moving when you have strong feelings or hearing someone's thoughts."
+    text: "For example, things moving when you have strong feelings or hearing someone's thoughts"
   },
-  value: data.magicalPowers,
+  value: data.hasSymptoms,
   items: [
   {
-    value: "yes",
+    value: "Yes",
     text: "Yes"
   },
   {
-    value: "no",
+    value: "No",
     text: "No"
   },
   {
-    value: "not sure",
+    value: "Not sure",
     text: "I'm not sure"
   }
 ]
 }) }}{% endraw %}{% endcall %}
 
 <p>
-  <a href="http://localhost:3000/{{exampleRadios.url}}"
-    >Go to http://localhost:3000/{{exampleRadios.url}}</a
-  >
-  and check the journey works by selecting an answer, continuing to the next
-  page, then going back.
+  Here we've told the radio component to pre-select a radio item if the value stored at <code>data.{{ exampleRadios.name }}</code> is equal to the radio item's value. If it does not match or no data is stored, then nothing will be selected.
 </p>
+
+<p>
+  <a href="http://localhost:3000/{{ exampleRadios.url }}">Go to http://localhost:3000/{{ exampleRadios.url }}</a>
+  and check the journey works by selecting an answer, continuing to the next
+  page, then going back and refreshing the page.
+</p>
+
 <h2 id="show-the-users-answer-in-question-2">
   Show the user's answer in question&nbsp;2
 </h2>
+
 <p>
-  Text inputs and textareas work in a similar way to radios, adding <code>value</code> to
-  set what text appears in them when the page loads.
+  Text inputs and textareas work in a similar way to radios, by adding a <code>value</code> to
+  set what text is pre-filled in them when the page loads.
 </p>
+
 <p>
-  Open the
-  <code>{{exampleTextArea.url}}.html</code> file in your
-  <code>app/views</code> folder.
+  Open the <code>{{ exampleTextArea.url }}.html</code> file in your <code>app/views</code> folder.
 </p>
+
 <p>
-  Go to  <code>id: "{{exampleTextArea.legend}}",</code> and add a new line
-  <code>value: data.{{exampleTextArea.legend}},</code>
-  like this:
+  Update the textarea component to add <code>value: data.{{ exampleTextArea.name }},</code>, like this:
 </p>
 
 {% call codeSnippet({ language: "js" }) %}{% raw %}

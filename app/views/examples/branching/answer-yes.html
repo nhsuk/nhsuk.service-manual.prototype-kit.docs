@@ -2,9 +2,7 @@
 
 {% set mainClasses = 'nhsuk-main-wrapper--s' %}
 
-{% block pageTitle %}
-  Example - Branching - Yes
-{% endblock %}
+{% set pageName = "You answered yes" %}
 
 {% block beforeContent %}
   {{ backLink({
@@ -18,7 +16,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
         <h1 class="nhsuk-heading-l">
-          You answered yes
+          {{ pageName }}
         </h1>
 
         <p>

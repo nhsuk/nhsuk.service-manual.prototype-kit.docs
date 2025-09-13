@@ -1,9 +1,7 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Example - passing data from page to page - step 5
-{% endblock %}
-
+{% set pageName = "Check your answers" %}
+  
 {% block beforeContent %}
   {{ breadcrumb({
     items: [
@@ -22,7 +20,7 @@
     <div class="nhsuk-grid-column-three-quarters">
 
       <h1>
-        Check your answers
+        {{ pageName }}
       </h1>
 
       <dl class="nhsuk-summary-list">

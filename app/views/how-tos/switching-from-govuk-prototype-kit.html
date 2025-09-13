@@ -1,9 +1,14 @@
-{% extends 'layout.html' %} {% block pageTitle %} Switching from the GOV.UK
-prototype kit - NHS prototype kit {% endblock %} {% block beforeContent %} {%
+{% extends 'layout.html' %}
+
+{% set currentSection = "Guides" %}
+
+{% set pageName "Switching from the GOV.UK prototype kit" %} 
+
+{% block beforeContent %} {%
 include "how-tos/includes/breadcrumb.html" %} {% endblock %} {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
-    <h1 class="nhsuk-heading-xl">Switching from the GOV.UK Prototype Kit</h1>
+    <h1 class="nhsuk-heading-xl">{{ pageName }}</h1>
 
     <p>
       If you have learned how to use the

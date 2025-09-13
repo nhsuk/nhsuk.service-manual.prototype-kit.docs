@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% block pageTitle %}
-  Terminal - NHS prototype kit
-{% endblock %}
+{% set pageName = "Terminal" %}
+
+{% set currentSection = "Get started" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -29,7 +29,7 @@
 
       <h1>
         <span class="nhsuk-caption-l">Step 1 of 8{{[":", installEnvironment ] | join(" ") if installEnvironment }}</span>
-        {% block branchingHeader %}Terminal{% endblock %}
+        {% block branchingHeader %}{{ pageName }}{% endblock %}
       </h1>
 
       {% block branchingContent %}

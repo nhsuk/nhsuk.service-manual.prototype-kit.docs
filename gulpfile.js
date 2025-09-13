@@ -27,8 +27,11 @@ function compileStyles(done) {
   return gulp
     .src(['app/assets/sass/**/*.scss'])
     .pipe(
-      sass()
-      .on('error', (error) => {
+      sass({
+        loadPaths: ['node_modules'],
+        sourceMap: true,
+        sourceMapIncludeSources: true
+      }).on('error', (error) => {
         done(
           new PluginError('compileCSS', error.messageFormatted, {
             showProperties: false

@@ -1,5 +1,6 @@
 // Import NHS.UK frontend library
-@forward "node_modules/nhsuk-frontend/packages/nhsuk";
+@use "vendor/nhsuk-frontend" as *;
+@forward "vendor/nhsuk-frontend";
 
 // Components that are not in the NHS.UK frontend library
 @forward 'components/code-snippet';

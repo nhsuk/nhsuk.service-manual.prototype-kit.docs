@@ -1,4 +1,4 @@
-@use "node_modules/nhsuk-frontend/packages/nhsuk" as *;
+@use "../vendor/nhsuk-frontend" as *;
 
 // Highlight code within body copy
 // This uses the same styling as on the NHS Service Manual

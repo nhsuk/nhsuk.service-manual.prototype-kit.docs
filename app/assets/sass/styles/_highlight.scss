@@ -1,4 +1,4 @@
-@use "node_modules/nhsuk-frontend/packages/nhsuk" as *;
+@use "../vendor/nhsuk-frontend" as *;
 
 // Highlight JS overrides
 $color-syntax--body: #28333b;

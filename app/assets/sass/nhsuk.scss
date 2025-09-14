@@ -616,7 +616,7 @@ main .app-list-signage a[href=""] {
 .nhsuk-related-nav {
   border-top: 1px solid $nhsuk-border-colour;
 
-  @include mq($until: desktop) {
+  @include nhsuk-media-query($until: desktop) {
     margin-top: nhsuk-spacing(7);
   }
 }

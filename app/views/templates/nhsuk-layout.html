@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+<!-- Add some additional CSS -->
+{% block head %}
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/nhsuk.css" rel="stylesheet">
+{% endblock %}
+
+
+<!-- NHS.UK header -->
+{% block header %}
+  {{ header({
+    search: true,
+    account: {
+      items: [
+        {
+          icon: true,
+          text: "My account",
+          href: "#"
+        }
+      ]
+    },
+    navigation: {
+      items: [
+        {
+          text: "Health A-Z",
+          href: "#"
+        },
+        {
+          text: "NHS Services",
+          href: "#"
+        },
+        {
+          text: "Live Well",
+          href: "#"
+        },
+        {
+          text: "Mental health",
+          href: "#"
+        },
+        {
+          text: "Care and support",
+          href: "#"
+        },
+        {
+          text: "Pregnancy",
+          href: "#"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+<!-- NHS.UK footer -->
+{% block footer %}
+  {{ footer({
+    copyright: {
+      text: "© Crown copyright"
+    },
+    navigation: [
+      {
+        items: [
+          {
+            href: "#",
+            text: "Home"
+          },
+          {
+            href: "#",
+            text: "Health A to Z"
+          },
+          {
+            href: "#",
+            text: "NHS services"
+          },
+          {
+            href: "#",
+            text: "Live Well"
+          },
+          {
+            href: "#",
+            text: "Mental health"
+          },
+          {
+            href: "#",
+            text: "Care and support"
+          },
+          {
+            href: "#",
+            text: "Accessibility statement"
+          },
+          {
+            href: "#",
+            text: "Pregnancy"
+          },
+          {
+            href: "#",
+            text: "COVID-19"
+          }
+        ]
+      },
+      {
+        items: [
+          {
+            href: "#",
+            text: "NHS App"
+          },
+          {
+            href: "#",
+            text: "Find my NHS number"
+          },
+          {
+            href: "#",
+            text: "View your GP health records"
+          },
+          {
+            href: "#",
+            text: "View your test results"
+          },
+          {
+            href: "#",
+            text: "About the NHS"
+          },
+          {
+            href: "#",
+            text: "Healthcare abroad"
+          }
+        ]
+      },
+      {
+        items: [
+          {
+            href: "#",
+            text: "Other NHS websites"
+          },
+          {
+            href: "#",
+            text: "Profile editor login"
+          }
+        ]
+      },
+      {
+        items: [
+          {
+            href: "#",
+            text: "About us"
+          },
+          {
+            href: "#",
+            text: "Give us feedback"
+          },
+          {
+            href: "#",
+            text: "Accessibility statement"
+          },
+          {
+            href: "#",
+            text: "Our policies"
+          },
+          {
+            href: "#",
+            text: "Cookies"
+          }
+        ]
+      }
+    ]
+  }) }}
+{% endblock %}

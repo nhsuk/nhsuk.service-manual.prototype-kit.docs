@@ -1,0 +1,12 @@
+{
+  "eleventyComputed": {
+    "caption": "Step {{order}} of 8: Mac",
+    "eleventyNavigation": {
+      "key": "{{caption}} – {{title}}",
+      "parent": "Mac install guide"
+    }
+  },
+  "showPagination": true,
+  "cli": "Terminal",
+  "slug": "mac"
+}

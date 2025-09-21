@@ -1,0 +1,151 @@
+{% extends "templates/nhsuk-layout.html" %}
+
+{% block pageTitle %}Mental health - NHS{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-u-reading-width">
+        <h1>Mental health</h1>
+        <p class="nhsuk-lede-text">
+          Find information and support for your mental health.
+        </p>
+      </div>
+
+      <h2 class="nhsuk-u-visually-hidden">Top tasks in Mental health</h2>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Get urgent help now for mental health",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Find an NHS talking therapies service",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Feelings, symptoms and behaviours",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about common feelings and symptoms such as stress, anxiety or a low mood",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Mental health conditions",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about specific mental health conditions, such as clinical depression, bipolar disorder or OCD",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Advice for life situations and events",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice for you and people you support about mental health in life situations and events, such as pregnancy and bullying at work",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Self-help",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about different types of self-help, such as 5 steps to mental wellbeing and breathing exercises",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "NHS, voluntary and charity services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read information and support about NHS, charity and voluntary mental health services and how to access them",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Mental health for children, teenagers and young adults",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read advice and support about mental health for children, teenagers, students and parents",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Talking therapies, medicine and psychiatry",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about the different types of talking therapy and other treatments, such as medicine for mental health problems",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Social care and your rights",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read advice and support about being a carer, receiving social care help and your mental health rights",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-s">Related information</h2>
+      <ul class="nhsuk-list">
+        <li>
+          <a href="#">Every Mind Matters</a>
+        </li>
+        <li>
+          <a href="#">Autism</a>
+        </li>
+        <li>
+          <a href="#">Insomnia</a>
+        </li>
+        <li>
+          <a href="#">Dementia guide</a>
+        </li>
+        <li>
+          <a href="#">Addiction</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

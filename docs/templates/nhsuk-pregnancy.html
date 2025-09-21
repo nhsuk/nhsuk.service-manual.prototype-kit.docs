@@ -1,0 +1,147 @@
+{% extends "templates/nhsuk-layout.html" %}
+
+{% block pageTitle %}Pregnancy - NHS{% endblock %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-u-reading-width">
+        <h1>Pregnancy</h1>
+        <p class="nhsuk-lede-text">
+          This guide includes all you need to know about trying for a baby, pregnancy, labour and birth.
+        </p>
+      </div>
+
+      <h2 class="nhsuk-u-visually-hidden">Top tasks in Pregnancy</h2>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Due date calculator",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Pregnancy and COVID-19",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Refer yourself for NHS pregnancy care",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Trying for a baby",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about planning a pregnancy and how to tell if you’re pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Having a baby if you’re LGBT+",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about starting a family if you’re LGBT+",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Finding out you’re pregnant",
+            headingClasses: "nhsuk-heading-m",
+            description: "What happens and things to think about when you’re first pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Your pregnancy care",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about the scans, tests and antenatal care you can have",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Keeping well in pregnancy",
+            headingClasses: "nhsuk-heading-m",
+            description: "How to look after yourself and your baby while you’re pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Pregnancy-related conditions",
+            headingClasses: "nhsuk-heading-m",
+            description: "What to do about common symptoms, complications and existing conditions",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Labour and birth",
+            headingClasses: "nhsuk-heading-m",
+            description: "How to tell if you’re in labour and what happens during labour and birth",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Support",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice for things you might need support with during pregnancy",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-s">Related links</h2>
+      <ul class="nhsuk-list">
+        <li>
+          <a href="#">Best Start in life: week-by-week guide to pregnancy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

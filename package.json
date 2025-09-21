@@ -5,9 +5,8 @@
   "homepage": "https://prototype-kit.service-manual.nhs.uk",
   "main": "app.js",
   "scripts": {
-    "build": "gulp build",
-    "prestart": "npm run build",
-    "start": "node app.js",
+    "prestart": "eleventy",
+    "start": "http-server ./_site",
     "test": "jest --coverage=true",
     "test:ci": "jest --ci",
     "prewatch": "gulp build",
@@ -25,8 +24,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
+    "@x-govuk/nhsuk-eleventy-plugin": "^1.0.5",
     "browser-sync": "^3.0.4",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.7",

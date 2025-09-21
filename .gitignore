@@ -4,6 +4,7 @@
 /dist
 /tmp
 /public
+/_site
 
 # Runtime data
 pids

@@ -1,6 +1,4 @@
 {% macro codeSnippet(params) %}
   {% set language = (params.language if params.language else "plaintext") %}
-  <div class="app-code-snippet">
-    <pre><code>{{ (caller() if caller else params.code) | highlight(language) | safe }}</code></pre>
-  </div>
+    <pre class="app-pre"><code>{{ (caller() if caller else params.code) | highlight(language) | safe }}</code></pre>
 {% endmacro %}

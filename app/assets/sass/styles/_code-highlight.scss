@@ -34,6 +34,11 @@ td code {
   }
 }
 
+.app-pre code {
+  font-family: $app-code-font;
+  @include nhsuk-font-size(16);
+}
+
 .hljs {
   background-color: nhsuk-colour("white");
   color: nhsuk-colour("black");

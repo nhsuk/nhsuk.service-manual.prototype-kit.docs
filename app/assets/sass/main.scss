@@ -3,11 +3,11 @@
 @forward "vendor/nhsuk-frontend";
 
 // Components that are not in the NHS.UK frontend library
-@forward 'components/code-snippet';
 @forward 'components/image';
 
 @forward 'styles/code';
-@forward 'styles/highlight';
+@forward 'styles/syntax-highlighting';
+@forward 'styles/code-highlight';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...

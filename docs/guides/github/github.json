@@ -1,0 +1,10 @@
+{
+  "eleventyComputed": {
+    "caption": "Store code online with GitHub",
+    "eleventyNavigation": {
+      "parent": "Store code online with GitHub"
+    }
+  },
+  "sectionKey": "Store code online with GitHub",
+  "showPagination": true
+}

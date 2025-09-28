@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% set pageName = "Install guide" %}
-
+{% set installEnvironment = "Mac" %}
 {% set currentSection = "Get started" %}
+{% set pageName = "Windows install guide" %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -23,8 +23,7 @@
     <h1>{{ pageName }}</h1>
 
     <p class="nhsuk-lede-text">
-      To start making prototypes you need to setup the right tools to make the
-      kit work.
+      To start making prototypes on your Windows machine, you need to setup the right tools to make the kit work.
     </p>
 
     <p>This guide will show you how to get setup in 8 steps.</p>
@@ -36,9 +35,12 @@
       install.
     </p>
 
-    {% include "install/_nhs-england-laptop-warning.html" %}
+    {{ insetText({
+      html: '<p>There are some <a href="/install/nhs-england-windows-laptops">extra steps for NHS England Windows laptops</a> you must do before you start.</p>',
+      classes: "nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-u-margin-bottom-4"
+    }) }}
 
-    {{ actionLink({ text: "Start install guide", href: "/install/mac-or-windows" }) }}
+    {{ actionLink({ text: "Start install guide", href: "/install/windows/terminal" }) }}
 
     <h2 class="nhsuk-heading-m">Problems using this guide</h2>
     <p>If you have any problems:</p>
@@ -49,12 +51,7 @@
      </ul>
     </p>
 
-    <h2 class="nhsuk-heading-m">Other install guides</h2>
-
-    <p>
-      If you are familiar with using git and the terminal, then you might prefer
-      the <a href="/install/advanced">advanced guide</a>.
-    </p>
   </div>
 </div>
 {% endblock %}
+

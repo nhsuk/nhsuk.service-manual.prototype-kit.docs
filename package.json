@@ -7,11 +7,7 @@
   "scripts": {
     "build": "eleventy",
     "prestart": "npm run build",
-    "start": "eleventy --serve --quiet",
-    "test": "jest --coverage=true",
-    "test:ci": "jest --ci",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
-    "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
+    "start": "eleventy --serve --quiet"
   },
   "author": {
     "name": "NHS England",

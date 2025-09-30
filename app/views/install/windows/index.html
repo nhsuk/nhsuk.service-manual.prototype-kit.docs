@@ -34,9 +34,13 @@
       install.
     </p>
 
+    {% set insetTextHtml %}
+      <p>There are some <a href="/install/nhs-england-windows-laptops">extra steps for NHS England Windows laptops</a> you must do before you start.</p>
+    {% endset %}
+
     {{ insetText({
-      html: '<p>There are some <a href="/install/nhs-england-windows-laptops">extra steps for NHS England Windows laptops</a> you must do before you start.</p>',
-      classes: "nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3 nhsuk-u-margin-bottom-4"
+      html: insetTextHtml,
+      classes: "nhsuk-u-padding-top-3 nhsuk-u-padding-bottom-3"
     }) }}
 
     {{ actionLink({ text: "Start install guide", href: "/install/windows/terminal" }) }}

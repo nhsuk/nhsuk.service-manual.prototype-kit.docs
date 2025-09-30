@@ -6,7 +6,4 @@ module.exports = {
   // Port to run nodemon on locally
   port: 2000,
 
-  // Automatically stores form data, and send to all views
-  useAutoStoreData: 'true',
-
 };

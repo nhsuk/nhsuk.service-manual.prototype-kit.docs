@@ -1,8 +1,8 @@
 {
   "name": "nhsuk-prototype-kit",
-  "version": "0.1.0",
   "prototypeKitVersion": "7.0.1",
   "description": "Website and documentation for the NHS prototype kit.",
+  "homepage": "https://prototype-kit.service-manual.nhs.uk",
   "main": "app.js",
   "scripts": {
     "build": "gulp build",
@@ -15,7 +15,14 @@
     "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
     "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
   },
-  "author": "https://github.com/nhsuk/",
+  "author": {
+    "name": "NHS England",
+    "url": "https://www.england.nhs.uk"
+  },
+  "repository": "github:nhsuk/nhsuk.service-manual.prototype-kit.docs",
+  "bugs": {
+    "url": "https://github.com/nhsuk/nhsuk.service-manual.prototype-kit.docs/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.28.4",

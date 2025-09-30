@@ -1,7 +1,6 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 
 {% set currentSection = "Get started" %}
-
 {% set pageName = "Using GitHub Codespaces" %}
 
 {% block beforeContent %}
@@ -12,7 +11,7 @@
         text: "Home"
       },
       {
-        href: "/install/",
+        href: "/install",
         text: "Get started"
       }
     ]
@@ -25,40 +24,31 @@
 
       <h1 class="nhsuk-heading-xl">{{ pageName }}</h1>
 
-      <p class="nhsuk-body-l">If you cannot install the kit on your computer (for example, because you are not able to install Node.js) you can use an online service to edit and run code using your web browser.</p>
+      <p class="nhsuk-body-l">You can use GitHub Codespaces as an alternative to running the kit on your computer.</p>
 
-      <p>Services that you can use include:<p>
+      <p>This avoids the need to install Node.js on your computer. Instead, you will run the kit in the cloud and edit the code in your web browser.</p>
 
-      <ul>
-        <li>
-          <a href="https://github.com/features/codespaces">GitHub Codespaces</a> – free for around 60 hours per month
-        </li>
-        <li>
-          <a href="https://www.gitpod.io/">Gitpod</a> – free for around 50 hours per month
-        </li>
-        </ul>
-
-        <p>For this guide we are using GitHub Codespaces.</p>
+      <p><a href="https://github.com/features/codespaces">GitHub Codespaces</a> is free for around 60 hours per month.</p>
 
       <h2 class="nhsuk-heading-l">Before you begin</h2>
 
       <p>You do not need any technical knowledge to use this guide.</p>
 
-      <p>You will need a
-        <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out">GitHub account</a>.
-      </p>
+      <p>You will need a <a href="https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out">GitHub account</a>.</p>
 
       <p>We will show you how to:</p>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>set up the Codespace
-          </li>
-        <li>work with the Codespace</li>
-        </ul>
-      <p>
-        Installation usually takes up to 5 minutes.
-      </p>
 
-      {{ actionLink({ text: "Start guide for using GitHub Codespaces", href: "/install/codespaces/create-a-codespace" }) }}
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>set up the Codespace</li>
+        <li>work with the Codespace</li>
+      </ul>
+      
+      <p>It usually takes no longer than 5 minutes.</p>
+
+      {{ actionLink({ 
+        text: "Start guide for using GitHub Codespaces", 
+        href: "/install/codespaces/create-a-codespace"
+      }) }}
 
     </div>
   </div>

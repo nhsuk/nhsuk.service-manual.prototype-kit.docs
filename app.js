@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 
 // External dependencies
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const nunjucks = require('nunjucks');
@@ -25,12 +24,8 @@ const port = parseInt(process.env.PORT, 10) || config.port;
 // Initialise applications
 const app = express();
 
-// Set up configuration variables
-const useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData;
-
 // Add variables that are available in all views
 app.locals.asset_path = '/public/';
-app.locals.useAutoStoreData = (useAutoStoreData === 'true');
 app.locals.serviceName = config.serviceName;
 
 // Use cookie middleware to parse cookies
@@ -88,17 +83,6 @@ app.use(sessionInMemory(Object.assign(sessionOptions, {
   saveUninitialized: false,
 })));
 
-// Support for parsing data in POSTs
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
-
-// Automatically store all data users enter
-if (useAutoStoreData === 'true') {
-  app.use(utils.autoStoreData);
-}
-
 // Warn if node_modules folder doesn't exist
 function checkFiles() {
   const nodeModulesExists = fs.existsSync(path.join(__dirname, '/node_modules'));
@@ -142,7 +126,7 @@ app.post('/examples/passing-data/clear-data', (req, res) => {
   res.render('examples/passing-data/clear-data-success');
 });
 
-// Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
+// Redirect all POSTs to GETs
 app.post(/^\/([^.]+)$/, (req, res) => {
   res.redirect(`/${req.params[0]}`);
 });

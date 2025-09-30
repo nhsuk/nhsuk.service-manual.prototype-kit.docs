@@ -1,4 +1,4 @@
-import { addNunjucksFilters, matchRoutes, autoStoreData } from '../../lib/utils';
+import { addNunjucksFilters, matchRoutes } from '../../lib/utils';
 
 const coreFilters = require('../../lib/core_filters');
 jest.mock('../../lib/core_filters');
@@ -117,50 +117,3 @@ test('test matchRoutes with empty path', () => {
     expect(mockNext).toHaveBeenCalled();
 });
 
-test('autoStoreData with request session data not set', () => {
-    const mockRequest = {
-        session: {},
-        body: {1: {2:"two"}},
-        query: {"_one": "_one"},
-    };
-
-    const mockResponse = {
-        set: jest.fn(),
-        end: jest.fn(),
-        render: jest.fn((routePath, cb) => {
-            // Call the callback with a template not found error the first time
-            cb(new Error('template not found'));
-          }),
-        locals:{data:{}},
-    };
-
-    const mockNext = jest.fn();
-
-    autoStoreData(mockRequest, mockResponse, mockNext);
-
-    expect(mockResponse.locals.data).toStrictEqual({1:{2:"two"}});
-});
-
-test('autoStoreData with unchecked in the request', () => {
-    const mockRequest = {
-        session: {},
-        body: {1: "_unchecked"},
-        query: {2: ["one", "_unchecked", "three"]},
-    };
-
-    const mockResponse = {
-        set: jest.fn(),
-        end: jest.fn(),
-        render: jest.fn((routePath, cb) => {
-            // Call the callback with a template not found error the first time
-            cb(new Error('template not found'));
-          }),
-        locals:{data:{}},
-    };
-
-    const mockNext = jest.fn();
-
-    autoStoreData(mockRequest, mockResponse, mockNext);
-
-    expect(mockResponse.locals.data).toStrictEqual({2: ["one", "three",],});
-});

@@ -149,7 +149,7 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     dir: {
-      input: "app/views",
+      input: "app",
     },
   };
 }

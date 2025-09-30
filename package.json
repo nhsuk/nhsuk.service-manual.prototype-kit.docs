@@ -5,12 +5,11 @@
   "homepage": "https://prototype-kit.service-manual.nhs.uk",
   "main": "app.js",
   "scripts": {
-    "prestart": "eleventy",
-    "start": "http-server ./_site",
+    "build": "eleventy",
+    "prestart": "npm run build",
+    "start": "eleventy --serve --quiet",
     "test": "jest --coverage=true",
     "test:ci": "jest --ci",
-    "prewatch": "gulp build",
-    "watch": "gulp",
     "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
     "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
   },

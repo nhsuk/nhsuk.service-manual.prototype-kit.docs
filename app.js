@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 
 // External dependencies
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const nunjucks = require('nunjucks');
@@ -87,17 +86,6 @@ app.use(sessionInMemory(Object.assign(sessionOptions, {
   resave: false,
   saveUninitialized: false,
 })));
-
-// Support for parsing data in POSTs
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
-
-// Automatically store all data users enter
-if (useAutoStoreData === 'true') {
-  app.use(utils.autoStoreData);
-}
 
 // Warn if node_modules folder doesn't exist
 function checkFiles() {

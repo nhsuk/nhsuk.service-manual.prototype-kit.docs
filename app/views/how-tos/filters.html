@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+
+{% set pageName = "Filters" %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ pageName }}</h1>
+
+      <p>Filters are a Nunjucks feature that you can use within your page templates.</p>
+
+      <p>They are useful for improving visual formatting or for displaying a calculated value.</p>
+
+      <p>To use a filter, add <code>|</code> character (a vertical line or ‘pipe’), and then the name of the filter.</p>
+
+      <p>For example, the <code>upper</code> filter can be used to display all the letters in uppercase:</p>
+
+      {% call codeSnippet({ language: "js" }) %}{% raw %}
+      Your postcode is {{ data.postcode | upper }}.
+      {% endraw %}{% endcall %}
+
+      <p>You can also use filters within Nunjucks macros for NHS components.</p>
+
+      <p>For example, if you have a question with checkboxes you can use the <code>join</code> filter to display the selected answers within a summary list with a comma and a space between them:</p>
+
+      {% call codeSnippet({ language: "js" }) %}{% raw %}
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Symptoms"
+      },
+      value: {
+        text: data.symptoms | join(", ")
+      }
+    }
+  ]
+}) }}
+      {% endraw %}{% endcall %}
+
+      <h2>Useful filters</h2>
+
+      <p>Here are some commonly used filters:</p>
+
+      <h3>Text filters</h3>
+
+      <ul>
+        <li><code>upper</code> - makes all letters uppercase</li>
+        <li><code>lower</code> - makes all letters lowercase</li>
+        <li><code>nl2br</code> - replaces line breaks with <code>&lt;br&gt;</code> tags</li>
+      </ul>
+
+      <h3>List filters</h3>
+
+      <ul>
+        <li><code>length</code> - counts the number of items in the list</li>
+        <li><code>first</code> - the first item in the list</li>
+        <li><code>last</code> - last last item of the list</li>
+        <li><code>reverse</code> - reverses the order</li>
+        <li><code>join(", ")</code> - joins the items in the list with a separator.</li>
+        <li><code>sort</code> - sorts the list alphabetically or numerically</li>
+      </ul>      
+      
+      <h3>Number filters</h3>
+      
+      <ul>
+        <li><code>round</code> - rounds a decimal to the nearest whole number</li>
+      </ul>  
+
+      <p>See the <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters">full list of built-in filters</a> in the Nunjucks documentation.</p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -20,13 +20,13 @@
 
       <p>For example, the <code>upper</code> filter can be used to display all the letters in uppercase:</p>
 
-      {% call codeSnippet({ language: "js" }) %}{% raw %}
+      {% call codeSnippet({ language: "jinja" }) %}{% raw %}
       Your postcode is {{ data.postcode | upper }}.
       {% endraw %}{% endcall %}
 
       <p>You can also use filters within Nunjucks macros for NHS components.</p>
 
-      <p>For example, if you have a question with checkboxes you can use the <code>join</code> filter to display the selected answers within a summary list with a comma and a space between them:</p>
+      <p>For example, if you have a question with checkboxes, you can use the <code>join</code> filter to display the checked answers in a summary list, with a comma and a space between each one:</p>
 
       {% call codeSnippet({ language: "js" }) %}{% raw %}
 {{ summaryList({

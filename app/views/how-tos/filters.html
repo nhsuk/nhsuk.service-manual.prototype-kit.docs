@@ -16,6 +16,8 @@
 
       <p>They are useful for improving visual formatting or for displaying a calculated value.</p>
 
+      <h2 id="how-to-use-filters">How to use filters</h2>
+
       <p>To use a filter, add the <code>|</code> character (a vertical line or ‘pipe’), and then the name of the filter.</p>
 
       <p>For example, the <code>upper</code> filter can be used to display all the letters in uppercase:</p>
@@ -43,33 +45,34 @@
 }) }}
       {% endraw %}{% endcall %}
 
-      <h2>Useful filters</h2>
+      <h2 id="useful-filters">Useful filters</h2>
 
-      <p>Here are some commonly used filters:</p>
+      <p>Here are some filters often used within prototypes:</p>
 
-      <h3>Text filters</h3>
+      <h3 id="text-filters">Text filters</h3>
 
       <ul>
-        <li><code>upper</code> - makes all letters uppercase</li>
-        <li><code>lower</code> - makes all letters lowercase</li>
-        <li><code>nl2br</code> - replaces line breaks with <code>&lt;br&gt;</code> tags</li>
+        <li><code>upper</code> – makes all letters uppercase</li>
+        <li><code>lower</code> – makes all letters lowercase</li>
+        <li><code>nl2br</code> – replaces line breaks with <code>&lt;br&gt;</code> tags</li>
       </ul>
 
-      <h3>List (or array) filters</h3>
+      <h3 id="list-filters">List (or array) filters</h3>
 
       <ul>
-        <li><code>length</code> - counts the number of items in the list</li>
-        <li><code>first</code> - the first item in the list</li>
-        <li><code>last</code> - last last item of the list</li>
-        <li><code>reverse</code> - reverses the order</li>
-        <li><code>join(", ")</code> - joins the items in the list with a separator.</li>
-        <li><code>sort</code> - sorts the list alphabetically or numerically</li>
+        <li><code>length</code> – counts the number of items in the list</li>
+        <li><code>first</code> – the first item in the list</li>
+        <li><code>last</code> – last last item of the list</li>
+        <li><code>reverse</code> – reverses the order</li>
+        <li><code>join(", ")</code> – joins the items in the list with a separator</li>
+        <li><code>sort</code> – orders the items alphabetically (A-Z) or numerically (lowest first)</li>
+        <li><code>sort(true)</code> – orders the items in reverse alphabetically (Z-A) or numerically (highest first)</li>
       </ul>      
       
-      <h3>Number filters</h3>
+      <h3 id="number-filters">Number filters</h3>
       
       <ul>
-        <li><code>round</code> - rounds a decimal to the nearest whole number</li>
+        <li><code>round</code> – rounds a decimal to the nearest whole number</li>
       </ul>  
 
       <p>See the <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters">full list of built-in filters</a> in the Nunjucks documentation.</p>

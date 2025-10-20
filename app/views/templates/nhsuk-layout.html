@@ -1,13 +1,10 @@
 {% extends "layout.html" %}
 
-<!-- Add some additional CSS -->
 {% block head %}
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/nhsuk.css" rel="stylesheet">
 {% endblock %}
 
-
-<!-- NHS.UK header -->
 {% block header %}
   {{ header({
     search: true,
@@ -21,13 +18,14 @@
       ]
     },
     navigation: {
+      classes: "nhsuk-header__navigation--justified",
       items: [
         {
           text: "Health A-Z",
           href: "#"
         },
         {
-          text: "NHS Services",
+          text: "NHS services",
           href: "#"
         },
         {
@@ -51,7 +49,6 @@
   }) }}
 {% endblock %}
 
-<!-- NHS.UK footer -->
 {% block footer %}
   {{ footer({
     copyright: {
@@ -86,10 +83,6 @@
           },
           {
             href: "#",
-            text: "Accessibility statement"
-          },
-          {
-            href: "#",
             text: "Pregnancy"
           },
           {
@@ -110,7 +103,7 @@
           },
           {
             href: "#",
-            text: "View your GP health records"
+            text: "View your GP health record"
           },
           {
             href: "#",

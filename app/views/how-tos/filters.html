@@ -45,9 +45,21 @@
 }) }}
       {% endraw %}{% endcall %}
 
-      <h2 id="useful-filters">Useful filters</h2>
+      <h2 id="kit-filters">NHS filters</h2>
 
-      <p>Here are some filters often used within prototypes:</p>
+      <p>The prototype kit come with some filters specific to the NHS.</p>
+
+      <h3 id="format-nhs-number"><code>formatNhsNumber</code></h3>
+
+      <p>Use this to format an NHS number according to the NHS style guide, as 3 groups of numbers with a single space between them, like this: <samp>999 123 4567</samp>.</p>
+      
+      {% call codeSnippet({ language: "jinja" }) %}{% raw %}
+      Your NHS number is {{ data.nhsNumber | formatNhsNumber }}.
+      {% endraw %}{% endcall %}
+
+      <h2 id="useful-filters">General filters</h2>
+
+      <p>Here are some general filters included within Nunjucks that often used within prototypes:</p>
 
       <h3 id="text-filters">Text filters</h3>
 

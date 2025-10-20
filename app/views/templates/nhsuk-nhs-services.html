@@ -1,8 +1,6 @@
-{% extends 'templates/nhsuk-layout.html' %}
+{% extends "templates/nhsuk-layout.html" %}
 
-{% block pageTitle %}
-  NHS services - NHS
-{% endblock %}
+{% block pageTitle %}NHS services - NHS{% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -15,295 +13,249 @@
   }) }}
 {% endblock %}
 
-
-<!-- NHS services content -->
 {% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-
-    <!-- Heading -->
-    <div class="nhsuk-u-reading-width">
-      <h1>NHS services</h1>
-    </div>
-
-    <article>
-      <h2 class="nhsuk-u-visually-hidden">Top tasks in NHS services</h2>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-padding-top-0">
-
-        <!-- Book a coronavirus vaccination if you're eligible -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Book a coronavirus vaccination if you&#x27;re eligible
-              </a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Get tested for coronavirus -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Get tested for coronavirus
-              </a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Use the NHS website repeat prescription ordering service -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Use the NHS website repeat prescription ordering service
-              </a>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-
-        <!-- Find services near you -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Find services near you
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Find your nearest NHS services, including pharmacies, GPs, and A&amp;E</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- GPs -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  GPs
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>About GP services, including how to find and register with a local GP and how to book an appointment</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Prescriptions and pharmacies -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Prescriptions and pharmacies
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Order repeat prescriptions, find out about prescription charges and how pharmacists can help you with medicines and medical advice</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Hospitals -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Hospitals
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>About NHS hospitals, booking and changing appointments with the NHS e-Referral Service and going into hospital</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Mental health services -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Mental health services
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Information about NHS mental health services, including how to access services and where to get urgent help</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Visiting or moving to England -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Visiting or moving to England
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Advice about using the NHS if you&#x27;re planning to visit or move to England</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-
-
-        <!-- Urgent and emergency care services -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Urgent and emergency care services
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Services the NHS provides if you need urgent or emergency medical help</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Sexual health services -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Sexual health services
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Information about NHS sexual health services</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Help with health costs -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Help with health costs
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Find out about when you need to pay, help when on universal credit, travel costs and personal health budgets</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Dentists -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Dentists
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>About NHS dental services, how to find an NHS dentist and how much treatment costs</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Opticians -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Opticians
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Find an optician and see if you are entitled to free NHS eye tests</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Armed forces and veterans healthcare -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Armed forces and veterans healthcare
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>How the NHS can help if you&#x27;re in military service or a veteran</p></div>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Online services -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item nhsuk-u-margin-bottom-6">
-          <div class="nhsuk-card nhsuk-card--clickable beta-card--plain">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Online services
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Get your NHS number and find out how to order repeat prescriptions using an app or website</p></div>
-            </div>
-          </div>
-        </li>
-
-      </ul>
-
-
-      <!-- If you need help now, if you think it's an emergency -->
-      <div class="nhsuk-u-reading-width beta-hub-bottom-content">
-        <h2>If you need help now, and you&#x27;re not sure what to do</h2>
-        <ul>
-          <li>Go to <a href="">111.nhs.uk</a> or call 111</li>
-        </ul>
-        <h2>If you think it&#x27;s an emergency</h2>
-        <ul>
-          <li><a href="">Find your nearest A&amp;E</a></li>
-          <li>Call 999</li>
-        </ul>
+      <div class="nhsuk-u-reading-width">
+        <h1>NHS services</h1>
       </div>
 
-    </article>
+      <h2 class="nhsuk-u-visually-hidden">Top tasks in NHS services</h2>
 
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Order a repeat prescription",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Find a pharmacy that offers free flu vaccination",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Find a walk-in COVID-19 vaccination site",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "GPs",
+            headingClasses: "nhsuk-heading-m",
+            description: "About GP services, including how to find and register with a local GP and how to book an appointment",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Pharmacies",
+            headingClasses: "nhsuk-heading-m",
+            description: "About pharmacies, including the services they provide and where to find them",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Prescriptions",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about prescriptions including charges, repeat prescriptions and if you can get free prescriptions",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Hospitals",
+            headingClasses: "nhsuk-heading-m",
+            description: "About NHS hospitals, booking and changing appointments with the NHS e-Referral Service and going into hospital",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Mental health services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out how to access NHS mental health services and where to get urgent help",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Vaccination and booking services",
+            headingClasses: "nhsuk-heading-m",
+            description: "About NHS vaccination services, including how to book online, find a walk-in site and change invitation preferences",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Visiting or moving to England",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about using the NHS if you’re planning to visit or move to England",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Urgent and emergency care services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Services the NHS provides if you need urgent or emergency medical help",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Sexual health services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information about NHS sexual health services",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Help with health costs",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about when you need to pay, help when on universal credit, travel costs and personal health budgets",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Dentists",
+            headingClasses: "nhsuk-heading-m",
+            description: "About NHS dental services, how to find an NHS dentist and how much treatment costs",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Opticians and sight tests",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find an optician and see if you are entitled to free NHS eye tests",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Alcohol addiction",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find services to help you stop or reduce your drinking",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Healthcare for the armed forces community",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find information for the armed forces community, including veterans, serving personnel, reservists and their families",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Online services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Get your NHS number and find out how to view test results online",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "How to find an NHS gender dysphoria clinic",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find information about gender dysphoria clinics (GDCs) in England",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Getting medical care as a student",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find information about looking after your health as a student, including registering with a GP and getting contraception",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Find your local integrated care board (ICB)",
+            headingClasses: "nhsuk-heading-m",
+            description: "Integrated care boards (ICBs) bring together NHS services in your area",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Find other health services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Use our service finder to find other health services",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-s">If you need help now, and you’re not sure what to do</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Go to <a href="#">111.nhs.uk</a> or call 111</li>
+      </ul>
+
+      <h2 class="nhsuk-heading-s">If you think it’s an emergency</h2>
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li><a href="#">Find your nearest A&amp;E</a></li>
+        <li>Call 999</li>
+      </ul>
+    </div>
   </div>
-</div>
-
 {% endblock %}

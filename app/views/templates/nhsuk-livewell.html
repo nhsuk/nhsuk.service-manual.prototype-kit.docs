@@ -1,8 +1,6 @@
-{% extends 'templates/nhsuk-layout.html' %}
+{% extends "templates/nhsuk-layout.html" %}
 
-{% block pageTitle %}
-  Live Well - NHS
-{% endblock %}
+{% block pageTitle %}Live Well - NHS{% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -15,241 +13,181 @@
   }) }}
 {% endblock %}
 
-
-<!-- Live Well content -->
 {% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h1>Live Well</h1>
+        <p class="nhsuk-lede-text">
+          NHS advice about healthy living, including eating a balanced diet, healthy weight, exercise, quitting smoking and drinking less alcohol.
+        </p>
+      </div>
 
-    <div class="nhsuk-u-reading-width">
-      <h1>Live Well</h1>
-      <p class="nhsuk-lede-text">
-        Advice, tips and tools to help you make the best choices about your
-        health and wellbeing.
-      </p>
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "5 steps to mental wellbeing",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Calculate your body mass index (BMI)",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Healthy weight",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information for adults and children about healthy weight, including advice to help you lose weight",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Exercise",
+            headingClasses: "nhsuk-heading-m",
+            description: "Exercise guidelines and workouts to help improve your fitness and wellbeing",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Sleep and tiredness",
+            headingClasses: "nhsuk-heading-m",
+            description: "Reasons why you might feel tired and advice about what you can do to prevent tiredness",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Eat well",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information and advice about eating a healthy, balanced diet",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Alcohol advice",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice and support for cutting down the amount of alcohol you drink",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Quit smoking",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information and advice to help you stop smoking",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Addiction support",
+            headingClasses: "nhsuk-heading-m",
+            description: "Help and support for addiction, including drug and gambling addictions",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Sexual health",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information and advice about sexual health, including contraception and sexually transmitted infections (STIs)",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+      </ul>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Bone health",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about keeping your bones healthy",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Pain",
+            headingClasses: "nhsuk-heading-m",
+            description: "Support and advice to help with your pain",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Healthy teeth and gums",
+            headingClasses: "nhsuk-heading-m",
+            description: "Information and advice about looking after your teeth and gums",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Seasonal health",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about staying healthy during winter and summer",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "How to wash your hands",
+            headingClasses: "nhsuk-heading-m",
+            description: "Step-by-step guide to washing your hands",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "When your child is too ill for school",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about when to keep your child off school or nursery",
+            href: "#",
+            clickable: true,
+            secondary: true
+          }) }}
+        </li>
+      </ul>
     </div>
-
-    <article>
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-
-
-        <!-- 5 steps to mental wellbeing -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/T_0917_moodzone_527900916.width-690.jpg"
-              alt="Practical advice to help you feel mentally and emotionally better"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  5 steps to mental wellbeing
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Practical advice to help you feel mentally and emotionally
-                better
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Healthy weight -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_healthy-weight-main_M24ENF.width-690.jpg"
-              alt="feet on scales"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Healthy weight
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Check your BMI using our healthy weight calculator and find out
-                if you&#x27;re a healthy weight
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Exercise -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_exercise-main_FKW1X7.width-690.jpg"
-              alt="A woman wearing exercise clothing with headphones in"
-            />
-           <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Exercise
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Programmes, workouts and tips to get you moving and improve your
-                fitness and wellbeing
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-
-
-        <!-- Sleep and tiredness -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_sleep-main_FWWNPR.width-690.width-690.png"
-              alt="White alarm clock with black hands and numbers to right foreground, blurred woman sleeping behind on blow-up bed"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Sleep and tiredness
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Find out how to sleep well and the common lifestyle factors that
-                are making you tired
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Eat well -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_healthy-eating-main_BATM01_copy.width-690.jpg"
-              alt="A bowl of fruit"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Eat well
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                All you need to know about the major food groups and a healthy,
-                balanced diet
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Alcohol support -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_alcohol-support-main__D88JWB.width-690.jpg"
-              alt="empty wine bottles"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Alcohol support
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Find out the health benefits of reducing your alcohol intake and
-                get tips on cutting down
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-
-
-        <!-- Quit smoking -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_quit-smoking_FR0Y98.width-690.jpg"
-              alt="Picture of an empty ashtray"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Quit smoking
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Learn about the benefits of quitting smoking, including better
-                health and increased fertility
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Healthy body -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0719_Health_KGEXK.width-690.jpg"
-              alt="None"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Healthy body
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Get some practical information and advice for keeping your body
-                in tip-top health
-              </p>
-            </div>
-          </div>
-        </li>
-
-
-        <!-- Sexual health -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <img
-              class="nhsuk-card__img"
-              src="/images/nhsuk/livewell/A_0218_sexual-health-main_HG8H7H.width-690.jpg"
-              alt="Some colourful condoms"
-            />
-            <div class="nhsuk-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Sexual health
-                </a>
-              </h2>
-              <p class="nhsuk-card__description">
-                Everything you need to know about sexual health, including
-                contraception, STIs and good sex
-              </p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </article>
-
   </div>
-</div>
-
 {% endblock %}
-

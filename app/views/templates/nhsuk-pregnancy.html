@@ -1,237 +1,147 @@
-{% extends 'templates/nhsuk-layout.html' %}
+{% extends "templates/nhsuk-layout.html" %}
 
-{% block pageTitle %}
-  Pregnancy - NHS
-{% endblock %}
+{% block pageTitle %}Pregnancy - NHS{% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
-  items: [
-    {
-      href: "#",
-      text: "Home"
-    }
-  ]
-}) }}
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      }
+    ]
+  }) }}
 {% endblock %}
 
-
-<!-- Pregnancy content -->
 {% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h1>Pregnancy</h1>
+        <p class="nhsuk-lede-text">
+          This guide includes all you need to know about trying for a baby, pregnancy, labour and birth.
+        </p>
+      </div>
 
-    <!-- Heading and lede text -->
-    <div class="nhsuk-u-reading-width">
-      <h1>Pregnancy</h1>
-      <p class="nhsuk-lede-text">
-        This guide includes all you need to know about trying for a baby, pregnancy, labour and birth.
-      </p>
-    </div>
-
-    <article>
       <h2 class="nhsuk-u-visually-hidden">Top tasks in Pregnancy</h2>
 
-      <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-padding-top-0">
-
-        <!-- Due date calculator -->
+      <ul class="nhsuk-grid-row nhsuk-card-group">
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Due date calculator
-              </a>
-            </div>
-          </div>
+          {{ card({
+            heading: "Due date calculator",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
         </li>
-
-        <!-- Pregnancy and COVID-19 -->
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Pregnancy and COVID-19
-              </a>
-            </div>
-          </div>
+          {{ card({
+            heading: "Pregnancy and COVID-19",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
         </li>
-
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          {{ card({
+            heading: "Refer yourself for NHS pregnancy care",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
+        </li>
       </ul>
 
       <ul class="nhsuk-grid-row nhsuk-card-group">
-
-        <!-- Trying for a baby -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Trying for a baby
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Advice about planning a pregnancy and how to tell if you're pregnant</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Trying for a baby",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice about planning a pregnancy and how to tell if you’re pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-        <!-- Finding out you're pregnant -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Finding out you&#x27;re pregnant
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>What happens and things to think about when you're first pregnant</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Having a baby if you’re LGBT+",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about starting a family if you’re LGBT+",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-        <!-- Your pregnancy care -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Your pregnancy care
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read about the scans, tests and antenatal care you can have</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Finding out you’re pregnant",
+            headingClasses: "nhsuk-heading-m",
+            description: "What happens and things to think about when you’re first pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Keeping well in pregnancy -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Keeping well in pregnancy
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>How to look after yourself and your baby while you're pregnant</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Your pregnancy care",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about the scans, tests and antenatal care you can have",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Pregnancy week-by-week -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Pregnancy week-by-week
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Find out what to expect from every week of your pregnancy</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Keeping well in pregnancy",
+            headingClasses: "nhsuk-heading-m",
+            description: "How to look after yourself and your baby while you’re pregnant",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Pregnancy-related conditions -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Pregnancy-related conditions
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>What to do about common symptoms, complications and existing conditions</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Pregnancy-related conditions",
+            headingClasses: "nhsuk-heading-m",
+            description: "What to do about common symptoms, complications and existing conditions",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Labour and birth -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Labour and birth
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>How to tell if you're in labour and what happens during labour and birth</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Labour and birth",
+            headingClasses: "nhsuk-heading-m",
+            description: "How to tell if you’re in labour and what happens during labour and birth",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Support -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Support
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Advice for things you might need support with during pregnancy</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Support",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice for things you might need support with during pregnancy",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
       </ul>
 
-    </article>
-
-  </div>
-</div>
-
-<!-- Did this information help you? -->
-<div id="nhsuk-user-feedback-form">
-  <div class="nhsuk-user-feedback-form">
-    <div class="nhsuk-card nhsuk-u-reading-width">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          Did this information help you?
-        </h2>
-        <ul class="nhsuk-list nhsuk-user-feedback-form">
-          <li class="nhsuk-user-feedback-form__list-item nhsuk-u-margin-bottom-0">
-            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-4 nhsuk-u-margin-bottom-0 nhsuk-user-feedback-form--yes">
-              Yes <span class="nhsuk-u-visually-hidden">this information helped me</span>
-            </button>
-          </li>
-          <li class="nhsuk-user-feedback-form__list-item nhsuk-u-margin-bottom-0">
-            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0 nhsuk-user-feedback-form--no">
-              No <span class="nhsuk-u-visually-hidden">this information did not help me</span>
-            </button>
-          </li>
-        </ul>
-      </div>
+      <h2 class="nhsuk-heading-s">Related links</h2>
+      <ul class="nhsuk-list">
+        <li>
+          <a href="#">Best Start in life: week-by-week guide to pregnancy</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
-
 {% endblock %}

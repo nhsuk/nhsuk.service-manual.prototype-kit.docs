@@ -1,8 +1,6 @@
-{% extends 'templates/nhsuk-layout.html' %}
+{% extends "templates/nhsuk-layout.html" %}
 
-{% block pageTitle %}
-  Mental health - NHS
-{% endblock %}
+{% block pageTitle %}Mental health - NHS{% endblock %}
 
 {% block beforeContent %}
   {{ breadcrumb({
@@ -15,236 +13,139 @@
   }) }}
 {% endblock %}
 
-
-<!-- Mental health content -->
 {% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h1>Mental health</h1>
+        <p class="nhsuk-lede-text">
+          Find information and support for your mental health.
+        </p>
+      </div>
 
-    <!-- Heading and lede text -->
-    <div class="nhsuk-u-reading-width">
-      <h1>Mental health</h1>
-      <p class="nhsuk-lede-text">
-        Find information and support for your mental health.
-      </p>
-    </div>
-
-    <article>
       <h2 class="nhsuk-u-visually-hidden">Top tasks in Mental health</h2>
 
-      <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-padding-top-0">
-
-        <!-- Get urgent help now for mental health -->
+      <ul class="nhsuk-grid-row nhsuk-card-group">
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Get urgent help now for mental health
-              </a>
-            </div>
-          </div>
+          {{ card({
+            heading: "Get urgent help now for mental health",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
         </li>
-
-        <!-- Access an NHS psychological therapies service (IAPT) -->
         <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Access an NHS psychological therapies service (IAPT)
-              </a>
-            </div>
-          </div>
+          {{ card({
+            heading: "Find an NHS talking therapies service",
+            headingClasses: "nhsuk-heading-xs",
+            href: "#",
+            clickable: true
+          }) }}
         </li>
-
-        <!-- Depression and anxiety self-assessment quiz -->
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content">
-              <a class="nhsuk-card__link nhsuk-heading-xs" href="">
-                Depression and anxiety self-assessment quiz
-              </a>
-            </div>
-          </div>
-        </li>
-
       </ul>
 
       <ul class="nhsuk-grid-row nhsuk-card-group">
-
-        <!-- Feelings, symptoms and behaviours -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Feelings, symptoms and behaviours
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read about common feelings and symptoms such as stress, anxiety or a low mood</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Feelings, symptoms and behaviours",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about common feelings and symptoms such as stress, anxiety or a low mood",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-        <!-- Mental health conditions -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Mental health conditions
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read about specific mental health conditions, such as clinical depression, bipolar disorder or OCD</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Mental health conditions",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about specific mental health conditions, such as clinical depression, bipolar disorder or OCD",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-        <!-- Advice for life situations and events -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Advice for life situations and events
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Advice for you and people you support about mental health in life situations and events, such as pregnancy and bullying at work</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Advice for life situations and events",
+            headingClasses: "nhsuk-heading-m",
+            description: "Advice for you and people you support about mental health in life situations and events, such as pregnancy and bullying at work",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Self-help -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Self-help
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read about different types of self-help, such as 5 steps to mental wellbeing and breathing exercises</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Self-help",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about different types of self-help, such as 5 steps to mental wellbeing and breathing exercises",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- NHS, voluntary and charity services -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  NHS, voluntary and charity services
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read information and support about NHS, charity and voluntary mental health services and how to access them</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "NHS, voluntary and charity services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read information and support about NHS, charity and voluntary mental health services and how to access them",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Mental health for children, teenagers and young adults -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Mental health for children, teenagers and young adults
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read advice and support about mental health for children, teenagers, students and parents</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Mental health for children, teenagers and young adults",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read advice and support about mental health for children, teenagers, students and parents",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Talking therapies, medicine and psychiatry -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Talking therapies, medicine and psychiatry
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read about the different types of talking therapy and other treatments, such as medicine for mental health problems</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Talking therapies, medicine and psychiatry",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read about the different types of talking therapy and other treatments, such as medicine for mental health problems",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
-
-        <!-- Social care and your rights -->
-        <li class="beta-hub-main-topic nhsuk-grid-column-one-half nhsuk-card-group__item">
-          <div class="nhsuk-card nhsuk-card--clickable ">
-            <div class="nhsuk-card__content beta-card__content">
-              <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                <a class="nhsuk-card__link" href="">
-                  Social care and your rights
-                </a>
-              </h2>
-              <div class="nhsuk-card__description"><p>Read advice and support about being a carer, receiving social care help and your mental health rights</p></div>
-              <div class="beta-hub-arrow">
-                <svg class="nhsuk-icon beta-icon__chevron-right-circle" xmlns="http://www.w3.org/2000/svg" width="27" height="27" aria-hidden="true"><circle cx="13.333" cy="13.333" r="13.333" fill=""/><g data-name="Group 1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.667"><path d="M15.438 13l-3.771 3.771"/><path data-name="Path" d="M11.667 9.229L15.438 13"/></g></svg>
-              </div>
-            </div>
-          </div>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Social care and your rights",
+            headingClasses: "nhsuk-heading-m",
+            description: "Read advice and support about being a carer, receiving social care help and your mental health rights",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
         </li>
-
       </ul>
 
-
-      <!-- Related information -->
-      <div class="nhsuk-u-margin-top-6">
-        <div class="beta-hub-related-links-title">
-          <h2 class="nhsuk-heading-s">Related information</h2>
-        </div>
-        <nav role="navigation" aria-label="Related information">
-          <ul class="beta-hub-related-links">
-            <li class="beta-hub-related-links__list-item">
-              <a href="">Every Mind Matters</a>
-            </li>
-            <li class="beta-hub-related-links__list-item">
-              <a href="">Autism</a>
-            </li>
-            <li class="beta-hub-related-links__list-item">
-              <a href="">Insomnia</a>
-            </li>
-            <li class="beta-hub-related-links__list-item">
-              <a href="">Dementia guide</a>
-            </li>
-            <li class="beta-hub-related-links__list-item">
-              <a href="">Addiction</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-    </article>
-
+      <h2 class="nhsuk-heading-s">Related information</h2>
+      <ul class="nhsuk-list">
+        <li>
+          <a href="#">Every Mind Matters</a>
+        </li>
+        <li>
+          <a href="#">Autism</a>
+        </li>
+        <li>
+          <a href="#">Insomnia</a>
+        </li>
+        <li>
+          <a href="#">Dementia guide</a>
+        </li>
+        <li>
+          <a href="#">Addiction</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
-
 {% endblock %}

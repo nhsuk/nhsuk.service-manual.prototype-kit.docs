@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-gds/scss",
+  "ignoreFiles": ["_site/**/*.css"],
+  "rules": {
+    "selector-no-qualifying-type": null
+  }
+}

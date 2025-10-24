@@ -82,7 +82,7 @@ export default function (eleventyConfig) {
   )
 
   // Passthrough
-  eleventyConfig.addPassthroughCopy('./docs/assets/images')
+  eleventyConfig.addPassthroughCopy('./app/assets/images')
 
   // Add shortcode for action link component
   eleventyConfig.addNunjucksShortcode('actionLink', function (params) {
@@ -130,7 +130,7 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
-      input: 'docs'
+      input: 'app'
     }
   }
 }

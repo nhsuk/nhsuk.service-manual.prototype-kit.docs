@@ -1,0 +1,6 @@
+{
+  "eleventyNavigation": {
+    "parent": "Get started"
+  },
+  "layout": "page"
+}

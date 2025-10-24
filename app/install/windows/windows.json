@@ -1,0 +1,12 @@
+{
+  "eleventyComputed": {
+    "caption": "Step {{order}} of 8: Windows",
+    "eleventyNavigation": {
+      "key": "{{caption}} – {{title}}",
+      "parent": "Windows install guide"
+    }
+  },
+  "showPagination": true,
+  "cli": "Command Prompt",
+  "slug": "windows"
+}

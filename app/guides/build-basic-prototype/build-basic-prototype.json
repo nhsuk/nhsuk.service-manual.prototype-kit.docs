@@ -1,0 +1,43 @@
+{
+  "eleventyComputed": {
+    "caption": "Step {{order}} of 8: Build a basic prototype",
+    "eleventyNavigation": {
+      "key": "{{caption}} – {{title}}",
+      "parent": "Build a basic prototype"
+    }
+  },
+  "sectionKey": "Build a basic prototype",
+  "showPagination": true,
+  "example": {
+    "name": "Order a test to check if you have magical powers",
+    "url": "magical-powers",
+    "startPage": {
+      "url": "start-page"
+    },
+    "radios": {
+      "url": "magical-powers",
+      "legend": "Have you felt symptoms of magical powers in the last 30 days?",
+      "name": "hasSymptoms",
+      "hint": "For example, things moving when you have strong feelings or hearing someone's thoughts",
+      "summaryListKey": "Symptoms of magical powers"
+    },
+    "textarea": {
+      "url": "details",
+      "label": "Tell us your symptoms of magical powers",
+      "name": "details",
+      "hint": "Details of the symptoms",
+      "summaryListKey": "Details of the symptoms"
+    },
+    "checkAnswers": {
+      "url": "check-your-answers",
+      "title": "Check your answers"
+    },
+    "confirmation": {
+      "url": "confirmation-page",
+      "title": "Confirmation"
+    },
+    "ineligible": {
+      "url": "ineligible"
+    }
+  }
+}

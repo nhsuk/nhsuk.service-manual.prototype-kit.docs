@@ -26,14 +26,15 @@ Git has an upper case G when talking about a version control system (for example
 
 GitHub is camel case with an upper case H - for example, 'use GitHub Desktop'.
 
-
 #### GOV.UK prototype Kit, GOV.UK design system and other GOV.UK products
 
 Sentence case.
 
 #### Headings and tab titles
+
 Use sentence case, for example "How to download the prototype kit".
-Tab titles (the title of the page as shown in the browser tab) may be different from the page H1, for example a tab title may say "How to download the prototype kit" and the H1 say "Download the prototype kit".
+
+Tab titles (the title of the page as shown in the browser tab) may be different from the page `h1`, for example a tab title may say "How to download the prototype kit" and the H1 say "Download the prototype kit".
 
 #### JavaScript
 
@@ -43,10 +44,10 @@ Camel case with an upper case S.
 
 We are changing how we talk about tools for delivery teams. These used to be called "NHS.UK" products but we are now removing the ".UK". This means that we talk about the:
 
-* NHS frontend (though this is still sometimes called 'NHS.UK frontend')
-* NHS digital service manual
-* NHS design system
-* NHS prototype kit
+- NHS frontend (though this is still sometimes called 'NHS.UK frontend')
+- NHS digital service manual
+- NHS design system
+- NHS prototype kit
 
 For talking to the public about the website (find out more on the [NHS health writing A-Z](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#N))
 
@@ -60,7 +61,7 @@ Use "NHS England Windows laptops" instructions for people using corporate laptop
 
 #### quotation marks
 
-Use double straight quotes only (not smart or curly quotes). More detail is in the <a href="https://service-manual.nhs.uk/content/formatting-and-punctuation#quotation-marks">Formatting and punctuation</a> part of the NHS digital service manual content guide.
+Use double straight quotes only (not smart or curly quotes). More detail is in the [Formatting and punctuation](https://service-manual.nhs.uk/content/formatting-and-punctuation#quotation-marks) part of the NHS digital service manual content guide.
 
 #### terminal
 
@@ -69,7 +70,6 @@ Lower case. Usually it will be "the terminal".
 #### Visual Studio Code
 
 Title case. When you use it for the first time in a guide, start with "Visual Studio Code (also known as VS Code)".
-
 
 ## Support
 

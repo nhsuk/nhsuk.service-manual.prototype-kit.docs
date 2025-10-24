@@ -1,0 +1,249 @@
+{% extends "templates/nhsuk-layout.html" %}
+
+{% set mainClasses = "app-homepage" %}
+
+{% block pageTitle %}The NHS website - NHS{% endblock %}
+
+{% macro listSignage(params) %}
+<ul class="app-list-signage">
+{% for item in params.items %}
+  <li>
+    <a href="{{ item.href }}">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"/>
+      </svg>
+      {{ item.text }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endmacro %}
+
+{% block main %}
+  {{ hero({
+    classes: "app-hero",
+    heading: "NHS website for England",
+    text: "Find information and services to help you manage your health",
+    imageURL: "/assets/images/templates/homepage-hero.jpg"
+  }) }}
+
+  <section class="app-section">
+    <div class="nhsuk-width-container">
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "Health A to Z",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about conditions, symptoms, medicines, tests and treatments, including when to get help",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          {{ card({
+            heading: "NHS services",
+            headingClasses: "nhsuk-heading-m",
+            description: "Find out about NHS services including GPs, pharmacies, prescriptions, hospitals and dentists",
+            href: "#",
+            clickable: true,
+            primary: true
+          }) }}
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-l">Manage your health</h2>
+
+      <ul class="nhsuk-list">
+        <li>
+          {{ actionLink({
+            classes: "nhsuk-u-margin-bottom-2",
+            text: "View your GP health record",
+            href: "#"
+          }) }}
+        </li>
+        <li>
+          {{ actionLink({
+            classes: "nhsuk-u-margin-bottom-2",
+            text: "Order a repeat prescription",
+            href: "#"
+          }) }}
+        </li>
+        <li>
+          {{ actionLink({
+            classes: "nhsuk-u-margin-bottom-2",
+            text: "View your test results",
+            href: "#"
+          }) }}
+        </li>
+        <li>
+          {{ actionLink({
+            classes: "nhsuk-u-margin-bottom-2",
+            text: "Appointments and bookings at your GP surgery",
+            href: "#"
+          }) }}
+        </li>
+        <li>
+          {{ actionLink({
+            classes: "nhsuk-u-margin-bottom-2",
+            text: "How to register with a GP surgery",
+            href: "#"
+          }) }}
+        </li>
+        <li>
+          {{ actionLink({
+            text: "Find your NHS number",
+            href: "#"
+          }) }}
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="app-section">
+    <div class="nhsuk-width-container app-section__content">
+      <h2 class="nhsuk-heading-l">NHS services</h2>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          {{ listSignage({
+            items: [
+              {
+                text: "Find a pharmacy",
+                href: "#"
+              },
+              {
+                text: "Find a dentist",
+                href: "#"
+              },
+              {
+                text: "Find a GP",
+                href: "#"
+              },
+              {
+                text: "Find NHS talking therapies for anxiety and depression",
+                href: "#"
+              }
+            ]
+          }) }}
+
+          {{ actionLink({
+            text: "Find other NHS services",
+            href: "#"
+          }) }}
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+          {{ card({
+            heading: "Help from NHS 111",
+            headingClasses: "nhsuk-heading-m",
+            descriptionHtml: '<p>If you’re worried about a symptom and not sure what help you need, NHS 111 can tell you what to do next.</p><p>Go to <a href="#">111.nhs.uk</a> or <a href="#">call 111</a>.</p><p>For a life-threatening emergency call 999.</p>'
+          }) }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section">
+    <div class="nhsuk-width-container app-section__content">
+      <h2 class="nhsuk-heading-l">Featured</h2>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Winter vaccinations and winter health",
+                headingClasses: "nhsuk-heading-m",
+                description: "Find out about things you can do to stay well in winter, including getting your flu vaccination",
+                href: "#",
+                clickable: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Refer yourself for NHS pregnancy care",
+                headingClasses: "nhsuk-heading-m",
+                description: "Refer yourself to NHS maternity services so you can start your pregnancy care with a midwife",
+                href: "#",
+                clickable: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Get healthcare cover abroad with a UK GHIC or EHIC",
+                headingClasses: "nhsuk-heading-m",
+                description: "Get or renew your health insurance card to help you get healthcare in the EU and some other countries",
+                href: "#",
+                clickable: true
+              }) }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section">
+    <div class="nhsuk-width-container app-section__content">
+      <h2 class="nhsuk-heading-l">More information and advice</h2>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Vaccinations",
+                headingClasses: "nhsuk-heading-m",
+                description: "Information about vaccinations for babies, children and adults, including why they're important and how to get them",
+                href: "#",
+                clickable: true,
+                secondary: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "COVID-19",
+                headingClasses: "nhsuk-heading-m",
+                description: "Advice about COVID-19, including symptoms, treatments and how to avoid catching and spreading it",
+                href: "#",
+                clickable: true,
+                secondary: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Baby",
+                headingClasses: "nhsuk-heading-m",
+                description: "A guide to everything you need to know about caring for a baby",
+                href: "#",
+                clickable: true,
+                secondary: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Women’s health",
+                headingClasses: "nhsuk-heading-m",
+                description: "Information and support on health, wellbeing, conditions and screening",
+                href: "#",
+                clickable: true,
+                secondary: true
+              }) }}
+            </li>
+            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+              {{ card({
+                heading: "Contraception",
+                headingClasses: "nhsuk-heading-m",
+                description: "Information about different types of contraception, including where to get them and how well they work",
+                href: "#",
+                clickable: true,
+                secondary: true
+              }) }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,7 @@
+{
+  "eleventyNavigation": {
+    "parent": "Codespaces"
+  },
+  "sectionKey": "Codespaces",
+  "showPagination": true
+}

@@ -1,19 +1,19 @@
 {
   "name": "nhsuk-prototype-kit",
-  "prototypeKitVersion": "7.1.0",
   "description": "Website and documentation for the NHS prototype kit.",
   "homepage": "https://prototype-kit.service-manual.nhs.uk",
-  "main": "app.js",
   "scripts": {
-    "build": "gulp build",
+    "build": "eleventy",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . --write",
+    "lint:js": "eslint '**/*.js'",
+    "lint:js:fix": "eslint '**/*.js' --fix",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint:scss:fix": "stylelint '**/*.scss' --fix",
+    "lint": "npm run lint:prettier && npm run lint:js && npm run lint:scss",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:scss:fix",
     "prestart": "npm run build",
-    "start": "node app.js",
-    "test": "jest --coverage=true",
-    "test:ci": "jest --ci",
-    "prewatch": "gulp build",
-    "watch": "gulp",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js",
-    "lint:js:fix": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js --fix"
+    "start": "eleventy --serve --quiet"
   },
   "author": {
     "name": "NHS England",
@@ -25,34 +25,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
-    "browser-sync": "^3.0.4",
-    "client-sessions": "^0.8.0",
-    "cookie-parser": "^1.4.7",
-    "express": "^5.1.0",
-    "express-session": "^1.18.2",
-    "gulp": "^5.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-nodemon": "^2.5.0",
-    "gulp-rename": "^2.1.0",
-    "gulp-sass": "^6.0.1",
-    "highlight.js": "^11.2.0",
-    "lodash": "^4.17.21",
-    "nhsuk-frontend": "^10.1.0",
-    "nunjucks": "^3.2.4",
-    "path": "^0.12.7",
-    "sass-embedded": "^1.93.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@x-govuk/nhsuk-eleventy-plugin": "^1.0.5"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.31.0",
-    "jest": "^30.2.0"
+    "@x-govuk/eslint-config": "^0.0.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.24.0",
+    "stylelint-config-gds": "^2.0.0"
   },
   "engines": {
     "node": "^22"
-  }
+  },
+  "type": "module"
 }

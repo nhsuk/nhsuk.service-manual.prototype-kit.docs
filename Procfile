@@ -1,1 +1,1 @@
-web: eleventy --serve --quiet --port PORT
+web: eleventy --serve --quiet --port $PORT

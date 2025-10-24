@@ -129,7 +129,9 @@ export default function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
-    pathPrefix: process.env.GITHUB_ACTIONS ? '/nhsuk.service-manual.prototype-kit.docs/' : '/',
+    pathPrefix: process.env.GITHUB_ACTIONS
+      ? '/nhsuk.service-manual.prototype-kit.docs/'
+      : '/',
     dir: {
       input: 'app'
     }

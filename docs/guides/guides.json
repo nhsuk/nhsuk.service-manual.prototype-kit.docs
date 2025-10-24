@@ -1,4 +1,7 @@
 {
+  "eleventyComputed": {
+    "redirectFrom": "{{ page.url | replace('guides', 'how-tos') }}"
+  },
   "eleventyNavigation": {
     "parent": "Guides"
   },

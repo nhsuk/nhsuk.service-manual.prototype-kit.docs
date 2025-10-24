@@ -2,6 +2,7 @@
 layout: page
 title: Updates
 description: Changes made in each major and minor version.
+redirectFrom: whats-new/updates
 ---
 
 ## 7.1.0 - 20 October 2025

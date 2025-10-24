@@ -1,6 +1,7 @@
 ---
 title: Updating the kit
 description: Use the latest version of the NHS prototype kit.
+redirectFrom: /how-tos/updating-the-kit
 ---
 
 > [!NOTE]

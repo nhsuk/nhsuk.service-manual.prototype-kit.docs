@@ -177,5 +177,6 @@ Check the terminal for error messages. Common issues:
 
 - Check your `if` conditions match exactly what the user selects
 - Make sure you are using `==` to check the answer’s answer, not `=`
+- Make sure you are using `==` to check the answer’s answer, not `=`
 - Check spelling and capitalisation in your conditions
 - Use `console.log(answer)` to see what value you're actually getting

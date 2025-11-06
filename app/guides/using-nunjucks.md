@@ -51,7 +51,7 @@ Use a `set` block for multi-line content, html, or including other Nunjucks stat
 {% endset %}
 
 {{ insetText({
-  HTML: messageText
+  html: messageText
 }) }}{% endraw %}
 ```
 

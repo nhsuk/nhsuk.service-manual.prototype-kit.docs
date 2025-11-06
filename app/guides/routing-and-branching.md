@@ -13,8 +13,6 @@ eleventyComputed:
 Routes go in `app/routes.js`. A route listens for form submissions and decides what to do next.
 
 ```js
-// app/routes.js
-
 // Run this code when a form is submitted to '/your-page-answer'
 router.post('/your-page-answer', function (req, res) {
   // Your logic goes here

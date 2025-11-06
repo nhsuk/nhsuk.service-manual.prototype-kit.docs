@@ -1,6 +1,6 @@
 ---
-title: "Quick reference: Routing and branching"
-description: Reference guide for routing and branching in the NHS prototype kit
+title: "Routing and branching"
+description: Quick reference guide
 order: 10
 tags:
   - advanced
@@ -8,15 +8,11 @@ eleventyComputed:
   bodyClasses: "app-print-reference"
 ---
 
-This is a quick reference guide for creating routes and branching logic in your prototype.
-
 ## Basic route structure
 
 Routes go in `app/routes.js`. A route listens for form submissions and decides what to do next.
 
 ```js
-// app/routes.js
-
 // Run this code when a form is submitted to '/your-page-answer'
 router.post('/your-page-answer', function (req, res) {
   // Your logic goes here
@@ -112,7 +108,11 @@ router.post('/symptoms-answer', function (req, res) {
   const data = req.session.data
   const symptoms = data.symptoms
 
-  if (symptoms && symptoms.includes('Chest pain') && symptoms.includes('Breathlessness')) {
+  if (
+    symptoms && 
+    symptoms.includes('Chest pain') && 
+    symptoms.includes('Breathlessness')
+  ) {
     res.redirect('/urgent')
   }
   else if (symptoms && symptoms.includes('Fever')) {
@@ -182,5 +182,7 @@ Check the terminal for error messages. Common issues:
 ### Wrong page shows
 
 - Check your `if` conditions match exactly what the user selects
+- Make sure you are using `==` to check the answer’s answer, not `=`
+- Make sure you are using `==` to check the answer’s answer, not `=`
 - Check spelling and capitalisation in your conditions
 - Use `console.log(answer)` to see what value you're actually getting

@@ -1,14 +1,12 @@
 ---
-title: "Quick reference: Using Nunjucks"
-description: Reference guide for using Nunjucks templating in the NHS prototype kit
+title: "Using Nunjucks"
+description: Quick reference guide
 order: 11
 tags:
   - general
 eleventyComputed:
   bodyClasses: "app-print-reference"
 ---
-
-This is a quick reference guide for using Nunjucks templating in your prototype pages.
 
 ## Variables and displaying data
 

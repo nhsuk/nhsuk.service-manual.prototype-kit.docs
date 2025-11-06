@@ -136,7 +136,9 @@ Checkboxes return an array. Check if a specific value was selected:
 {% endif %}{% endraw %}
 ```
 
-## Loops
+## Displaying multiple items (lists / arrays)
+
+Use a `for` loop to repeat content for each item in a list. For example, if a user selected multiple checkboxes, you can display each selected checkbox item.
 
 ### Basic for loop
 
@@ -198,7 +200,7 @@ Show a message when there are no items:
 
 ## Loop properties
 
-Useful properties available inside loops:
+When using a `for` loop, these properties are available:
 
 - `loop.index` – current iteration (starts at 1)
 - `loop.index0` – current iteration (starts at 0)
@@ -241,7 +243,7 @@ Or use a `set` block to create content first:
 
 ## Filters
 
-Filters transform how data is displayed. Add them with the `|` character.
+Filters transform how data is displayed. For example, format a user's NHS number in the form `999 999 9999` or uppercase their postcode.
 
 ### Text formatting
 

@@ -1,6 +1,6 @@
 ---
-title: "Quick reference: Routing and branching"
-description: Reference guide for routing and branching in the NHS prototype kit
+title: "Routing and branching"
+description: Quick reference guide
 order: 10
 tags:
   - advanced
@@ -103,7 +103,11 @@ Check for multiple selected values:
 router.post('/symptoms-answer', function (req, res) {
   const symptoms = req.session.data.symptoms
 
-  if (symptoms && symptoms.includes('Chest pain') && symptoms.includes('Breathlessness')) {
+  if (
+    symptoms && 
+    symptoms.includes('Chest pain') && 
+    symptoms.includes('Breathlessness')
+  ) {
     res.redirect('/urgent')
   }
   else if (symptoms && symptoms.includes('Fever')) {
@@ -172,5 +176,6 @@ Check the terminal for error messages. Common issues:
 ### Wrong page shows
 
 - Check your `if` conditions match exactly what the user selects
+- Make sure you are using `==` to check the answer’s answer, not `=`
 - Check spelling and capitalisation in your conditions
 - Use `console.log(answer)` to see what value you're actually getting

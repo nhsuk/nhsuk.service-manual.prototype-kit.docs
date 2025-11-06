@@ -42,12 +42,17 @@ Create variables in your templates:
 {% endif %}{% endraw %}
 ```
 
-Use a `set` block for multi-line content:
+Use a `set` block for multi-line content, html, or including other Nunjucks statements:
 
 ```njk
 {% raw %}{% set messageText %}
-  You told us your name is {{ data.name }}.
-{% endset %}{% endraw %}
+  <p>You told us your name is {{ data.name }}.</p>
+  <p>Your appointment is on {{ data.appointmentDate }}.</p>
+{% endset %}
+
+{{ insetText({
+  HTML: messageText
+}) }}{% endraw %}
 ```
 
 ## Logic with if/else
@@ -201,15 +206,15 @@ Useful properties available inside loops:
 - `loop.last` – true if last iteration
 - `loop.length` – total number of items
 
-Example:
+Example using `loop.last` to add a full stop after the final item:
 
 ```njk
-{% raw %}{% for item in data.items %}
-  <p>
-    Item {{ loop.index }} of {{ loop.length }}
-    {% if loop.last %}(final item){% endif %}
-  </p>
-{% endfor %}{% endraw %}
+{% raw %}<ul>
+  {% for item in data.shoppingList %}
+    <li>{{ item }}{% if loop.last %}.{% else %},{% endif %}</li>
+  {% endfor %}
+</ul>
+<!-- Adds a comma after each item except the last, which gets a full stop -->{% endraw %}
 ```
 
 ## Using data in components
@@ -269,7 +274,7 @@ Join checkbox or list items with a separator:
 <!-- Output: Fever, Cough, Headache -->
 
 {{ data.items | join(" and ") }}
-<!-- With "and" -->{% endraw %}
+<!-- Output: Fever and Cough and Headache -->{% endraw %}
 ```
 
 ### Length (count items)
@@ -321,7 +326,12 @@ Chain multiple filters together:
 
 ```njk
 {% raw %}<!-- Sort and join -->
-{{ data.conditions | sort | join(", ") }}{% endraw %}
+{{ data.conditions | sort | join(", ") }}
+
+<!-- Convert to lowercase, sort, then join -->
+{{ data.symptoms | lower | sort | join(", ") }}
+<!-- Input: ["Headache", "Cough", "Fever"] -->
+<!-- Output: cough, fever, headache -->{% endraw %}
 ```
 
 ## Check your answers pattern
@@ -444,8 +454,8 @@ Examples:
 ### Displaying checkbox answers as comma-separated text
 
 ```njk
-{% raw %}<p>Your symptoms: {{ data.symptoms | join(", ") }}</p>
-<!-- Output: Fever, Cough, Headache -->{% endraw %}
+{% raw %}<p>Your symptoms: {{ data.symptoms | lower | join(", ") }}</p>
+<!-- Output: <p>Your symptoms: fever, cough, headache</p> -->{% endraw %}
 ```
 
 ### Showing radio button answer

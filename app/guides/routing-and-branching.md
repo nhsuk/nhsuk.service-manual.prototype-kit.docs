@@ -8,6 +8,16 @@ eleventyComputed:
   bodyClasses: "app-print-reference"
 ---
 
+## Setting the form action
+
+In your HTML page, set the form to submit to your route:
+
+```njk
+{% raw %}<form method="post" action="/your-page-answer">
+  <!-- Your form content -->
+</form>{% endraw %}
+```
+
 ## Basic route structure
 
 Routes go in `app/routes.js`. A route listens for form submissions and decides what to do next.
@@ -109,8 +119,8 @@ router.post('/symptoms-answer', function (req, res) {
   const symptoms = data.symptoms
 
   if (
-    symptoms && 
-    symptoms.includes('Chest pain') && 
+    symptoms &&
+    symptoms.includes('Chest pain') &&
     symptoms.includes('Breathlessness')
   ) {
     res.redirect('/urgent')
@@ -122,16 +132,6 @@ router.post('/symptoms-answer', function (req, res) {
     res.redirect('/standard')
   }
 })
-```
-
-## Setting the form action
-
-In your HTML page, set the form to submit to your route:
-
-```njk
-{% raw %}<form method="post" action="/your-page-answer">
-  <!-- Your form content -->
-</form>{% endraw %}
 ```
 
 ## Common patterns

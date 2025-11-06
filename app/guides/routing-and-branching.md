@@ -8,8 +8,6 @@ eleventyComputed:
   bodyClasses: "app-print-reference"
 ---
 
-This is a quick reference guide for creating routes and branching logic in your prototype.
-
 ## Basic route structure
 
 Routes go in `app/routes.js`. A route listens for form submissions and decides what to do next.

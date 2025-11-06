@@ -8,8 +8,6 @@ eleventyComputed:
   bodyClasses: "app-print-reference"
 ---
 
-This is a quick reference guide for using Nunjucks templating in your prototype pages.
-
 ## Variables and displaying data
 
 ### Displaying variables

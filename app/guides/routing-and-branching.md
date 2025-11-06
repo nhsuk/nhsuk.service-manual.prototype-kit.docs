@@ -34,6 +34,11 @@ const symptoms = req.session.data.symptoms
 
 // Another example
 const answer = req.session.data.dateOfBirth
+
+// Or get all data at once for easier access
+const data = req.session.data
+const firstName = data.firstName
+const lastName = data.lastName
 ```
 
 ## Branching on radio button answers
@@ -42,7 +47,8 @@ Send users to different pages based on their radio button selection:
 
 ```js
 router.post('/eligibility-answer', function (req, res) {
-  const eligible = req.session.data.isEligible
+  const data = req.session.data
+  const eligible = data.isEligible
 
   if (eligible == "Yes") {
     res.redirect('/next-question')
@@ -59,7 +65,8 @@ Handle more than 2 options with `else if`:
 
 ```js
 router.post('/appointment-type-answer', function (req, res) {
-  const appointmentType = req.session.data.appointmentType
+  const data = req.session.data
+  const appointmentType = data.appointmentType
 
   if (appointmentType == "Face to face") {
     res.redirect('/book-face-to-face')
@@ -83,7 +90,8 @@ Checkboxes return an array of values. Check if a specific value was selected:
 
 ```js
 router.post('/symptoms-answer', function (req, res) {
-  const symptoms = req.session.data.symptoms
+  const data = req.session.data
+  const symptoms = data.symptoms
 
   // Check if 'Fever' was selected
   if (symptoms && symptoms.includes('Fever')) {
@@ -101,7 +109,8 @@ Check for multiple selected values:
 
 ```js
 router.post('/symptoms-answer', function (req, res) {
-  const symptoms = req.session.data.symptoms
+  const data = req.session.data
+  const symptoms = data.symptoms
 
   if (symptoms && symptoms.includes('Chest pain') && symptoms.includes('Breathlessness')) {
     res.redirect('/urgent')
@@ -149,7 +158,8 @@ else {
 You can use data values in your redirect paths:
 
 ```js
-const service = req.session.data.serviceType
+const data = req.session.data
+const service = data.serviceType
 res.redirect(`/${service}/next-page`)
 ```
 

@@ -4,6 +4,8 @@ description: Reference guide for routing and branching in the NHS prototype kit
 order: 10
 tags:
   - advanced
+eleventyComputed:
+  bodyClasses: "app-print-reference"
 ---
 
 This is a quick reference guide for creating routes and branching logic in your prototype.

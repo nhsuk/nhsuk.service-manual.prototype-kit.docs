@@ -42,3 +42,60 @@
     padding: 0;
   }
 }
+
+// Print styles for reference guides
+@media print {
+  .app-print-reference {
+    font-size: 10pt;
+
+    .app-prose-scope {
+      max-width: 100%;
+
+      h1 {
+        font-size: 18pt;
+        margin-bottom: 8pt;
+      }
+
+      h2 {
+        font-size: 14pt;
+        margin-top: 12pt;
+        margin-bottom: 6pt;
+        page-break-after: avoid;
+      }
+
+      h3 {
+        font-size: 11pt;
+        margin-top: 8pt;
+        margin-bottom: 4pt;
+        page-break-after: avoid;
+      }
+
+      p,
+      ul,
+      ol {
+        margin-bottom: 6pt;
+      }
+
+      // Code blocks
+      pre {
+        border: 1pt solid #d8dde0;
+        padding: 6pt;
+        margin-bottom: 8pt;
+        page-break-inside: avoid;
+        background-color: #f0f4f5;
+      }
+
+      code {
+        font-size: 8pt;
+      }
+
+      // Inline code
+      code.app-code--inline,
+      kbd,
+      samp {
+        border: 1pt solid #d8dde0;
+        background-color: #f0f4f5;
+      }
+    }
+  }
+}

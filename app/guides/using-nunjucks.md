@@ -291,15 +291,6 @@ Count how many items:
 {% endif %}{% endraw %}
 ```
 
-### First and last
-
-Get first or last item from a list:
-
-```njk
-{% raw %}<p>First symptom: {{ data.symptoms | first }}</p>
-<p>Last symptom: {{ data.symptoms | last }}</p>{% endraw %}
-```
-
 ### Sort
 
 Order items alphabetically:
@@ -510,6 +501,42 @@ Apply different formatting based on value:
 {% elseif data.status == "Routine" %}
   <strong class="nhsuk-tag">{{ data.status }}</strong>
 {% endif %}{% endraw %}
+```
+
+### Complex data in check your answers
+
+Use a `set` block to format data before displaying in a summary list:
+
+```njk
+{% raw %}{% set symptomsHtml %}
+  <ul>
+    {% for symptom in data.symptoms %}
+      <li>{{ symptom }}</li>
+    {% endfor %}
+  </ul>
+{% endset %}
+
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Your symptoms"
+      },
+      value: {
+        html: symptomsHtml
+      },
+      actions: {
+        items: [
+          {
+            href: "/symptoms",
+            text: "Change",
+            visuallyHiddenText: "your symptoms"
+          }
+        ]
+      }
+    }
+  ]
+}) }}{% endraw %}
 ```
 
 ## Troubleshooting

@@ -555,24 +555,30 @@ Use a `set` block to format data before displaying in a summary list:
 ### Logic not working
 
 - Check spacing: use `==` not `= =`
-- Check quotes match: `"Yes"` or `'Yes'`, not mixed
-- Remember `=` (set) is different from `==` (compare)
+- Remember `=` (assign) is different from `==` (compare)
 
 ### Data not showing
 
 - Check the input has a `name` attribute
 - Check you're using the correct name (case-sensitive)
 
-### Checkboxes showing `[object Object]`
+### Data showing `[object Object]` or `one,two,three`
 
-Use `join` filter or loop through the array:
+Use `join` filter or loop through the list (array):
 
 ```njk
 {% raw %}<!-- Don't do this: -->
 {{ data.items }}
 
 <!-- Do this instead: -->
-{{ data.items | join(", ") }}{% endraw %}
+{{ data.items | join(", ") }}
+
+<!-- Or loop through the items: -->
+<ul>
+  {% for item in data.items %}
+    <li>{{ item }}</li>
+  {% endfor %}
+</ul>{% endraw %}
 ```
 
 ### Filters not working

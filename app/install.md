@@ -1,24 +1,20 @@
 ---
 layout: hub
 title: Get started
-description: To use the kit you'll need some basic knowledge of HTML, for example what tags and attributes are and how to copy and paste code.
 groups:
-  - title: Local installation
+  - title: Installing the kit on your computer
     items: collections.install-local
     clickable: true
     columns: 3
-  - title: Running the kit in the cloud
+  - title: Run the kit in the cloud
     items: collections.install-cloud
     clickable: true
     columns: 3
 ---
 
-You can learn basic HTML and CSS at [MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started), [Codecademy](https://www.codecademy.com) or other online tutorials. You'll also need to install some other tools and software.
+Before you start using the kit, you'll need some basic knowledge of HTML. You can learn this at [MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started), [Codecademy](https://www.codecademy.com/learn/learn-html-fundamentals) or other tutorial websites.
 
-## Updating
+There are 2 ways to use the kit. You can either install and run it on your own computer, or run it in the cloud and access it through a web browser.
 
-If you have already got an NHS prototype but need to upgrade it to the latest version, see the [guide to updating the kit](/install/updating-the-kit).
-
-## Switching from the GOV.UK Prototype Kit
-
-If you are new to the NHS prototype kit but are familiar with the GOV.UK Prototype Kit, you can find out [how the NHS prototype kit is different from the GOV.UK Prototype Kit](/guides/switching-from-govuk-prototype-kit).
+> [!NOTE]
+> If you’ve already got a prototype using the NHS prototype kit and need to upgrade it to the latest version, see the [guide to updating the kit](/install/updating-the-kit).

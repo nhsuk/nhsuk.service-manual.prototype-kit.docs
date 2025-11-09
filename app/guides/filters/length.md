@@ -27,4 +27,3 @@ You can also use it within a condition:
   <p>You are taking more than 5 medications.</p>
 {% endif %}{% endraw %}
 ```
-

@@ -18,7 +18,6 @@ Displays:
 {% raw %}<p>You selected these symptoms: headache, high temperature.</p>{% endraw %}
 ```
 
-
 ## Summary list example
 
 The join filter is especially useful in summary lists where a user may have selected more than 1 checkbox option.

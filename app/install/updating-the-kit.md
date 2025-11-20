@@ -28,18 +28,18 @@ Make these changes within the `dependencies` section:
 
 Add this line:
 
-* add `"nhsuk-prototype-kit": "8.0.0",`
+- add `"nhsuk-prototype-kit": "8.0.0",`
 
 Remove these lines (the version numbers may be different):
 
-* `"body-parser": "^2.2.0",`
-* `"client-sessions": "^0.8.0",`
-* `"cookie-parser": "^1.4.7",`
-* `"dotenv": "^17.2.2",`
-* `"express-session": "^1.18.2",`
-* `"lodash": "^4.17.21",`
-* `"path": "^0.12.7",`
-* ` "portscanner": "^2.2.0",`
+- `"body-parser": "^2.2.0",`
+- `"client-sessions": "^0.8.0",`
+- `"cookie-parser": "^1.4.7",`
+- `"dotenv": "^17.2.2",`
+- `"express-session": "^1.18.2",`
+- `"lodash": "^4.17.21",`
+- `"path": "^0.12.7",`
+- ` "portscanner": "^2.2.0",`
 
 Check the version number of `nhuk-frontend`. It should look like this:
 
@@ -49,10 +49,10 @@ Check the version number of `nhuk-frontend`. It should look like this:
 
 ### 2. Delete these sub-folders within your prototype:
 
-* `lib`
-* `tests/lib`
-* `docs` (if present)
-* `middleware` (if present)
+- `lib`
+- `tests/lib`
+- `docs` (if present)
+- `middleware` (if present)
 
 ### 3. Edit your `app.js` file
 
@@ -338,7 +338,6 @@ gulp.task('default', gulp.series(startNodemon, startBrowserSync, watch))
 ```
 
 ### 5. Run `npm install` in your terminal
-
 
 The install may take up to a minute.
 

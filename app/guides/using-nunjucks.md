@@ -539,6 +539,43 @@ Use a `set` block to format data before displaying in a summary list:
 }) }}{% endraw %}
 ```
 
+### Address in check your answers
+
+Format an address using a `set` block:
+
+```njk
+{% raw %}{% set addressHtml %}
+  {{ data.addressLine1 }}<br>
+  {% if data.addressLine2 %}
+    {{ data.addressLine2 }}<br>
+  {% endif %}
+  {{ data.addressTown }}<br>
+  {{ data.addressPostcode | upper }}
+{% endset %}
+
+{{ summaryList({
+  rows: [
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: addressHtml
+      },
+      actions: {
+        items: [
+          {
+            href: "/your-address",
+            text: "Change",
+            visuallyHiddenText: "address"
+          }
+        ]
+      }
+    }
+  ]
+}) }}{% endraw %}
+```
+
 ## Troubleshooting
 
 ### Nothing displays

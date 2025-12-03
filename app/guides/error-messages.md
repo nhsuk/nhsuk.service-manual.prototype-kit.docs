@@ -16,7 +16,7 @@ In most scenarios, we recommend not adding validation errors to your prototype, 
 
 Instead, in usability research you could observe whether users do anything which would cause an error.
 
-If you want to test whether your error messages make sense, you could add some alternative pages which always include them, and prompt the participant to try and understand the issue.
+If you want to check whether your error messages make sense, you could make a copy of the page with static error messages and show these to participants within usability testing.
 
 When developers are building your service for real, you could create a separate document to list all the possible errors in your service along with the required logic and the error message to display.
 

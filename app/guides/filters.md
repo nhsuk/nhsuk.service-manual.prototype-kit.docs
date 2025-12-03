@@ -39,7 +39,7 @@ For example, if you have a question with checkboxes, you can use the `join` filt
 }) }}{% endraw %}
 ```
 
-## NHS filters
+## NHS prototype kit filters
 
 These are custom filters developed for the NHS prototype kit.
 

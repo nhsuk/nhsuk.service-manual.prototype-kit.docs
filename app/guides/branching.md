@@ -14,18 +14,18 @@ Here is an example:
 // Called when answering question about whether NHS number is known
 router.post("/do-you-know-your-nhs-number-answer", (req, res) => {
   // Make a variable and give it the value from 'nhsNumberKnown'
-  const nhsNumberKnown = req.session.data.nhsNumberKnown;
+  const nhsNumberKnown = req.session.data.nhsNumberKnown
 
   // Check whether the variable matches a condition
   if (nhsNumberKnown === "Yes") {
     // Send user to a page where they'll enter their NHS number
-    res.redirect("/enter-nhs-number");
+    res.redirect("/enter-nhs-number")
   } else if (nhsNumberKnown === "No") {
     // Send user to a page where they can find their NHS number
-    res.redirect("/find-nhs-number");
+    res.redirect("/find-nhs-number")
   } else {
     // Send user back to the question page
-    res.redirect("/do-you-know-your-nhs-number");
+    res.redirect("/do-you-know-your-nhs-number")
   }
-});
+})
 ```

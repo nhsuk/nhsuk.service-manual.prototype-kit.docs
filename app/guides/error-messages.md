@@ -18,6 +18,6 @@ Instead, in usability research you could observe whether users do anything which
 
 If you want to check whether your error messages make sense, you could make a copy of the page with static error messages and show these to participants within usability testing.
 
-When developers are building your service for real, you could create a separate document to list all the possible errors in your service along with the required logic and the error message to display.
+When developers are building your service for real, you could create a list elsewhere of all the possible errors in your service along with the required logic and the error message to display. For example, you could maintain a separate document or include the list as acceptance criteria on development cards.
 
 See [validation for prototypes](https://www.craigabbott.co.uk/blog/validation-for-prototypes/) by Craig Abbott for some further thoughts on this topic.

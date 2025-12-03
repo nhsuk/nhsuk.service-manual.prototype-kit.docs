@@ -79,7 +79,7 @@ Displays as:
 
 ### lower
 
-Use this to makes all letters uppercase.
+Use this to makes all letters lowercase.
 
 Example:
 

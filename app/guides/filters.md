@@ -230,3 +230,7 @@ Displays as:
 ```html
 {% raw %}<p>Your BMI is 21.</p>{% endraw %}
 ```
+
+----
+
+See the [full list of built-in filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) in the Nunjucks documentation.

@@ -8,7 +8,7 @@ tags:
 
 The NHS prototype kit does not currently include any code or feature that makes it easy to display [error messages](https://service-manual.nhs.uk/design-system/components/error-message) based upon the user’s answers (for example, leaving a field empty).
 
-Whilst you can add validation errors, to do so you will have to write your own JavaScript code.
+It's possible to add validation to prototypes, but it is an advanced task and requires writing your own code to do so.
 
 ## Avoid adding validation errors
 

@@ -16,7 +16,7 @@ This avoids the need to install Node.js on your computer. Instead, you will run 
 
 You do not need any technical knowledge to use this guide.
 
-You will need a [GitHub account](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out).
+You will need a [GitHub account](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out) and should have already followed the guide to [create a new prototype](/install/creating-a-new-prototype/).
 
 We will show you how to:
 

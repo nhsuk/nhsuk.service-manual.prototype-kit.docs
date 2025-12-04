@@ -12,11 +12,11 @@ The kit is built on the [Express](http://expressjs.com/) framework, and uses [NH
 
 [Node.js](https://nodejs.org) version 20 or higher.
 
-## Download the kit
+## Create a new prototype
 
-The simplest way to get the kit is to [download it as a zip]({{downloadUrl}}).
+The best way to create a new prototype is to [use the template repository on GitHub](/install/creating-a-new-prototype/).
 
-You can also clone or download a copy from [GitHub](https://github.com/nhsuk/nhsuk-prototype-kit).
+If you do not want to use GitHub you can [download it as a zip]({{downloadUrl}}) instead.
 
 ## Install dependencies
 

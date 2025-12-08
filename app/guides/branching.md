@@ -97,7 +97,7 @@ router.post('/days-experiencing-symptoms-answer', function (req, res) {
   const data = req.session.data
 
   // convert the answer from a string into a number
-  const daysExperiencingSymptoms = parseInt(data.daysExperiencingSymptoms)
+  const daysExperiencingSymptoms = Number(data.daysExperiencingSymptoms)
 
   if (daysExperiencingSymptoms > 7) {
 

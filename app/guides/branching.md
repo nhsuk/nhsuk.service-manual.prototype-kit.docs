@@ -17,15 +17,15 @@ router.post('/appointment-type-answer', function (req, res) {
   const data = req.session.data
   const appointmentType = data.appointmentType
 
-  if (appointmentType == "Face to face") {
+  if (appointmentType === "Face to face") {
 
     res.redirect('/book-face-to-face')
 
-  } else if (appointmentType == "Phone call") {
+  } else if (appointmentType === "Phone call") {
 
     res.redirect('/book-phone')
 
-  } else if (appointmentType == "Video call") {
+  } else if (appointmentType === "Video call") {
 
     res.redirect('/book-video')
 

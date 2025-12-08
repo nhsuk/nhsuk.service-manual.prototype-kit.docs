@@ -93,32 +93,24 @@ You can then use these operators to test the number:
 - `<=` – less than or equal to
 
 ```js
-router.post('/age-answer', function (req, res) {
+router.post('/days-experiencing-symptoms-answer', function (req, res) {
   const data = req.session.data
 
-  // convert the age from a string into a number
-  const age = parseInt(data.age)
+  // convert the answer from a string into a number
+  const daysExperiencingSymptoms = parseInt(data.daysExperiencingSymptoms)
 
-  if (age >= 18) {
+  if (daysExperiencingSymptoms > 7) {
 
-    res.redirect('/adult')
-
-  } else if (age >= 13) {
-
-    res.redirect('/teenager')
-
-  } else if (age >= 4) {
-
-    res.redirect('/child')
+    res.redirect('/ask-for-an-urgent-gp-appointment')
 
   } else if (age >= 0) {
 
-    res.redirect('/baby')
+    res.redirect('/how-to-treat-yourself')
 
   } else {
 
-    // No answer selected, return to question
-    res.redirect('/age')
+    // No answer selected or not a number, return to question
+    res.redirect('/days-experiencing-symptoms')
   }
 })
 ```

@@ -103,7 +103,7 @@ router.post('/days-experiencing-symptoms-answer', function (req, res) {
 
     res.redirect('/ask-for-an-urgent-gp-appointment')
 
-  } else if (age >= 0) {
+  } else if (daysExperiencingSymptoms >= 0) {
 
     res.redirect('/how-to-treat-yourself')
 

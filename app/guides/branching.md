@@ -109,7 +109,7 @@ router.post('/days-experiencing-symptoms-answer', function (req, res) {
 
   } else {
 
-    // No answer selected or not a number, return to question
+    // No answer given or not a number or a negative number, return to question
     res.redirect('/days-experiencing-symptoms')
   }
 })

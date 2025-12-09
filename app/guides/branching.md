@@ -1,6 +1,6 @@
 ---
 title: Branching
-description: You can show a user different pages, depending on how they've answered a question.
+description: You can show a user different pages depending on how they've answered a question.
 order: 7
 tags:
   - advanced

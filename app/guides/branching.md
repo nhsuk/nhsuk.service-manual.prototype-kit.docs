@@ -53,7 +53,7 @@ router.post('/symptoms-answer', function (req, res) {
   const data = req.session.data
   const symptoms = data.symptoms
 
-  // If either of the urgent symptoms selected
+  // If either of the urgent symptoms have been checked
   if (
     symptoms.includes('Chest pain') ||
     symptoms.includes('Breathlessness')
@@ -69,9 +69,10 @@ router.post('/symptoms-answer', function (req, res) {
 
     res.redirect('/standard')
 
+  // No answer selected
   } else {
 
-    // No answer selected, return to question
+    // Return to question
     res.redirect('/symptoms')
   }
 })

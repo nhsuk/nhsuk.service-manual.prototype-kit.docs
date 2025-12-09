@@ -99,17 +99,20 @@ router.post('/days-experiencing-symptoms-answer', function (req, res) {
   // convert the answer from a string into a number
   const daysExperiencingSymptoms = Number(data.daysExperiencingSymptoms)
 
-  if (daysExperiencingSymptoms > 7) {
+  // If they've had the symptoms for a week (7 days) or more
+  if (daysExperiencingSymptoms >= 7) {
 
     res.redirect('/ask-for-an-urgent-gp-appointment')
 
+  // Otherwise if it's a number between 0 and 6
   } else if (daysExperiencingSymptoms >= 0) {
 
     res.redirect('/how-to-treat-yourself')
 
+  // No answer given, or not a number, or a negative number
   } else {
 
-    // No answer given or not a number or a negative number, return to question
+    // Return to question
     res.redirect('/days-experiencing-symptoms')
   }
 })

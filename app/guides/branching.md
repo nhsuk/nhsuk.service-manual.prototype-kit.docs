@@ -51,7 +51,7 @@ To test if multiple checkboxes have all been checked, combine several of these w
 ```js
 router.post('/symptoms-answer', function (req, res) {
   const data = req.session.data
-  const symptoms = data.symptoms
+  const symptoms = data.symptoms || []
 
   // If either of the urgent symptoms have been checked
   if (

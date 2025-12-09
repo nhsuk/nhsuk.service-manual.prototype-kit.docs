@@ -82,7 +82,7 @@ router.post('/symptoms-answer', function (req, res) {
 
 If you use a text input to ask the user to input a number, such as their age, you can then branch based on that number.
 
-All text inputs will be treated as a string of text instead of a number by JavaScript, so you will have to first use `parseInt()` to convert the string to a number.
+All text inputs will be treated as a string of text instead of a number by JavaScript, so you will have to first use `Number()` to convert the string to a number.
 
 You can then use these operators to test the number:
 

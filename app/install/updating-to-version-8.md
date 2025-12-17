@@ -100,6 +100,7 @@ const prototype = NHSPrototypeKit.init({
   express: app,
   routes: routes,
   locals: locals,
+  filters: filters,
   sessionDataDefaults: sessionDataDefaults,
   buildOptions: {
     entryPoints: ['app/assets/sass/main.scss']

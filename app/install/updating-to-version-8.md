@@ -28,7 +28,7 @@ Make these changes within the `dependencies` section:
 
 Add this line:
 
-- add `"nhsuk-prototype-kit": "8.0.0-beta.1",`
+- add `"nhsuk-prototype-kit": "8.0.0-beta.2",`
 
 Remove these lines (the version numbers may be different):
 

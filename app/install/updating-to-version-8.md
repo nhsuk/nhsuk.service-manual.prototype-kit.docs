@@ -33,8 +33,6 @@ In the `dependencies` section, update the contents to:
 }
 ```
 
-
-
 Update the `scripts` section of your `package.json` file to:
 
 ```json

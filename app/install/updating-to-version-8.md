@@ -24,38 +24,18 @@ node --version
 
 ### 2. Edit the `package.json` file
 
-Make these changes within the `dependencies` section:
-
-Add this line:
-
-- add `"nhsuk-prototype-kit": "8.0.0-beta.2",`
-
-Remove these lines (the version numbers may be different):
-
-- `"@inquirer/prompts": "^7.10.1",`
-- `"body-parser": "^2.2.0",`
-- `"browser-sync": "^3.0.4",`
-- `"client-sessions": "^0.8.0",`
-- `"cookie-parser": "^1.4.7",`
-- `"dotenv": "^17.2.2",`
-- `"express-session": "^1.18.2",`
-- `"gulp": "^5.0.1",`
-- `"gulp-babel": "^8.0.0",`
-- `"gulp-clean": "^0.4.0",`
-- `"gulp-clean-css": "^4.3.0",`
-- `"gulp-nodemon": "^2.5.0",`
-- `"gulp-rename": "^2.1.0",`
-- `"gulp-sass": "^6.0.1",`
-- `"lodash": "^4.17.21",`
-- `"portscanner": "^2.2.0",`
-
-Check the version number of `nhuk-frontend`. It should look like this:
+In the `dependencies` section, update the contents to:
 
 ```json
-"nhsuk-frontend": "^10.2.0",
+"dependencies": {
+  "nhsuk-frontend": "^10.2.2",
+  "nhsuk-prototype-kit": "8.0.0-beta.2"
+}
 ```
 
-Update the `scripts` section of your `package.json` file to be this:
+
+
+Update the `scripts` section of your `package.json` file to:
 
 ```json
 "scripts": {
@@ -81,31 +61,38 @@ Delete these files:
 Replace the entire contents of it with this:
 
 ```js
+const { join } = require('node:path')
+
 const NHSPrototypeKit = require('nhsuk-prototype-kit')
 
 // Local dependencies
 const config = require('./app/config')
+const sessionDataDefaults = require('./app/data/session-data-defaults')
+const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
-const filters = require('./app/filters')
-const sessionDataDefaults = require('./app/data/session-data-defaults')
 
 const SERVICE_NAME = config.serviceName
 
 // Set configuration variables
 const port = parseInt(process.env.PORT, 10) || 2000
 
+const viewsPath = join(__dirname, 'app/views/')
+
 const prototype = NHSPrototypeKit.init({
   serviceName: SERVICE_NAME,
-  express: app,
   routes: routes,
   locals: locals,
-  filters: filters,
   sessionDataDefaults: sessionDataDefaults,
+  viewsPath: viewsPath,
   buildOptions: {
     entryPoints: ['app/assets/sass/main.scss']
   }
 })
+
+for (const [name, filter] of Object.entries(filters())) {
+  prototype.nunjucks.addFilter(name, filter)
+}
 
 prototype.start(port)
 ```

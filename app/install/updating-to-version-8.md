@@ -121,7 +121,7 @@ In your `app/layout.html` file, update the the last part of the file which refer
 {% raw %}
 ```njk
 {% block bodyEnd %}
-  <script src="/application.js" defer></script>
+  <script type="module" src="/application.js"></script>
   {{ super() }}
 {% endblock %}
 ```

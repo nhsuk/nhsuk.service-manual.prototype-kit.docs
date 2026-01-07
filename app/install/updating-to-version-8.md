@@ -55,7 +55,6 @@ Delete these files:
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
 
-
 ### 3. Edit your `app.js` file
 
 Replace the entire contents of it with this:
@@ -119,12 +118,14 @@ found 0 vulnerabilities
 In your `app/layout.html` file, update the the last part of the file which references `bodyEnd` to this:
 
 {% raw %}
+
 ```njk
 {% block bodyEnd %}
   <script type="module" src="/application.js"></script>
   {{ super() }}
 {% endblock %}
 ```
+
 {% endraw %}
 
 If you have added any custom frontend JavaScript to your prototype, you will need to add references to it here too.

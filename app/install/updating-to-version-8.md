@@ -37,7 +37,7 @@ Update the `scripts` section of your `package.json` file to:
 
 ```json
 "scripts": {
-  "start": "node app.js"
+  "start": "node --watch app.js"
 }
 ```
 

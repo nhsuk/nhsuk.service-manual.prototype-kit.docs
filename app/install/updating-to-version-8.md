@@ -56,11 +56,20 @@ Delete these folders:
 - `tests/lib`
 - `docs` (if present)
 - `middleware` (if present)
+- `.github/ISSUE_TEMPLATE`
 
 Delete these files:
 
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
+- `.babelrc`
+- `.browserslistrc`
+- `.prettierignore`
+- `.prettierrc.js`
+- `.github/workflows/pull-request.yml`
+- `.github/PULL_REQUEST_TEMPLATE.md`
+- `.gitpod.yml`
+- `CONTRIBUTING.md`
 
 ### 4. Edit your `locals.js` file
 

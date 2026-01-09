@@ -33,6 +33,13 @@ In the `dependencies` section, update the contents to:
 }
 ```
 
+In the `devDependencies` section, update the contents to:
+
+```json
+"devDependencies": {
+}
+```
+
 Update the `scripts` section of your `package.json` file to:
 
 ```json

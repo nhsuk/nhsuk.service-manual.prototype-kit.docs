@@ -77,7 +77,19 @@ If you had previously edited the file to set any local variables, copy the relev
 
 You no longer need to set the `serviceName` variable as this is done automatically.
 
-### 5. Edit your `app.js` file
+### 5. Edit your `devcontainer.json` file
+
+If you have a file named `.devcontainer/devcontainer.json`, update the `postAttachCommand` line to this:
+
+```json
+  "postAttachCommand": {
+    "server": "npm start"
+  },
+```
+
+This will make sure that your prototype still works within GitHub Codespaces.
+
+### 6. Edit your `app.js` file
 
 Replace the entire contents of it with this:
 
@@ -118,7 +130,7 @@ for (const [name, filter] of Object.entries(filters())) {
 prototype.start(port)
 ```
 
-### 6. Run `npm install` in your terminal
+### 7. Run `npm install` in your terminal
 
 The install may take up to a minute.
 
@@ -135,7 +147,7 @@ run `npm fund` for details
 found 0 vulnerabilities
 ```
 
-### 7. Edit your layout file
+### 8. Edit your layout file
 
 In your `app/layout.html` file, update the the last part of the file which references `bodyEnd` to this:
 
@@ -152,7 +164,7 @@ In your `app/layout.html` file, update the the last part of the file which refer
 
 If you have added any custom frontend JavaScript to your prototype, you will need to add references to it here too.
 
-### 8. Start your local server
+### 9. Start your local server
 
 In your terminal, enter: <kbd>npm start</kbd>
 

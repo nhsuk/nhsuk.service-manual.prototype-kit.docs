@@ -29,7 +29,7 @@ In the `dependencies` section, update the contents to:
 ```json
 "dependencies": {
   "nhsuk-frontend": "^10.2.2",
-  "nhsuk-prototype-kit": "8.0.0-beta.4"
+  "nhsuk-prototype-kit": "8.0.0-beta.6"
 }
 ```
 

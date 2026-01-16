@@ -160,7 +160,6 @@ prototype.start(port)
 > ]
 > ```
 
-
 ### 7. Run `npm install` in your terminal
 
 The install may take up to a minute.

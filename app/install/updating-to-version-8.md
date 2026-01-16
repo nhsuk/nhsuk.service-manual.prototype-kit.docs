@@ -170,12 +170,14 @@ You should have a layout file named `app/layout.html`.
 In that file, update the lines which references `block head` to this:
 
 {% raw %}
+
 ```njk
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
   <link href="/main.css" rel="stylesheet">
 {% endblock %}
 ```
+
 {% endraw %}
 
 Update the section which references `block bodyEnd` to this:

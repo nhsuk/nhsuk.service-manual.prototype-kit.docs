@@ -33,6 +33,10 @@ In the `dependencies` section, update the contents to:
 }
 ```
 
+> [!NOTE]
+> If you are also using the [NHS App design system](https://design-system.nhsapp.service.nhs.uk), keep
+> `nhsapp-frontend` within your `dependencies` section too.
+
 In the `devDependencies` section, update the contents to:
 
 ```json
@@ -145,6 +149,17 @@ for (const [name, filter] of Object.entries(filters())) {
 
 prototype.start(port)
 ```
+
+> [!NOTE]
+> If you are also using the [NHS App design system](https://design-system.nhsapp.service.nhs.uk), change your `viewsPath` to this:
+>
+> ```njk
+> const viewsPath = [
+>   join(__dirname, 'app/views/'),
+>   join(__dirname, 'node_modules/nhsapp-frontend/dist')
+> ]
+> ```
+
 
 ### 7. Run `npm install` in your terminal
 

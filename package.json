@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@x-govuk/eslint-config": "^0.0.1",
-    "prettier": "^3.7.4",
-    "stylelint": "^16.24.0",
+    "prettier": "^3.8.0",
+    "stylelint": "^16.26.1",
     "stylelint-config-gds": "^2.0.0"
   },
   "engines": {

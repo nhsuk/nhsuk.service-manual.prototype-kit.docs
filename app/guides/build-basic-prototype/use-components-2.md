@@ -16,7 +16,7 @@ Our `{{example.textarea.url}}.html` page is going to have a textarea component t
 2. Under `label`, change `text` from "Can you provide more detail?" to "{{example.textarea.label}}".
 3. Change the `id` and `name` to `{{example.textarea.name}}`.
 4. We don't need a hint, so remove it and the comma just before it.
-5. We also want to make the label be the page `h1`, so in the `label` area add `classes: "nhsuk-label--l",` and `isPageHeading: true`
+5. We also want to make the label be the page `h1`, so in the `label` area add `size: "l",` and `isPageHeading: true`
 
 Your component code should now look like this:
 
@@ -26,7 +26,7 @@ Your component code should now look like this:
   id: "details",
   label: {
     text: "Tell us your symptoms of magical powers",
-    classes: "nhsuk-label--l",
+    size: "l",
     isPageHeading: true
   }
 }) }}{% endraw %}

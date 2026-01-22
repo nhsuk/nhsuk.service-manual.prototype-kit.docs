@@ -38,7 +38,7 @@ Your component code should now look like this:
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },

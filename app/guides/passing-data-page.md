@@ -64,7 +64,7 @@ For checkboxes and dates you need to use the `values` option (plural) instead:
   fieldset: {
     legend: {
       text: "Have you ever had any of these conditions?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },

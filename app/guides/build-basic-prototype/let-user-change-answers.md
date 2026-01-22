@@ -27,7 +27,7 @@ Update the radios component to add `value: data.hasSymptoms,`, like this:
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },

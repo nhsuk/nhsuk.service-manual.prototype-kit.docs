@@ -51,12 +51,12 @@ Currently, the `{{example.radios.url}}` page sends the user directly to question
      const hasSymptoms = req.session.data.hasSymptoms
 
      // Check whether the variable matches a condition
-     if (hasSymptoms == "Yes") {
+     if (hasSymptoms === "Yes") {
 
        // Send user to next page
        res.redirect('/{{example.textarea.url}}')
      }
-     else if (hasSymptoms == "No" || hasSymptoms == "Not sure") {
+     else if (hasSymptoms === "No" || hasSymptoms === "Not sure") {
 
        // Send user to ineligible page
        res.redirect('/{{example.ineligible.url}}')

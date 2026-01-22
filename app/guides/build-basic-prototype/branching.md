@@ -47,16 +47,16 @@ Currently, the `{{example.radios.url}}` page sends the user directly to question
    // Run this code when a form submitted to '/{{example.radios.url}}-answer'
    router.post('/{{example.radios.url}}-answer', function (req, res) {
 
-     // Make a variable and give it the value from '{{example.radios.name}}'
-     const hasMagicPowers = req.session.data.{{example.radios.name}}
+     // Make a variable and give it the value from 'hasSymptoms'
+     const hasSymptoms = req.session.data.hasSymptoms
 
      // Check whether the variable matches a condition
-     if (hasMagicPowers == "Yes") {
+     if (hasSymptoms == "Yes") {
 
        // Send user to next page
        res.redirect('/{{example.textarea.url}}')
      }
-     else if (hasMagicPowers == "No" || hasMagicPowers == "Not sure") {
+     else if (hasSymptoms == "No" || hasSymptoms == "Not sure") {
 
        // Send user to ineligible page
        res.redirect('/{{example.ineligible.url}}')

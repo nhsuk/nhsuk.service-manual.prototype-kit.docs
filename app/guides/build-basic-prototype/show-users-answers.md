@@ -12,9 +12,9 @@ When storing data, the kit uses the `name` attribute from the component to save 
 1. Open `{{example.checkAnswers.url}}.html` in your `app/views` folder.
 2. In the first row, find the `key` that contains the text "NHS number".
 3. Change "NHS number" to "{{example.radios.summaryListKey}}".
-4. In `value` on the next line, change '485 777 3456' to `data.{{example.radios.name}}`.
+4. In `value` on the next line, change '485 777 3456' to `data.hasSymptoms`.
 
-This is how we use data a user has entered – '{{example.radios.name}}' is the `name` attribute from the input component on the question page.
+This is how we use data a user has entered – 'hasSymptoms' is the `name` attribute from the input component on the question page.
 
 In the same row, find the line with `visuallyHiddenText` and change 'NHS number' to '{{example.radios.summaryListKey | lower}}'.
 

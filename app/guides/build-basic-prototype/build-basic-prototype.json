@@ -17,7 +17,6 @@
     "radios": {
       "url": "magical-powers",
       "legend": "Have you felt symptoms of magical powers in the last 30 days?",
-      "name": "hasSymptoms",
       "hint": "For example, things moving when you have strong feelings or hearing someone's thoughts",
       "summaryListKey": "Symptoms of magical powers"
     },

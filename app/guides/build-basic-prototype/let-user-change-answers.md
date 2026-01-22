@@ -18,12 +18,12 @@ Radios let you select which radio should be pre-selected by setting the `value` 
 
 Open the `{{example.radios.url}}.html` file in your `app/views` folder.
 
-Update the radios component to add `value: data.{{example.radios.name}},`, like this:
+Update the radios component to add `value: data.hasSymptoms,`, like this:
 
 ```njk
 {% raw %}{{ radios({
   idPrefix: "has-symptoms",
-  name: "has-symptoms",
+  name: "hasSymptoms",
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
@@ -52,7 +52,7 @@ Update the radios component to add `value: data.{{example.radios.name}},`, like 
 }) }}{% endraw %}
 ```
 
-Here we've told the radio component to pre-select a radio item if the value stored at `data.{{example.radios.name}}` is equal to the radio item's value. If it does not match or no data is stored, then nothing will be selected.
+Here we've told the radio component to pre-select a radio item if the value stored at `data.hasSymptoms` is equal to the radio item's value. If it does not match or no data is stored, then nothing will be selected.
 
 Go to <http://localhost:3000/{{example.radios.url}}> and check the journey works by selecting an answer, continuing to the next page, then going back and refreshing the page.
 

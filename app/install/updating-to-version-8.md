@@ -29,7 +29,7 @@ In the `dependencies` section, update the contents to:
 ```json
 "dependencies": {
   "nhsuk-frontend": "^10.2.2",
-  "nhsuk-prototype-kit": "8.0.0-beta.6"
+  "nhsuk-prototype-kit": "8.0.0-beta.8"
 }
 ```
 
@@ -130,16 +130,21 @@ const SERVICE_NAME = config.serviceName
 // Set configuration variables
 const port = parseInt(process.env.PORT, 10) || 2000
 
-const viewsPath = join(__dirname, 'app/views/')
+const viewsPath = [
+  join(__dirname, 'app/views/')
+]
 
-const prototype = NHSPrototypeKit.init({
+const prototype = await NHSPrototypeKit.init({
   serviceName: SERVICE_NAME,
   routes: routes,
   locals: locals,
   sessionDataDefaults: sessionDataDefaults,
   viewsPath: viewsPath,
   buildOptions: {
-    entryPoints: ['app/assets/sass/main.scss']
+    entryPoints: [
+      'app/assets/sass/main.scss',
+      'app/assets/javascript/*.js'
+    ]
   }
 })
 

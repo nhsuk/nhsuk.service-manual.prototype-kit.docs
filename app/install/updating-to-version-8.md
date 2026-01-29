@@ -130,9 +130,7 @@ const SERVICE_NAME = config.serviceName
 // Set configuration variables
 const port = parseInt(process.env.PORT, 10) || 2000
 
-const viewsPath = [
-  join(__dirname, 'app/views/')
-]
+const viewsPath = ['app/views']
 
 async function init() {
   const prototype = await NHSPrototypeKit.init({

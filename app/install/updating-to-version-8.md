@@ -114,8 +114,6 @@ This will make sure that your prototype still works within GitHub Codespaces.
 Replace the entire contents of it with this:
 
 ```js
-const { join } = require('node:path')
-
 const NHSPrototypeKit = require('nhsuk-prototype-kit')
 
 // Local dependencies
@@ -125,18 +123,16 @@ const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
 
-const SERVICE_NAME = config.serviceName
-
 // Set configuration variables
 const port = parseInt(process.env.PORT, 10) || 2000
 
 const viewsPath = [
-  join(__dirname, 'app/views/')
+  'app/views/'
 ]
 
 async function init() {
   const prototype = await NHSPrototypeKit.init({
-    serviceName: SERVICE_NAME,
+    serviceName: config.serviceName,
     buildOptions: {
       entryPoints: [
         'app/assets/sass/main.scss',
@@ -168,8 +164,8 @@ init()
 >
 > ```njk
 > const viewsPath = [
->   join(__dirname, 'app/views/'),
->   join(__dirname, 'node_modules/nhsapp-frontend/dist')
+>   'app/views/',
+>   'node_modules/nhsapp-frontend/dist'
 > ]
 > ```
 

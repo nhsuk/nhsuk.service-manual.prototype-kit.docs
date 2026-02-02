@@ -186,7 +186,7 @@ In that file, update the lines which references `block head` to this:
 ```njk
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/main.css" rel="stylesheet">
+  <link href="/assets/sass/main.css" rel="stylesheet">
 {% endblock %}
 ```
 
@@ -198,7 +198,7 @@ Update the section which references `block bodyEnd` to this:
 
 ```njk
 {% block bodyEnd %}
-  <script type="module" src="/application.js"></script>
+  <script type="module" src="/assets/javascript/application.js"></script>
   {{ super() }}
 {% endblock %}
 ```

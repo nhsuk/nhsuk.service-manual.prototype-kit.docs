@@ -120,9 +120,6 @@ const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
 
-// Set configuration variables
-const port = config.port || 2000
-
 const viewsPath = [
   'app/views/'
 ]
@@ -145,7 +142,7 @@ async function init() {
     sessionDataDefaults
   })
 
-  prototype.start(port)
+  prototype.start(config.port)
 }
 
 init()

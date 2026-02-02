@@ -29,7 +29,7 @@ In the `dependencies` section, update the contents to:
 ```json
 "dependencies": {
   "nhsuk-frontend": "^10.2.2",
-  "nhsuk-prototype-kit": "8.0.0-beta.6"
+  "nhsuk-prototype-kit": "8.0.0-beta.9"
 }
 ```
 
@@ -48,7 +48,7 @@ Update the `scripts` section of your `package.json` file to:
 
 ```json
 "scripts": {
-  "start": "node --watch app.js"
+  "start": "node ."
 }
 ```
 
@@ -114,8 +114,6 @@ This will make sure that your prototype still works within GitHub Codespaces.
 Replace the entire contents of it with this:
 
 ```js
-const { join } = require('node:path')
-
 const NHSPrototypeKit = require('nhsuk-prototype-kit')
 
 // Local dependencies
@@ -125,29 +123,42 @@ const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
 
-const SERVICE_NAME = config.serviceName
-
 // Set configuration variables
 const port = parseInt(process.env.PORT, 10) || 2000
 
-const viewsPath = join(__dirname, 'app/views/')
+const viewsPath = [
+  'app/views/'
+]
 
-const prototype = NHSPrototypeKit.init({
-  serviceName: SERVICE_NAME,
-  routes: routes,
-  locals: locals,
-  sessionDataDefaults: sessionDataDefaults,
-  viewsPath: viewsPath,
-  buildOptions: {
-    entryPoints: ['app/assets/sass/main.scss']
+const entryPoints = [
+  'app/assets/sass/main.scss',
+  'app/assets/javascript/*.js'
+]
+
+async function init() {
+  const prototype = await NHSPrototypeKit.init({
+    serviceName: config.serviceName,
+    buildOptions: {
+      entryPoints: entryPoints
+    },
+    viewsPath,
+    routes,
+    locals,
+    sessionDataDefaults
+  })
+
+  // Add custom port number
+  prototype.app?.set('port', config.port)
+
+  // Add custom Nunjucks filters
+  for (const [name, filter] of Object.entries(filters())) {
+    prototype.nunjucks?.addFilter(name, filter)
   }
-})
 
-for (const [name, filter] of Object.entries(filters())) {
-  prototype.nunjucks.addFilter(name, filter)
+  prototype.start()
 }
 
-prototype.start(port)
+init()
 ```
 
 > [!NOTE]
@@ -155,8 +166,8 @@ prototype.start(port)
 >
 > ```njk
 > const viewsPath = [
->   join(__dirname, 'app/views/'),
->   join(__dirname, 'node_modules/nhsapp-frontend/dist')
+>   'app/views/',
+>   'node_modules/nhsapp-frontend/dist'
 > ]
 > ```
 

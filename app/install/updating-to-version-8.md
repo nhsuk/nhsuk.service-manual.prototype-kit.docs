@@ -3,9 +3,6 @@ title: Updating to version 8
 description: How to upgrade to version 8
 ---
 
-> [!NOTE]
-> Version 8 is still in beta. Follow this guide only if you are happy to test it and give feedback.
-
 Version 8 of the NHS prototype kit contains some significant changes which will make it much easier for you to update your prototype in future.
 
 However, to upgrade to version 8 from version 7 or below involves some manual steps.
@@ -29,7 +26,7 @@ In the `dependencies` section, update the contents to:
 ```json
 "dependencies": {
   "nhsuk-frontend": "^10.2.2",
-  "nhsuk-prototype-kit": "8.0.0-beta.9"
+  "nhsuk-prototype-kit": "^8.0.0"
 }
 ```
 
@@ -66,6 +63,7 @@ Delete these files:
 
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
+- `app/views/includes/scripts.html`
 - `.babelrc`
 - `.browserslistrc`
 - `.prettierignore`
@@ -123,9 +121,6 @@ const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
 
-// Set configuration variables
-const port = parseInt(process.env.PORT, 10) || 2000
-
 const viewsPath = [
   'app/views/'
 ]
@@ -139,23 +134,16 @@ async function init() {
   const prototype = await NHSPrototypeKit.init({
     serviceName: config.serviceName,
     buildOptions: {
-      entryPoints: entryPoints
+      entryPoints
     },
     viewsPath,
     routes,
     locals,
+    filters,
     sessionDataDefaults
   })
 
-  // Add custom port number
-  prototype.app?.set('port', config.port)
-
-  // Add custom Nunjucks filters
-  for (const [name, filter] of Object.entries(filters())) {
-    prototype.nunjucks?.addFilter(name, filter)
-  }
-
-  prototype.start()
+  prototype.start(config.port)
 }
 
 init()
@@ -199,7 +187,7 @@ In that file, update the lines which references `block head` to this:
 ```njk
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/main.css" rel="stylesheet">
+  <link href="/assets/sass/main.css" rel="stylesheet">
 {% endblock %}
 ```
 
@@ -211,8 +199,9 @@ Update the section which references `block bodyEnd` to this:
 
 ```njk
 {% block bodyEnd %}
-  <script type="module" src="/application.js"></script>
   {{ super() }}
+  <script type="module" src="/assets/javascript/application.js"></script>
+  {% block pageScripts %}{% endblock %}
 {% endblock %}
 ```
 
@@ -227,12 +216,12 @@ In your terminal, enter: <kbd>npm start</kbd>
 After the kit has started, you should see a message telling you that the kit is running:
 
 ```shell
-> node app.js
+> node .
 
 [Browsersync] Access URLs:
  -----------------------------------
-    Local: http://localhost:2001
- External: http://192.168.1.247:2001
+    Local: http://localhost:3000
+ External: http://192.168.1.247:3000
  -----------------------------------
 [Browsersync] Watching files...
 ```

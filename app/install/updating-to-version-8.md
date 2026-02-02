@@ -63,6 +63,7 @@ Delete these files:
 
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
+- `app/views/includes/scripts.html`
 - `.babelrc`
 - `.browserslistrc`
 - `.prettierignore`

@@ -134,7 +134,7 @@ async function init() {
   const prototype = await NHSPrototypeKit.init({
     serviceName: config.serviceName,
     buildOptions: {
-      entryPoints: entryPoints
+      entryPoints
     },
     viewsPath,
     routes,

@@ -218,8 +218,8 @@ After the kit has started, you should see a message telling you that the kit is 
 
 [Browsersync] Access URLs:
  -----------------------------------
-    Local: http://localhost:2001
- External: http://192.168.1.247:2001
+    Local: http://localhost:3000
+ External: http://192.168.1.247:3000
  -----------------------------------
 [Browsersync] Watching files...
 ```

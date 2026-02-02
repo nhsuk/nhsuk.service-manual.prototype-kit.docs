@@ -121,7 +121,7 @@ const locals = require('./app/locals')
 const routes = require('./app/routes')
 
 // Set configuration variables
-const port = parseInt(process.env.PORT, 10) || config.port || 2000
+const port = config.port || 2000
 
 const viewsPath = [
   'app/views/'

@@ -3,9 +3,6 @@ title: Updating to version 8
 description: How to upgrade to version 8
 ---
 
-> [!NOTE]
-> Version 8 is still in beta. Follow this guide only if you are happy to test it and give feedback.
-
 Version 8 of the NHS prototype kit contains some significant changes which will make it much easier for you to update your prototype in future.
 
 However, to upgrade to version 8 from version 7 or below involves some manual steps.
@@ -29,7 +26,7 @@ In the `dependencies` section, update the contents to:
 ```json
 "dependencies": {
   "nhsuk-frontend": "^10.2.2",
-  "nhsuk-prototype-kit": "8.0.0-beta.9"
+  "nhsuk-prototype-kit": "8.0.0"
 }
 ```
 
@@ -124,7 +121,7 @@ const locals = require('./app/locals')
 const routes = require('./app/routes')
 
 // Set configuration variables
-const port = parseInt(process.env.PORT, 10) || 2000
+const port = parseInt(process.env.PORT, 10) || config.port || 2000
 
 const viewsPath = [
   'app/views/'
@@ -144,18 +141,11 @@ async function init() {
     viewsPath,
     routes,
     locals,
+    filters,
     sessionDataDefaults
   })
 
-  // Add custom port number
-  prototype.app?.set('port', config.port)
-
-  // Add custom Nunjucks filters
-  for (const [name, filter] of Object.entries(filters())) {
-    prototype.nunjucks?.addFilter(name, filter)
-  }
-
-  prototype.start()
+  prototype.start(port)
 }
 
 init()
@@ -227,7 +217,7 @@ In your terminal, enter: <kbd>npm start</kbd>
 After the kit has started, you should see a message telling you that the kit is running:
 
 ```shell
-> node app.js
+> node .
 
 [Browsersync] Access URLs:
  -----------------------------------

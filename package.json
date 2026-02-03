@@ -26,16 +26,17 @@
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@x-govuk/nhsuk-eleventy-plugin": "^1.0.6"
+    "@x-govuk/nhsuk-eleventy-plugin": "^1.1.1"
   },
   "devDependencies": {
     "@x-govuk/eslint-config": "^0.0.1",
-    "prettier": "^3.7.4",
-    "stylelint": "^16.24.0",
+    "prettier": "^3.8.1",
+    "stylelint": "^16.26.1",
     "stylelint-config-gds": "^2.0.0"
   },
   "engines": {
-    "node": "^22"
+    "node": "^24",
+    "npm": "^11.6.2"
   },
   "type": "module"
 }

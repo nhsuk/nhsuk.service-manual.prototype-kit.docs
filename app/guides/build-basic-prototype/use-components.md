@@ -23,21 +23,22 @@ In the design system, components have both Nunjucks and HTML code examples. Eith
 ### Customise the example code
 
 1. Delete `{% raw %}{% from "radios/macro.njk" import radios %}{% endraw %}`. These import lines are not needed in the prototype kit.
-2. Change `name` and `idPrefix` to `{{example.radios.name}}`.
-3. Under `legend`, change `text` from `Do you know your NHS number?` to `{{example.radios.legend}}`.
-4. In the `hint: { text:` area replace the hint with `{{example.radios.hint}}`.
-5. Update each of the radio options so the text is appropriate. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted. It's what will be used when we display the data. It's often easiest if these match.
+2. Change `name` to `hasSymptoms`
+3. Change the `idPrefix` to `has-symptoms`.
+4. Under `legend`, change `text` from `Do you know your NHS number?` to `{{example.radios.legend}}`.
+5. In the `hint: { text:` area replace the hint with `{{example.radios.hint}}`.
+6. Update each of the radio options so the text is appropriate. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted. It's what will be used when we display the data. It's often easiest if these match.
 
 Your component code should now look like this:
 
 ```njk
 {% raw %}{{ radios({
   idPrefix: "has-symptoms",
-  name: "has-symptoms",
+  name: "hasSymptoms",
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
-      classes: "nhsuk-fieldset__legend--l",
+      size: "l",
       isPageHeading: true
     }
   },

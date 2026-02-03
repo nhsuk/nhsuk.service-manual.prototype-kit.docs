@@ -1,5 +1,5 @@
 ---
-title: Download and decide where to keep your prototypes
+title: Download and decide where to keep your prototype
 order: 4
 ---
 

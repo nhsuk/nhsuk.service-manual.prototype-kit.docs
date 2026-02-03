@@ -2,6 +2,10 @@
 layout: hub
 title: Get started
 groups:
+  - title: Creating a new prototype
+    items: collections.setup
+    clickable: true
+    columns: 3
   - title: Installing the kit on your computer
     items: collections.install-local
     clickable: true

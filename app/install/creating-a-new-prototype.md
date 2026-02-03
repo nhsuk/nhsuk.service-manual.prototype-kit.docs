@@ -22,7 +22,7 @@ You'll then be taken to a screen where you can enter some details about your pro
 Here’s how to complete the fields:
 
 - **Include all branches**: leave this in the ‘off’ setting
-- **Owner**: this should be the name of the organisation you are working for. If you have not yet been added to your organisation on GitHub you should ask to be added.
+- **Owner**: this should be the name of the organisation you are working for. If you have not yet been added to your organisation on GitHub you should ask to be added. If you are just trying the kit out or taking part in training you can set yourself as the owner instead.
 - **Repository name**: this should be the name of the service you are prototyping. You can change this later if you are not yet sure of the name. By convention it is lowercase and uses hyphens instead of spaces. Add the suffix `-prototype` to make it clear to others in your organisation that it is a prototype.
 - **Description**: this is optional and you can leave it blank for now, or enter a short description of what the service you are prototyping will do.
 - **Choose visibility**: You can choose to make your prototype code public or private. This can be changed later. By default public sector work should be open source, so make it public unless you expect to have sensitive information in it, for example if it’s related to an unannounced policy.

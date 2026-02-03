@@ -75,12 +75,6 @@ export default function (eleventyConfig) {
       'https://prototype-kit.service-manual.nhs.uk'
   })
 
-  // Add global data
-  eleventyConfig.addGlobalData(
-    'downloadUrl',
-    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v7.1.0.zip`
-  )
-
   // Passthrough
   eleventyConfig.addPassthroughCopy('./app/assets/images')
 

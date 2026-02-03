@@ -14,8 +14,8 @@ When you are installing and running your prototype:
 
 {% list title="Do", type="tick" %}
 
-- get the kit either by [downloading it as a zip]({{downloadUrl}}) or by [cloning or downloading a copy from GitHub](https://github.com/nhsuk/nhsuk-prototype-kit)
-- start your local server by running `npm run watch`
+- get the kit by [creating a new prototype](/install/creating-a-new-prototype/) using the GitHub template
+- start your local server by running `npm start`
   {%- endlist %}
 
 {% list title="Don’t", type="cross" %}

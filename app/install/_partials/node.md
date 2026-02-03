@@ -1,6 +1,6 @@
 Node.js is very easy to install.
 
-The kit is designed to work with Node.js LTS (Long Term Support) version 20 or higher.
+The kit is designed to work with Node.js LTS (Long Term Support) version 22 or higher.
 
 ## 1. Check if you have Node
 
@@ -13,15 +13,15 @@ If it says:
 - <samp>Error 0x2 starting node.exe --version</samp>
 - or another number such as <samp>0.12</samp> or <samp>5.x.x</samp>
 
-Then you will need to download and install the LTS version 20 or higher.
+Then you will need to download and install the LTS version 22 or higher.
 
-### If the version number starts with an 20 or higher
+### If the version number starts with an 22 or higher
 
 You have the correct version installed and can go to [step 3](/install/{{slug}}/text-editor).
 
 ## 2. Downloader and install Node.js LTS version
 
-Download the LTS version 20 or higher.
+Download the LTS version 22 or higher.
 
 Run the installer with all default options.
 
@@ -33,7 +33,7 @@ You'll need to quit and restart the {{cli}} to be able to use Node for the first
 
 To check it is installed correctly you can run <kbd>node --version</kbd>.
 
-If it's installed correctly it should show a number starting with an 20 or higher:
+If it's installed correctly it should show a number starting with an 22 or higher:
 
 {% if slug == "windows" %}
 

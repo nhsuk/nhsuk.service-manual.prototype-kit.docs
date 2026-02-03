@@ -5,6 +5,16 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.0.0 - 3 February 2026
+
+- The kit is now published as an npm package, for easier updates
+- A more helpful error page is shown if you visit a path which doesn’t match a route or a template.
+- A more helpful error page if you have an error in your template
+- The password page now has a show/hide button
+- The kit now support ES modules as well as CommonJS
+- Views can now use the `.njk` file extension, as well as `.html`
+- The express-flash middleware is now included as default middleware
+
 ## 7.1.0 - 20 October 2025
 
 - Adds a filter for formatting NHS numbers with spaces

@@ -18,4 +18,4 @@ The simplest way to download your prototype is to use the [GitHub Desktop](https
 
 Alternatively if you use Visual Studio Code you can open a new window and select ‘Clone Git Repository’ and then paste in the URL of your prototype on GitHub.
 
-You can also click the ‘Code’ button and select the ‘Download ZIP’ option – however if you do this you will not be able to synchronies your changes as easily.
+You can also click the ‘Code’ button and select the ‘Download ZIP’ option – however if you do this you will not be able to synchronise your changes as easily with Git.

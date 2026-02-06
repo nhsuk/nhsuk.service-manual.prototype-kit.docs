@@ -79,7 +79,9 @@ Delete these files:
 
 The `useAutoStoreData` and  `useCookieSessionStore` settings in the `config.js` are no longer needed and can be removed.
 
-The `port` will now be used to determine which port to run the prototype runs on locally (a previous bug that 1000 was added to this number). You may want to change the number to `3000` to keep it the same as before.
+You should change the `port: 2000` option to `port: 3000` to continue using http://localhost:3000 in the browser.
+
+(We've fixed a previous bug that added 1000 to this number.)
 
 Update the file to this:
 

@@ -181,7 +181,7 @@ found 0 vulnerabilities
 
 ### 8. Edit your layout file
 
-You should have a layout file named `app/layout.html`.
+You should have a layout file named `app/views/layout.html`.
 
 In that file, update the lines which references `block head` to this:
 

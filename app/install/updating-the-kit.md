@@ -77,7 +77,7 @@ Delete these files:
 
 ### 4. Edit your `config.js` file
 
-The `useAutoStoreData` and  `useCookieSessionStore` settings in the `config.js` are no longer needed and can be removed.
+The `useAutoStoreData` and `useCookieSessionStore` settings in the `config.js` are no longer needed and can be removed.
 
 You should change the `port: 2000` option to `port: 3000` to continue using http://localhost:3000 in the browser.
 

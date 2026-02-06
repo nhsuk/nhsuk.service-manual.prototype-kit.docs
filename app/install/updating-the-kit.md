@@ -216,7 +216,7 @@ If you have previously edited `app/views/includes/scripts.html` to add custom sc
 ```njk
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/application.js"></script>
+  <script type="module" src="/assets/javascript/main.js"></script>
 
   <!-- Add any custom scripts -->
   <script type="module" src="/assets/javascript/custom-file-1.js"></script>

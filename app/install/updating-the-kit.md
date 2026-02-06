@@ -94,7 +94,7 @@ module.exports = function(req, res, next) {
 }
 ```
 
-If you had previously edited the file to set any local variables, copy the relevant lines back in to the file, above the `next()` line.
+If you have previously edited the file to set any local variables, copy the relevant lines back in to the file, above the `next()` line.
 
 You no longer need to set the `serviceName` variable as this is done automatically.
 

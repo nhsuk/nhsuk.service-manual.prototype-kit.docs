@@ -203,7 +203,7 @@ Update the section which references `block bodyEnd` to this:
 ```njk
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/application.js"></script>
+  <script type="module" src="/assets/javascript/main.js"></script>
   {% block pageScripts %}{% endblock %}
 {% endblock %}
 ```

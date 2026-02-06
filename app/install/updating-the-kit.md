@@ -158,7 +158,7 @@ init()
 > ```njk
 > const viewsPath = [
 >   'app/views/',
->   'node_modules/nhsapp-frontend/dist'
+>   'node_modules/nhsapp-frontend/dist/'
 > ]
 > ```
 

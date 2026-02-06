@@ -28,7 +28,7 @@ In the `dependencies` section, update the contents to:
 
 ```json
 "dependencies": {
-  "nhsuk-frontend": "^10.2.2",
+  "nhsuk-frontend": "^10.3.1",
   "nhsuk-prototype-kit": "^8.0.0"
 }
 ```
@@ -66,7 +66,6 @@ Delete these files:
 
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
-- `app/views/includes/scripts.html`
 - `.babelrc`
 - `.browserslistrc`
 - `.prettierignore`
@@ -94,7 +93,7 @@ module.exports = function(req, res, next) {
 }
 ```
 
-If you had previously edited the file to set any local variables, copy the relevant lines back in to the file, above the `next()` line.
+If you have previously edited the file to set any local variables, copy the relevant lines back in to the file, above the `next()` line.
 
 You no longer need to set the `serviceName` variable as this is done automatically.
 
@@ -158,7 +157,7 @@ init()
 > ```njk
 > const viewsPath = [
 >   'app/views/',
->   'node_modules/nhsapp-frontend/dist'
+>   'node_modules/nhsapp-frontend/dist/'
 > ]
 > ```
 
@@ -181,7 +180,7 @@ found 0 vulnerabilities
 
 ### 8. Edit your layout file
 
-You should have a layout file named `app/layout.html`.
+You should have a layout file named `app/views/layout.html`.
 
 In that file, update the lines which references `block head` to this:
 
@@ -203,14 +202,33 @@ Update the section which references `block bodyEnd` to this:
 ```njk
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/application.js"></script>
+  <script type="module" src="/assets/javascript/main.js"></script>
   {% block pageScripts %}{% endblock %}
 {% endblock %}
 ```
 
 {% endraw %}
 
-If you have added any custom frontend JavaScript to your prototype, you will need to add references to it here too.
+If you have previously edited `app/views/includes/scripts.html` to add custom scripts, you must move them to `block bodyEnd` like this:
+
+{% raw %}
+
+```njk
+{% block bodyEnd %}
+  {{ super() }}
+  <script type="module" src="/assets/javascript/application.js"></script>
+
+  <!-- Add any custom scripts -->
+  <script type="module" src="/assets/javascript/custom-file-1.js"></script>
+  <script type="module" src="/assets/javascript/custom-file-2.js"></script>
+  <script type="module" src="/assets/javascript/custom-file-3.js"></script>
+  {% block pageScripts %}{% endblock %}
+{% endblock %}
+```
+
+{% endraw %}
+
+You can now delete the file `app/views/includes/scripts.html`.
 
 ### 9. Start your local server
 

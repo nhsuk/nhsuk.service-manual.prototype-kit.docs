@@ -66,7 +66,6 @@ Delete these files:
 
 - `gulpfile.js`
 - `app/assets/javascript/auto-store-data.js` (if present)
-- `app/views/includes/scripts.html`
 - `.babelrc`
 - `.browserslistrc`
 - `.prettierignore`
@@ -210,7 +209,26 @@ Update the section which references `block bodyEnd` to this:
 
 {% endraw %}
 
-If you have added any custom frontend JavaScript to your prototype, you will need to add references to it here too.
+If you have previously edited `app/views/includes/scripts.html` to add custom scripts, you must move them to `block bodyEnd` like this:
+
+{% raw %}
+
+```njk
+{% block bodyEnd %}
+  {{ super() }}
+  <script type="module" src="/assets/javascript/application.js"></script>
+
+  <!-- Add any custom scripts -->
+  <script type="module" src="/assets/javascript/custom-file-1.js"></script>
+  <script type="module" src="/assets/javascript/custom-file-2.js"></script>
+  <script type="module" src="/assets/javascript/custom-file-3.js"></script>
+  {% block pageScripts %}{% endblock %}
+{% endblock %}
+```
+
+{% endraw %}
+
+You can now delete the file `app/views/includes/scripts.html`.
 
 ### 9. Start your local server
 

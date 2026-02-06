@@ -83,7 +83,7 @@ You should change the `port: 2000` option to `port: 3000` to continue using http
 
 (We've fixed a previous bug that added 1000 to this number.)
 
-Update the file to this:
+For example, the file could now look like this:
 
 ```js
 // Use this file to change prototype configuration.

@@ -75,7 +75,30 @@ Delete these files:
 - `.gitpod.yml`
 - `CONTRIBUTING.md`
 
-### 4. Edit your `locals.js` file
+### 4. Edit your `config.js` file
+
+The `useAutoStoreData` and `useCookieSessionStore` settings in the `config.js` are no longer needed and can be removed.
+
+You should change the `port: 2000` option to `port: 3000` to continue using http://localhost:3000 in the browser.
+
+(We've fixed a previous bug that added 1000 to this number.)
+
+For example, the file could now look like this:
+
+```js
+// Use this file to change prototype configuration.
+module.exports = {
+  // Service name
+  serviceName: 'Service name goes here',
+
+  // Port to run the prototype on locally
+  port: 3000
+}
+```
+
+If you added any other configuration options of your own, you should keep those if still needed.
+
+### 5. Edit your `locals.js` file
 
 Update the file to this:
 
@@ -97,7 +120,7 @@ If you have previously edited the file to set any local variables, copy the rele
 
 You no longer need to set the `serviceName` variable as this is done automatically.
 
-### 5. Edit your `devcontainer.json` file
+### 6. Edit your `devcontainer.json` file
 
 If you have a file named `.devcontainer/devcontainer.json`, update the `postAttachCommand` line to this:
 
@@ -109,7 +132,7 @@ If you have a file named `.devcontainer/devcontainer.json`, update the `postAtta
 
 This will make sure that your prototype still works within GitHub Codespaces.
 
-### 6. Edit your `app.js` file
+### 7. Edit your `app.js` file
 
 Replace the entire contents of it with this:
 
@@ -161,7 +184,7 @@ init()
 > ]
 > ```
 
-### 7. Run `npm install` in your terminal
+### 8. Run `npm install` in your terminal
 
 The install may take up to a minute.
 
@@ -178,7 +201,7 @@ run `npm fund` for details
 found 0 vulnerabilities
 ```
 
-### 8. Edit your layout file
+### 9. Edit your layout file
 
 You should have a layout file named `app/views/layout.html`.
 
@@ -230,7 +253,7 @@ If you have previously edited `app/views/includes/scripts.html` to add custom sc
 
 You can now delete the file `app/views/includes/scripts.html`.
 
-### 9. Start your local server
+### 10. Start your local server
 
 In your terminal, enter: <kbd>npm start</kbd>
 

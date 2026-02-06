@@ -10,7 +10,7 @@ The way that you update the kit has recently changed.
 
 If you are using version 8 of the kit or above, you can now update the kit by changing the version number in your `package.json` file and then running `npm install`.
 
-If your version of the kit is version 7 or or below, follow this upgrade guide.
+If your version of the kit is version 7 or below, follow this upgrade guide.
 
 ### 1. Check which version of Node.js you are using.
 

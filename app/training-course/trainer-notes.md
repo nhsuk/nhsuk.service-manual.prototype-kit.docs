@@ -27,7 +27,9 @@ Before we can start, we need to create a new prototype. You’ll only do this on
 
 You should all have a GitHub account set up. If you don’t, create one now. It’s free.
 
-Person A: Go to https://github.com/nhsuk/nhsuk-prototype-kit/ and click ‘Use this template’.
+Person A: Search for the NHS prototype kit. Click on 'Get started', and then 'Creating a new prototype', and then follow the link to 'NHS prototype kit on GitHub'.
+
+Click 'Use this template'. Note that there are 2 green buttons (bad practice!) and you want the top-most one.
 
 Click ‘Create a new repository’ - repositories are the GitHub name for projects
 
@@ -51,11 +53,11 @@ Go to Settings, Collaborators
 
 Under Manage access, click ‘Add people’ and add your partner’s GitHub name
 
-Person B:  accept the invitation – you can either do this from your email or log in to GitHub and go to notifications or share the repository link.
+Person B: accept the invitation – you can either do this from your email or log in to GitHub and go to notifications or share the repository link.
 
 You now both have access to the project and can both make updates.
 
-For today, only one of you will be making changes at a time, and the other person will be helping. This will help avoid conflicts, and means you have a second pair of eyes to spot typos and fix issues! Try not to let the more confident person do everythign.
+For today, only one of you will be making changes at a time, and the other person will be helping. This will help avoid conflicts, and means you have a second pair of eyes to spot typos and fix issues! Try not to let the more confident person do everything.
 
 We’ll swap over at regular intervals.
 
@@ -91,7 +93,7 @@ List out the basic tags
 
 Chat about pairing tags and nesting them, indentation
 
-Attributes within tags – eg href
+Attributes within tags – eg `href`
 
 Talk through the folder structure of the kit in VS Code.
 
@@ -103,116 +105,205 @@ Talk through the folder structure of the kit in VS Code.
 
 ## Exercise
 
-* ask Person A to create a basic page
+Ask Person A to create a basic page with some HTML.
 
-Adds some tags
-Warm up exercise:  creating a basic HTML page
-Talk through the folder structure
-App – everything you need to edit is in here
-Views – contains the pages
-Assets – for images and CSS
-Config.js - some setup stuff
-Update the name of your service
-This is in the config file as you may need to show it on multiple pages
-Open config.js
-Change ‘Service name goes here’ to “Order a test to check if you have magical powers” - if you’d like to come up with a different service, feel free to choose a different name.
-Usually on your computer you need to save files before they update. With codespaces it’s *always* saving.
+Then mention how it’s all very basic with a white background - these are the browser default styles.
+
+To use the NHS styles we need to add some additional code to make the kit use the template.
+
+First add this to the top:
+
+```njk
+{% raw %}{% extends "layout.html" %}{% endraw %}
+```
+
+Notice how this adds the header and footer - but the content has disappeared! This is because the template doesn’t know where to put the content. There are different places to put the content, including the header and the footer, but most of the time you want to put content in the middle, which is called the 'content' area.
+
+To do this, add this to the top, after the line you just added:
+
+```njk
+{% raw %}{% block "content" %}{% endraw %}
+```
+
+And then at the bottom, add this:
+
+```njk
+{% raw %}{% endblock %}{% endraw %}
+```
+
+Tada! Your content appears. We’ll talk more about this code later.
+
+For now, let’s do a quick tour of how the kit is set up. [Talk through the folder structure.]
+
+One last set up task to do - you’ll note that at the top it says 'Service name goes here'. Let's set that.
+
+Because the service name is shown in the header of every page, and may be used on other pages, there’s a special setting for it.
+
+Go to `config.js` and change the service name to something like “Order a test to check if you have magical powers”
+
 Refresh the preview and see that it has changed.
+
+We’re done! Before we finish, let's commit the code.
+
 Go to the Branching icon on the left
+
 Enter a message like “Add name of service”
+
 Commit messages are traditionally present tense
+
 Press commit
+
 If you get a popup select Yes
+
 Press Sync
-Update the first page
-Remove the “you can delete these lines” and the ones below
-Remove everything after the h1 up until the </div>
 
 ## Lesson 2: Let’s make some pages
 
-Core concepts to talk through
-How templates/views relate to pages
-Usually there’s a one to one mapping – a template file in views makes a page in the prototype.
-Talk about how these templates get converted in to pages
-Index.html is special
-You can use slashes in urls to go in to folders
+> [!NOTE]
+> Give out the diagram of pages
+
+Core concepts to talk through:
+
+* how templates/views relate to pages
+* usually there’s a one to one mapping – a template file in views makes a page in the prototype.
+* talk about how these templates get converted in to pages
+* `index.html` is special
+* you can use slashes in urls to go in to folders
+
 Create a start page
+
 Right click on ‘views’ and choose ‘new file’.
+
 Call the new file `start-page.html`. Press enter.  This will be used in the URL of the prototype. Use lowercase with hyphens and use plain english words that you will remember what they mean
-At the top of the file add `{% extends "layout.html" %}`. This tells the prototype kit we want to use the default template
+
+At the top of the file add `{% raw %}{% extends "layout.html" %}{% endraw %}`. This tells the prototype kit we want to use the default template
+
 Now we need some contents for the file. There’s an example start page on the nhs design system website and some guidance on when to use it.
 Direct to ‘patterns’ section of design system, find start page pattern and pick from nunjucks
+
 Spend some time updating the content on the page for our service.
+
 Talk about Nunjucks
-Give out the Crib sheet for Nunjucks
 
+> [!NOTE]
+> Give out the Crib sheet for Nunjucks
 
-## Lesson 3: Add a second question page
+## Lesson 3: Add question pages
 
 Create a question page
-This is going to ask what magical powers you have
-Right click on views and choose new file, name is magical-powers.html
-Add extends layout
+
+This is going to ask whether you have symptoms of magical powers. Imagine the kits are expensive and we can’t afford to give them to everyone!
+
+Right click on views and choose new file, name is `magical-powers.html`
+
+Add extends layout as before.
+
 Copy question page pattern in from the design system
+
 This uses nunjucks for the radio button
-This is different from HTML – it uses { instead of <
+
+This is different from HTML – it uses `{` instead of `<`
+
 It will generate HTML for you
+
 It’s a bit more readable
+
 It will be updated more easily if the HTML changes in the design system
+
 Demonstrate that nunjucks is brittle – that wrong commas or brackets willl crash. This is ok. We can always undo. It will give you an error which may be helpful – however the line number won’t always be 100% accurate
+
 Legend represents the question
+
 Items has the options
+
 Text is displayed to users, value is what is saved as data. You can choose to make these the same.
+
 Change the legend text
+
 Update the options, show deleting an option.
+
 Add a hint
+
 Go to design system website, radio example
+
 Go to radios with hints example
+
 Point out nunjucks code, look for ‘hint’ section
+
 Copy in to prototype, hint: "For example, things moving when you have strong feelings or hearing someone's thoughts."
 
 Add a second question page
+
 Now that we have a question page, we can use it as a base to copy from
-Make a new file ‘details.html’
-Copy the contents of `magical-powers.html’
-Check it work by visiting /details. It might be easier to change something on the page to be sure.
+
+Make a new file `details.html`
+
+Copy the contents of `magical-powers.html`.
+
+Check it work by visiting `/details`. It might be easier to change something on the page to be sure.
+
 Delete the radio
+
 Go to design system and grab text area component
-The default component is not set up to be a heading or right size – we need to add this – sadly it’s a bit cumbersome:
+
 Update the back link to point to `/magical-powers`
+
 Continue button on magical powers doesn’t work.
-Talk  about how forms are special
+
+Talk about how forms are special
+
 Change ‘action’ to the url for the next page - `/details`
+
 Fix the back links
+
 Change the href to `”/start-page”` -
+
 When linking between pages we do not use the file extensions
+
 Make the start button work
-Currently the button doens’t link to anything. We need to link to the magical powers page.
-This is done with something called the ‘href’
-Change it to ‘/magical-powers’
+
+Currently the button doesn’t link to anything. We need to link to the magical powers page.
+
+This is done with something called the `href`. Change it to `/magical-powers`
 
 ## Lesson 4: Check your answers and using data
 
 Make new page `check-your-answers.html`
-Add `{% extends “layout.html” %}`
+
+Add `{% raw %}{% extends “layout.html” %}{% endraw %}`
+
 Copy design system check answers code in to page
-Check it works by visiting /check-your-answers
+
+Check it works by visiting `/check-your-answers`
+
 Update the first row – change the display name, value and visuallyHidden – go back and update the name attribute
+
 Update the second row – change the display name, value and visuallyHidden– go back and update the name attribute
+
 Delete remaining rows
+
 Delete second summary list and heading
+
 Point form handler to `/confirmation`
+
 Update change links so they work – test it
-Update question macros to pre-fil the data using ‘value’ param
+
+Update question macros to pre-fill the data using ‘value’ param
+
 Make a confirmation page
+
 Create new page `confirmation.html`
-Add {% extends “layout.html” %}
+
+Add `{% raw %}{% extends “layout.html” %}{% endraw %}`
+
 Grab confirmation page from design system
+
 Update the content so it makes sense
 
-## Lesson 5: Branching and routes – Ed
+## Lesson 5: Branching and routes
 
-Give out Crib Sheet for Branching
+> [!NOTE]
+> Give out Crib Sheet for Branching
 
 Things to cover:
 
@@ -223,34 +314,37 @@ Things to cover:
 
 Create a new file called `ineligible.html`
 
-Add `{% extends “layout.html” %}`
+Add `{% raw %}{% extends “layout.html” %}{% endraw %}`
 
-The heading is too large – let's use a class to fix it. Add this to h1 `class="nhsuk-heading-l"`
 
 Add a back link:
 
-```
-{% block beforeContent %}
+```njk
+{% raw %}{% block beforeContent %}
   {{ backLink({
     href: "/magical-powers",
     text: "Back"
   }) }}
-{% endblock %}
+{% endblock %}{% endraw %}
 ```
 
 Go to routes, add:
+
+```js
 // Run this code when a form is submitted to '/magical-powers-answer'
 router.post('/magical-powers-answer', function (req, res) {
 })
+```
 
 Things to explain:
-const means setting a constant (variable) to make it easier to refer to things later
-Lines starting with // are comments
-== means “is equal to”. Single = means setting variable!
-|| means “or”
 
+* `const` means setting a constant (variable) to make it easier to refer to things later
+* Lines starting with `//` are comments
+* `==` means “is equal to”. Single `=` means setting variable!
+`||` means “or”
 
 Go back to `magical-powers.html` and update the form action to use `magical-powers-answer.html`
+
 Demonstrate that things are now broken – now let’s fix things in turn
 
 ## Lesson 6: Add your own page

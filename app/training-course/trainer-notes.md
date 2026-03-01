@@ -170,7 +170,18 @@ Core concepts to talk through:
 - `index.html` is special
 - you can use slashes in urls to go in to folders
 
-Create a start page
+
+This is different from HTML – it uses `{` instead of `<`
+
+It will generate HTML for you
+
+It’s a bit more readable
+
+It will be updated more easily if the HTML changes in the design system
+
+Demonstrate that nunjucks is brittle – that wrong commas or brackets willl crash. This is ok. We can always undo. It will give you an error which may be helpful – however the line number won’t always be 100% accurate
+
+### Exercise: Create a start page
 
 Right click on ‘views’ and choose ‘new file’.
 
@@ -182,8 +193,6 @@ Now we need some contents for the file. There’s an example start page on the n
 Direct to ‘patterns’ section of design system, find start page pattern and pick from nunjucks
 
 Spend some time updating the content on the page for our service.
-
-Talk about Nunjucks
 
 > [!NOTE]
 > Give out the Crib sheet for Nunjucks
@@ -201,16 +210,6 @@ Add extends layout as before.
 Copy question page pattern in from the design system
 
 This uses nunjucks for the radio button
-
-This is different from HTML – it uses `{` instead of `<`
-
-It will generate HTML for you
-
-It’s a bit more readable
-
-It will be updated more easily if the HTML changes in the design system
-
-Demonstrate that nunjucks is brittle – that wrong commas or brackets willl crash. This is ok. We can always undo. It will give you an error which may be helpful – however the line number won’t always be 100% accurate
 
 Legend represents the question
 

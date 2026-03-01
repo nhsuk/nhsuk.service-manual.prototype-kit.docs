@@ -15,7 +15,7 @@ Why prototype in code? – ask people for their thoughts
 
 We are going to create a prototype of a new NHS service called “Order a test to check if you have magical powers”
 
-You will work in pairs.  Explain benefits of pair working.
+You will work in pairs. Explain benefits of pair working.
 
 We’ll help you get started and with the initial questions. You can also choose to customise it and add your own. Have some fun!
 
@@ -99,9 +99,9 @@ Talk through the folder structure of the kit in VS Code.
 
 ### Demo
 
-* create a test.html page
-* navigate to it in the preview
-* add some tags
+- create a test.html page
+- navigate to it in the preview
+- add some tags
 
 ## Exercise
 
@@ -164,17 +164,17 @@ Press Sync
 
 Core concepts to talk through:
 
-* how templates/views relate to pages
-* usually there’s a one to one mapping – a template file in views makes a page in the prototype.
-* talk about how these templates get converted in to pages
-* `index.html` is special
-* you can use slashes in urls to go in to folders
+- how templates/views relate to pages
+- usually there’s a one to one mapping – a template file in views makes a page in the prototype.
+- talk about how these templates get converted in to pages
+- `index.html` is special
+- you can use slashes in urls to go in to folders
 
 Create a start page
 
 Right click on ‘views’ and choose ‘new file’.
 
-Call the new file `start-page.html`. Press enter.  This will be used in the URL of the prototype. Use lowercase with hyphens and use plain english words that you will remember what they mean
+Call the new file `start-page.html`. Press enter. This will be used in the URL of the prototype. Use lowercase with hyphens and use plain english words that you will remember what they mean
 
 At the top of the file add `{% raw %}{% extends "layout.html" %}{% endraw %}`. This tells the prototype kit we want to use the default template
 
@@ -307,15 +307,14 @@ Update the content so it makes sense
 
 Things to cover:
 
-* Talk about relationship between browser and server
-* Create ineligible page
-* Create route to decide where to go
-* Check it works
+- Talk about relationship between browser and server
+- Create ineligible page
+- Create route to decide where to go
+- Check it works
 
 Create a new file called `ineligible.html`
 
 Add `{% raw %}{% extends “layout.html” %}{% endraw %}`
-
 
 Add a back link:
 
@@ -338,10 +337,10 @@ router.post('/magical-powers-answer', function (req, res) {
 
 Things to explain:
 
-* `const` means setting a constant (variable) to make it easier to refer to things later
-* Lines starting with `//` are comments
-* `==` means “is equal to”. Single `=` means setting variable!
-`||` means “or”
+- `const` means setting a constant (variable) to make it easier to refer to things later
+- Lines starting with `//` are comments
+- `==` means “is equal to”. Single `=` means setting variable!
+  `||` means “or”
 
 Go back to `magical-powers.html` and update the form action to use `magical-powers-answer.html`
 

@@ -38,6 +38,6 @@ If a file is named `index.html` it is special, and can be viewed in your browser
 
 The file at `/app/views/index.html` is your ‘home page’, and can be viewed at <http://localhost:3000>.
 
-You can also add files named `index.html` within sub-folders.
+You can also add files named `index.html` within subfolders.
 
 For example, a file named `/app/views/medicines/index.html` can be viewed at <http://localhost:3000/medicines/>.

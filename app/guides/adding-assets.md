@@ -50,7 +50,7 @@ Do not edit the file `/public/assets/javascript/main.js` because it's deleted an
 
 ## Images
 
-Add images to the `/app/assets/images` folder. You can also use sub-folders to organise them if you have a lot of images.
+Add images to the `/app/assets/images` folder. You can also use subfolders to organise them if you have a lot of images.
 
 For example if you add an image named `user.png`, use it in your page like this:
 

@@ -26,7 +26,7 @@ Styles can also be added to individual page templates by using a `<style>` tag:
 {% endblock%}{% endraw %}
 ```
 
-Do not edit the file `public/assets/sass/main.css` because it's deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file `public/assets/sass/main.css` because it’s deleted and rebuilt every time you make a change to your prototype.
 
 The prototype kit uses [Sass](https://sass-lang.com/guide), which adds extra features to CSS.
 
@@ -46,7 +46,7 @@ You can use JavaScript to make changes to a web page without loading a new one. 
 
 To add JavaScript use: `/app/assets/javascript/main.js`
 
-Do not edit the file `/public/assets/javascript/main.js` because it's deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file `/public/assets/javascript/main.js` because it’s deleted and rebuilt every time you make a change to your prototype.
 
 ## Images
 
@@ -58,7 +58,7 @@ For example if you add an image named `user.png`, use it in your page like this:
 <img src="/assets/images/user.png" alt="User icon">
 ```
 
-Use 'alt' text to describe the image for screen readers.
+Use alt text to describe the image for screen readers.
 
 Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.
 

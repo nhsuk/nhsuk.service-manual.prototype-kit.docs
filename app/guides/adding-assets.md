@@ -55,7 +55,7 @@ Add images to the `/app/assets/images` folder. You can also use sub-folders to o
 For example if you add an image named `user.png`, use it in your page like this:
 
 ```html
-<img src="/assets/images/user.png" alt="User icon" />
+<img src="/assets/images/user.png" alt="User icon">
 ```
 
 Use 'alt' text to describe the image for screen readers.

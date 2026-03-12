@@ -46,11 +46,11 @@ You can use JavaScript to make changes to a web page without loading a new one. 
 
 To add JavaScript use: `app/assets/javascript/main.js`
 
-Do not edit the file `/public/assets/javascript/main.js` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file `public/assets/javascript/main.js` because it’s deleted and rebuilt every time you make a change to your prototype.
 
 ## Images
 
-Add images to the `/app/assets/images` folder. You can also use subfolders to organise them if you have a lot of images.
+Add images to the `app/assets/images` folder. You can also use subfolders to organise them if you have a lot of images.
 
 For example if you add an image named `user.png`, use it in your page like this:
 
@@ -60,11 +60,11 @@ For example if you add an image named `user.png`, use it in your page like this:
 
 Use alt text to describe the image for screen readers.
 
-Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not put files directly in `public` because it’s deleted and rebuilt every time you make a change to your prototype.
 
 ## Other files
 
-If you need to use other types of files in your prototype, you can create folders for them within `/app/assets/`, for example `/app/assets/pdfs/` or `/app/assets/symptoms/`.
+If you need to use other types of files in your prototype, you can create folders for them within `app/assets/`, for example `app/assets/pdfs/` or `app/assets/symptoms/`.
 
 Use the folder names when linking to the files in your prototype.
 
@@ -74,6 +74,6 @@ For example if you create a subfolder in `assets` called `downloads` and add a P
 <a href="/assets/downloads/report.pdf">Download report (PDF only, 1MB)</a>
 ```
 
-Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not put files directly in `public` because it’s deleted and rebuilt every time you make a change to your prototype.
 
 We avoid publishing PDFs, however. Read the guidance on [PDFs and other non-HTML documents in the service manual](https://service-manual.nhs.uk/content/pdfs-and-other-non-html-documents).

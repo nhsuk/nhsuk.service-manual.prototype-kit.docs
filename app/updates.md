@@ -5,6 +5,16 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.1.0 - 18 March 2026
+
+- A new `formatDate` filter has been added for displaying dates, for example as '18 March 2026'
+- Add new Nunjucks globals option
+- Add new Express session option for custom session stores
+- Add support for `.env` files
+- Allow custom Sass plugin to override default
+- Increase limit for bodyParser plugin
+
+
 ## 8.0.0 - 3 February 2026
 
 - The kit is now published as an npm package, for easier updates

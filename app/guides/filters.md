@@ -43,6 +43,52 @@ For example, if you have a question with checkboxes, you can use the `join` filt
 
 These are custom filters developed for the NHS prototype kit.
 
+### formatDate
+
+Use this to format a date according to the NHS style guide, including the name of the month.
+
+This can be used for dates entered using the `dateInput` component. If your date input is this:
+
+```njk
+{% raw %}{{ dateInput({
+  id: "date-of-birth",
+  namePrefix: "dateOfBirth",
+  fieldset: {
+    legend: {
+      text: "What is your date of birth?"
+    }
+  }
+}) }}{% endraw %}
+```
+
+Then you can use this to display the date, for example in a check answers page:
+
+```njk
+{% raw %}{{ data.dateOfBirth | formatDate }}{% endraw %}
+```
+
+Displays as:
+
+```
+7 February 1984
+```
+
+You can also include the day of the week, for example if the date relates to an appointment.
+
+For example:
+
+```njk
+{% raw %}{{ data.appointmentDate | formatDate({ includeDayOfWeek: true }) }}{% endraw %}
+```
+
+Displays as:
+
+```
+Wednesday 18 March 2026
+```
+
+The filter will also work with dates that are in `YYYY-MM-DD` format.
+
 ### formatNhsNumber
 
 Use this to format an NHS number according to the NHS style guide, as 3 groups of numbers with a single space between them, like this: <samp>999 123 4567</samp>.

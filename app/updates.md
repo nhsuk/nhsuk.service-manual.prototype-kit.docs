@@ -7,7 +7,7 @@ redirectFrom: whats-new/updates
 
 ## 8.1.0 - 18 March 2026
 
-- A new [date formatting filter](guides/filters/#format-date) has been added for displaying dates
+- A new [date formatting filter](/guides/filters/#format-date) has been added for displaying dates
 - Add new Nunjucks globals option
 - Add new Express session option for custom session stores
 - Add support for `.env` files

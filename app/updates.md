@@ -14,7 +14,6 @@ redirectFrom: whats-new/updates
 - Allow custom Sass plugin to override default
 - Increase limit for bodyParser plugin
 
-
 ## 8.0.0 - 3 February 2026
 
 - The kit is now published as an npm package, for easier updates

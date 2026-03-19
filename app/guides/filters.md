@@ -45,7 +45,7 @@ These are custom filters developed for the NHS prototype kit.
 
 ### formatDate
 
-Use this to format a date according to the NHS style guide, including the name of the month.
+Use this to format a date according to the [NHS style guide for dates](https://service-manual.nhs.uk/content/numbers-measurements-dates-time#dates), which includes the name of the month.
 
 This can be used for dates entered using the `dateInput` component. If your date input is this:
 

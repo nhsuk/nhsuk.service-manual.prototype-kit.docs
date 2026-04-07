@@ -12,7 +12,7 @@ To do this, add some JavaScript to your `routes.js` file.
 
 Send users to different pages based on their radio button selection:
 
-```js
+```js { .nhsuk-code--button }
 router.post('/appointment-type-answer', function (req, res) {
   const data = req.session.data
   const appointmentType = data.appointmentType
@@ -48,7 +48,7 @@ To test if any of of several checkboxes have been checked, combine several of th
 
 To test if multiple checkboxes have all been checked, combine several of these with `&&`, which means 'and'.
 
-```js
+```js { .nhsuk-code--button }
 router.post('/symptoms-answer', function (req, res) {
   const data = req.session.data
   const symptoms = data.symptoms || []
@@ -93,7 +93,7 @@ You can then use these operators to test the number:
 - `<` – less than
 - `<=` – less than or equal to
 
-```js
+```js { .nhsuk-code--button }
 router.post('/days-experiencing-symptoms-answer', function (req, res) {
   const data = req.session.data
 

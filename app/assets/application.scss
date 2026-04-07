@@ -1,5 +1,8 @@
 @use "pkg:nhsuk-frontend/dist/nhsuk/core" as *;
 
+// Add the highlighter styles
+@forward "pkg:nhsuk-frontend/lib/highlighter/styles";
+
 // Extra NHS.UK Frontend components used by this app
 @forward "pkg:nhsuk-frontend/dist/nhsuk/components/action-link";
 @forward "pkg:nhsuk-frontend/dist/nhsuk/components/do-dont-list";

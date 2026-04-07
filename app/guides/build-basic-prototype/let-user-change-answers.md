@@ -20,7 +20,7 @@ Open the `{{example.radios.url}}.html` file in your `app/views` folder.
 
 Update the radios component to add `value: data.hasSymptoms,`, like this:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{{ radios({
   idPrefix: "has-symptoms",
   name: "hasSymptoms",

@@ -38,7 +38,7 @@ On the "Check answers" template page, there are example answers that you do not 
 
 Your code should now look like this:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}<div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <h1 class="nhsuk-heading-l">

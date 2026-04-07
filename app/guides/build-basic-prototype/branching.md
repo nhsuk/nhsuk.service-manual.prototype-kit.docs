@@ -15,7 +15,7 @@ We'll make a route that takes the answer the user gave to the 1st question and e
 
 First, make an `{{example.ineligible.url}}.html` page by copying this code to `app/views`.
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}
 
 {% set pageName = "Ineligible" %}
@@ -43,7 +43,7 @@ Currently, the `{{example.radios.url}}` page sends the user directly to question
 2. Open `/app/routes.js`.
 3. Insert new JavaScript into line 5, before `module.exports = router`.
 
-   ```js
+   ```js { .nhsuk-code--button }
    // Run this code when a form submitted to '/{{example.radios.url}}-answer'
    router.post('/{{example.radios.url}}-answer', function (req, res) {
 

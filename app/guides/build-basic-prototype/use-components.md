@@ -31,7 +31,7 @@ In the design system, components have both Nunjucks and HTML code examples. Eith
 
 Your component code should now look like this:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{{ radios({
   idPrefix: "has-symptoms",
   name: "hasSymptoms",

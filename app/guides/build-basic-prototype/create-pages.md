@@ -11,7 +11,7 @@ Create an empty file named <kbd>{{example.startPage.url}}.html</kbd> in your `ap
 
 Add this line to the very top of your file:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}{% endraw %}
 ```
 
@@ -46,7 +46,7 @@ Create 2 empty files for question pages in `app/views` named:
 
 As before, add this line to the top of each file:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}{% endraw %}
 ```
 
@@ -66,7 +66,7 @@ Create an empty file named <kbd>{{example.checkAnswers.url}}.html</kbd> in `app/
 
 Add this line to the top of the file:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}{% endraw %}
 ```
 
@@ -82,7 +82,7 @@ Copy the Nunjucks code from the [confirmation page pattern](https://service-manu
 
 Add this line to the top of the file:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}{% endraw %}
 ```
 

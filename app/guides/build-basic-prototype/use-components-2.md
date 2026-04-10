@@ -20,7 +20,7 @@ Our `{{example.textarea.url}}.html` page is going to have a textarea component t
 
 Your component code should now look like this:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{{ textarea({
   name: "details",
   id: "details",

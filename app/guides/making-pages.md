@@ -22,7 +22,7 @@ Each page you create will need to specify which layout it uses. Otherwise you’
 
 To use the standard layout that comes with the prototype kit, add this line to the top of each file:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% extends "layout.html" %}{% endraw %}
 ```
 

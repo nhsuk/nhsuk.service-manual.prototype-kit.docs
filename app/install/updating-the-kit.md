@@ -26,7 +26,7 @@ node --version
 
 In the `dependencies` section, update the contents to:
 
-```json
+```json { .nhsuk-code--button }
 "dependencies": {
   "nhsuk-frontend": "^10.4.2",
   "nhsuk-prototype-kit": "^8.2.0"
@@ -39,14 +39,14 @@ In the `dependencies` section, update the contents to:
 
 In the `devDependencies` section, update the contents to:
 
-```json
+```json { .nhsuk-code--button }
 "devDependencies": {
 }
 ```
 
 Update the `scripts` section of your `package.json` file to:
 
-```json
+```json { .nhsuk-code--button }
 "scripts": {
   "start": "node ."
 }
@@ -85,7 +85,7 @@ You should change the `port: 2000` option to `port: 3000` to continue using http
 
 For example, the file could now look like this:
 
-```js
+```js { .nhsuk-code--button }
 // Use this file to change prototype configuration.
 module.exports = {
   // Service name
@@ -102,7 +102,7 @@ If you added any other configuration options of your own, you should keep those 
 
 Update the file to this:
 
-```js
+```js { .nhsuk-code--button }
 module.exports = function(req, res, next) {
 
   // You can set any additional local variables here.
@@ -124,7 +124,7 @@ You no longer need to set the `serviceName` variable as this is done automatical
 
 If you have a file named `.devcontainer/devcontainer.json`, update the `postAttachCommand` line to this:
 
-```json
+```json { .nhsuk-code--button }
   "postAttachCommand": {
     "server": "npm start"
   },
@@ -136,7 +136,7 @@ This will make sure that your prototype still works within GitHub Codespaces.
 
 Replace the entire contents of it with this:
 
-```js
+```js { .nhsuk-code--button }
 const NHSPrototypeKit = require('nhsuk-prototype-kit')
 
 // Local dependencies
@@ -177,7 +177,7 @@ init()
 > [!NOTE]
 > If you are also using the [NHS App design system](https://design-system.nhsapp.service.nhs.uk), change your `viewsPath` to this:
 >
-> ```njk
+> ```js { .nhsuk-code--button }
 > const viewsPath = [
 >   'app/views/',
 >   'node_modules/nhsapp-frontend/dist/'
@@ -209,7 +209,7 @@ In that file, update the lines which references `block head` to this:
 
 {% raw %}
 
-```njk
+```njk { .nhsuk-code--button }
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
   <link href="/assets/sass/main.css" rel="stylesheet">
@@ -222,7 +222,7 @@ Update the section which references `block bodyEnd` to this:
 
 {% raw %}
 
-```njk
+```njk { .nhsuk-code--button }
 {% block bodyEnd %}
   {{ super() }}
   <script type="module" src="/assets/javascript/main.js"></script>
@@ -236,7 +236,7 @@ If you have previously edited `app/views/includes/scripts.html` to add custom sc
 
 {% raw %}
 
-```njk
+```njk { .nhsuk-code--button }
 {% block bodyEnd %}
   {{ super() }}
   <script type="module" src="/assets/javascript/main.js"></script>

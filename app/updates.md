@@ -5,6 +5,11 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.2.0 - 14 April 2026
+
+- A new [postcode formatting filter](/guides/filters/#format-postcode) has been added for formatting UK postcodes
+- NHS.UK frontend minimum version updated to 10.4
+
 ## 8.1.0 - 18 March 2026
 
 - A new [date formatting filter](/guides/filters/#format-date) has been added for displaying dates

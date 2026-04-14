@@ -123,7 +123,6 @@ Displays as:
 {% raw %}<p>Postcode: SW1A 1AA.</p>{% endraw %}
 ```
 
-
 ## Text filters
 
 ### upper

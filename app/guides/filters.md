@@ -105,6 +105,25 @@ Displays as:
 {% raw %}<p>Your NHS number is 999 123 4567.</p>{% endraw %}
 ```
 
+### formatPostcode
+
+Use this to format an UK postcode so that it appears uppercase with a space in the middle, regardless of how the user entered it.
+
+The filter does not validate that the postcode is a real one. Any postcode which matches the general UK postcode pattern will be formatted, and otherwise the input will be unchanged.
+
+Example:
+
+```njk
+{% raw %}<p>Postcode: {{ data.postcode | formatPostcode }}.</p>{% endraw %}
+```
+
+Displays as:
+
+```html
+{% raw %}<p>Postcode: SW1A 1AA.</p>{% endraw %}
+```
+
+
 ## Text filters
 
 ### upper

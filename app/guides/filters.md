@@ -109,7 +109,7 @@ Displays as:
 
 Use this to format a UK postcode so that it appears uppercase with a space in the middle, regardless of how the user entered it.
 
-Any UK postcodes will be formatted, otherwise the input will be unchanged.
+Only UK postcodes will be formatted, otherwise the input will stay unchanged.
 
 This does not validate that the UK postcode is a real one in use.
 

@@ -109,7 +109,9 @@ Displays as:
 
 Use this to format an UK postcode so that it appears uppercase with a space in the middle, regardless of how the user entered it.
 
-The filter does not validate that the postcode is a real one. Any postcode which matches the general UK postcode pattern will be formatted, and otherwise the input will be unchanged.
+Any UK postcodes will be formatted, otherwise the input will be unchanged.
+
+Do not use this filter for validating postcodes and [displaying error messages](/guides/error-messages/).
 
 Example:
 

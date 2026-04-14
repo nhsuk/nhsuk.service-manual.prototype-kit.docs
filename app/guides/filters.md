@@ -111,7 +111,7 @@ Use this to format an UK postcode so that it appears uppercase with a space in t
 
 Any UK postcodes will be formatted, otherwise the input will be unchanged.
 
-Do not use this filter for validating postcodes and [displaying error messages](/guides/error-messages/).
+This does not validate that the UK postcode is a real one in use. See [displaying error messages](/guides/error-messages/).
 
 Example:
 

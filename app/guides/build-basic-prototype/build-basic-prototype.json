@@ -1,6 +1,6 @@
 {
   "eleventyComputed": {
-    "caption": "Step {{order}} of 8: Build a basic prototype",
+    "caption": "Build a basic prototype",
     "eleventyNavigation": {
       "key": "{{caption}} – {{title}}",
       "parent": "Build a basic prototype"

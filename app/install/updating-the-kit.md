@@ -35,7 +35,7 @@ In the `dependencies` section, update the contents to:
 
 > [!NOTE]
 > If you are also using the [NHS App design system](https://design-system.nhsapp.service.nhs.uk), keep
-> `nhsapp-frontend` within your `dependencies` section too.
+> `nhsapp-frontend` within your `dependencies` section too. You may need to update it to the latest version.
 
 In the `devDependencies` section, update the contents to:
 

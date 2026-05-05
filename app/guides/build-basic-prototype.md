@@ -25,8 +25,8 @@ Before you start, you must first [create a new prototype](/install/creating-a-ne
 
 You’ll then need to either:
 
-* install the kit on your computer
-* run the kit in the cloud
+- install the kit on your computer
+- run the kit in the cloud
 
 See [get started](/install/) for guidance on both options.
 

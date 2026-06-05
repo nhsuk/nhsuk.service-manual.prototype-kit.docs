@@ -3,7 +3,7 @@ title: Create a check answers page
 order: 6
 ---
 
-It’s helpful to let users check their answers before submitting them. To do this, we’ll add a Check answers page.
+It’s helpful to let users check their answers before submitting them. To do this, we’ll add a check answers page.
 
 Create an empty file named <kbd>{{example.checkAnswers.url}}.html</kbd> in `app/views`.
 
@@ -47,7 +47,7 @@ Go to <http://localhost:3000/{{exampleStart.url}}> and answer the questions to c
 
 ### Delete the remaining example answers
 
-On the "Check answers" template page, there are example answers that you do not need.
+In the code there are some example answers that you do not need.
 
 1. Find the `,` (comma) after the details you have changed, and delete this and everything up to the `]` (square bracket).
 2. Delete everything from the line that contains "Medical details" down to the line before "Now send your application".
@@ -134,16 +134,16 @@ As before, you’ll need to link up this page with previous pages.
 
 ### Make the 'Change' links work
 
-Unlike the previous question pages, there is no Back link on the Check answers pattern as instead users can go back to any previous question page using the Change links in the summary.
+Unlike the previous question pages, there is no back link on the check answers pattern as instead users can go back to any previous question page using the change links in the summary.
 
-Make the Change links on the page work by adding the right links.
+Make the change links on the page work by adding the right links.
 
 1. Find the row for `{{example.radios.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.radios.url}}"`
 2. Find the row for `{{example.textarea.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.textarea.url}}"`
 
 ### Link to check answers page from the last question
 
-We also need to link the last question page to the Check answers page.
+We also need to link the last question page to the check answers page.
 
 To do this:
 
@@ -151,4 +151,4 @@ To do this:
 2. Find the line `<form action="/form-handler" method="post" novalidate>`.
 3. Change the value of the `action` attribute from `/form-handler` to `/{{example.checkAnswers.url}}`.
 
-Click on the Continue button to check that it now works. It should take you the second question page.
+Click on the continue button to check that it now works. It should take you the second question page.

@@ -3,7 +3,7 @@ title: Let the user change their answers
 order: 7
 ---
 
-If you select a **Change** link, you'll go back to the right question page, but the existing answer will not be pre-filled.
+If you select a change link, you'll go back to the right question page, but the existing answer will not be pre-filled.
 
 ## Show the user's answer in question 1
 

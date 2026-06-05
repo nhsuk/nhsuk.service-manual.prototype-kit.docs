@@ -44,4 +44,4 @@ Find an example on the page and select ‘Nunjucks’ to reveal the Nunjucks cod
 
 Edit the content to suit this fictional service.
 
-When you are finished editing, move on to the next step in this tutorial. You can always come back and edit the Start page content some more later.
+When you are finished editing, move on to the next step in this tutorial. You can always come back and edit the start page content some more later.

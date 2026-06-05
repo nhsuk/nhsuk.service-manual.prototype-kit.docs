@@ -17,9 +17,9 @@ Go to <http://localhost:3000/{{example.confirmation.url}}> to check.
 
 Update the content to suit this fictional service.
 
-## Link to the confirmation page from the Check answers page
+## Link to the confirmation page from the check answers page
 
-As before, you’ll need to link to this page from the previous page. However there is only 1 link to update as the Confirmation page does not have a back link.
+As before, you’ll need to link to this page from the previous page. However there is only 1 link to update as the confirmation page does not have a back link.
 
 To link to the confirmation page:
 

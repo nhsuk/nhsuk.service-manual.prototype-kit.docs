@@ -86,11 +86,11 @@ Find the `backLink` component in your code, and change `"#"` to `"/{{example.sta
 
 Click the back link to check that it takes you back to the start page.
 
-### Make the Start now button work
+### Make the start now button work
 
-On your start page, you’ll notice that the Start now button also does not work.
+On your start page, you’ll notice that the ‘Start now’ button also does not work.
 
-Links normally appear as text with underlines. We make 'Start now' look like a button to make it more obvious to users.
+Links normally appear as text with underlines. We make ‘Start now’ look like a button to make it more obvious to users.
 
 You’ll now need to update this button to link to your question page.
 
@@ -98,4 +98,4 @@ You’ll now need to update this button to link to your question page.
 2. Find the button component. This will start with `{% raw %}{{ button({{% endraw %}` and have 'Start now' inside.
 3. Change the value of the `href` attribute from `#` to `/{{example.radios.url}}`.
 
-Click the Start now button to check it works.
+Click the ‘Start now’ button to check it works.

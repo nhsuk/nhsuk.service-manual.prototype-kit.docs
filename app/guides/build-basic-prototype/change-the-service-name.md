@@ -3,7 +3,11 @@ title: Change the service name
 order: 2
 ---
 
-You'll normally edit the HTML to make changes to pages, but the service name is in a config file. This is so we can change it in one place to update it on every page in your prototype.
+The service name is displayed in the header of every page. We don’t want to have to edit every page if you decide to rename the service.
+
+Instead, it is set in a config file so that you can set it in one place and then every page will update automatically.
+
+To set your service name:
 
 1. Open the `config.js` file in your `app` folder
 2. Change `serviceName` from `"Service name goes here"` to `"{{example.name}}"`

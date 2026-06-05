@@ -9,7 +9,7 @@ You'll use the Command Prompt to install, start and stop the kit.
 To open the Command Prompt:
 
 - Click Start
-- In the Search, type <kbd>cmd</kbd> (short for command) or <kbd>commandprompt</kbd>, and press Enter.
+- In the Search, type <kbd>cmd</kbd> (short for command) or <kbd>commandprompt</kbd>, and press <kbd><kbd>Enter</kbd></kbd>.
 
 When you open the application, it will contain text similar to this:
 

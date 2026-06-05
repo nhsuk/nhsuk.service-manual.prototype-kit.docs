@@ -1,6 +1,8 @@
 ---
 title: Create a second question page
 order: 5
+redirectFrom:
+ - /guides/build-basic-prototype/use-components-2/
 ---
 
 Create another empty file for your second question named <kbd>{{example.textarea.url}}.html</kbd> in your `app/views` folder.

@@ -40,7 +40,7 @@ Each page has some guidance on when and how to use it.
 
 Select one of the ‘Content presentation’ components, like Details, Expander or Warning callout.
 
-Find an example on the page and select ‘Nunjucks’ to reveal the Nunjucks code. Use the ‘Copy code’ to copy the code, and then paste it into the code for your start page.
+Find an example on the page and select ‘Nunjucks’ to reveal the Nunjucks code. Copy the code and then paste it into the code for your start page.
 
 Edit the content to suit this fictional service.
 

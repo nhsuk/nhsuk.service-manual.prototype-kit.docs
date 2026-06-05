@@ -11,7 +11,7 @@ In your code editor, open your prototype folder. You will see the files and fold
 
 - `assets` is for CSS, JavaScript, images and downloadable files
 - `data` is where you can put any default data for your prototype
-- `views` is where the templates for each of your pages go – this is where you’ll spend most of your time editing
+- `views` is for page templates – this is where you’ll spend most of your time editing
 
 Outside of a folder are some additional files:
 

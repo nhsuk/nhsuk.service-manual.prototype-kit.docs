@@ -82,7 +82,7 @@ If you click the back link on your question page, you’ll notice that nothing h
 
 To make the back link work, you’ll need to tell it which page to go back to.
 
-Find the `backLink` component in your code, and change `"#"` to `"/start-page"`.
+Find the `backLink` component in your code, and change `"#"` to `"/{{example.startPage.url}}"`.
 
 Click the back link to check that it takes you back to the start page.
 

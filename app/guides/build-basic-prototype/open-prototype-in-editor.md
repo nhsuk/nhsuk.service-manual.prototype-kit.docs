@@ -27,4 +27,4 @@ In most code editors you can toggle folders open or closed, and click files to o
 
 You can have more than one file open at once in tabs, and close them when you are finished editing them.
 
-Depending on your editor and its settings, you may need to press ‘Save’ (Control-S on Windows or Command-S on a Mac) to save changes. In Codespaces this is set up to save automatically, although you can turn this feature off later if you prefer.
+Depending on your editor and its settings, you may need to press ‘Save’ to save changes. Press <kbd><kbd>Command</kbd></kbd> + <kbd><kbd>S</kbd></kbd> on Mac or <kbd><kbd>Ctrl</kbd></kbd> + <kbd><kbd>S</kbd></kbd> on Windows. In Codespaces this is set up to save automatically, although you can turn this feature off later if you prefer.

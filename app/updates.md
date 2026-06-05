@@ -5,6 +5,13 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.3.0 - 4 June 2026
+
+- Update to use [NHS.UK frontend 10.5](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.5.1) and the new `template-with-imports.njk` template
+- Fix link to guidance on password not set error page
+- Add contact support message to error page
+- Dependency updates including security fixes
+
 ## 8.2.0 - 14 April 2026
 
 - A new [postcode formatting filter](/guides/filters/#format-postcode) has been added for formatting UK postcodes

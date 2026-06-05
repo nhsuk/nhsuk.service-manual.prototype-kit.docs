@@ -14,7 +14,7 @@ To do these tasks, you must have [set up GitHub Desktop](/guides/github/setup-gi
 
 ### If Github Desktop shows a warning
 
-You may get a warning saying that the directory does not appear to be a Git directory. This is the correct process.
+You may get a warning saying that the folder does not appear to be a Git folder. This is the correct process.
 
 1. In the warning, click the <kbd><samp>Create a repository</samp></kbd> link.
 2. On the next screen, titled <samp>Create a repository</samp>, click the <kbd><samp>Create repository</samp></kbd> button.

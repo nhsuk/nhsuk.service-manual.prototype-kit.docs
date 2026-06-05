@@ -10,7 +10,7 @@ In your code editor, open your prototype folder. You will see the files and fold
 `app` is for your work. Inside that folder:
 
 - `assets` is for CSS, JavaScript, images and downloadable files
-- `data` is where you can put any default data for your prototype
+- `data` is for any default data, such as a default answer to a question
 - `views` is for page templates – this is where you’ll spend most of your time editing
 
 Outside of a folder are some additional files:

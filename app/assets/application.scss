@@ -19,29 +19,4 @@
   .nhsuk-image__img {
     padding: nhsuk-spacing(2);
   }
-
-  samp {
-    font-family: $nhsuk-font, $nhsuk-font-fallback;
-    word-break: keep-all;
-  }
-
-  code.app-code--inline,
-  kbd {
-    font-family: ui-monospace, monospace;
-    font-weight: normal;
-  }
-
-  code.app-code--inline,
-  kbd:not(:has(> kbd)),
-  samp {
-    background-color: nhsuk-colour("white");
-    border-radius: $nhsuk-border-radius;
-    font-size: 1em;
-    padding: 0.15rem 0.3rem;
-  }
-
-  kbd samp {
-    font-weight: 600;
-    padding: 0;
-  }
 }

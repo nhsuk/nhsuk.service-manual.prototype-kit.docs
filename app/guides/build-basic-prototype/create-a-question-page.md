@@ -15,7 +15,7 @@ As before, add this line to the top of each file:
 
 Visit the [question page pattern](https://service-manual.nhs.uk/design-system/patterns/question-pages) to see some example question pages.
 
-Find the first example with radios and copy the Nunjucks in to the first file. Copy the Nunjucks in to the first file you made.
+Find the first example with radios and copy the Nunjucks in to the file you just made.
 
 Preview the page by visiting <http://localhost:3000/{{example.radios.url}}> in your browser.
 

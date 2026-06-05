@@ -14,7 +14,7 @@ If you want to use GitHub Desktop, go to our guide for [using GitHub and GitHub 
 
 ## 1. Check if you have Git installed
 
-Open a terminal, type <kbd>git --version</kbd> and press enter.
+Open a terminal, type <kbd>git --version</kbd> and press <kbd><kbd>Enter</kbd></kbd>.
 
 If git is installed, you will see the version installed, something similar to this:
 

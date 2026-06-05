@@ -31,7 +31,7 @@ You'll normally edit the HTML to make changes to pages, but the service name is 
 
 1. Open the `config.js` file in your `app` folder
 2. Change `serviceName` from `"Service name goes here"` to `"{{example.name}}"`
-3. Press <kbd>Cmd</kbd> + <kbd>S</kbd> on Mac or <kbd>Ctrl</kbd> + <kbd>S</kbd> on Windows to save your change
+3. Press <kbd><kbd>Command</kbd></kbd> + <kbd><kbd>S</kbd></kbd> on Mac or <kbd><kbd>Ctrl</kbd></kbd> + <kbd><kbd>S</kbd></kbd> on Windows to save your change
 
 You must save every time you make a change to a file. In most code editors, a dot appears in the tab for any file that has unsaved changes.
 

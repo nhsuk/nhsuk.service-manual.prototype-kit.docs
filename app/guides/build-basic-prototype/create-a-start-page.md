@@ -1,6 +1,9 @@
 ---
 title: Create a start page
 order: 3
+redirectFrom:
+ - /guides/build-basic-prototype/create-pages/
+ - /guides/build-basic-prototype/use-components/
 ---
 
 Create an empty file named <kbd>{{example.startPage.url}}.html</kbd> in your `app/views` folder.

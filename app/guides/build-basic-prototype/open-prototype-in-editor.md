@@ -16,7 +16,7 @@ In your code editor, open your prototype folder. You will see the files and fold
 Outside of a folder are some additional files:
 
 - `config.js` is used for configuring some settings
-- `filters.js` can be used to add your own helpful filters, but this is not covered in this tutorial
+- `filters.js` can be used to add your own helpful filters
 - `locals.js` can be used to set any information you’d like to be able to include on any page, for example the name of your organisation
 - `routes.js` is for advanced logic – for example, if a user should go to one page or another based on their answers (we'll cover this later)
 - `README.md` can be used to add any notes about your prototypes for yourself or others working on it

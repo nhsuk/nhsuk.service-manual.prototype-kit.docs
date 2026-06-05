@@ -2,7 +2,7 @@
 title: Create a question page
 order: 4
 redirectFrom:
- - /guides/build-basic-prototype/link-pages-together/
+ - /guides/build-basic-prototype/link-page-together/
 ---
 
 Create an empty file for your first question named <kbd>{{example.radios.url}}.html</kbd> in your `app/views` folder.

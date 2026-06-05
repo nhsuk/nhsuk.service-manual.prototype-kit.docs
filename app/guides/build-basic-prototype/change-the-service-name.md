@@ -15,4 +15,4 @@ To set your service name:
 
 You must save every time you make a change to a file. In most code editors, a dot indicator appears in the tab for any file that has unsaved changes.
 
-Normally your changes will automatically show in the browser without refreshing. But for this config change, you need to refresh the page. You should see your service name change on the Start page.
+Normally your changes will automatically show in the browser without refreshing. But for this config change, you need to refresh the page. You should see your service name change on the page.

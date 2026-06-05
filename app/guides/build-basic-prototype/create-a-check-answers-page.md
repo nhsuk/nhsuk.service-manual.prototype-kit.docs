@@ -138,8 +138,8 @@ Unlike the previous question pages, there is no Back link on the Check answers p
 
 Make the Change links on the page work by adding the right links.
 
-1. Find the row for `{{example.radios.summaryListKey}}`, then change the `href` value from `'#'` to `'/{{example.radios.url}}'`
-2. Find the row for `{{example.textarea.summaryListKey}}`, then change the `href` value from `'#'` to `'/{{example.textarea.url}}'`
+1. Find the row for `{{example.radios.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.radios.url}}"`
+2. Find the row for `{{example.textarea.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.textarea.url}}"`
 
 ### Link to check answers page from the last question
 

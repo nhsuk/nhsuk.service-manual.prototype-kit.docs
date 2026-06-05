@@ -27,4 +27,4 @@ To link to the confirmation page:
 2. Find the line `<form action="/form-handler" method="post" novalidate>`.
 3. Change the value of the `action` attribute from `/form-handler` to `/{{example.confirmation.url}}`.
 
-Click on the ‘Confirm and send’ button to check that it now works. It should take you the second question page.
+Click on the ‘Confirm and send’ button to check that it now works. It should take you the confirmation page.

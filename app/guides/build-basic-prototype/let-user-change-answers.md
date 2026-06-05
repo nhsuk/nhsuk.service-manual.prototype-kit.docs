@@ -3,13 +3,6 @@ title: Let the user change their answers
 order: 7
 ---
 
-## Make the 'Change' links work
-
-Make the **Change** links on the "{{example.checkAnswers.title}}" page work by adding the right links.
-
-1. Find the row for `{{example.radios.summaryListKey}}`, then change the `href` value from `'#'` to `'/{{example.radios.url}}'`
-2. Find the row for `{{example.textarea.summaryListKey}}`, then change the `href` value from `'#'` to `'/{{example.textarea.url}}'`
-
 If you select a **Change** link, you'll go back to the right question page, but the existing answer will not be pre-filled.
 
 ## Show the user's answer in question 1

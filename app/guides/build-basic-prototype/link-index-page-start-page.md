@@ -1,6 +1,6 @@
 ---
 title: Link your index page to your start page
-order: 9
+order: 10
 ---
 
 You can route users from your service's index page to your start page. The index page is the page that loads when users go to <http://localhost:3000>.

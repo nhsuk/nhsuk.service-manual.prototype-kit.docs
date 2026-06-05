@@ -1,6 +1,6 @@
 ---
 title: Show different pages depending on user input
-order: 8
+order: 9
 ---
 
 Our 1st question asks the user if they have had symptoms of magical powers in the last 30 days. We're going to send them to an 'ineligible' page if they answer anything other than yes. Sending users to different pages based on their input is called branching.

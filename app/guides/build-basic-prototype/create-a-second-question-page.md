@@ -58,7 +58,7 @@ Find the back link on this second question page and update the `href` to `/{{exa
 
 ### Make the continue button on the first question work
 
-You’ll notice that if you try clicking the Continue on the first question page, it will take you to a Page not found error page.
+You’ll notice that the continue button on the first question page takes you to a ‘Page not found’ error page.
 
 To make this button work, you will have to do something different from the button on the start page. That’s because this time it's a real HTML button, not a link. Buttons submit form data -- the URL is on the form tag, not the button.
 

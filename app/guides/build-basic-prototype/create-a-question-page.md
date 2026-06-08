@@ -78,7 +78,7 @@ The method used will depend on whether the page is submitting form data (radios,
 
 ### Make the back link work
 
-If you click the back link on your question page, you’ll notice that nothing happens.
+If you select the back link on your question page, you’ll notice that nothing happens.
 
 To make the back link work, you’ll need to tell it which page to go back to.
 

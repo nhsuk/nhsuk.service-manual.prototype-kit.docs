@@ -23,7 +23,7 @@ Outside of a folder are some additional files:
 
 ## Editing files
 
-In most code editors you can toggle folders open or closed, and click files to open them in a separate panel.
+In most code editors you can toggle folders open or closed, and select files to open them in a separate panel.
 
 You can have more than one file open at once in tabs, and close them when you are finished editing them.
 

@@ -1,13 +1,29 @@
 ---
-title: Show the user's answers
+title: Create a check answers page
 order: 6
 ---
+
+It’s helpful to let users check their answers before submitting them. To do this, we’ll add a check answers page.
+
+Create an empty file named <kbd>{{example.checkAnswers.url}}.html</kbd> in `app/views`.
+
+Add this line to the top of the file:
+
+```njk { .nhsuk-code--button }
+{% raw %}{% extends "layout.html" %}{% endraw %}
+```
+
+Copy the Nunjucks code from the [check answers pattern page](https://service-manual.nhs.uk/design-system/patterns/check-answers) and add it to the file.
+
+Go to <http://localhost:3000/{{example.checkAnswers.url}}> to check it works.
+
+## Show the user's answers
 
 The prototype kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check or to branch off to different pages depending on their answer.
 
 When storing data, the kit uses the `name` attribute from the component to save it. We'll use this when looking up the user's answer.
 
-## Show the answer to question 1
+### Show the answer to question 1
 
 1. Open `{{example.checkAnswers.url}}.html` in your `app/views` folder.
 2. In the first row, find the `key` that contains the text "NHS number".
@@ -20,7 +36,7 @@ In the same row, find the line with `visuallyHiddenText` and change 'NHS number'
 
 The link text will read as "Change {{example.radios.summaryListKey | lower }}" to screen reader users. Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear "Change" and not necessarily know what it relates to.
 
-## Show the answer to question 2
+### Show the answer to question 2
 
 1. In the second row, find the `key` that contains the text 'Name'.
 2. Change "Name" to "{{example.textarea.summaryListKey}}".
@@ -29,9 +45,9 @@ The link text will read as "Change {{example.radios.summaryListKey | lower }}" t
 
 Go to <http://localhost:3000/{{exampleStart.url}}> and answer the questions to check your answers show up correctly.
 
-## Delete the remaining example answers
+### Delete the remaining example answers
 
-On the "Check answers" template page, there are example answers that you do not need.
+In the code there are some example answers that you do not need.
 
 1. Find the `,` (comma) after the details you have changed, and delete this and everything up to the `]` (square bracket).
 2. Delete everything from the line that contains "Medical details" down to the line before "Now send your application".
@@ -109,3 +125,30 @@ Your code should now look like this:
   </div>
 </div>{% endraw %}
 ```
+
+You can edit the "Now send your application" heading and the content after it to make it more suitable for this service.
+
+## Link up the pages
+
+As before, you’ll need to link up this page with previous pages.
+
+### Make the 'Change' links work
+
+Unlike the previous question pages, there is no back link on the check answers pattern as instead users can go back to any previous question page using the change links in the summary.
+
+Make the change links on the page work by adding the right links.
+
+1. Find the row for `{{example.radios.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.radios.url}}"`
+2. Find the row for `{{example.textarea.summaryListKey}}`, then change the `href` value from `"#"` to `"/{{example.textarea.url}}"`
+
+### Link to check answers page from the last question
+
+We also need to link the last question page to the check answers page.
+
+To do this:
+
+1. Open `{{example.textarea.url}}.html` in your `app/views` folder.
+2. Find the line `<form action="/form-handler" method="post" novalidate>`.
+3. Change the value of the `action` attribute from `/form-handler` to `/{{example.checkAnswers.url}}`.
+
+Click on the continue button to check that it now works. It should take you the second question page.

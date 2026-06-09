@@ -1,6 +1,6 @@
 ---
 title: Show different pages depending on user input
-order: 8
+order: 9
 ---
 
 Our 1st question asks the user if they have had symptoms of magical powers in the last 30 days. We're going to send them to an 'ineligible' page if they answer anything other than yes. Sending users to different pages based on their input is called branching.
@@ -43,31 +43,31 @@ Currently, the `{{example.radios.url}}` page sends the user directly to question
 2. Open `/app/routes.js`.
 3. Insert new JavaScript into line 5, before `module.exports = router`.
 
-   ```js { .nhsuk-code--button }
-   // Run this code when a form submitted to '/{{example.radios.url}}-answer'
-   router.post('/{{example.radios.url}}-answer', function (req, res) {
+```js { .nhsuk-code--button }
+// Run this code when the form is submitted
+router.post('/{{example.radios.url}}-answer', function (req, res) {
 
-     // Make a variable and give it the value from 'hasSymptoms'
-     const hasSymptoms = req.session.data.hasSymptoms
+ // Make a variable and give it the value from 'hasSymptoms'
+ const hasSymptoms = req.session.data.hasSymptoms
 
-     // Check whether the variable matches a condition
-     if (hasSymptoms === "Yes") {
+ // Check whether the variable matches a condition
+ if (hasSymptoms === "Yes") {
 
-       // Send user to next page
-       res.redirect('/{{example.textarea.url}}')
-     }
-     else if (hasSymptoms === "No" || hasSymptoms === "Not sure") {
+   // Send user to next page
+   res.redirect('/{{example.textarea.url}}')
+ }
+ else if (hasSymptoms === "No" || hasSymptoms === "Not sure") {
 
-       // Send user to ineligible page
-       res.redirect('/{{example.ineligible.url}}')
-     }
-     else {
+   // Send user to ineligible page
+   res.redirect('/{{example.ineligible.url}}')
+ }
+ else {
 
-       // No answer, return to question
-       res.redirect('/{{example.radios.url}}')
-     }
-   })
-   ```
+   // No answer, return to question
+   res.redirect('/{{example.radios.url}}')
+ }
+})
+```
 
 4. Check it works. Selecting 'Yes' should send you to the next question. Selecting 'No' or 'Not sure' should send you to the ineligible page. If the question isn't answered, you should be sent back to the question.
 

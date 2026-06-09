@@ -6,6 +6,6 @@ order: 10
 You can route users from your service's index page to your start page. The index page is the page that loads when users go to <http://localhost:3000>.
 
 1. Open the `index.html` file in your `app/views` folder.
-2. Add an `<a>` tag that links to `/{{example.url}}`.
+2. Add an `<a>` tag that links to `/{{example.startPage.url}}`.
 
 You can now find out how to [publish your prototype online](/guides/publish-your-prototype-online), so you can share it with your team or do user research.

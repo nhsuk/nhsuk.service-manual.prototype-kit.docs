@@ -32,7 +32,7 @@
     "@x-govuk/eslint-config": "^0.0.1",
     "prettier": "^3.8.4",
     "stylelint": "^16.26.1",
-    "stylelint-config-gds": "^2.0.0"
+    "stylelint-config-gds": "^3.0.0"
   },
   "engines": {
     "node": "^24.11.0",

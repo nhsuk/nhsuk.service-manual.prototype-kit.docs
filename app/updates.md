@@ -5,6 +5,11 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.4.0 - 14 August 2026
+
+- Update to use [NHS.UK frontend 10.6](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.6.0)
+- Dependency updates including security fixes
+
 ## 8.3.0 - 4 June 2026
 
 - Update to use [NHS.UK frontend 10.5](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.5.1) and the new `template-with-imports.njk` template

@@ -16,4 +16,4 @@ The course is run regularly and is open to anyone who works for the NHS, includi
 
 Priority is given to NHS England employees.
 
-[Find upcoming courses and register for a place on EventBrite](https://www.eventbrite.co.uk/o/121524534432)
+[Find upcoming courses and register for a place on Eventbrite](https://www.eventbrite.co.uk/o/121524534432)

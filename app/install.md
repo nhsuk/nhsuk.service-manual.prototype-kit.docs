@@ -14,6 +14,8 @@ groups:
     items: collections.install-cloud
     clickable: true
     columns: 3
+redirectFrom:
+  - /install/simple/
 ---
 
 Before you start using the kit, you'll need some basic knowledge of HTML. You can learn this at [MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started), [Codecademy](https://www.codecademy.com/learn/learn-html-fundamentals) or other tutorial websites.

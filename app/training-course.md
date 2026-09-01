@@ -16,6 +16,4 @@ The course is run regularly and is open to anyone who works for the NHS, includi
 
 Priority is given to NHS England employees.
 
-[Register your interest in attending the course](https://forms.office.com/pages/responsepage.aspx?id=slTDN7CF9UeyIge0jXdO4yDQZMYZ1-lDqfmR_EKWYuRURDhHMktOSkk5VUFGUVJDOVk1UkFLRUxRTS4u&route=shorturl)
-
-We will contact you when a place becomes available.
+[Find upcoming courses and register for a place on EventBrite](https://www.eventbrite.co.uk/o/121524534432)

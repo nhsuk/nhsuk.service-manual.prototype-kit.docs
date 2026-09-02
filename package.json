@@ -29,7 +29,7 @@
     "@x-govuk/nhsuk-eleventy-plugin": "^1.2.1"
   },
   "devDependencies": {
-    "@x-govuk/eslint-config": "^0.0.1",
+    "@x-govuk/eslint-config": "^0.0.3",
     "prettier": "^3.8.4",
     "stylelint": "^16.26.1",
     "stylelint-config-gds": "^2.0.0"

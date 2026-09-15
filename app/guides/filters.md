@@ -131,7 +131,7 @@ Use this to format times according to the [NHS style guide for times](https://se
 
 This can be used with times entered using separate `hour` and `minute` inputs. If your input is this:
 
-```njk
+```njk { .nhsuk-code--button }
 {% raw %}{% call fieldset({
   legend: {
     text: "When will the appointment start?",
@@ -170,7 +170,7 @@ Displays as:
 ```html
 {% raw %}5pm
 5:30pm
-mighnight
+midnight
 midday
 {% endraw %}
 ```
@@ -181,13 +181,36 @@ If you need to, you can choose to always include the minutes, even when the time
 {% raw %}{{ data.startTime | formatTime({ includeMinutesOnTheHour: true }) }}{% endraw %}
 ```
 
-You can also choose to not use "midday" and "midnight", for example for consistency in a staff-facing service listing appointment times:
+You can also choose to not use ‘midday’ and ‘midnight’, for example for consistency in a staff-facing service listing appointment times:
 
 ```njk
 {% raw %}{{ data.startTime | formatTime({ useMiddayMidnight: false }) }}{% endraw %}
 ```
 
 The filter will also work with times that are in a string format, either as `HH:MM` or a full ISO 8601 datetime format like `YYYY-MM-DDTHH:MM`.
+
+If your time includes a time zone offset like `Z` (meaning UTC) or `+HH:MM`, then the time will be translated into the UK timezone by default.
+
+This means that a UTC time during the summer months like:
+
+```njk
+{% raw %}{{ "2026-07-31T10:30Z" | formatTime }}{% endraw %}
+```
+
+will display correctly in UK daylight savings time as:
+
+```
+11:30am
+```
+
+If you need to display times in a different time zone, you can set the `TZ` environment variable to a different time zone, such as `Atlantic/Bermuda`.
+
+Alternatively you can set the `timeZone` option:
+
+```
+{% raw %}{% set startsAt = "2026-07-31T23:30Z" %}
+{{ startsAt | formatDate({ timeZone: "Atlantic/Bermuda" }) }}{% endraw %}
+```
 
 ### formatTime24Hour
 

@@ -156,7 +156,7 @@ This can be used with times entered using separate `hour` and `minute` inputs. I
       width: 2
     }) }}
   </div>
-{% endcall %}{% endraw %}  
+{% endcall %}{% endraw %}
 ```
 
 Then you can use this to display the time, for example in a check answers page:

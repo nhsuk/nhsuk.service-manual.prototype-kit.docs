@@ -47,7 +47,19 @@ These are custom filters developed for the NHS prototype kit.
 
 Use this to format a date according to the [NHS style guide for dates](https://service-manual.nhs.uk/content/numbers-measurements-dates-time#dates), which includes the name of the month.
 
-This can be used for dates entered using the `dateInput` component. If your date input is this:
+For example:
+
+```njk
+{% raw %}{{ data.dateOfBirth | formatDate }}{% endraw %}
+```
+
+Displays as:
+
+```
+7 February 1984
+```
+
+This can be used for dates entered using the `dateInput` component, like this:
 
 ```njk
 {% raw %}{{ dateInput({
@@ -61,17 +73,7 @@ This can be used for dates entered using the `dateInput` component. If your date
 }) }}{% endraw %}
 ```
 
-Then you can use this to display the date, for example in a check answers page:
-
-```njk
-{% raw %}{{ data.dateOfBirth | formatDate }}{% endraw %}
-```
-
-Displays as:
-
-```
-7 February 1984
-```
+#### Including day of the week
 
 You can also include the day of the week, for example if the date relates to an appointment.
 
@@ -124,6 +126,120 @@ Displays as:
 ```html
 {% raw %}<p>Postcode: SW1A 1AA.</p>{% endraw %}
 ```
+
+### formatTime
+
+Use this to format times according to the [NHS style guide for times](https://service-manual.nhs.uk/content/numbers-measurements-dates-time#time), which uses the 12 hour clock, and displays 'midday' or 'midnight' at those exact times to avoid confusion.
+
+For example:
+
+```njk
+{% raw %}{{ data.startTime | formatTime }}{% endraw %}
+```
+
+Will display using these formats:
+
+```html
+{% raw %}5pm
+5:30pm
+midnight
+midday{% endraw %}
+```
+
+This can be used with times entered by the user using separate `hour` and `minute` inputs, like this:
+
+```njk { .nhsuk-code--button }
+{% raw %}{% call fieldset({
+  legend: {
+    text: "When will the appointment start?",
+    size: "m"
+  }
+  }) %}
+
+  <div class="nhsuk-form-group nhsuk-form-group--inline">
+    {{ input({
+      name: "startTime[hour]",
+      label: {
+        text: "Hour"
+      },
+      width: 2
+    }) }}
+
+    {{ input({
+      name: "startTime[minute]",
+      label: {
+        text: "Minute"
+      },
+      width: 2
+    }) }}
+  </div>
+{% endcall %}{% endraw %}
+```
+
+#### Including minutes on the hour
+
+If you need to, you can choose to always include the minutes, even when the time is on-the-hour:
+
+```
+{% raw %}{{ data.startTime | formatTime({ includeMinutesOnTheHour: true }) }}{% endraw %}
+```
+
+Displays as:
+
+```
+5:00pm
+```
+
+#### Using numbers for midday and midnight
+
+You can also choose to not use ‘midday’ and ‘midnight’, for example for consistency in a staff-facing service listing appointment times:
+
+```njk
+{% raw %}{{ data.startTime | formatTime({ useMiddayMidnight: false }) }}{% endraw %}
+```
+
+Displays as:
+
+```
+12:00am
+```
+
+#### Using ISO 8601 string format and time zones
+
+The filter will also work with times that are in a string format, either as `HH:MM` or a full ISO 8601 datetime format like `YYYY-MM-DDTHH:MM`.
+
+If your time includes a time zone offset like `Z` (meaning UTC) or `+HH:MM`, then the time will be translated into the UK timezone by default.
+
+This means that a UTC time during the summer months like:
+
+```njk
+{% raw %}{{ "2026-07-31T10:30Z" | formatTime }}{% endraw %}
+```
+
+will display correctly in UK daylight savings time as:
+
+```
+11:30am
+```
+
+If you need to display times in a different time zone, you can set the `TZ` [environment variable](/guides/publish-your-prototype-online/#using-environment-variables) to a different time zone, such as `Atlantic/Bermuda`.
+
+Alternatively you can set the `timeZone` option:
+
+```
+{% raw %}{% set startsAt = "2026-07-31T23:30Z" %}
+{{ startsAt | formatDate({ timeZone: "Atlantic/Bermuda" }) }}{% endraw %}
+```
+
+### formatTime24Hour
+
+This filter formats times using the 24 hour clock. Only use this within staff-facing services.
+
+```
+{% raw %}{{ data.startTime | formatTime24Hour }}{% endraw %}
+```
+
+The filter will also work with times that are in a string format, either as `HH:MM` or a full ISO 8601 datetime format like `YYYY-MM-DDTHH:MM`.
 
 ## Text filters
 

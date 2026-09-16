@@ -5,6 +5,13 @@ description: Changes made in each major and minor version.
 redirectFrom: whats-new/updates
 ---
 
+## 8.5.0 - 16 September 2026
+
+- Add a [filter for formatting times](/guides/filters/#format-time), including a 24 hour clock version
+- Update the [date formatting filter](/guides/filters/#format-date) to allow it to format full ISO 8601 datetime strings, with an new `timeZone` option for translating the date into a local time zone
+- Update to use [NHS.UK frontend 10.6.1](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.6.1)
+- Dependency updates including security fixes
+
 ## 8.4.0 - 14 August 2026
 
 - Update to use [NHS.UK frontend 10.6](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.6.0)

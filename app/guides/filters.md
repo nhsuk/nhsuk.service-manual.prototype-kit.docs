@@ -47,7 +47,19 @@ These are custom filters developed for the NHS prototype kit.
 
 Use this to format a date according to the [NHS style guide for dates](https://service-manual.nhs.uk/content/numbers-measurements-dates-time#dates), which includes the name of the month.
 
-This can be used for dates entered using the `dateInput` component. If your date input is this:
+For example:
+
+```njk
+{% raw %}{{ data.dateOfBirth | formatDate }}{% endraw %}
+```
+
+Displays as:
+
+```
+7 February 1984
+```
+
+This can be used for dates entered using the `dateInput` component, like this:
 
 ```njk
 {% raw %}{{ dateInput({
@@ -59,18 +71,6 @@ This can be used for dates entered using the `dateInput` component. If your date
     }
   }
 }) }}{% endraw %}
-```
-
-Then you can use this to display the date, for example in a check answers page:
-
-```njk
-{% raw %}{{ data.dateOfBirth | formatDate }}{% endraw %}
-```
-
-Displays as:
-
-```
-7 February 1984
 ```
 
 You can also include the day of the week, for example if the date relates to an appointment.
@@ -129,7 +129,22 @@ Displays as:
 
 Use this to format times according to the [NHS style guide for times](https://service-manual.nhs.uk/content/numbers-measurements-dates-time#time), which uses the 12 hour clock, and displays 'midday' or 'midnight' at those exact times to avoid confusion.
 
-This can be used with times entered using separate `hour` and `minute` inputs. If your input is this:
+For example:
+
+```njk
+{% raw %}{{ data.startTime | formatTime }}{% endraw %}
+```
+
+Will display using these formats:
+
+```html
+{% raw %}5pm
+5:30pm
+midnight
+midday{% endraw %}
+```
+
+This can be used with times entered by the user using separate `hour` and `minute` inputs, like this:
 
 ```njk { .nhsuk-code--button }
 {% raw %}{% call fieldset({
@@ -157,21 +172,6 @@ This can be used with times entered using separate `hour` and `minute` inputs. I
     }) }}
   </div>
 {% endcall %}{% endraw %}
-```
-
-Then you can use this to display the time, for example in a check answers page:
-
-```njk
-{% raw %}{{ data.startTime | formatTime }}{% endraw %}
-```
-
-Will display using these formats:
-
-```html
-{% raw %}5pm
-5:30pm
-midnight
-midday{% endraw %}
 ```
 
 #### Including minutes on the hour

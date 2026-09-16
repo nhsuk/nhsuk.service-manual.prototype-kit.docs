@@ -73,6 +73,8 @@ This can be used for dates entered using the `dateInput` component, like this:
 }) }}{% endraw %}
 ```
 
+#### Including day of the week
+
 You can also include the day of the week, for example if the date relates to an appointment.
 
 For example:

@@ -18,7 +18,7 @@ Preview the page by visiting <http://localhost:3000/{{example.textarea.url}}> in
 Our `{{example.textarea.url}}.html` page is going to have a textarea component to collect details of the users symptoms.
 
 1. Go to the [textarea page of the design system](https://service-manual.nhs.uk/design-system/components/textarea).
-2. Select the <kbd><samp>Nunjucks</samp></kbd> tab under the 'Radios with hints' example, then <kbd><samp>Copy code</samp></kbd>.
+2. Select the <kbd><samp>Nunjucks</samp></kbd> tab under the 'default' example, then <kbd><samp>Copy code</samp></kbd>.
 3. Open `{{example.textarea.url}}.html` in your `app/views` folder.
 4. Paste the component inside the `<form>` tag, before the continue button.
 

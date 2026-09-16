@@ -175,17 +175,35 @@ midday
 {% endraw %}
 ```
 
+#### Including minutes on the hour
+
 If you need to, you can choose to always include the minutes, even when the time is on-the-hour:
 
 ```
 {% raw %}{{ data.startTime | formatTime({ includeMinutesOnTheHour: true }) }}{% endraw %}
 ```
 
+Displays as:
+
+```
+5:00pm
+```
+
+#### Using numbers for midday and midnight
+
 You can also choose to not use ‘midday’ and ‘midnight’, for example for consistency in a staff-facing service listing appointment times:
 
 ```njk
 {% raw %}{{ data.startTime | formatTime({ useMiddayMidnight: false }) }}{% endraw %}
 ```
+
+Displays as:
+
+```
+12:00am
+```
+
+#### Using ISO 8601 string format and time zones
 
 The filter will also work with times that are in a string format, either as `HH:MM` or a full ISO 8601 datetime format like `YYYY-MM-DDTHH:MM`.
 

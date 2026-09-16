@@ -165,14 +165,13 @@ Then you can use this to display the time, for example in a check answers page:
 {% raw %}{{ data.startTime | formatTime }}{% endraw %}
 ```
 
-Displays as:
+Will display using these formats:
 
 ```html
 {% raw %}5pm
 5:30pm
 midnight
-midday
-{% endraw %}
+midday{% endraw %}
 ```
 
 #### Including minutes on the hour

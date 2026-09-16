@@ -12,7 +12,6 @@ redirectFrom: whats-new/updates
 - Update to use [NHS.UK frontend 10.6.1](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.6.1)
 - Dependency updates including security fixes
 
-
 ## 8.4.0 - 14 August 2026
 
 - Update to use [NHS.UK frontend 10.6](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.6.0)

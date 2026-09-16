@@ -220,7 +220,7 @@ will display correctly in UK daylight savings time as:
 11:30am
 ```
 
-If you need to display times in a different time zone, you can set the `TZ` environment variable to a different time zone, such as `Atlantic/Bermuda`.
+If you need to display times in a different time zone, you can set the `TZ` [environment variable](/guides/publish-your-prototype-online/#using-environment-variables) to a different time zone, such as `Atlantic/Bermuda`.
 
 Alternatively you can set the `timeZone` option:
 

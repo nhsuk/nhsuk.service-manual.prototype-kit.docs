@@ -2,6 +2,7 @@
   "name": "nhsuk-prototype-kit",
   "description": "Website and documentation for the NHS prototype kit.",
   "homepage": "https://prototype-kit.service-manual.nhs.uk",
+  "private": true,
   "scripts": {
     "build": "eleventy",
     "lint:prettier": "prettier . --check",
@@ -29,7 +30,7 @@
     "@x-govuk/nhsuk-eleventy-plugin": "^1.2.1"
   },
   "devDependencies": {
-    "@x-govuk/eslint-config": "^0.0.1",
+    "@x-govuk/eslint-config": "^0.0.3",
     "prettier": "^3.9.6",
     "stylelint": "^16.26.1",
     "stylelint-config-gds": "^2.0.0"

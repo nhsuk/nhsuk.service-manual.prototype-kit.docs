@@ -2,6 +2,7 @@
   "name": "nhsuk-prototype-kit",
   "description": "Website and documentation for the NHS prototype kit.",
   "homepage": "https://prototype-kit.service-manual.nhs.uk",
+  "private": true,
   "scripts": {
     "build": "eleventy",
     "lint:prettier": "prettier . --check",

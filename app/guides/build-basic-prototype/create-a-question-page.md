@@ -24,11 +24,15 @@ The example includes a default radio question 'Where do you live?' with 4 possib
 ### Customise the example code
 
 1. Delete these lines: `{% raw %}{% from "back-link/macro.njk" import backLink %}
-{% from "button/macro.njk" import button %}
-{% from "radios/macro.njk" import radios %}{% endraw %}` (they not needed in the prototype kit).
+   {% from "button/macro.njk" import button %}
+   {% from "radios/macro.njk" import radios %}{% endraw %}` (they not needed in the prototype kit).
+
 2. Under `legend`, change `text` from `Where do you live?` to `{{example.radios.legend}}`.
-3. Change `name` to `hasSymptoms`
+
+3. Change `name` to `hasSymptoms`.
+
 4. Update the first 3 radio options to be ‘Yes’, ‘No’ and ‘Not sure’. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted and it's what will be used when we display the data. It's often easiest if these match. The 4th radio option is not needed, so you’ll need to delete it. You’ll also need to remember to delete the comma after the 3rd radio option, as it’s now the last one.
+
 5. Add some hint text by adding `hint: { text: "For example, things moving when you have strong feelings or hearing someone's thoughts"}` to the component.
 
 Your component code should now look something like this:

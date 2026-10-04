@@ -29,7 +29,7 @@ The example includes a default radio question 'Where do you live?' with 4 possib
 
 2. Under `legend`, change `text` from `Where do you live?` to `{{example.radios.legend}}`.
 
-3. Change `name` to `hasSymptoms`
+3. Change `name` to `hasSymptoms`.
 
 4. Update the first 3 radio options to be ‘Yes’, ‘No’ and ‘Not sure’. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted and it's what will be used when we display the data. It's often easiest if these match. The 4th radio option is not needed, so you’ll need to delete it. You’ll also need to remember to delete the comma after the 3rd radio option, as it’s now the last one.
 

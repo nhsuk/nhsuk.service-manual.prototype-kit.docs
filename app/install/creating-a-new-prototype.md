@@ -11,7 +11,10 @@ tags:
 
 You will first need to create a free GitHub account if you do not already one, and sign in.
 
-Then visit the [NHS prototype kit on GitHub](https://github.com/nhsuk/nhsuk-prototype-kit), click the ‘Use this template’ button and select ‘Create a new repository’:
+Then visit the [NHS prototype kit template on GitHub](https://github.com/nhsuk/nhsuk-prototype-kit), click the ‘Use this template’ button and select ‘Create a new repository’.
+
+> [!NOTE]
+> If you are creating a prototype for the NHS App, use the [NHS App prototype template on GitHub](https://github.com/NHSDigital/nhsuk-prototype-kit-app) instead.
 
 ![Screenshot showing a page on the GitHub.com website with the title ‘nhsuk-prototype-kit’. There are 2 green buttons on the page, one is labelled ‘Use this template’ and is circled in red, the other is labelled ‘Code’ and is not circled.](/assets/images/install/creating-a-new-prototype/use-this-template.png)
 

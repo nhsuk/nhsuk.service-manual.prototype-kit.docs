@@ -23,19 +23,18 @@ The example includes a default radio question 'Where do you live?' with 4 possib
 
 ### Customise the example code
 
-1. Delete `{% raw %}{% from "radios/macro.njk" import radios %}{% endraw %}`. These import lines are not needed in the prototype kit.
-2. Change `name` to `hasSymptoms`
-3. Change the `idPrefix` to `has-symptoms`.
-4. Under `legend`, change `text` from `Do you know your NHS number?` to `{{example.radios.legend}}`.
-5. In the `hint: { text:` area replace the hint with `{{example.radios.hint}}`.
-6. Update each of the radio options so the text is appropriate. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted. It's what will be used when we display the data. It's often easiest if these match.
+1. Delete these lines: `{% raw %}{% from "back-link/macro.njk" import backLink %}
+{% from "button/macro.njk" import button %}
+{% from "radios/macro.njk" import radios %}{% endraw %}` (they not needed in the prototype kit).
+2. Under `legend`, change `text` from `Where do you live?` to `{{example.radios.legend}}`.
+3. Change `name` to `hasSymptoms`
+4. Update the first 3 radio options to be ‘Yes’, ‘No’ and ‘Not sure’. The `text` is what is used as the radio label. The `value` is what is sent to the server when the form is submitted and it's what will be used when we display the data. It's often easiest if these match. The 4th radio option is not needed, so you’ll need to delete it. You’ll also need to remember to delete the comma after the 3rd radio option, as it’s now the last one.
+5. Add some hint text by adding `hint: { text: "For example, things moving when you have strong feelings or hearing someone's thoughts"}` to the component.
 
-Your component code should now look like this:
+Your component code should now look something like this:
 
 ```njk { .nhsuk-code--button }
 {% raw %}{{ radios({
-  idPrefix: "has-symptoms",
-  name: "hasSymptoms",
   fieldset: {
     legend: {
       text: "Have you felt symptoms of magical powers in the last 30 days?",
@@ -43,23 +42,24 @@ Your component code should now look like this:
       isPageHeading: true
     }
   },
+  name: "hasSymptoms",
   hint: {
     text: "For example, things moving when you have strong feelings or hearing someone's thoughts"
   },
   items: [
-  {
-    value: "Yes",
-    text: "Yes"
-  },
-  {
-    value: "No",
-    text: "No"
-  },
-  {
-    value: "Not sure",
-    text: "I'm not sure"
-  }
-]
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    },
+    {
+      value: "Not sure",
+      text: "I'm not sure"
+    }
+  ]
 }) }}{% endraw %}
 ```
 

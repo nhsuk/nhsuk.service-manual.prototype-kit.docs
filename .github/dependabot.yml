@@ -4,7 +4,27 @@ updates:
     directory: '/'
     schedule:
       interval: 'daily'
+    cooldown:
+      default-days: 7
+    groups:
+      # All our workflows only use actions/* so one group covers everything
+      actions:
+        patterns:
+          - '*'
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'daily'
+    cooldown:
+      default-days: 7
+    groups:
+      build:
+        patterns:
+          - '@11ty/*'
+          - '@x-govuk/nhsuk-eleventy-plugin'
+      lint:
+        patterns:
+          - '@x-govuk/eslint-config'
+          - 'prettier'
+          - 'stylelint'
+          - 'stylelint-config-gds'

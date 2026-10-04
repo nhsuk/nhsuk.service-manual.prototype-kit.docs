@@ -18,33 +18,32 @@ Preview the page by visiting <http://localhost:3000/{{example.textarea.url}}> in
 Our `{{example.textarea.url}}.html` page is going to have a textarea component to collect details of the users symptoms.
 
 1. Go to the [textarea page of the design system](https://service-manual.nhs.uk/design-system/components/textarea).
-2. Select the <kbd><samp>Nunjucks</samp></kbd> tab under the 'Radios with hints' example, then <kbd><samp>Copy code</samp></kbd>.
+2. Select the ‘Nunjucks’ tab under the first example, then copy the code.
 3. Open `{{example.textarea.url}}.html` in your `app/views` folder.
 4. Paste the component inside the `<form>` tag, before the continue button.
 
 ### Customise the example code
 
 1. Delete `{% raw %}{% from "textarea/macro.njk" import textarea %}{% endraw %}`. These import lines are not needed in the prototype kit.
-2. Under `label`, change `text` from "Can you provide more detail?" to "{{example.textarea.label}}".
+2. Under `label`, change `text` from "Can you provide more detail about how you move about (your mobility)?" to "{{example.textarea.label}}".
 3. Change the `id` and `name` to `{{example.textarea.name}}`.
-4. We don't need a hint, so remove it and the comma just before it.
-5. We also want to make the label be the page `h1`, so in the `label` area add `size: "l",` and `isPageHeading: true`
+4. Rewrite the hint text to something appropriate for the question, or remove it
 
-Your component code should now look like this:
+Your component code should now look something like this:
 
 ```njk { .nhsuk-code--button }
 {% raw %}{{ textarea({
-  name: "details",
-  id: "details",
   label: {
     text: "Tell us your symptoms of magical powers",
     size: "l",
     isPageHeading: true
-  }
+  },
+  id: "details",
+  name: "details"
 }) }}{% endraw %}
 ```
 
-Your page should now look like this:
+Your page should now look something like this:
 
 ![Web page with the heading ‘Tell us your symptoms of magical powers’, a textarea and continue button.](/assets/images/guides/build-basic-prototype/textarea.png 'Screenshot of how your prototype should look.')
 

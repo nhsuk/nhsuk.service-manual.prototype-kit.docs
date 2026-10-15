@@ -1,7 +1,7 @@
 ---
 title: Passing data page to page
 description: The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.
-order: 6
+order: 8
 tags:
   - general
 ---

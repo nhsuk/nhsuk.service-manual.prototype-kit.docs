@@ -1,7 +1,7 @@
 ---
 title: Displaying error messages
 description: Why to avoid adding validation errors in prototypes.
-order: 10
+order: 11
 tags:
   - general
 ---

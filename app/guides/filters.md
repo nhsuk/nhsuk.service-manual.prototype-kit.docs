@@ -1,7 +1,7 @@
 ---
 title: Filters
 description: Filters are a Nunjucks feature that you can use within your page templates.
-order: 4
+order: 7
 tags:
   - general
 ---

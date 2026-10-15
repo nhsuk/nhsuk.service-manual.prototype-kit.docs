@@ -1,7 +1,7 @@
 ---
 title: Using components
 description: Components are reusable parts of the user interface, like buttons, text inputs and checkboxes.
-order: 5
+order: 3
 tags:
   - general
 ---

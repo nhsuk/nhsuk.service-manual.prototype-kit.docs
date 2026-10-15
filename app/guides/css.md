@@ -8,7 +8,7 @@ tags:
 
 Cascading style sheets (CSS) are used to style web content, for example setting text sizes, colours or spacing.
 
-The prototype kit comes with the standard styles from NHS frontend. 
+The prototype kit comes with the standard styles from NHS frontend.
 
 However, if you need to modify existing styles or add new ones, you can do so by adding your own CSS.
 
@@ -62,4 +62,3 @@ Styles can also be added to individual page templates by using a `<style>` tag:
 </style>
 {% endblock%}{% endraw %}
 ```
-

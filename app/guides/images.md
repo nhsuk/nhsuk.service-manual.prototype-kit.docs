@@ -36,4 +36,3 @@ For example:
 Available in
 <img src="/assets/images/bsl.png" alt="British Sign Language">
 ```
-

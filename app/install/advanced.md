@@ -27,14 +27,14 @@ This will install all required dependencies, including Express and NHS frontend.
 To use the kit, you will then to create an `app.js` file like this:
 
 ```js
-const NHSPrototypeKit = require('nhsuk-prototype-kit')
+import NHSPrototypeKit from 'nhsuk-prototype-kit'
 
 // Local dependencies
-const config = require('./app/config')
-const sessionDataDefaults = require('./app/data/session-data-defaults')
-const filters = require('./app/filters')
-const locals = require('./app/locals')
-const routes = require('./app/routes')
+import config from './app/config.js'
+import sessionDataDefaults from './app/data/session-data-defaults.js'
+import filters from './app/filters.js'
+import locals from './app/locals.js'
+import routes from './app/routes.js'
 
 const viewsPath = [
   'app/views/'
@@ -45,23 +45,19 @@ const entryPoints = [
   'app/assets/javascript/*.js'
 ]
 
-async function init() {
-  const prototype = await NHSPrototypeKit.init({
-    serviceName: config.serviceName,
-    buildOptions: {
-      entryPoints
-    },
-    viewsPath,
-    routes,
-    locals,
-    filters,
-    sessionDataDefaults
-  })
+const prototype = await NHSPrototypeKit.init({
+  serviceName: config.serviceName,
+  buildOptions: {
+    entryPoints
+  },
+  viewsPath,
+  routes,
+  locals,
+  filters,
+  sessionDataDefaults
+})
 
-  prototype.start(config.port)
-}
-
-init()
+prototype.start(config.port)
 ```
 
 ## Run the kit

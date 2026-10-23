@@ -65,7 +65,7 @@ Delete these folders:
 Delete these files:
 
 - `gulpfile.js`
-- `app/assets/javascript/auto-store-data.js` (if present)
+- `app/javascripts/auto-store-data.js` (if present)
 - `.babelrc`
 - `.browserslistrc`
 - `.prettierignore`
@@ -151,8 +151,8 @@ const viewsPath = [
 ]
 
 const entryPoints = [
-  'app/assets/sass/main.scss',
-  'app/assets/javascript/*.js'
+  'app/stylesheets/main.scss',
+  'app/javascripts/*.js'
 ]
 
 const prototype = await NHSPrototypeKit.init({
@@ -207,8 +207,8 @@ In that file, update the lines which references `block head` to this:
 
 ```njk { .nhsuk-code--button }
 {% block head %}
-  <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/assets/sass/main.css" rel="stylesheet">
+  <!-- Add your custom CSS or Sass in /app/stylesheets/main.scss -->
+  <link href="/stylesheets/main.css" rel="stylesheet">
 {% endblock %}
 ```
 
@@ -221,7 +221,7 @@ Update the section which references `block bodyEnd` to this:
 ```njk { .nhsuk-code--button }
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/main.js"></script>
+  <script type="module" src="/javascripts/main.js"></script>
   {% block pageScripts %}{% endblock %}
 {% endblock %}
 ```
@@ -235,12 +235,12 @@ If you have previously edited `app/views/includes/scripts.html` to add custom sc
 ```njk { .nhsuk-code--button }
 {% block bodyEnd %}
   {{ super() }}
-  <script type="module" src="/assets/javascript/main.js"></script>
+  <script type="module" src="/javascripts/main.js"></script>
 
   <!-- Add any custom scripts -->
-  <script type="module" src="/assets/javascript/custom-file-1.js"></script>
-  <script type="module" src="/assets/javascript/custom-file-2.js"></script>
-  <script type="module" src="/assets/javascript/custom-file-3.js"></script>
+  <script type="module" src="/javascripts/custom-file-1.js"></script>
+  <script type="module" src="/javascripts/custom-file-2.js"></script>
+  <script type="module" src="/javascripts/custom-file-3.js"></script>
   {% block pageScripts %}{% endblock %}
 {% endblock %}
 ```

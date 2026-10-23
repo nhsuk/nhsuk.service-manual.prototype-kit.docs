@@ -8,6 +8,6 @@ tags:
 
 You can use JavaScript to make changes to a web page without loading a new one. For example, a user could enter some numbers, then JavaScript displays the results of a calculation without loading a new page.
 
-Add your JavaScript to the file at `app/assets/javascript/main.js`.
+Add your JavaScript to the file at `app/javascripts/main.js`.
 
-Do not edit the file at `public/assets/javascript/main.js` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not edit the file at `public/javascripts/main.js` because it’s deleted and rebuilt every time you make a change to your prototype.

@@ -24,7 +24,9 @@ For example, to make all your second level headings pink:
 
 ```scss
 // Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+@use "nhsuk-frontend/dist/nhsuk" as * with (
+  $nhsuk-assets-path: "/nhsuk-frontend/assets/"
+);
 
 // Add your custom CSS/Sass styles below.
 
@@ -40,13 +42,13 @@ If you have a very long `main.scss` file, you can split it up into multiple file
 Import this file into your `main.scss` file without the underscore:
 
 ```scss
-$nhsuk-assets-path: "/nhsuk-frontend/assets/";
-
 // Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+@use "nhsuk-frontend/dist/nhsuk" as * with (
+  $nhsuk-assets-path: "/nhsuk-frontend/assets/"
+);
 
 // Add your custom CSS/Sass styles below.
-@import "admin";
+@forward "admin";
 ```
 
 ## Adding CSS to individual pages

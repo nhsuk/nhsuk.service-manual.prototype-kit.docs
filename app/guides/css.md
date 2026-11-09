@@ -39,7 +39,7 @@ h2 {
 
 If you have a very long `main.scss` file, you can split it up into multiple files and include them in `main.scss` using `@forward`.
 
-Use an underscore (`_`) at the start of the import file filenames, for example, `_admin.scss`.
+Use an underscore (`_`) at the start of the filenames, for example, `_admin.scss`.
 
 Import this file into your `main.scss` file without the underscore:
 

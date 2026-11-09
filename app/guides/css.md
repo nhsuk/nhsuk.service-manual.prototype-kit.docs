@@ -23,7 +23,7 @@ Do not edit the file at `public/assets/sass/main.css` because it’s deleted and
 For example, to make all your second level headings pink:
 
 ```scss
-// Import NHS.UK frontend library
+// Use the NHS.UK frontend library
 @use "nhsuk-frontend/dist/nhsuk" as * with (
   $nhsuk-assets-path: "/nhsuk-frontend/assets/"
 );

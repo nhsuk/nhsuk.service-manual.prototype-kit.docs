@@ -35,7 +35,7 @@ h2 {
 }
 ```
 
-### Using import
+### Using multiple files
 
 If you have a very long `main.scss` file, you can split it up into multiple files and import those into `main.scss`. Use an underscore (`_`) at the start of the import file filenames, for example, `_admin.scss`.
 

@@ -41,7 +41,7 @@ If you have a very long `main.scss` file, you can split it up into multiple file
 
 Use an underscore (`_`) at the start of the filenames, for example, `_admin.scss`.
 
-Import this file into your `main.scss` file without the underscore:
+Load this file into your `main.scss` file without the underscore:
 
 ```scss
 // Import NHS.UK frontend library

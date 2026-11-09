@@ -1,7 +1,7 @@
 ---
 title: PDFs and other files
 description: How to include downloadable files.
-order: 6
+order: 7
 tags:
   - general
 ---

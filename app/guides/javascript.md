@@ -1,7 +1,7 @@
 ---
 title: JavaScript
 description: How to add your own JavaScript to pages.
-order: 10
+order: 11
 tags:
   - general
 ---

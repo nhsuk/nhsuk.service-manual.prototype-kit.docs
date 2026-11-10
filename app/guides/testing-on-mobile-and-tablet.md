@@ -31,7 +31,7 @@ Use the prototype kit’s resizable device frame to present or share your protot
 
 ![A prototype page displayed inside a resizable phone frame.](/assets/images/guides/frame-example.png 'Screenshot of a prototype in a device frame.')
 
-Open `/frame` on your prototype URL, for example <http://localhost:3000/frame>.
+Add `/frame` to the end of your prototype URL, for example <http://localhost:3000/frame>.
 
 You can resize the frame to approximate different phone and tablet sizes.
 

@@ -1,7 +1,7 @@
 ---
 title: Publishing your prototype
 description: Publishing your prototype online means you can share it with others and test it with users.
-order: 9
+order: 10
 tags:
   - general
 ---

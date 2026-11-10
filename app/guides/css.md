@@ -16,9 +16,9 @@ The prototype kit uses [Sass](https://sass-lang.com/guide), which adds extra fea
 
 ## Adding CSS used on multiple pages
 
-If your CSS applies to multiple pages, add it to the bottom of the file at `app/assets/sass/main.scss`.
+If your CSS applies to multiple pages, add it to the bottom of the file at `app/stylesheets/main.scss`. (In older prototypes this may be named `app/assets/sass/main.scss` instead.)
 
-Do not edit the file at `public/assets/sass/main.css` because it’s deleted and rebuilt every time you make a change to your prototype.
+Do not edit any files in the `public/` folder because they are deleted and rebuilt every time you make a change to your prototype.
 
 For example, to make all your second level headings pink:
 

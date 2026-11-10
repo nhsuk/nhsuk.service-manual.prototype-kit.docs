@@ -8,7 +8,7 @@ redirectFrom: whats-new/updates
 ## 8.6.0 - 10 November 2026
 
 - Add a [filter for formatting phone numbers](/guides/filters/#format-phone-number) in the NHS style using spaces
-- Add a new `/frame` view for demonstrating prototypes within a phone or tablet frame
+- Add a new [device frame view](/guides/testing-on-mobile-and-tablet/#presenting-a-prototype-in-a-device-frame) for demonstrating prototypes within a phone or tablet frame
 - Update to use [NHS.UK frontend 10.7.0](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v10.7.0)
 - Mark the kit as compatible with Node.js 26 (LTS) and npm v12
 - Prevent updates to session data defaults affecting other sessions

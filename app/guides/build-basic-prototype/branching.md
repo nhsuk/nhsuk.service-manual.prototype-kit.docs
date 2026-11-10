@@ -41,7 +41,7 @@ Currently, the `{{example.radios.url}}` page sends the user directly to question
 
 1. In `{{example.radios.url}}.html` change the form `action` to `/{{example.radios.url}}-answer`. This is a URL we're making up now so that we can have a route that responds at this URL.
 2. Open `/app/routes.js`.
-3. Insert new JavaScript into line 5, before `module.exports = router`.
+3. Insert new JavaScript into line 7, after `// Add your routes here`.
 
 ```js { .nhsuk-code--button }
 // Run this code when the form is submitted

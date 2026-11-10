@@ -107,6 +107,33 @@ Displays as:
 {% raw %}<p>Your NHS number is 999 123 4567.</p>{% endraw %}
 ```
 
+### formatPhoneNumber
+
+Use this to format a phone number with spaces, following the [NHS style guide for phone numbers](https://service-manual.nhs.uk/content/a-to-z-of-nhs-health-writing#phone-and-phone-numbers). This makes it easier for people to read.
+
+Example:
+
+```njk
+{% raw %}<p>Phone: {{ data.phoneNumber | formatPhoneNumber }}</p>{% endraw %}
+```
+
+Displays as:
+
+```html
+{% raw %}<p>Phone: 0161 496 0999</p>{% endraw %}
+```
+
+Numbers starting with `+44`, `44` or `0044` are displayed as `+44 (0)`, so they work for people calling from within the UK and from abroad.
+
+For non-UK numbers, include the international dialling code at the start so the number is formatted using the convention for that country.
+
+| Input           | Displays as           |
+| --------------- | --------------------- |
+| `01614960999`   | `0161 496 0999`       |
+| `07700900866`   | `07700 900 866`       |
+| `+442079460999` | `+44 (0)20 7946 0999` |
+| `+33199000001`  | `+33 1 99 00 00 01`   |
+
 ### formatPostcode
 
 Use this to format a UK postcode so that it appears uppercase with a space in the middle, regardless of how the user entered it.

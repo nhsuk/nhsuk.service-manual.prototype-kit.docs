@@ -23,8 +23,10 @@ Do not edit the file at `public/assets/sass/main.css` because it’s deleted and
 For example, to make all your second level headings pink:
 
 ```scss
-// Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+// Use the NHS.UK frontend library
+@use "nhsuk-frontend/dist/nhsuk" as * with (
+  $nhsuk-assets-path: "/nhsuk-frontend/assets/"
+);
 
 // Add your custom CSS/Sass styles below.
 
@@ -33,20 +35,22 @@ h2 {
 }
 ```
 
-### Using import
+### Using multiple files
 
-If you have a very long `main.scss` file, you can split it up into multiple files and import those into `main.scss`. Use an underscore (`_`) at the start of the import file filenames, for example, `_admin.scss`.
+If you have a very long `main.scss` file, you can split it up into multiple files and include them in `main.scss` using `@forward`.
 
-Import this file into your `main.scss` file without the underscore:
+Use an underscore (`_`) at the start of the filenames, for example, `_admin.scss`.
+
+Load this file into your `main.scss` file without the underscore:
 
 ```scss
-$nhsuk-assets-path: "/nhsuk-frontend/assets/";
-
 // Import NHS.UK frontend library
-@import "nhsuk-frontend/dist/nhsuk";
+@use "nhsuk-frontend/dist/nhsuk" as * with (
+  $nhsuk-assets-path: "/nhsuk-frontend/assets/"
+);
 
 // Add your custom CSS/Sass styles below.
-@import "admin";
+@forward "admin";
 ```
 
 ## Adding CSS to individual pages

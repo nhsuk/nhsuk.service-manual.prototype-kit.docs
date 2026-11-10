@@ -14,7 +14,7 @@ If your version of the kit is version 7 or below, follow this upgrade guide.
 
 ### 1. Check which version of Node.js you are using.
 
-Version 8 requires you to be using either Node 22 or Node 24.
+Version 8 requires you to be using either Node.js 22, 24 or 26.
 
 You can check which version you are currently using by running this command in your terminal:
 

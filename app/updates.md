@@ -79,7 +79,7 @@ redirectFrom: whats-new/updates
 ## 6.2.0 -- 23 May 2025
 
 - NHS frontend updated to 9.6.1
-- Mark the kit as compatible with Node 22
+- Mark the kit as compatible with Node.js 22
 - Preserve query strings when redirecting from POSTs
 
 ## 6.1.0 -- 16 May 2025

@@ -10,7 +10,7 @@ The kit is built on the [Express](http://expressjs.com/) framework, and uses [NH
 
 ## Requirements
 
-[Node.js](https://nodejs.org) version 22 or higher.
+[Node.js](https://nodejs.org) version 22, 24 or 26.
 
 ## Use the template repository
 

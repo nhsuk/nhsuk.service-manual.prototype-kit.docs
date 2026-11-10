@@ -120,7 +120,7 @@ Example:
 Displays as:
 
 ```html
-{% raw %}<p>Phone: 0113 496 0123</p>{% endraw %}
+{% raw %}<p>Phone: 0161 496 0999</p>{% endraw %}
 ```
 
 Numbers starting with `+44`, `44` or `0044` are displayed as `+44 (0)`, so they work for people calling from within the UK and from abroad.

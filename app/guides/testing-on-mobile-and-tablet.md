@@ -10,6 +10,8 @@ tags:
 
 Test your prototype on real phones and tablets to check screen sizes, touch interactions and how the device is held.
 
+Whilst developing, you can test on devices on the same network as your laptop by using the ‘External’ IP address listed in terminal shortly after running `npm start`.
+
 For usability research, ideally use participants’ own devices. If that is not possible, use devices they are already familiar with.
 
 ## Designing

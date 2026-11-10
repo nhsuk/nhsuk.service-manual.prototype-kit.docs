@@ -18,10 +18,10 @@ Desktop browsers include tools for previewing different screen sizes and device 
 
 To open the tool in your browser:
 
-* Chrome: Open DevTools and select ‘Toggle device toolbar’. See [Chrome’s device mode guide](https://developer.chrome.com/docs/devtools/device-mode/).
-* Edge: Open DevTools and select ‘Toggle device emulation’. See [Edge’s device emulation guide](https://learn.microsoft.com/en-us/microsoft-edge/devtools/device-mode/).
-* Safari: Select ‘Develop’, then ‘Enter Responsive Design Mode’. If the ‘Develop’ menu is not visible, open Safari settings, select ‘Advanced’, then enable ‘Show features for web developers’. See [Apple’s Responsive Design Mode guide](https://developer.apple.com/documentation/safari-developer-tools/responsive-design-mode).
-* Firefox: Open the Firefox menu and select ‘Browser Tools’, then ‘Responsive Design Mode’. On macOS, or if the menu bar is shown, select it from the ‘Tools’ menu. See [Firefox’s Responsive Design Mode guide](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/).
+- Chrome: Open DevTools and select ‘Toggle device toolbar’. See [Chrome’s device mode guide](https://developer.chrome.com/docs/devtools/device-mode/).
+- Edge: Open DevTools and select ‘Toggle device emulation’. See [Edge’s device emulation guide](https://learn.microsoft.com/en-us/microsoft-edge/devtools/device-mode/).
+- Safari: Select ‘Develop’, then ‘Enter Responsive Design Mode’. If the ‘Develop’ menu is not visible, open Safari settings, select ‘Advanced’, then enable ‘Show features for web developers’. See [Apple’s Responsive Design Mode guide](https://developer.apple.com/documentation/safari-developer-tools/responsive-design-mode).
+- Firefox: Open the Firefox menu and select ‘Browser Tools’, then ‘Responsive Design Mode’. On macOS, or if the menu bar is shown, select it from the ‘Tools’ menu. See [Firefox’s Responsive Design Mode guide](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/).
 
 ## Presenting a prototype in a device frame
 

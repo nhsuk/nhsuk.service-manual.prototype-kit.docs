@@ -87,7 +87,7 @@ For example, the file could now look like this:
 
 ```js { .nhsuk-code--button }
 // Use this file to change prototype configuration.
-module.exports = {
+export default {
   // Service name
   serviceName: 'Service name goes here',
 
@@ -103,7 +103,7 @@ If you added any other configuration options of your own, you should keep those 
 Update the file to this:
 
 ```js { .nhsuk-code--button }
-module.exports = function(req, res, next) {
+export default function(req, res, next) {
 
   // You can set any additional local variables here.
   // These will be made available to any views
@@ -137,14 +137,14 @@ This will make sure that your prototype still works within GitHub Codespaces.
 Replace the entire contents of it with this:
 
 ```js { .nhsuk-code--button }
-const NHSPrototypeKit = require('nhsuk-prototype-kit')
+import NHSPrototypeKit from 'nhsuk-prototype-kit'
 
 // Local dependencies
-const config = require('./app/config')
-const sessionDataDefaults = require('./app/data/session-data-defaults')
-const filters = require('./app/filters')
-const locals = require('./app/locals')
-const routes = require('./app/routes')
+import config from './app/config.js'
+import sessionDataDefaults from './app/data/session-data-defaults.js'
+import filters from './app/filters.js'
+import locals from './app/locals.js'
+import routes from './app/routes.js'
 
 const viewsPath = [
   'app/views/'
@@ -155,23 +155,19 @@ const entryPoints = [
   'app/assets/javascript/*.js'
 ]
 
-async function init() {
-  const prototype = await NHSPrototypeKit.init({
-    serviceName: config.serviceName,
-    buildOptions: {
-      entryPoints
-    },
-    viewsPath,
-    routes,
-    locals,
-    filters,
-    sessionDataDefaults
-  })
+const prototype = await NHSPrototypeKit.init({
+  serviceName: config.serviceName,
+  buildOptions: {
+    entryPoints
+  },
+  viewsPath,
+  routes,
+  locals,
+  filters,
+  sessionDataDefaults
+})
 
-  prototype.start(config.port)
-}
-
-init()
+prototype.start(config.port)
 ```
 
 > [!NOTE]

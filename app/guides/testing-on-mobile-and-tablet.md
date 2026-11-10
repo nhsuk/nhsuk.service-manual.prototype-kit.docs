@@ -8,7 +8,7 @@ tags:
 
 ## Testing and research
 
-Test your prototype on real phones and tablets to check screen sizes, touch interactions and how people hold and use their devices.
+Test your prototype on real phones and tablets to check screen sizes, touch interactions and how the device is held.
 
 For usability research, ideally use participants’ own devices. If that is not possible, use devices they are already familiar with.
 
